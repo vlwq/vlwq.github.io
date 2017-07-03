@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>//litten.me/2017/07/05/20170705/</loc>
+    <lastmod>2017-07-03T16:05:24.230Z</lastmod>
+    <data>
+        <display>
+        <title>nginx反向代理</title>
+        <pubTime>2017-07-05T02:36:00.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2017/05/03/20170503/</loc>
     <lastmod>2017-07-03T15:31:29.006Z</lastmod>
     <data>
