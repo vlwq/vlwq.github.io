@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>Archives: 2017/2 | Andrew的博客</title>
+  <title>mongoose分页 | Andrew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="此为博客一枚。">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Andrew的博客">
-<meta property="og:url" content="//litten.me/archives/2017/02/index.html">
+  <meta name="description" content="12345678910111213141516171819202122var mongoose = require(&apos;mongoose&apos;);mongoose.connect(&apos;MongoDB://192.168.0.229:27017/Test&apos;);var Cat = mongoose.model(&apos;Cat&apos;, &amp;#123;    name: String ,    _id:String ,">
+<meta name="keywords" content="node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongoose分页">
+<meta property="og:url" content="//litten.me/2017/05/03/20170503/index.html">
 <meta property="og:site_name" content="Andrew的博客">
-<meta property="og:description" content="此为博客一枚。">
+<meta property="og:description" content="12345678910111213141516171819202122var mongoose = require(&apos;mongoose&apos;);mongoose.connect(&apos;MongoDB://192.168.0.229:27017/Test&apos;);var Cat = mongoose.model(&apos;Cat&apos;, &amp;#123;    name: String ,    _id:String ,">
+<meta property="og:updated_time" content="2017-07-03T15:31:29.006Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Andrew的博客">
-<meta name="twitter:description" content="此为博客一枚。">
+<meta name="twitter:title" content="mongoose分页">
+<meta name="twitter:description" content="12345678910111213141516171819202122var mongoose = require(&apos;mongoose&apos;);mongoose.connect(&apos;MongoDB://192.168.0.229:27017/Test&apos;);var Cat = mongoose.model(&apos;Cat&apos;, &amp;#123;    name: String ,    _id:String ,">
   
     <link rel="alternative" href="/atom.xml" title="Andrew的博客" type="application/atom+xml">
   
@@ -143,60 +144,160 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-20170503" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/01/20170201/" class="archive-article-date">
-  	<time datetime="2017-02-01T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/01/20170201/">25岁前你必须要做完的7件事</a>
+    <h1 class="article-title" itemprop="name">
+      mongoose分页
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/03/20170503/" class="archive-article-date">
+  	<time datetime="2017-05-03T11:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var mongoose = require(<span class="string">'mongoose'</span>);</div><div class="line">mongoose.connect(<span class="string">'MongoDB://192.168.0.229:27017/Test'</span>);</div><div class="line"></div><div class="line"></div><div class="line">var Cat = mongoose.model(<span class="string">'Cat'</span>, &#123;</div><div class="line">    <span class="built_in">name</span>: String ,</div><div class="line">    <span class="variable">_id</span>:String ,</div><div class="line">    age:&#123; <span class="built_in">type</span>: Number, <span class="built_in">min</span>: <span class="number">18</span>, <span class="built_in">max</span>: <span class="number">65</span> &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">var query=Cat.<span class="built_in">find</span>(&#123;&#125;);</div><div class="line"></div><div class="line">query.where(&#123;age:<span class="number">30</span>&#125;);</div><div class="line">query.<span class="built_in">sort</span>(&#123; <span class="built_in">name</span>: <span class="string">'asc'</span>, age: -<span class="number">1</span> &#125;);</div><div class="line"><span class="comment">//query.and(&#123;_id:"123456222"&#125;);</span></div><div class="line">query.<span class="built_in">or</span>([&#123;<span class="variable">_id</span>:<span class="string">"123456fff222"</span>&#125;,&#123;<span class="variable">_id</span>:<span class="string">"123456222"</span>&#125;]);</div><div class="line"><span class="comment">//query.limit(3); //限制条数</span></div><div class="line"><span class="comment">//query.skip(3)   //开始数 ，通过计算可是实现分页</span></div><div class="line"><span class="comment">//query.friends('name')</span></div><div class="line">query.<span class="built_in">exec</span>(function(err,docs)&#123;</div><div class="line">    console.<span class="built_in">log</span>(docs);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>开发文档地址：<a href="http://mongoosejs.com/docs/api.html#query_Query-or" target="_blank" rel="external">http://mongoosejs.com/docs/api.html#query_Query-or</a></p>
+
+      
+
+      
+<!--        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>-->
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">鸡汤</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABvUlEQVR42u3aQZLDMAgEwPz/094HpGwPEMnJVuuUgyNaPlAC/HrF63hb+ZPv/0r2GS1cXNwxdx4gOUDy+9qAi4u7n5uHySn5IQsvAhcX9yu5SQLKbym4uLj/j9u7rODi4v4KNwlQTV7zPXFxcZ/i5l3Kdb+X9HdxcXFb3KO45qXRKDouLu4Wbp5Q8pC9hFiIi4uLu5g7TzF5qVMdyp6+V1xc3O3cpMExGalWY90kMlxc3GXcai8iGaj0EtzNwXBxcbdzq9vlBdL1f/NrEy4u7k7upFDJEXlD5PRJXFzc7dzkklEdl17vUx3G4OLiPsWdfHR1E6x4DTotfnBxcRdzJ8Rq2dM7zM1ABRcXdxm3WtjkrdVe8dOLjouL+1lub9QxaZhOhru4uLj7uUmTImlu5heXvCmDi4u7n5uMRvLxyeTCdPMMLi7uYu5RXM3PJorXnVF1hYuLO+ZWmyOTAPn1qNeKxcXF/Sy32uKslkDXe5YTJS4u7kZuMhCdlD294gcXF/cXuUkCajZGe5McXFzch7hRuil+ZjEapeDi4i7j5oVK9Uj58DXaGRcXdwu32u6cDD+qY5tRfxcXF7fD/QOuhjPSWuEqSQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/05/21/20170501/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          移动端
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/02/01/20170201/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">25岁前你必须要做完的7件事</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -219,8 +320,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

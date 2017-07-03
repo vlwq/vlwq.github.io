@@ -205,6 +205,66 @@
 
 
   
+    <article id="post-20170503" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/03/20170503/">mongoose分页</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/03/20170503/" class="archive-article-date">
+  	<time datetime="2017-05-03T11:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var mongoose = require(<span class="string">'mongoose'</span>);</div><div class="line">mongoose.connect(<span class="string">'MongoDB://192.168.0.229:27017/Test'</span>);</div><div class="line"></div><div class="line"></div><div class="line">var Cat = mongoose.model(<span class="string">'Cat'</span>, &#123;</div><div class="line">    <span class="built_in">name</span>: String ,</div><div class="line">    <span class="variable">_id</span>:String ,</div><div class="line">    age:&#123; <span class="built_in">type</span>: Number, <span class="built_in">min</span>: <span class="number">18</span>, <span class="built_in">max</span>: <span class="number">65</span> &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">var query=Cat.<span class="built_in">find</span>(&#123;&#125;);</div><div class="line"></div><div class="line">query.where(&#123;age:<span class="number">30</span>&#125;);</div><div class="line">query.<span class="built_in">sort</span>(&#123; <span class="built_in">name</span>: <span class="string">'asc'</span>, age: -<span class="number">1</span> &#125;);</div><div class="line"><span class="comment">//query.and(&#123;_id:"123456222"&#125;);</span></div><div class="line">query.<span class="built_in">or</span>([&#123;<span class="variable">_id</span>:<span class="string">"123456fff222"</span>&#125;,&#123;<span class="variable">_id</span>:<span class="string">"123456222"</span>&#125;]);</div><div class="line"><span class="comment">//query.limit(3); //限制条数</span></div><div class="line"><span class="comment">//query.skip(3)   //开始数 ，通过计算可是实现分页</span></div><div class="line"><span class="comment">//query.friends('name')</span></div><div class="line">query.<span class="built_in">exec</span>(function(err,docs)&#123;</div><div class="line">    console.<span class="built_in">log</span>(docs);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>开发文档地址：<a href="http://mongoosejs.com/docs/api.html#query_Query-or" target="_blank" rel="external">http://mongoosejs.com/docs/api.html#query_Query-or</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/03/20170503/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-20170201" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -391,6 +451,68 @@
 
 
   
+    <article id="post-20170101" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/01/20170101/">2017年房价</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/01/20170101/" class="archive-article-date">
+  	<time datetime="2017-01-01T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一苒说：2017年，房价的拐点是不是到了？</p>
+<p>首先声明，本文只是一个房地产业外人士的个人观点，很可能不够正确和严谨。<br>其次声明，绝非房地产楼盘或者中介广告——没有广告文章里，是唱衰房价的。<br>我也不会从Wind平台上拉一堆数据，或者引用一堆券商的PPT。整的看起来像那么回事，跟所有招摇撞骗的分析报告一样：形式严重大于内容，只有分析没有观点，只有人云亦云，没有对事物本质的思考。<br>
+        
+          <a class="article-more-a" href="/2017/01/01/20170101/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">金融</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/01/20170101/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-20170301" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -445,68 +567,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/01/01/20170301/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-20170101" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/01/20170101/">2017年房价</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/01/20170101/" class="archive-article-date">
-  	<time datetime="2017-01-01T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一苒说：2017年，房价的拐点是不是到了？</p>
-<p>首先声明，本文只是一个房地产业外人士的个人观点，很可能不够正确和严谨。<br>其次声明，绝非房地产楼盘或者中介广告——没有广告文章里，是唱衰房价的。<br>我也不会从Wind平台上拉一堆数据，或者引用一堆券商的PPT。整的看起来像那么回事，跟所有招摇撞骗的分析报告一样：形式严重大于内容，只有分析没有观点，只有人云亦云，没有对事物本质的思考。<br>
-        
-          <a class="article-more-a" href="/2017/01/01/20170101/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">金融</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/01/20170101/">展开全文 >></a>
         </p>
       
 
@@ -583,75 +643,9 @@
 
 
   
-    <article id="post-20161123" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/23/20161123/">执行力</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/23/20161123/" class="archive-article-date">
-  	<time datetime="2016-11-23T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前几天和一位初中好友一起吃饭，我和他的友谊，从那个时候开始，至今都没有中断过，经常出来喝喝酒，拉拉家常，谈谈人生理想。</p>
-<p>吃饭的期间，他跟我说，再过一个月，自己就要辞职出来创业了。</p>
-<p>我第一次听到这个消息时，说实话，还是挺惊讶的，毕竟他才刚刚毕业两年多，按照常理来说，现在工作应该才步入正轨，怎么就要出来创业了呢？</p>
-<p>那天和他聊完，再到后来和一些跑得比较快的同龄人聊过之后，我才发现，毕业三年，混得好的同学，其实已经和其他的人，拉开了越来越大的差距。</p>
-<p>有的月薪过两万，有的出来创业，有的组建了自己的小团队，各有各的精彩。</p>
-<p>其实我关心的不是差距的大小，而是那些跑得快的人，他们究竟是怎么做到的？</p>
-        
-          <a class="article-more-a" href="/2016/11/23/20161123/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">自我</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/23/20161123/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -745,7 +739,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
+                <a href="javascript:void(0)" class="js-tag color3">金融</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -753,11 +747,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">金融</a>
+                <a href="javascript:void(0)" class="js-tag color3">自我</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">自我</a>
+                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -770,6 +764,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">伯恩斯新情绪疗法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
