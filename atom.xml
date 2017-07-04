@@ -191,7 +191,7 @@
     <link href="//litten.me/2017/06/14/20170614/"/>
     <id>//litten.me/2017/06/14/20170614/</id>
     <published>2017-06-14T02:36:00.000Z</published>
-    <updated>2017-07-04T13:48:29.020Z</updated>
+    <updated>2017-07-04T14:06:57.758Z</updated>
     
     <content type="html"><![CDATA[<p>Debian / Ubuntu 14.04 +</p>
 <pre><code>CentOS用户请使用这个脚本：CentOS/Debian/Ubuntu系统 TCP-BBR 一键安装脚本
@@ -237,7 +237,7 @@
     </summary>
     
     
-      <category term="js" scheme="//litten.me/tags/js/"/>
+      <category term="linux" scheme="//litten.me/tags/linux/"/>
     
   </entry>
   
@@ -284,7 +284,7 @@
     <link href="//litten.me/2017/06/12/20170612/"/>
     <id>//litten.me/2017/06/12/20170612/</id>
     <published>2017-06-12T02:36:00.000Z</published>
-    <updated>2017-07-04T13:45:08.592Z</updated>
+    <updated>2017-07-04T14:08:34.309Z</updated>
     
     <content type="html"><![CDATA[<p>flex布局，做了3个demo</p>
 <a id="more"></a>
@@ -301,7 +301,7 @@
     </summary>
     
     
-      <category term="js" scheme="//litten.me/tags/js/"/>
+      <category term="html5" scheme="//litten.me/tags/html5/"/>
     
   </entry>
   
@@ -310,7 +310,7 @@
     <link href="//litten.me/2017/06/11/20170611/"/>
     <id>//litten.me/2017/06/11/20170611/</id>
     <published>2017-06-11T02:36:00.000Z</published>
-    <updated>2017-07-04T13:41:12.242Z</updated>
+    <updated>2017-07-04T14:11:00.833Z</updated>
     
     <content type="html"><![CDATA[<p>guajs简单版本，备用工具</p>
 <a id="more"></a>
@@ -324,7 +324,7 @@
     </summary>
     
     
-      <category term="js" scheme="//litten.me/tags/js/"/>
+      <category term="guagua" scheme="//litten.me/tags/guagua/"/>
     
   </entry>
   
@@ -333,7 +333,7 @@
     <link href="//litten.me/2017/06/10/20170610/"/>
     <id>//litten.me/2017/06/10/20170610/</id>
     <published>2017-06-10T02:36:00.000Z</published>
-    <updated>2017-07-04T13:39:29.623Z</updated>
+    <updated>2017-07-04T14:11:00.962Z</updated>
     
     <content type="html"><![CDATA[<h1 id="guasync-file"><a href="#guasync-file" class="headerlink" title="guasync file"></a>guasync file</h1><p>/*<br> 同步和异步编程的概念</p>
 <p> 同步的意思是 函数通过返回值来传递数据<br> 函数从获取数据一直到返回数据之间的时间一直在等待</p>
@@ -351,7 +351,7 @@
     </summary>
     
     
-      <category term="js" scheme="//litten.me/tags/js/"/>
+      <category term="guagua" scheme="//litten.me/tags/guagua/"/>
     
   </entry>
   
@@ -360,7 +360,7 @@
     <link href="//litten.me/2017/06/09/20170609/"/>
     <id>//litten.me/2017/06/09/20170609/</id>
     <published>2017-06-09T02:36:00.000Z</published>
-    <updated>2017-07-04T13:37:49.584Z</updated>
+    <updated>2017-07-04T14:08:40.110Z</updated>
     
     <content type="html"><![CDATA[<p>HTML5 新内容主要是以下几点</p>
 <p>语义化标签如 article、footer、header、nav、section<br>视频和音频标签 video 和 audio<br>本地离线存储 localStorage 和 sessionStorage<br>新增表单特性如新控件 calendar email color 等<br>用于绘图的 canvas 标签(用于游戏等)<br>用于高性能图形的 WebGL(用于游戏等, 这个是专用领域的知识, 我们不会直接接触)</p>
@@ -395,7 +395,7 @@
     </summary>
     
     
-      <category term="js" scheme="//litten.me/tags/js/"/>
+      <category term="html5" scheme="//litten.me/tags/html5/"/>
     
   </entry>
   
@@ -404,7 +404,7 @@
     <link href="//litten.me/2017/06/08/20170608/"/>
     <id>//litten.me/2017/06/08/20170608/</id>
     <published>2017-06-08T02:36:00.000Z</published>
-    <updated>2017-07-04T13:36:13.927Z</updated>
+    <updated>2017-07-04T14:08:48.116Z</updated>
     
     <content type="html"><![CDATA[<p>Linux 服务器介绍和使用<br>常用 Linux 版本分析<br>常用工具/概念/使用方式<br>以前和现在的服务器(托管和云平台)<br>服务器配置<br>部署项目</p>
 <a id="more"></a>
@@ -417,7 +417,7 @@
     </summary>
     
     
-      <category term="js" scheme="//litten.me/tags/js/"/>
+      <category term="linux" scheme="//litten.me/tags/linux/"/>
     
   </entry>
   
@@ -503,7 +503,7 @@
     <link href="//litten.me/2017/06/06/20170606/"/>
     <id>//litten.me/2017/06/06/20170606/</id>
     <published>2017-06-06T02:36:00.000Z</published>
-    <updated>2017-07-04T13:31:47.782Z</updated>
+    <updated>2017-07-04T14:09:00.138Z</updated>
     
     <content type="html"><![CDATA[<p>CSS动画<br><a id="more"></a></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>fe 21<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">            <span class="selector-class">.b</span> + <span class="selector-class">.b</span> &#123;</div><div class="line">                <span class="comment">/*background: red;*/</span></div><div class="line">                <span class="attribute">border-top</span>: <span class="number">1px</span> solid black;</div><div class="line">            &#125;</div><div class="line">            <span class="selector-class">.c</span> &#123;</div><div class="line">                <span class="attribute">transform</span>: <span class="built_in">translate</span>(20px, 40px);</div><div class="line">            &#125;</div><div class="line">            <span class="selector-tag">wujcxy</span><span class="selector-pseudo">::after</span> &#123;</div><div class="line">                <span class="attribute">content</span>: <span class="string">'★'</span>;</div><div class="line">                <span class="attribute">font-size</span>: <span class="number">32px</span>;</div><div class="line">                <span class="attribute">text-shadow</span>: <span class="number">1px</span> <span class="number">1px</span> black;</div><div class="line">            &#125;</div><div class="line">            <span class="selector-class">.orange</span> &#123;</div><div class="line">                <span class="attribute">color</span>: # FF9800;</div><div class="line">            &#125;</div><div class="line">            <span class="selector-class">.gray</span> &#123;</div><div class="line">                <span class="attribute">color</span>: lightgray;</div><div class="line">            &#125;</div><div class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">            <span class="comment">/* transition 动画 */</span></div><div class="line">            <span class="selector-class">.gua-cube</span> &#123;</div><div class="line">                <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">                <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">                <span class="attribute">background</span>: red;</div><div class="line">            &#125;</div><div class="line">            <span class="selector-class">.gua-cube</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">                <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">                <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">                <span class="attribute">background</span>: blue;</div><div class="line">                <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.2, 2);</div><div class="line">            &#125;</div><div class="line">            <span class="selector-class">.gua-cube</span> &#123;</div><div class="line">                <span class="attribute">transition</span>: <span class="number">1s</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">/* animation 动画 */</span></div><div class="line">            <span class="selector-class">.gua-animation</span> <span class="selector-tag">div</span> &#123;</div><div class="line">                <span class="attribute">height</span>: <span class="number">30px</span>;</div><div class="line">                <span class="attribute">background</span>: lightblue;</div><div class="line">                <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">10px</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">/*</span></div><div class="line">            定义一个动画</div><div class="line">            改变背景色</div><div class="line">            */</div><div class="line">            @<span class="keyword">keyframes</span> changecolor &#123;</div><div class="line">                0% &#123;</div><div class="line">                    <span class="attribute">background</span>: lightblue;</div><div class="line">                    <span class="comment">/*height: 30px;*/</span></div><div class="line">                &#125;</div><div class="line">                100% &#123;</div><div class="line">                    <span class="attribute">background</span>: black;</div><div class="line">                    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            @<span class="keyword">keyframes</span> vr &#123;</div><div class="line">                0% &#123;</div><div class="line">                    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(0deg);</div><div class="line">                &#125;</div><div class="line">                50% &#123;</div><div class="line">                    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(280deg);</div><div class="line">                &#125;</div><div class="line">                100% &#123;</div><div class="line">                    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(360deg);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">/* 播放动画 1s 完成， 动画名是 changecolor */</span></div><div class="line">            <span class="selector-class">.gua1</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">                <span class="attribute">animation</span>: <span class="number">1s</span> changecolor;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">/* 利用 play-state 属性实现动画暂停 */</span></div><div class="line">            <span class="selector-class">.gua2</span> &#123;</div><div class="line">                <span class="attribute">animation</span>: <span class="number">1s</span> vr infinite;</div><div class="line">                <span class="attribute">animation-timing-function</span>: linear;</div><div class="line">                <span class="attribute">animation-play-state</span>: paused;</div><div class="line">            &#125;</div><div class="line">            <span class="selector-class">.gua2</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">                <span class="attribute">animation-play-state</span>: running;</div><div class="line">            &#125;</div><div class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"b"</span>&gt;</span></div><div class="line">            a</div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"c"</span>&gt;</span></div><div class="line">            c</div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"b"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">wujcxy</span> <span class="attr">class</span>=<span class="string">"orange"</span>&gt;</span><span class="tag">&lt;/<span class="name">wujcxy</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">wujcxy</span> <span class="attr">class</span>=<span class="string">"orange"</span>&gt;</span><span class="tag">&lt;/<span class="name">wujcxy</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">wujcxy</span> <span class="attr">class</span>=<span class="string">"orange"</span>&gt;</span><span class="tag">&lt;/<span class="name">wujcxy</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">wujcxy</span> <span class="attr">class</span>=<span class="string">"gray"</span>&gt;</span><span class="tag">&lt;/<span class="name">wujcxy</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">wujcxy</span> <span class="attr">class</span>=<span class="string">"gray"</span>&gt;</span><span class="tag">&lt;/<span class="name">wujcxy</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- transition 动画 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"gua-transition"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"gua-cube"</span>&gt;</span></div><div class="line"></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"gua-animation"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"gua1"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"gua2"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"gua3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -518,7 +518,7 @@
     </summary>
     
     
-      <category term="js" scheme="//litten.me/tags/js/"/>
+      <category term="html5" scheme="//litten.me/tags/html5/"/>
     
   </entry>
   
@@ -615,7 +615,7 @@
     <link href="//litten.me/2017/06/01/20170601/"/>
     <id>//litten.me/2017/06/01/20170601/</id>
     <published>2017-06-01T02:36:00.000Z</published>
-    <updated>2017-07-04T13:18:13.625Z</updated>
+    <updated>2017-07-04T14:11:00.917Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> log = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log.apply(<span class="built_in">console</span>, <span class="built_in">arguments</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> e = <span class="function"><span class="keyword">function</span>(<span class="params">selector</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">document</span>.querySelector(selector)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> es = <span class="function"><span class="keyword">function</span> (<span class="params">selector</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">document</span>.querySelectorAll(selector)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -628,7 +628,7 @@
     </summary>
     
     
-      <category term="js" scheme="//litten.me/tags/js/"/>
+      <category term="guagua" scheme="//litten.me/tags/guagua/"/>
     
   </entry>
   
@@ -1377,7 +1377,7 @@
     <link href="//litten.me/2016/09/20/20160920/"/>
     <id>//litten.me/2016/09/20/20160920/</id>
     <published>2016-09-20T02:36:00.000Z</published>
-    <updated>2017-07-02T11:45:05.103Z</updated>
+    <updated>2017-07-04T14:05:14.860Z</updated>
     
     <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=694286&auto=0&height=66"></iframe>
 
@@ -1423,7 +1423,7 @@
     </summary>
     
     
-      <category term="伯恩斯新情绪疗法" scheme="//litten.me/tags/%E4%BC%AF%E6%81%A9%E6%96%AF%E6%96%B0%E6%83%85%E7%BB%AA%E7%96%97%E6%B3%95/"/>
+      <category term="旧事" scheme="//litten.me/tags/%E6%97%A7%E4%BA%8B/"/>
     
   </entry>
   
@@ -1570,6 +1570,47 @@
   </entry>
   
   <entry>
+    <title>出国</title>
+    <link href="//litten.me/2016/08/23/20160823/"/>
+    <id>//litten.me/2016/08/23/20160823/</id>
+    <published>2016-08-23T02:36:00.000Z</published>
+    <updated>2017-07-02T11:25:35.926Z</updated>
+    
+    <content type="html"><![CDATA[<p>我觉得出国回来，最大的不同，就是能让自己抽离出去这个太过熟悉的环境。</p>
+<p>人在一个地方待太久，一切的好处坏处，都会习以为常。很多好的坏的，都不能感受到了。</p>
+<p>出去工作生活几年，越来越少的中国朋友，感觉真的按照美国人的思维方式，生活了一段时间。然后再回国，那种突如其来的文化冲击，也是感觉很震撼。</p>
+<p>对于个人的变化，我觉得第一就是那种思维方式，会更加国际化。你去过不一样的地方，按照不同的思维习惯去考虑问题，审视世界。回来之后，你看见一个问题，很容易的就会以另外一个视角去考虑一下。然后自己的内心也能更加的淡定。因为你可以理解人与人之间巨大的不同，所以也就不再对让所以人懂你，那么的执着。感觉生活就是不停磨砺自己本心的旅程，能做自己觉得对的事，有坚持，就已经很难得。</p>
+<a id="more"></a>
+<p>然后再说一些回归后的个人感想。</p>
+<p>首先说说不习惯的，第一点当然就是空气，环境，肯定还是差很多。也理解了为什么老外来中国会很想一直戴口罩。但过了两个月也就这样了，反而觉得雨后的上海，还是有股淡淡的桂花香。</p>
+<p>第二就是一下子感觉突然世界挤了很多倍。那里都是人，那里都是不守规矩的人。确实是素质是比以前有很多的提高的。但人口基数在那里，就算只有百分之一的人不守规矩，那每天看见的就是很多很多人。</p>
+<p>第三就是生活的节奏，特别的快。感觉每个人每时每刻都在赶路，任何事情都怕自己慢了一秒。我们的城市和人，就好像没有刹车的高速列车，一路狂奔，不愿意为任何人，任何事来做停留。</p>
+<p>第四呢，就感觉这两年，舆论，海关，都好像更紧了，连上海感觉都没有以前那么的多元化了。这个也谈不上好或者坏，只是习惯了的那些app，网站，现在都要翻墙才能用，翻墙也越来越麻烦，所以老外来了感觉言论不自由，也是有理由的。</p>
+<p>说了不好的，又说说好的。<br>第一就是手机支付真的太便利了。回来这么久，几乎就没用到现金或者卡。无纸币的城市，真的已经在发生。电动车在上海也是越来越普及，滴滴打的就几乎全是电动车。</p>
+<p>第二就是外卖真的方便。无时无刻，都可以点。但是心里还是会担心食品的安全问题。所以也是尽量不点一些没有实体店的网店。</p>
+<p>第三就是国内公司的发展，真的很快，很多东西，转眼之间，已经可以和美国巨头们同场较量。那些外派来中国的高管什么的也越来越少。外企也没有以前那么吃香了。</p>
+<p>第四就是国内城市的发展速度，真的日新月异，今年去成都，重庆，遵义，贵阳，都感觉每一个城市都是在大搞健设。每一次回去，都有新的高楼大厦在出现。而且走在城市的交界，也很多新的农村的好看的房子出现。设计感也在走入新农村。</p>
+<p>第五就是交通的快捷。高铁是真的太方便了。虽然还是很挤，但是这个速度，真的方便。</p>
+<p>我是感觉中国现在就是站在凤凰涅槃的关卡，有很多的问题，但也有很多的机遇，感觉一下秒，也许会功亏一篑，但我更相信，我们会真的强势突围，迎来新的世界。</p>
+<p>很高兴，可以来见证这些变革。</p>
+<p>毕竟说不定我们是最后的人类了。AI，机器人，肯定会替代现在的人类，以一种新的生命形式出现。希望那时候，我们还有这些自我意识，可以这样互相喷来喷去</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我觉得出国回来，最大的不同，就是能让自己抽离出去这个太过熟悉的环境。&lt;/p&gt;
+&lt;p&gt;人在一个地方待太久，一切的好处坏处，都会习以为常。很多好的坏的，都不能感受到了。&lt;/p&gt;
+&lt;p&gt;出去工作生活几年，越来越少的中国朋友，感觉真的按照美国人的思维方式，生活了一段时间。然后再回国，那种突如其来的文化冲击，也是感觉很震撼。&lt;/p&gt;
+&lt;p&gt;对于个人的变化，我觉得第一就是那种思维方式，会更加国际化。你去过不一样的地方，按照不同的思维习惯去考虑问题，审视世界。回来之后，你看见一个问题，很容易的就会以另外一个视角去考虑一下。然后自己的内心也能更加的淡定。因为你可以理解人与人之间巨大的不同，所以也就不再对让所以人懂你，那么的执着。感觉生活就是不停磨砺自己本心的旅程，能做自己觉得对的事，有坚持，就已经很难得。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="旧事" scheme="//litten.me/tags/%E6%97%A7%E4%BA%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>别给自己找借口</title>
     <link href="//litten.me/2016/08/23/20150823/"/>
     <id>//litten.me/2016/08/23/20150823/</id>
@@ -1618,47 +1659,6 @@
     <summary type="html">
     
       &lt;p&gt;我经常能收到各种回复、提问、私信，有五种我不会回答，有这五种思维的人在现实生活中，我也会尽量远离，这是我爸活着的时候教我的。后来我一位广东朋友跟我说，这不是我爸一个人悟出来的，这是一种在他们那边流传很久的智慧，用广东话讲“费神教会你”。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="旧事" scheme="//litten.me/tags/%E6%97%A7%E4%BA%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>出国</title>
-    <link href="//litten.me/2016/08/23/20160823/"/>
-    <id>//litten.me/2016/08/23/20160823/</id>
-    <published>2016-08-23T02:36:00.000Z</published>
-    <updated>2017-07-02T11:25:35.926Z</updated>
-    
-    <content type="html"><![CDATA[<p>我觉得出国回来，最大的不同，就是能让自己抽离出去这个太过熟悉的环境。</p>
-<p>人在一个地方待太久，一切的好处坏处，都会习以为常。很多好的坏的，都不能感受到了。</p>
-<p>出去工作生活几年，越来越少的中国朋友，感觉真的按照美国人的思维方式，生活了一段时间。然后再回国，那种突如其来的文化冲击，也是感觉很震撼。</p>
-<p>对于个人的变化，我觉得第一就是那种思维方式，会更加国际化。你去过不一样的地方，按照不同的思维习惯去考虑问题，审视世界。回来之后，你看见一个问题，很容易的就会以另外一个视角去考虑一下。然后自己的内心也能更加的淡定。因为你可以理解人与人之间巨大的不同，所以也就不再对让所以人懂你，那么的执着。感觉生活就是不停磨砺自己本心的旅程，能做自己觉得对的事，有坚持，就已经很难得。</p>
-<a id="more"></a>
-<p>然后再说一些回归后的个人感想。</p>
-<p>首先说说不习惯的，第一点当然就是空气，环境，肯定还是差很多。也理解了为什么老外来中国会很想一直戴口罩。但过了两个月也就这样了，反而觉得雨后的上海，还是有股淡淡的桂花香。</p>
-<p>第二就是一下子感觉突然世界挤了很多倍。那里都是人，那里都是不守规矩的人。确实是素质是比以前有很多的提高的。但人口基数在那里，就算只有百分之一的人不守规矩，那每天看见的就是很多很多人。</p>
-<p>第三就是生活的节奏，特别的快。感觉每个人每时每刻都在赶路，任何事情都怕自己慢了一秒。我们的城市和人，就好像没有刹车的高速列车，一路狂奔，不愿意为任何人，任何事来做停留。</p>
-<p>第四呢，就感觉这两年，舆论，海关，都好像更紧了，连上海感觉都没有以前那么的多元化了。这个也谈不上好或者坏，只是习惯了的那些app，网站，现在都要翻墙才能用，翻墙也越来越麻烦，所以老外来了感觉言论不自由，也是有理由的。</p>
-<p>说了不好的，又说说好的。<br>第一就是手机支付真的太便利了。回来这么久，几乎就没用到现金或者卡。无纸币的城市，真的已经在发生。电动车在上海也是越来越普及，滴滴打的就几乎全是电动车。</p>
-<p>第二就是外卖真的方便。无时无刻，都可以点。但是心里还是会担心食品的安全问题。所以也是尽量不点一些没有实体店的网店。</p>
-<p>第三就是国内公司的发展，真的很快，很多东西，转眼之间，已经可以和美国巨头们同场较量。那些外派来中国的高管什么的也越来越少。外企也没有以前那么吃香了。</p>
-<p>第四就是国内城市的发展速度，真的日新月异，今年去成都，重庆，遵义，贵阳，都感觉每一个城市都是在大搞健设。每一次回去，都有新的高楼大厦在出现。而且走在城市的交界，也很多新的农村的好看的房子出现。设计感也在走入新农村。</p>
-<p>第五就是交通的快捷。高铁是真的太方便了。虽然还是很挤，但是这个速度，真的方便。</p>
-<p>我是感觉中国现在就是站在凤凰涅槃的关卡，有很多的问题，但也有很多的机遇，感觉一下秒，也许会功亏一篑，但我更相信，我们会真的强势突围，迎来新的世界。</p>
-<p>很高兴，可以来见证这些变革。</p>
-<p>毕竟说不定我们是最后的人类了。AI，机器人，肯定会替代现在的人类，以一种新的生命形式出现。希望那时候，我们还有这些自我意识，可以这样互相喷来喷去</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我觉得出国回来，最大的不同，就是能让自己抽离出去这个太过熟悉的环境。&lt;/p&gt;
-&lt;p&gt;人在一个地方待太久，一切的好处坏处，都会习以为常。很多好的坏的，都不能感受到了。&lt;/p&gt;
-&lt;p&gt;出去工作生活几年，越来越少的中国朋友，感觉真的按照美国人的思维方式，生活了一段时间。然后再回国，那种突如其来的文化冲击，也是感觉很震撼。&lt;/p&gt;
-&lt;p&gt;对于个人的变化，我觉得第一就是那种思维方式，会更加国际化。你去过不一样的地方，按照不同的思维习惯去考虑问题，审视世界。回来之后，你看见一个问题，很容易的就会以另外一个视角去考虑一下。然后自己的内心也能更加的淡定。因为你可以理解人与人之间巨大的不同，所以也就不再对让所以人懂你，那么的执着。感觉生活就是不停磨砺自己本心的旅程，能做自己觉得对的事，有坚持，就已经很难得。&lt;/p&gt;
     
     </summary>
     
@@ -2106,7 +2106,7 @@
     <link href="//litten.me/2015/06/28/abc/"/>
     <id>//litten.me/2015/06/28/abc/</id>
     <published>2015-06-27T16:00:00.000Z</published>
-    <updated>2017-07-04T14:00:40.458Z</updated>
+    <updated>2017-07-04T14:06:29.595Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a>
 <p>helloWorld</p>
@@ -2121,7 +2121,7 @@
     </summary>
     
     
-      <category term="js" scheme="//litten.me/tags/js/"/>
+      <category term="旧事" scheme="//litten.me/tags/%E6%97%A7%E4%BA%8B/"/>
     
   </entry>
   
