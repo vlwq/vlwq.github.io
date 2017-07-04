@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//litten.me/"/>
-  <updated>2017-07-03T16:05:24.230Z</updated>
+  <updated>2017-07-02T11:23:59.563Z</updated>
   <id>//litten.me/</id>
   
   <author>
@@ -14,47 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>nginx反向代理</title>
-    <link href="//litten.me/2017/07/05/20170705/"/>
-    <id>//litten.me/2017/07/05/20170705/</id>
-    <published>2017-07-05T02:36:00.000Z</published>
-    <updated>2017-07-03T16:05:24.230Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="nginx反向代理"><a href="#nginx反向代理" class="headerlink" title="nginx反向代理"></a>nginx反向代理</h1><p>标签（空格分隔）： nginx</p>
-<hr>
-<p>当只有一台服务器，而又想运行多个 web 后端服务，且希望网址为 www.XX.com / bbs.XX.com / blog.XX.com,怎么办，此时就要用nginx进行反向代理</p>
-<blockquote>
-<p>以 ubuntu 为例</p>
-</blockquote>
-<ol>
-<li>安装 NGINX</li>
-</ol>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-<span class="builtin-name">get</span> install nginx</div></pre></td></tr></table></figure>
-<ol>
-<li>修改 NGINX 的配置文件<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 配置文件在 /etc/nginx/nginx.conf</span></div><div class="line"><span class="keyword">cd</span> <span class="string">/etc/nginx</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>然后修改 nginx.conf,<br>具体为:修改配置文件中 的 http{}<br>在 http{} 中的末尾补上反向代理配置代码</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">user www-data;</div><div class="line">worker_processes auto;</div><div class="line">pid <span class="string">/run/nginx.pid</span>;</div><div class="line">events &#123;</div><div class="line">	worker_connections 768;</div><div class="line">	<span class="comment"># multi_accept on;</span></div><div class="line">&#125;</div><div class="line">http &#123;</div><div class="line">    <span class="comment">##</span></div><div class="line">    <span class="comment">#  前面的代码再此不展示了,在 http&#123;&#125; 中补上以上代码</span></div><div class="line">    <span class="comment">##</span></div><div class="line">	<span class="comment">##</span></div><div class="line">	<span class="comment"># 反向代理配置代码</span></div><div class="line">	<span class="comment">##</span></div><div class="line">    <span class="comment"># 注意端口号 8081 为 bbs 服务, 8082 为 blog 服务,8083 为 www 服务</span></div><div class="line">	upstream bbs &#123;</div><div class="line">        server 127.0.0.1<span class="function">:8081</span> weight=1;</div><div class="line">    &#125;</div><div class="line">    upstream blog &#123;</div><div class="line">        server 127.0.0.1<span class="function">:8082</span> weight=1;</div><div class="line">    &#125;</div><div class="line">    upstream www &#123;</div><div class="line">        server 127.0.0.1<span class="function">:8083</span> weight=1;</div><div class="line">    &#125;</div><div class="line">    server&#123;</div><div class="line">        listen 80;</div><div class="line">        <span class="comment"># 配置 www.bigbananas.cn</span></div><div class="line">        server_name www.bigbananas.cn;</div><div class="line">        access_log  <span class="string">/var/log/nginx/www.log</span>;</div><div class="line">        location / &#123;</div><div class="line">            root <span class="string">/home/website_root</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    server&#123;</div><div class="line">        listen 80;</div><div class="line">        <span class="comment"># 配置 blog.bigbananas.cn</span></div><div class="line">        server_name blog.bigbananas.cn;</div><div class="line">        access_log  <span class="string">/var/log/nginx/blog_access.log</span>;</div><div class="line">        location / &#123;</div><div class="line">            root <span class="string">/home/todo_root</span>;</div><div class="line">            <span class="comment"># proxy_pass 为反向代理后的 网站</span></div><div class="line">            proxy_pass http:<span class="string">//127.0.0.1</span><span class="function">:8081</span>/;</div><div class="line">            proxy_read_timeout 300;</div><div class="line">            proxy_<span class="keyword">connect</span>_timeout 300;</div><div class="line">            proxy_redirect     off;</div><div class="line">            proxy_<span class="keyword">set</span>_header   X-Forwarded-Proto $scheme;</div><div class="line">            proxy_<span class="keyword">set</span>_header   Host              $http_host;</div><div class="line">            proxy_<span class="keyword">set</span>_header   X-Real-IP         $remote_addr;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    server&#123;</div><div class="line">        listen 80;</div><div class="line">        <span class="comment"># 配置 bbs.bigbananas.cn</span></div><div class="line">        server_name bbs.bigbananas.cn;</div><div class="line">        access_log  <span class="string">/var/log/nginx/bbs_access.log</span>;</div><div class="line">        location / &#123;</div><div class="line">            root <span class="string">/home/todo_root</span>;</div><div class="line">            <span class="comment"># proxy_pass 为反向代理后的 网站</span></div><div class="line">            proxy_pass http:<span class="string">//127.0.0.1</span><span class="function">:8082</span>/;</div><div class="line">            proxy_read_timeout 300;</div><div class="line">            proxy_<span class="keyword">connect</span>_timeout 300;</div><div class="line">            proxy_redirect     off;</div><div class="line">            proxy_<span class="keyword">set</span>_header   X-Forwarded-Proto $scheme;</div><div class="line">            proxy_<span class="keyword">set</span>_header   Host              $http_host;</div><div class="line">            proxy_<span class="keyword">set</span>_header   X-Real-IP         $remote_addr;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>3、 在重启 NGINX 服务<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> sudo nginx -s reload</span></div></pre></td></tr></table></figure></p>
-<p>4、 在服务器启动 BLOG、BBS、WWW 服务</p>
-<p>注意：<br>端口号 8081 为 bbs 服务, 8082 为 blog 服务,8083 为 www 服务</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;nginx反向代理&quot;&gt;&lt;a href=&quot;#nginx反向代理&quot; class=&quot;headerlink&quot; title=&quot;nginx反向代理&quot;&gt;&lt;/a&gt;nginx反向代理&lt;/h1&gt;&lt;p&gt;标签（空格分隔）： nginx&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;当只有一台服务器，而又想运行
-    
-    </summary>
-    
-    
-      <category term="nginx" scheme="//litten.me/tags/nginx/"/>
-    
-  </entry>
   
   <entry>
     <title>移动端</title>
@@ -80,13 +39,90 @@
   </entry>
   
   <entry>
+    <title>nginx反向代理</title>
+    <link href="//litten.me/2017/05/05/20170505/"/>
+    <id>//litten.me/2017/05/05/20170505/</id>
+    <published>2017-05-05T02:36:00.000Z</published>
+    <updated>2017-07-04T12:25:24.922Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<p>当只有一台服务器，而又想运行多个 web 后端服务，且希望网址为 www.XX.com / bbs.XX.com / blog.XX.com,怎么办，此时就要用nginx进行反向代理</p>
+<blockquote>
+<p>以 ubuntu 为例</p>
+</blockquote>
+<ol>
+<li>安装 NGINX</li>
+</ol>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-<span class="builtin-name">get</span> install nginx</div></pre></td></tr></table></figure>
+<ol>
+<li>修改 NGINX 的配置文件<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 配置文件在 /etc/nginx/nginx.conf</span></div><div class="line"><span class="keyword">cd</span> <span class="string">/etc/nginx</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>然后修改 nginx.conf,<br>具体为:修改配置文件中 的 http{}<br>在 http{} 中的末尾补上反向代理配置代码</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">user www-data;</div><div class="line">worker_processes auto;</div><div class="line">pid <span class="string">/run/nginx.pid</span>;</div><div class="line">events &#123;</div><div class="line">	worker_connections 768;</div><div class="line">	<span class="comment"># multi_accept on;</span></div><div class="line">&#125;</div><div class="line">http &#123;</div><div class="line">    <span class="comment">##</span></div><div class="line">    <span class="comment">#  前面的代码再此不展示了,在 http&#123;&#125; 中补上以上代码</span></div><div class="line">    <span class="comment">##</span></div><div class="line">	<span class="comment">##</span></div><div class="line">	<span class="comment"># 反向代理配置代码</span></div><div class="line">	<span class="comment">##</span></div><div class="line">    <span class="comment"># 注意端口号 8081 为 bbs 服务, 8082 为 blog 服务,8083 为 www 服务</span></div><div class="line">	upstream bbs &#123;</div><div class="line">        server 127.0.0.1<span class="function">:8081</span> weight=1;</div><div class="line">    &#125;</div><div class="line">    upstream blog &#123;</div><div class="line">        server 127.0.0.1<span class="function">:8082</span> weight=1;</div><div class="line">    &#125;</div><div class="line">    upstream www &#123;</div><div class="line">        server 127.0.0.1<span class="function">:8083</span> weight=1;</div><div class="line">    &#125;</div><div class="line">    server&#123;</div><div class="line">        listen 80;</div><div class="line">        <span class="comment"># 配置 www.bigbananas.cn</span></div><div class="line">        server_name www.bigbananas.cn;</div><div class="line">        access_log  <span class="string">/var/log/nginx/www.log</span>;</div><div class="line">        location / &#123;</div><div class="line">            root <span class="string">/home/website_root</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    server&#123;</div><div class="line">        listen 80;</div><div class="line">        <span class="comment"># 配置 blog.bigbananas.cn</span></div><div class="line">        server_name blog.bigbananas.cn;</div><div class="line">        access_log  <span class="string">/var/log/nginx/blog_access.log</span>;</div><div class="line">        location / &#123;</div><div class="line">            root <span class="string">/home/todo_root</span>;</div><div class="line">            <span class="comment"># proxy_pass 为反向代理后的 网站</span></div><div class="line">            proxy_pass http:<span class="string">//127.0.0.1</span><span class="function">:8081</span>/;</div><div class="line">            proxy_read_timeout 300;</div><div class="line">            proxy_<span class="keyword">connect</span>_timeout 300;</div><div class="line">            proxy_redirect     off;</div><div class="line">            proxy_<span class="keyword">set</span>_header   X-Forwarded-Proto $scheme;</div><div class="line">            proxy_<span class="keyword">set</span>_header   Host              $http_host;</div><div class="line">            proxy_<span class="keyword">set</span>_header   X-Real-IP         $remote_addr;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    server&#123;</div><div class="line">        listen 80;</div><div class="line">        <span class="comment"># 配置 bbs.bigbananas.cn</span></div><div class="line">        server_name bbs.bigbananas.cn;</div><div class="line">        access_log  <span class="string">/var/log/nginx/bbs_access.log</span>;</div><div class="line">        location / &#123;</div><div class="line">            root <span class="string">/home/todo_root</span>;</div><div class="line">            <span class="comment"># proxy_pass 为反向代理后的 网站</span></div><div class="line">            proxy_pass http:<span class="string">//127.0.0.1</span><span class="function">:8082</span>/;</div><div class="line">            proxy_read_timeout 300;</div><div class="line">            proxy_<span class="keyword">connect</span>_timeout 300;</div><div class="line">            proxy_redirect     off;</div><div class="line">            proxy_<span class="keyword">set</span>_header   X-Forwarded-Proto $scheme;</div><div class="line">            proxy_<span class="keyword">set</span>_header   Host              $http_host;</div><div class="line">            proxy_<span class="keyword">set</span>_header   X-Real-IP         $remote_addr;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>3、 在重启 NGINX 服务<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> sudo nginx -s reload</span></div></pre></td></tr></table></figure></p>
+<p>4、 在服务器启动 BLOG、BBS、WWW 服务</p>
+<p>注意：<br>端口号 8081 为 bbs 服务, 8082 为 blog 服务,8083 为 www 服务</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;当只有一台服务器，而又想运行多个 web 后端服务，且希望网址为 www.XX.com / bbs.XX.com / blog.XX.com,怎么办，此时就要用nginx进行反向代理&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以 ubunt
+    
+    </summary>
+    
+    
+      <category term="nginx" scheme="//litten.me/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx 的 403 Forbidden errors</title>
+    <link href="//litten.me/2017/05/04/20170504/"/>
+    <id>//litten.me/2017/05/04/20170504/</id>
+    <published>2017-05-04T02:36:00.000Z</published>
+    <updated>2017-07-04T12:25:24.857Z</updated>
+    
+    <content type="html"><![CDATA[<p>nginx 的 403 Forbidden errors 表示你在请求一个资源文件但是nginx不允许你查看。<br>403 Forbidden 只是一个HTTP状态码，像404,200一样不是技术上的错误。<br>哪些场景需要返回403状态码的场景？<br><a id="more"></a><br>1.网站禁止特定的用户访问所有内容，例：网站屏蔽某个ip访问。<br>2.访问禁止目录浏览的目录，例：设置autoindex off后访问目录。<br>3.用户访问只能被内网访问的文件。</p>
+<p>以上几种常见的需要返回 403 Forbidden 的场景。</p>
+<p>由于服务器端的错误配置导致在不希望nginx返回403时返回403 Forbidden。</p>
+<p>1.权限配置不正确</p>
+<p>这个是nginx出现403 forbidden最常见的原因。</p>
+<p>为了保证文件能正确执行，nginx既需要文件的读权限,又需要文件所有父目录的可执行权限。</p>
+<p>例如，当访问/usr/local/nginx/html/image.jpg时，nginx既需要image.jpg文件的可读权限，也需要/,/usr,/usr/local,/usr/local/nginx,/usr/local/nginx/html的可以执行权限。</p>
+<p>解决办法:设置所有父目录为755权限，设置文件为644权限可以避免权限不正确。</p>
+<p>2.目录索引设置错误（index指令配置）</p>
+<p>网站根目录不包含index指令设置的文件。</p>
+<p>例如，运行PHP的网站，通常像这样配置index</p>
+<p>index  index.html index.htm index.php;</p>
+<p>当访问该网站的时，nginx 会按照 index.html，index.htm ，index.php 的先后顺序在根目录中查找文件。如果这三个文件都不存在，那么nginx就会返回403 Forbidden。</p>
+<p>如果index中不定义 index.php ，nginx直接返回403 Forbidden而不会去检查index.php是否存在。</p>
+<p>同样对于如果运行jsp, py时也需要添加index.jsp,index.py到目录索引指令index中。</p>
+<p>解决办法:添加首页文件到index指令，常见的是index.php，index.jsp，index.jsp或者自定义首页文件。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;nginx 的 403 Forbidden errors 表示你在请求一个资源文件但是nginx不允许你查看。&lt;br&gt;403 Forbidden 只是一个HTTP状态码，像404,200一样不是技术上的错误。&lt;br&gt;哪些场景需要返回403状态码的场景？&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="nginx" scheme="//litten.me/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mongoose分页</title>
     <link href="//litten.me/2017/05/03/20170503/"/>
     <id>//litten.me/2017/05/03/20170503/</id>
     <published>2017-05-03T11:36:00.000Z</published>
-    <updated>2017-07-03T15:31:29.006Z</updated>
+    <updated>2017-07-04T12:25:24.808Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var mongoose = require(<span class="string">'mongoose'</span>);</div><div class="line">mongoose.connect(<span class="string">'MongoDB://192.168.0.229:27017/Test'</span>);</div><div class="line"></div><div class="line"></div><div class="line">var Cat = mongoose.model(<span class="string">'Cat'</span>, &#123;</div><div class="line">    <span class="built_in">name</span>: String ,</div><div class="line">    <span class="variable">_id</span>:String ,</div><div class="line">    age:&#123; <span class="built_in">type</span>: Number, <span class="built_in">min</span>: <span class="number">18</span>, <span class="built_in">max</span>: <span class="number">65</span> &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">var query=Cat.<span class="built_in">find</span>(&#123;&#125;);</div><div class="line"></div><div class="line">query.where(&#123;age:<span class="number">30</span>&#125;);</div><div class="line">query.<span class="built_in">sort</span>(&#123; <span class="built_in">name</span>: <span class="string">'asc'</span>, age: -<span class="number">1</span> &#125;);</div><div class="line"><span class="comment">//query.and(&#123;_id:"123456222"&#125;);</span></div><div class="line">query.<span class="built_in">or</span>([&#123;<span class="variable">_id</span>:<span class="string">"123456fff222"</span>&#125;,&#123;<span class="variable">_id</span>:<span class="string">"123456222"</span>&#125;]);</div><div class="line"><span class="comment">//query.limit(3); //限制条数</span></div><div class="line"><span class="comment">//query.skip(3)   //开始数 ，通过计算可是实现分页</span></div><div class="line"><span class="comment">//query.friends('name')</span></div><div class="line">query.<span class="built_in">exec</span>(function(err,docs)&#123;</div><div class="line">    console.<span class="built_in">log</span>(docs);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var mongoose = require(<span class="string">'mongoose'</span>);</div><div class="line">mongoose.connect(<span class="string">'MongoDB://192.168.0.229:27017/Test'</span>);</div><div class="line"></div><div class="line">&lt;!-- more --&gt;</div><div class="line">var Cat = mongoose.model(<span class="string">'Cat'</span>, &#123;</div><div class="line">    <span class="built_in">name</span>: String ,</div><div class="line">    <span class="variable">_id</span>:String ,</div><div class="line">    age:&#123; <span class="built_in">type</span>: Number, <span class="built_in">min</span>: <span class="number">18</span>, <span class="built_in">max</span>: <span class="number">65</span> &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">var query=Cat.<span class="built_in">find</span>(&#123;&#125;);</div><div class="line"></div><div class="line">query.where(&#123;age:<span class="number">30</span>&#125;);</div><div class="line">query.<span class="built_in">sort</span>(&#123; <span class="built_in">name</span>: <span class="string">'asc'</span>, age: -<span class="number">1</span> &#125;);</div><div class="line"><span class="comment">//query.and(&#123;_id:"123456222"&#125;);</span></div><div class="line">query.<span class="built_in">or</span>([&#123;<span class="variable">_id</span>:<span class="string">"123456fff222"</span>&#125;,&#123;<span class="variable">_id</span>:<span class="string">"123456222"</span>&#125;]);</div><div class="line"><span class="comment">//query.limit(3); //限制条数</span></div><div class="line"><span class="comment">//query.skip(3)   //开始数 ，通过计算可是实现分页</span></div><div class="line"><span class="comment">//query.friends('name')</span></div><div class="line">query.<span class="built_in">exec</span>(function(err,docs)&#123;</div><div class="line">    console.<span class="built_in">log</span>(docs);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>开发文档地址：<a href="http://mongoosejs.com/docs/api.html#query_Query-or" target="_blank" rel="external">http://mongoosejs.com/docs/api.html#query_Query-or</a></p>
 ]]></content>
     
@@ -102,11 +138,122 @@
   </entry>
   
   <entry>
+    <title>node启动listen EADDRINUSE</title>
+    <link href="//litten.me/2017/05/02/20170502/"/>
+    <id>//litten.me/2017/05/02/20170502/</id>
+    <published>2017-05-02T02:36:00.000Z</published>
+    <updated>2017-07-04T12:25:24.888Z</updated>
+    
+    <content type="html"><![CDATA[<p>我在使用elasticsearch的kibana插件时候，有一次启动，遇到这个错误：</p>
+<p>Error: listen EADDRINUSE 0.0.0.0:5601<br>它的意思是，端口5601被其他进程占用。</p>
+<p>故而，需要kill掉那个进程，或者更换kibana的端口号。</p>
+<a id="more"></a>
+<p>我先找到那个进程是什么：</p>
+<p>方法：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -apn<span class="string">|grep 5601</span></div></pre></td></tr></table></figure></p>
+<p>然后kill掉，即可启动kibana。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我在使用elasticsearch的kibana插件时候，有一次启动，遇到这个错误：&lt;/p&gt;
+&lt;p&gt;Error: listen EADDRINUSE 0.0.0.0:5601&lt;br&gt;它的意思是，端口5601被其他进程占用。&lt;/p&gt;
+&lt;p&gt;故而，需要kill掉那个进程，或者更换kibana的端口号。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="node" scheme="//litten.me/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>能得到锻炼能力的机会</title>
+    <link href="//litten.me/2017/01/06/20170106/"/>
+    <id>//litten.me/2017/01/06/20170106/</id>
+    <published>2017-01-06T02:36:00.000Z</published>
+    <updated>2017-07-04T12:23:27.254Z</updated>
+    
+    <content type="html"><![CDATA[<p>“能得到锻炼能力的机会”本身就是一项极其稀缺的资源。没有锻炼的机会，你就算本身有天分也够努力，但没用，你得不到外界的营养，就会长得慢。</p>
+<p>为什么有的宝宝长得强壮，有的宝宝长得孱弱？妈妈们会告诉你“营养摄入”的区别。<br>为什么森林里有的树木长得高大，有的树木萎靡？因为有的树木得到了阳光，肥沃的土壤，有的树木得不到阳光，阳光被其他树木抢去了。</p>
+<a id="more"></a>
+<p>人的职业成长也一样。在中等以上资质的基础上，把你放到有阳光、有营养的岗位上，每天大量机会给你练手，你很快就能成长起来。<br>但可惜，大部分人之所以能得到一份工作，因为那些占据着阳光营养的人，需要“打下手”、“做杂事”的人，而已。<br>从一开始，就根本没打算让你成长。那些占据上位的人们，自己还要成长呢。<br>当然，场面上的漂亮话还是要说的，什么帮助你成长之类，你听听就算了。</p>
+<p>不过，就算环境这么恶劣，依然有大量年轻人能出头，他们怎么做到的？<br>除了一部分家里人一开始就安排好阳光营养的岗位的，主要两个途径。<br>一个是走运登上一条高速前进的大船，进去的时候还是小舢板，高速发展过程中涌进大量练手机会，巨鳄还没注意到以前，自己捞到了锻炼机会。<br>第二条是自己摸索，不管是自己画画、做装置、写作、做生意，自己独自做事得到的锻炼机会是给人打工不能比的，但这条路比较苦痛，不建议承受能力差的人尝试。</p>
+<p>工作这么多年，各种例子也见得很多，不过我有大量前领导同事也上知乎，具体例子就不说了。有些话，点到为止就好。成人世界之所以困难，是因为大量谎言包裹其中，“帮助你成长”即是其中之一。<br>创建于 2016-12-29<br>作者保留权利</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;“能得到锻炼能力的机会”本身就是一项极其稀缺的资源。没有锻炼的机会，你就算本身有天分也够努力，但没用，你得不到外界的营养，就会长得慢。&lt;/p&gt;
+&lt;p&gt;为什么有的宝宝长得强壮，有的宝宝长得孱弱？妈妈们会告诉你“营养摄入”的区别。&lt;br&gt;为什么森林里有的树木长得高大，有的树木萎靡？因为有的树木得到了阳光，肥沃的土壤，有的树木得不到阳光，阳光被其他树木抢去了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="职场" scheme="//litten.me/tags/%E8%81%8C%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>差距</title>
+    <link href="//litten.me/2017/01/05/20170105/"/>
+    <id>//litten.me/2017/01/05/20170105/</id>
+    <published>2017-01-05T02:36:00.000Z</published>
+    <updated>2017-07-04T12:22:38.039Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实差别在上高中的时候就产生了。</p>
+<p>到了高二文理分科的时候，其实就是一个人生的选择转折点。</p>
+<p>因为从那个时候，摆在你面前的是一条又一条的十字路口。</p>
+<p>前十几年不可改变的生活背景，教育方式和水平，以及生活重心慢慢发生改变。</p>
+<p>人生的方向盘慢慢转交到了自己的手上。</p>
+<p>那个时候还是一脸天真，未谙世事的学生。哪里知道以后生活的路呢？</p>
+<p>但是作为一个典型的危机主义者，对未来充满曙光的同时也就会有巨大的压力。</p>
+<p>排解压力的方式也就是跟身边的好朋友谈想法谈未来。</p>
+<a id="more"></a>
+<p>慢慢发现人与人之间真的是有差别的。不同家庭条件的人之间是有差别的，相同家庭条件的人之间也是有差别的。</p>
+<p>有的人读书是知道知识改变命运，有的人知道读书是为了让自己接触更高层次的人，有的人读书是为了在家庭聚会上作为长辈表扬自己的资本。</p>
+<p>有的人以批判应试教育为理由作为自己不学习的借口，有的人明明很反对800字的八股文却还是研究如何写好。</p>
+<p>有的人过一天算一天，有的人连大学生活都规划好了。</p>
+<p>有的人开始学会自己搜集资料填报学校和专业，有的人高考结束将填报志愿的事情推给父母。</p>
+<p>如果说高中是方向盘慢慢的交到自己手上，上了大学那就是方向盘完全交到了自己手上。</p>
+<p>自由的时间多了，喝酒的机会也就多了，喝多了之后也会谈谈自己的想法和打算。</p>
+<p>好朋友A一直强调他没有远大的志向，只想找个工作娶个媳妇不愁吃喝也就够了，想在所学的行当干干在做打算。每天干的就是打撸，所以人称外号小撸子。<br>好朋友B是家里当地官二代，生性不羁，情商过人，却思维懒惰。大学后期家父心脏除了问题，做了搭桥手术，听了家里意见考了公务员。<br>好朋友C 家里倾尽财力想让他去澳大利亚留学定居，为了省下学费，每天自学雅思。希望以后能在国外留学定居<br>好朋友D 独来独往，每天准时早上六点左右起来独自一人去图书馆看书或者出去玩或者逛。很有自己的思想和见解。大学后期不喜欢土木，自己在网上投简历去上海实习转行it。</p>
+<p>到了工作领域，接触的人也就慢慢不太一样，联系也就越来越少。但是情况却大致了解，未来的发展也大致能够估算的出来，人的感觉嘛都大致一样。</p>
+<p>一个人的人生路程别人大致能看在眼里。</p>
+<p>后来A还是在这个行业坚持干了下去，虽然委屈和难处很多，没有好的出路，迫于生活压力选择留守。也算努力工作。收入不高也没有用钱的地方，勉强维持生活。</p>
+<p>B回家考了公务员，头两年生活还算潇洒，家里有房有车，经常换女朋友待在一起。后来发现自己工资还是一点点工资，而以前的同学都月薪上万了。心里开始不平衡了，也没有了出去的勇气。</p>
+<p>C后来雅思考了七点几分，收到了澳大利亚第二好的学校的offer。努力也得到了回报，称为世界水平的高校研究生，并有定居的打算。</p>
+<p>D转行之后，在上海也是慢慢顺手了，工作虽然辛苦却小有成就，成长的也很快。目前的月薪也是接近三万。</p>
+<p>其实说了这么多，还就是想说明一点。</p>
+<p>其实差别从高中的时候就开始了，从读大学的时候就开始了，从参加工作就开始了。你和任何人的差别，从你认识他的时候就开始了。只不过随着时间推移，形成了差距你才看到。</p>
+<p>而这些差距就是你之前对于生活的的规划，和人生的摸索定位。</p>
+<p>如今社会的发展速度只会越来越快，大城市和小城市的眼界差距也会越来越大。</p>
+<p>千万不要在年轻的时候选择安逸的不奋斗，等哪一天发现跟身边人的差距时后悔也就来不及了。<br>创建于 2017-02-02<br>作者保留权利</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其实差别在上高中的时候就产生了。&lt;/p&gt;
+&lt;p&gt;到了高二文理分科的时候，其实就是一个人生的选择转折点。&lt;/p&gt;
+&lt;p&gt;因为从那个时候，摆在你面前的是一条又一条的十字路口。&lt;/p&gt;
+&lt;p&gt;前十几年不可改变的生活背景，教育方式和水平，以及生活重心慢慢发生改变。&lt;/p&gt;
+&lt;p&gt;人生的方向盘慢慢转交到了自己的手上。&lt;/p&gt;
+&lt;p&gt;那个时候还是一脸天真，未谙世事的学生。哪里知道以后生活的路呢？&lt;/p&gt;
+&lt;p&gt;但是作为一个典型的危机主义者，对未来充满曙光的同时也就会有巨大的压力。&lt;/p&gt;
+&lt;p&gt;排解压力的方式也就是跟身边的好朋友谈想法谈未来。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="自我" scheme="//litten.me/tags/%E8%87%AA%E6%88%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>25岁前你必须要做完的7件事</title>
-    <link href="//litten.me/2017/02/01/20170201/"/>
-    <id>//litten.me/2017/02/01/20170201/</id>
-    <published>2017-02-01T02:36:00.000Z</published>
-    <updated>2017-07-02T11:39:03.376Z</updated>
+    <link href="//litten.me/2017/01/04/20170104/"/>
+    <id>//litten.me/2017/01/04/20170104/</id>
+    <published>2017-01-04T02:36:00.000Z</published>
+    <updated>2017-07-04T12:21:45.989Z</updated>
     
     <content type="html"><![CDATA[<p>人生中有很多要做的事情，也一定会有更多的缺憾，无论你怎么拼了命去做，都会留下遗憾。</p>
 <p>我知道你我都会活得没那么容易，我愿你是活得潇洒精彩的人，别沦落到中年时热血已凉，回忆年少轻狂的梦，没一件做成，心酸又心凉。</p>
@@ -176,7 +323,7 @@
     <link href="//litten.me/2017/01/03/20170103/"/>
     <id>//litten.me/2017/01/03/20170103/</id>
     <published>2017-01-03T02:36:00.000Z</published>
-    <updated>2017-07-02T11:41:26.368Z</updated>
+    <updated>2017-07-04T12:22:19.872Z</updated>
     
     <content type="html"><![CDATA[<p>我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。</p>
 <p>虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。<br><a id="more"></a></p>
@@ -234,61 +381,6 @@
     <summary type="html">
     
       &lt;p&gt;一切所谓的提点和建议无论如何都会有强烈的个人经验主义，要强调的是，这个世界上根本没有、也不可能有什么“一定能成功”的模版或者路径，如果真的有，那岂不是所有人都“成功”了，所以以下提到的建议，仅供参考，饭还得自己一口一口吃，路还得自己一步一步走。答主在今天已经差不多毕业10年，开了自己的公司，做互联网市场运营教学，以下列出来10点有必要一说的地方，希望有所帮助。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="自我" scheme="//litten.me/tags/%E8%87%AA%E6%88%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>差距</title>
-    <link href="//litten.me/2017/01/01/20170301/"/>
-    <id>//litten.me/2017/01/01/20170301/</id>
-    <published>2017-01-01T02:36:00.000Z</published>
-    <updated>2017-07-02T11:34:03.825Z</updated>
-    
-    <content type="html"><![CDATA[<p>其实差别在上高中的时候就产生了。</p>
-<p>到了高二文理分科的时候，其实就是一个人生的选择转折点。</p>
-<p>因为从那个时候，摆在你面前的是一条又一条的十字路口。</p>
-<p>前十几年不可改变的生活背景，教育方式和水平，以及生活重心慢慢发生改变。</p>
-<p>人生的方向盘慢慢转交到了自己的手上。</p>
-<p>那个时候还是一脸天真，未谙世事的学生。哪里知道以后生活的路呢？</p>
-<p>但是作为一个典型的危机主义者，对未来充满曙光的同时也就会有巨大的压力。</p>
-<p>排解压力的方式也就是跟身边的好朋友谈想法谈未来。</p>
-<a id="more"></a>
-<p>慢慢发现人与人之间真的是有差别的。不同家庭条件的人之间是有差别的，相同家庭条件的人之间也是有差别的。</p>
-<p>有的人读书是知道知识改变命运，有的人知道读书是为了让自己接触更高层次的人，有的人读书是为了在家庭聚会上作为长辈表扬自己的资本。</p>
-<p>有的人以批判应试教育为理由作为自己不学习的借口，有的人明明很反对800字的八股文却还是研究如何写好。</p>
-<p>有的人过一天算一天，有的人连大学生活都规划好了。</p>
-<p>有的人开始学会自己搜集资料填报学校和专业，有的人高考结束将填报志愿的事情推给父母。</p>
-<p>如果说高中是方向盘慢慢的交到自己手上，上了大学那就是方向盘完全交到了自己手上。</p>
-<p>自由的时间多了，喝酒的机会也就多了，喝多了之后也会谈谈自己的想法和打算。</p>
-<p>好朋友A一直强调他没有远大的志向，只想找个工作娶个媳妇不愁吃喝也就够了，想在所学的行当干干在做打算。每天干的就是打撸，所以人称外号小撸子。<br>好朋友B是家里当地官二代，生性不羁，情商过人，却思维懒惰。大学后期家父心脏除了问题，做了搭桥手术，听了家里意见考了公务员。<br>好朋友C 家里倾尽财力想让他去澳大利亚留学定居，为了省下学费，每天自学雅思。希望以后能在国外留学定居<br>好朋友D 独来独往，每天准时早上六点左右起来独自一人去图书馆看书或者出去玩或者逛。很有自己的思想和见解。大学后期不喜欢土木，自己在网上投简历去上海实习转行it。</p>
-<p>到了工作领域，接触的人也就慢慢不太一样，联系也就越来越少。但是情况却大致了解，未来的发展也大致能够估算的出来，人的感觉嘛都大致一样。</p>
-<p>一个人的人生路程别人大致能看在眼里。</p>
-<p>后来A还是在这个行业坚持干了下去，虽然委屈和难处很多，没有好的出路，迫于生活压力选择留守。也算努力工作。收入不高也没有用钱的地方，勉强维持生活。</p>
-<p>B回家考了公务员，头两年生活还算潇洒，家里有房有车，经常换女朋友待在一起。后来发现自己工资还是一点点工资，而以前的同学都月薪上万了。心里开始不平衡了，也没有了出去的勇气。</p>
-<p>C后来雅思考了七点几分，收到了澳大利亚第二好的学校的offer。努力也得到了回报，称为世界水平的高校研究生，并有定居的打算。</p>
-<p>D转行之后，在上海也是慢慢顺手了，工作虽然辛苦却小有成就，成长的也很快。目前的月薪也是接近三万。</p>
-<p>其实说了这么多，还就是想说明一点。</p>
-<p>其实差别从高中的时候就开始了，从读大学的时候就开始了，从参加工作就开始了。你和任何人的差别，从你认识他的时候就开始了。只不过随着时间推移，形成了差距你才看到。</p>
-<p>而这些差距就是你之前对于生活的的规划，和人生的摸索定位。</p>
-<p>如今社会的发展速度只会越来越快，大城市和小城市的眼界差距也会越来越大。</p>
-<p>千万不要在年轻的时候选择安逸的不奋斗，等哪一天发现跟身边人的差距时后悔也就来不及了。<br>创建于 2017-02-02<br>作者保留权利</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;其实差别在上高中的时候就产生了。&lt;/p&gt;
-&lt;p&gt;到了高二文理分科的时候，其实就是一个人生的选择转折点。&lt;/p&gt;
-&lt;p&gt;因为从那个时候，摆在你面前的是一条又一条的十字路口。&lt;/p&gt;
-&lt;p&gt;前十几年不可改变的生活背景，教育方式和水平，以及生活重心慢慢发生改变。&lt;/p&gt;
-&lt;p&gt;人生的方向盘慢慢转交到了自己的手上。&lt;/p&gt;
-&lt;p&gt;那个时候还是一脸天真，未谙世事的学生。哪里知道以后生活的路呢？&lt;/p&gt;
-&lt;p&gt;但是作为一个典型的危机主义者，对未来充满曙光的同时也就会有巨大的压力。&lt;/p&gt;
-&lt;p&gt;排解压力的方式也就是跟身边的好朋友谈想法谈未来。&lt;/p&gt;
     
     </summary>
     
@@ -929,47 +1021,6 @@
   </entry>
   
   <entry>
-    <title>出国</title>
-    <link href="//litten.me/2016/08/23/20160823/"/>
-    <id>//litten.me/2016/08/23/20160823/</id>
-    <published>2016-08-23T02:36:00.000Z</published>
-    <updated>2017-07-02T11:25:35.926Z</updated>
-    
-    <content type="html"><![CDATA[<p>我觉得出国回来，最大的不同，就是能让自己抽离出去这个太过熟悉的环境。</p>
-<p>人在一个地方待太久，一切的好处坏处，都会习以为常。很多好的坏的，都不能感受到了。</p>
-<p>出去工作生活几年，越来越少的中国朋友，感觉真的按照美国人的思维方式，生活了一段时间。然后再回国，那种突如其来的文化冲击，也是感觉很震撼。</p>
-<p>对于个人的变化，我觉得第一就是那种思维方式，会更加国际化。你去过不一样的地方，按照不同的思维习惯去考虑问题，审视世界。回来之后，你看见一个问题，很容易的就会以另外一个视角去考虑一下。然后自己的内心也能更加的淡定。因为你可以理解人与人之间巨大的不同，所以也就不再对让所以人懂你，那么的执着。感觉生活就是不停磨砺自己本心的旅程，能做自己觉得对的事，有坚持，就已经很难得。</p>
-<a id="more"></a>
-<p>然后再说一些回归后的个人感想。</p>
-<p>首先说说不习惯的，第一点当然就是空气，环境，肯定还是差很多。也理解了为什么老外来中国会很想一直戴口罩。但过了两个月也就这样了，反而觉得雨后的上海，还是有股淡淡的桂花香。</p>
-<p>第二就是一下子感觉突然世界挤了很多倍。那里都是人，那里都是不守规矩的人。确实是素质是比以前有很多的提高的。但人口基数在那里，就算只有百分之一的人不守规矩，那每天看见的就是很多很多人。</p>
-<p>第三就是生活的节奏，特别的快。感觉每个人每时每刻都在赶路，任何事情都怕自己慢了一秒。我们的城市和人，就好像没有刹车的高速列车，一路狂奔，不愿意为任何人，任何事来做停留。</p>
-<p>第四呢，就感觉这两年，舆论，海关，都好像更紧了，连上海感觉都没有以前那么的多元化了。这个也谈不上好或者坏，只是习惯了的那些app，网站，现在都要翻墙才能用，翻墙也越来越麻烦，所以老外来了感觉言论不自由，也是有理由的。</p>
-<p>说了不好的，又说说好的。<br>第一就是手机支付真的太便利了。回来这么久，几乎就没用到现金或者卡。无纸币的城市，真的已经在发生。电动车在上海也是越来越普及，滴滴打的就几乎全是电动车。</p>
-<p>第二就是外卖真的方便。无时无刻，都可以点。但是心里还是会担心食品的安全问题。所以也是尽量不点一些没有实体店的网店。</p>
-<p>第三就是国内公司的发展，真的很快，很多东西，转眼之间，已经可以和美国巨头们同场较量。那些外派来中国的高管什么的也越来越少。外企也没有以前那么吃香了。</p>
-<p>第四就是国内城市的发展速度，真的日新月异，今年去成都，重庆，遵义，贵阳，都感觉每一个城市都是在大搞健设。每一次回去，都有新的高楼大厦在出现。而且走在城市的交界，也很多新的农村的好看的房子出现。设计感也在走入新农村。</p>
-<p>第五就是交通的快捷。高铁是真的太方便了。虽然还是很挤，但是这个速度，真的方便。</p>
-<p>我是感觉中国现在就是站在凤凰涅槃的关卡，有很多的问题，但也有很多的机遇，感觉一下秒，也许会功亏一篑，但我更相信，我们会真的强势突围，迎来新的世界。</p>
-<p>很高兴，可以来见证这些变革。</p>
-<p>毕竟说不定我们是最后的人类了。AI，机器人，肯定会替代现在的人类，以一种新的生命形式出现。希望那时候，我们还有这些自我意识，可以这样互相喷来喷去</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我觉得出国回来，最大的不同，就是能让自己抽离出去这个太过熟悉的环境。&lt;/p&gt;
-&lt;p&gt;人在一个地方待太久，一切的好处坏处，都会习以为常。很多好的坏的，都不能感受到了。&lt;/p&gt;
-&lt;p&gt;出去工作生活几年，越来越少的中国朋友，感觉真的按照美国人的思维方式，生活了一段时间。然后再回国，那种突如其来的文化冲击，也是感觉很震撼。&lt;/p&gt;
-&lt;p&gt;对于个人的变化，我觉得第一就是那种思维方式，会更加国际化。你去过不一样的地方，按照不同的思维习惯去考虑问题，审视世界。回来之后，你看见一个问题，很容易的就会以另外一个视角去考虑一下。然后自己的内心也能更加的淡定。因为你可以理解人与人之间巨大的不同，所以也就不再对让所以人懂你，那么的执着。感觉生活就是不停磨砺自己本心的旅程，能做自己觉得对的事，有坚持，就已经很难得。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="旧事" scheme="//litten.me/tags/%E6%97%A7%E4%BA%8B/"/>
-    
-  </entry>
-  
-  <entry>
     <title>别给自己找借口</title>
     <link href="//litten.me/2016/08/23/20150823/"/>
     <id>//litten.me/2016/08/23/20150823/</id>
@@ -1027,29 +1078,43 @@
   </entry>
   
   <entry>
-    <title>能得到锻炼能力的机会</title>
-    <link href="//litten.me/2016/08/23/20170529/"/>
-    <id>//litten.me/2016/08/23/20170529/</id>
+    <title>出国</title>
+    <link href="//litten.me/2016/08/23/20160823/"/>
+    <id>//litten.me/2016/08/23/20160823/</id>
     <published>2016-08-23T02:36:00.000Z</published>
-    <updated>2017-07-02T11:39:03.329Z</updated>
+    <updated>2017-07-02T11:25:35.926Z</updated>
     
-    <content type="html"><![CDATA[<p>“能得到锻炼能力的机会”本身就是一项极其稀缺的资源。没有锻炼的机会，你就算本身有天分也够努力，但没用，你得不到外界的营养，就会长得慢。</p>
-<p>为什么有的宝宝长得强壮，有的宝宝长得孱弱？妈妈们会告诉你“营养摄入”的区别。<br>为什么森林里有的树木长得高大，有的树木萎靡？因为有的树木得到了阳光，肥沃的土壤，有的树木得不到阳光，阳光被其他树木抢去了。</p>
+    <content type="html"><![CDATA[<p>我觉得出国回来，最大的不同，就是能让自己抽离出去这个太过熟悉的环境。</p>
+<p>人在一个地方待太久，一切的好处坏处，都会习以为常。很多好的坏的，都不能感受到了。</p>
+<p>出去工作生活几年，越来越少的中国朋友，感觉真的按照美国人的思维方式，生活了一段时间。然后再回国，那种突如其来的文化冲击，也是感觉很震撼。</p>
+<p>对于个人的变化，我觉得第一就是那种思维方式，会更加国际化。你去过不一样的地方，按照不同的思维习惯去考虑问题，审视世界。回来之后，你看见一个问题，很容易的就会以另外一个视角去考虑一下。然后自己的内心也能更加的淡定。因为你可以理解人与人之间巨大的不同，所以也就不再对让所以人懂你，那么的执着。感觉生活就是不停磨砺自己本心的旅程，能做自己觉得对的事，有坚持，就已经很难得。</p>
 <a id="more"></a>
-<p>人的职业成长也一样。在中等以上资质的基础上，把你放到有阳光、有营养的岗位上，每天大量机会给你练手，你很快就能成长起来。<br>但可惜，大部分人之所以能得到一份工作，因为那些占据着阳光营养的人，需要“打下手”、“做杂事”的人，而已。<br>从一开始，就根本没打算让你成长。那些占据上位的人们，自己还要成长呢。<br>当然，场面上的漂亮话还是要说的，什么帮助你成长之类，你听听就算了。</p>
-<p>不过，就算环境这么恶劣，依然有大量年轻人能出头，他们怎么做到的？<br>除了一部分家里人一开始就安排好阳光营养的岗位的，主要两个途径。<br>一个是走运登上一条高速前进的大船，进去的时候还是小舢板，高速发展过程中涌进大量练手机会，巨鳄还没注意到以前，自己捞到了锻炼机会。<br>第二条是自己摸索，不管是自己画画、做装置、写作、做生意，自己独自做事得到的锻炼机会是给人打工不能比的，但这条路比较苦痛，不建议承受能力差的人尝试。</p>
-<p>工作这么多年，各种例子也见得很多，不过我有大量前领导同事也上知乎，具体例子就不说了。有些话，点到为止就好。成人世界之所以困难，是因为大量谎言包裹其中，“帮助你成长”即是其中之一。<br>创建于 2016-12-29<br>作者保留权利</p>
+<p>然后再说一些回归后的个人感想。</p>
+<p>首先说说不习惯的，第一点当然就是空气，环境，肯定还是差很多。也理解了为什么老外来中国会很想一直戴口罩。但过了两个月也就这样了，反而觉得雨后的上海，还是有股淡淡的桂花香。</p>
+<p>第二就是一下子感觉突然世界挤了很多倍。那里都是人，那里都是不守规矩的人。确实是素质是比以前有很多的提高的。但人口基数在那里，就算只有百分之一的人不守规矩，那每天看见的就是很多很多人。</p>
+<p>第三就是生活的节奏，特别的快。感觉每个人每时每刻都在赶路，任何事情都怕自己慢了一秒。我们的城市和人，就好像没有刹车的高速列车，一路狂奔，不愿意为任何人，任何事来做停留。</p>
+<p>第四呢，就感觉这两年，舆论，海关，都好像更紧了，连上海感觉都没有以前那么的多元化了。这个也谈不上好或者坏，只是习惯了的那些app，网站，现在都要翻墙才能用，翻墙也越来越麻烦，所以老外来了感觉言论不自由，也是有理由的。</p>
+<p>说了不好的，又说说好的。<br>第一就是手机支付真的太便利了。回来这么久，几乎就没用到现金或者卡。无纸币的城市，真的已经在发生。电动车在上海也是越来越普及，滴滴打的就几乎全是电动车。</p>
+<p>第二就是外卖真的方便。无时无刻，都可以点。但是心里还是会担心食品的安全问题。所以也是尽量不点一些没有实体店的网店。</p>
+<p>第三就是国内公司的发展，真的很快，很多东西，转眼之间，已经可以和美国巨头们同场较量。那些外派来中国的高管什么的也越来越少。外企也没有以前那么吃香了。</p>
+<p>第四就是国内城市的发展速度，真的日新月异，今年去成都，重庆，遵义，贵阳，都感觉每一个城市都是在大搞健设。每一次回去，都有新的高楼大厦在出现。而且走在城市的交界，也很多新的农村的好看的房子出现。设计感也在走入新农村。</p>
+<p>第五就是交通的快捷。高铁是真的太方便了。虽然还是很挤，但是这个速度，真的方便。</p>
+<p>我是感觉中国现在就是站在凤凰涅槃的关卡，有很多的问题，但也有很多的机遇，感觉一下秒，也许会功亏一篑，但我更相信，我们会真的强势突围，迎来新的世界。</p>
+<p>很高兴，可以来见证这些变革。</p>
+<p>毕竟说不定我们是最后的人类了。AI，机器人，肯定会替代现在的人类，以一种新的生命形式出现。希望那时候，我们还有这些自我意识，可以这样互相喷来喷去</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;“能得到锻炼能力的机会”本身就是一项极其稀缺的资源。没有锻炼的机会，你就算本身有天分也够努力，但没用，你得不到外界的营养，就会长得慢。&lt;/p&gt;
-&lt;p&gt;为什么有的宝宝长得强壮，有的宝宝长得孱弱？妈妈们会告诉你“营养摄入”的区别。&lt;br&gt;为什么森林里有的树木长得高大，有的树木萎靡？因为有的树木得到了阳光，肥沃的土壤，有的树木得不到阳光，阳光被其他树木抢去了。&lt;/p&gt;
+      &lt;p&gt;我觉得出国回来，最大的不同，就是能让自己抽离出去这个太过熟悉的环境。&lt;/p&gt;
+&lt;p&gt;人在一个地方待太久，一切的好处坏处，都会习以为常。很多好的坏的，都不能感受到了。&lt;/p&gt;
+&lt;p&gt;出去工作生活几年，越来越少的中国朋友，感觉真的按照美国人的思维方式，生活了一段时间。然后再回国，那种突如其来的文化冲击，也是感觉很震撼。&lt;/p&gt;
+&lt;p&gt;对于个人的变化，我觉得第一就是那种思维方式，会更加国际化。你去过不一样的地方，按照不同的思维习惯去考虑问题，审视世界。回来之后，你看见一个问题，很容易的就会以另外一个视角去考虑一下。然后自己的内心也能更加的淡定。因为你可以理解人与人之间巨大的不同，所以也就不再对让所以人懂你，那么的执着。感觉生活就是不停磨砺自己本心的旅程，能做自己觉得对的事，有坚持，就已经很难得。&lt;/p&gt;
     
     </summary>
     
     
-      <category term="职场" scheme="//litten.me/tags/%E8%81%8C%E5%9C%BA/"/>
+      <category term="旧事" scheme="//litten.me/tags/%E6%97%A7%E4%BA%8B/"/>
     
   </entry>
   
