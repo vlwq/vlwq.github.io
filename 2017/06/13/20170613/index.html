@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>github怎么绑定自己的域名？ | Andrew的博客</title>
+  <title>mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？ | Andrew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="向你的 Github Pages 仓库添加一个CNAME(一定要大写)文件其中只能包含一个顶级域名，像这样：1example.com">
-<meta name="keywords" content="github">
+  <meta name="description" content="错误提示的意思是：mongoose模型被重复定义了，这是不允许的 首先，你需要搞清楚require和module.exports的运行机制，建议你看看这篇：http://www.nodeclass.com/articles/37488">
+<meta name="keywords" content="mongoose">
 <meta property="og:type" content="article">
-<meta property="og:title" content="github怎么绑定自己的域名？">
+<meta property="og:title" content="mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？">
 <meta property="og:url" content="//litten.me/2017/06/13/20170613/index.html">
 <meta property="og:site_name" content="Andrew的博客">
-<meta property="og:description" content="向你的 Github Pages 仓库添加一个CNAME(一定要大写)文件其中只能包含一个顶级域名，像这样：1example.com">
-<meta property="og:updated_time" content="2017-07-04T13:52:30.388Z">
+<meta property="og:description" content="错误提示的意思是：mongoose模型被重复定义了，这是不允许的 首先，你需要搞清楚require和module.exports的运行机制，建议你看看这篇：http://www.nodeclass.com/articles/37488">
+<meta property="og:updated_time" content="2017-07-05T11:23:52.994Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="github怎么绑定自己的域名？">
-<meta name="twitter:description" content="向你的 Github Pages 仓库添加一个CNAME(一定要大写)文件其中只能包含一个顶级域名，像这样：1example.com">
+<meta name="twitter:title" content="mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？">
+<meta name="twitter:description" content="错误提示的意思是：mongoose模型被重复定义了，这是不允许的 首先，你需要搞清楚require和module.exports的运行机制，建议你看看这篇：http://www.nodeclass.com/articles/37488">
   
     <link rel="alternative" href="/atom.xml" title="Andrew的博客" type="application/atom+xml">
   
@@ -155,7 +155,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      github怎么绑定自己的域名？
+      mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？
     </h1>
   
 
@@ -168,21 +168,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>向你的 Github Pages 仓库添加一个CNAME(一定要<em>大写</em>)文件其中只能包含一个顶级域名，<br>像这样：<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">example</span><span class="selector-class">.com</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
+        <p>错误提示的意思是：mongoose模型被重复定义了，这是不允许的</p>
+<p>首先，你需要搞清楚require和module.exports的运行机制，建议你看看这篇：<a href="http://www.nodeclass.com/articles/37488" target="_blank" rel="external">http://www.nodeclass.com/articles/37488</a></p>
 <a id="more"></a>
-<p>如果你是用 hexo 框架搭建博客并部署到 Github Pages 上，每次</p>
-<blockquote>
-<p>hexo g<br>hexo d</p>
-</blockquote>
-<p>后会把你的博客所在目录下 public 文件夹里的东西都推到 Github Pages 仓库上，并且把 CNAME 文件覆盖掉，<br>解决这个问题可以直接把 CNAME 文件添加到 source 文件夹里，这样每次推的时候就不用担心仓库里的 CNAME 文件被覆盖掉了。</p>
-<ol>
-<li>向你的 DNS 配置中添加 3 条记录<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@          A             <span class="number">192.30</span><span class="number">.252</span><span class="number">.153</span></div><div class="line">@          A             <span class="number">192.30</span><span class="number">.252</span><span class="number">.154</span></div><div class="line">www      CNAME    username.github.io.</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>用你自己的 Github 用户名替换 username推荐使用 DNSPOD 的服务，使用国外的 DNS 解析服务可能有被墙的风险。至于如何使用 DNSPOD 解析域名，<br>参考<br><a href="http://jingyan.baidu.com/article/546ae1857c4ee81149f28cbe.html3" target="_blank" rel="external">http://jingyan.baidu.com/article/546ae1857c4ee81149f28cbe.html3</a>.<br>等待你的 DNS 配置生效对DNS的配置不是立即生效的，过10分钟再去访问你的域名看看有没有配置成功 : )</p>
+<p>然后，针对你这个场景，不应该把 mongoose.model()模型定义方法做为模块导出的方法，因<br>为：</p>
+<p>模型定义不允许重复，所以这个mongoose.model()应该只调用一次，而导出它执行后的结果<br>require机制确保了mongoose.model()只会执行一次</p>
+<p>所以，你的代码应该改写成这样：<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var UserAccountSchema = mongoose.Schema(&#123;</div><div class="line">   <span class="comment">//...略去定义代码</span></div><div class="line">&#125;);</div><div class="line">var <span class="keyword">model</span> = mongoose.<span class="keyword">model</span>(<span class="string">'user.account'</span>, UserAccountSchema);</div><div class="line"><span class="comment">//导出模型</span></div><div class="line">module.exports =<span class="keyword">model</span>;</div></pre></td></tr></table></figure></p>
 
       
 
@@ -217,7 +208,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mongoose</a>
         		</li>
       		
 		</ul>
@@ -287,7 +278,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/14/20170614/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/06/14/20170202/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -297,8 +288,8 @@
     </a>
   
   
-    <a href="/2017/06/12/20170612/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">flex布局</div>
+    <a href="/2017/06/05/20170605/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用淘宝的cnpm代替npm</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -430,11 +421,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">职场</a>
+                <a href="javascript:void(0)" class="js-tag color5">5700</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">5700</a>
+                <a href="javascript:void(0)" class="js-tag color3">职场</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -458,10 +449,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
@@ -471,6 +458,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">mongoose</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
               </li>
             
             <div class="clearfix"></div>

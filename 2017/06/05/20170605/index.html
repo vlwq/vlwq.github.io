@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>ES6中的promise对象 | Andrew的博客</title>
+  <title>使用淘宝的cnpm代替npm | Andrew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ES6中的promise对象">
-<meta name="keywords" content="js">
+  <meta name="description" content="使用国内 npm 镜像  npm 默认从国外的源（https://registry.npmjs.org/）获取和下载包信息，国内访问速度很不理想。就像其他很多开源软件都有国内镜像源，npm 也不例外。所以我们可以利用国内镜像源来加速模块安装。">
+<meta name="keywords" content="node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6中的promise对象">
+<meta property="og:title" content="使用淘宝的cnpm代替npm">
 <meta property="og:url" content="//litten.me/2017/06/05/20170605/index.html">
 <meta property="og:site_name" content="Andrew的博客">
-<meta property="og:description" content="ES6中的promise对象">
-<meta property="og:updated_time" content="2017-07-04T13:29:29.452Z">
+<meta property="og:description" content="使用国内 npm 镜像  npm 默认从国外的源（https://registry.npmjs.org/）获取和下载包信息，国内访问速度很不理想。就像其他很多开源软件都有国内镜像源，npm 也不例外。所以我们可以利用国内镜像源来加速模块安装。">
+<meta property="og:updated_time" content="2017-07-05T11:39:59.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6中的promise对象">
-<meta name="twitter:description" content="ES6中的promise对象">
+<meta name="twitter:title" content="使用淘宝的cnpm代替npm">
+<meta name="twitter:description" content="使用国内 npm 镜像  npm 默认从国外的源（https://registry.npmjs.org/）获取和下载包信息，国内访问速度很不理想。就像其他很多开源软件都有国内镜像源，npm 也不例外。所以我们可以利用国内镜像源来加速模块安装。">
   
     <link rel="alternative" href="/atom.xml" title="Andrew的博客" type="application/atom+xml">
   
@@ -155,7 +155,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ES6中的promise对象
+      使用淘宝的cnpm代替npm
     </h1>
   
 
@@ -168,9 +168,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ES6中的promise对象</p>
+        <p>使用国内 npm 镜像</p>
+<blockquote>
+<p>npm 默认从国外的源（<a href="https://registry.npmjs.org/）获取和下载包信息，国内访问速度很不理想。" target="_blank" rel="external">https://registry.npmjs.org/）获取和下载包信息，国内访问速度很不理想。</a><br>就像其他很多开源软件都有国内镜像源，npm 也不例外。所以我们可以利用国内镜像源来加速模块安装。</p>
+</blockquote>
 <a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">Promise 是抽象异步处理对象以及对其进行各种操作的组件</div><div class="line">简而言之, 就是让异步操作变得好看一些</div><div class="line"></div><div class="line">Promise 的用法如下</div><div class="line">*/</div><div class="line"></div><div class="line"><span class="comment">// 将 fs.readFile 的操作封装成 promise</span></div><div class="line"><span class="comment">// 这样就可以使用 promise 的 api 了</span></div><div class="line"><span class="keyword">const</span> readFile = <span class="function"><span class="keyword">function</span>(<span class="params">filename</span>) </span>&#123;</div><div class="line">    <span class="comment">// 一般前端的写法</span></div><div class="line">    <span class="comment">// return new Promise(function(resolve, reject) &#123;&#125;)</span></div><div class="line">    <span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">        <span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line">        <span class="keyword">const</span> options = &#123;</div><div class="line">            <span class="attr">encoding</span>: <span class="string">'utf8'</span></div><div class="line">        &#125;</div><div class="line">        fs.readFile(filename, options, <span class="function"><span class="keyword">function</span>(<span class="params">error, content</span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (error !== <span class="literal">null</span>) &#123;</div><div class="line">                reject(error)</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                resolve(content)</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    <span class="keyword">return</span> p</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 使用 promise 读取文件就不用写成回调的形式了</span></div><div class="line"><span class="comment">// 直接按照同步的写法就好了</span></div><div class="line"><span class="comment">// 可以无限 then, 只要你保证上一个 then 返回了东西即可</span></div><div class="line"><span class="keyword">let</span> promise = readFile(<span class="string">'foo.txt'</span>)</div><div class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'debug file content'</span>, content)</div><div class="line">    <span class="keyword">const</span> c = content + <span class="string">' suffix1'</span></div><div class="line">    <span class="keyword">return</span> c</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'debug error message'</span>, error)</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">c1</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'second then'</span>, c1)</div><div class="line">    <span class="keyword">const</span> c = c1 + <span class="string">' suffix2'</span></div><div class="line">    <span class="keyword">return</span> c</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">c</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'third then'</span>, c)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 上面的写法也可以写成下面这样</span></div><div class="line"><span class="comment">// 把 reject 的操作放在 catch 里面</span></div><div class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'debug file content'</span>, content)</div><div class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'debug error message'</span>, error)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 有时候会碰到批量执行异步操作，如果直接用循环 + 调用函数的形式会比较麻烦</span></div><div class="line"><span class="comment">// 使用 Promise.all 就很方便了</span></div><div class="line"><span class="comment">// all 方法是直接挂在 Promise 类上的</span></div><div class="line"><span class="comment">// 而 then catch 这些方法是挂在原型上</span></div><div class="line"><span class="keyword">const</span> fileList = [</div><div class="line">    <span class="string">'t1.txt'</span>,</div><div class="line">    <span class="string">'t2.txt'</span>,</div><div class="line">    <span class="string">'t3.txt'</span>,</div><div class="line">]</div><div class="line"><span class="keyword">const</span> list = fileList.map(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> r = readFile(item)</div><div class="line">    <span class="keyword">return</span> r</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">Promise</span>.all(list).then(<span class="function"><span class="keyword">function</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'content'</span>, content)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">这是一个完整的参考, 如果有兴趣以后可以翻翻看, 但是现在没必要看了</div><div class="line">http://liubin.org/promises-book/</div><div class="line">*/</div></pre></td></tr></table></figure>
+<h2 id="国内-npm-镜像源"><a href="#国内-npm-镜像源" class="headerlink" title="国内 npm 镜像源"></a>国内 npm 镜像源</h2><p>cnpmjs 镜像：</p>
+<p>搜索地址：<a href="https://cnpmjs.org/" target="_blank" rel="external">https://cnpmjs.org/</a><br>registry ： <a href="https://r.cnpmjs.org/" target="_blank" rel="external">https://r.cnpmjs.org/</a><br>淘宝 npm 镜像：</p>
+<p>搜索地址：<a href="https://npm.taobao.org/" target="_blank" rel="external">https://npm.taobao.org/</a><br>registry ： <a href="https://registry.npm.taobao.org/" target="_blank" rel="external">https://registry.npm.taobao.org/</a></p>
+<p>临时使用<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install express --registry <span class="string">https:</span><span class="comment">//r.cnpmjs.org/</span></div></pre></td></tr></table></figure></p>
+<p>持久使用</p>
+<p>npm 依次通过命令行、环境变量、.npmrc 文件来获取配置</p>
+<p>方式一：命令行修改 npm 配置<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 配置 registry</span></div><div class="line">npm config <span class="keyword">set</span> registry https:<span class="comment">//r.cnpmjs.org/</span></div><div class="line"><span class="meta"># 验证配置是否修改成功</span></div><div class="line">npm config <span class="keyword">get</span> registry</div></pre></td></tr></table></figure></p>
+<p>方式二：修改环境变量</p>
+<blockquote>
+<p>任何环境变量以npm<em>config</em>开头，将被解释为配置参数。<br>以 windows 为例，打开：系统信息 &gt; 高级系统设置 &gt; 环境变量。可以新建一条用户变量或者系统变量<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 变量名</span></div><div class="line">npm_config_registry</div><div class="line"><span class="meta"># 变量值</span></div><div class="line">https:<span class="comment">//r.cnpmjs.org/</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>方式三：添加 npm 配置文件 .npmrc<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.npmrc 包含 <span class="number">4</span> 级，可以按需求选择配置的地方</div><div class="line"></div><div class="line">项目目录：<span class="meta-keyword">/path/</span>to<span class="meta-keyword">/my/</span>project/.npmrc</div><div class="line">用户目录：~/.npmrc</div><div class="line">全局配置：$PREFIX<span class="meta-keyword">/etc/</span>.npmrc</div><div class="line">内置配置：<span class="meta-keyword">/path/</span>to<span class="meta-keyword">/npm/</span>.npmrc</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta"># .npmrc 配置</span></div><div class="line">registry = https:<span class="comment">//r.cnpmjs.org</span></div></pre></td></tr></table></figure></p>
+<h2 id="命令行工具-cnpm"><a href="#命令行工具-cnpm" class="headerlink" title="命令行工具 cnpm"></a>命令行工具 cnpm</h2><p>还可以通过定制的 cnpm 命令来直接从淘宝镜像源安装模块，参考 <a href="https://npm.taobao.org/" target="_blank" rel="external">https://npm.taobao.org/</a><br><figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 安装 cnpm</span></div><div class="line">npm install -g cnpm --registry=https:<span class="comment">//registry.npm.taobao.org</span></div><div class="line"></div><div class="line"><span class="meta"># 通过 cnpm 命令替代 npm 命令安装模块</span></div><div class="line">cnpm install express</div></pre></td></tr></table></figure></p>
 
       
 
@@ -205,7 +220,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
         		</li>
       		
 		</ul>
@@ -275,18 +290,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/06/20170606/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/06/13/20170613/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          css动画
+          mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？
         
       </div>
     </a>
   
   
-    <a href="/2017/06/04/20170604/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">lodash</div>
+    <a href="/2017/02/25/20170225/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nginx配置静态网页</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -418,11 +433,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">职场</a>
+                <a href="javascript:void(0)" class="js-tag color5">5700</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">5700</a>
+                <a href="javascript:void(0)" class="js-tag color3">职场</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,10 +461,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
@@ -459,6 +470,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">mongoose</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
               </li>
             
             <div class="clearfix"></div>

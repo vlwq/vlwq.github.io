@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//litten.me/"/>
-  <updated>2017-07-04T13:43:29.800Z</updated>
+  <updated>2017-07-04T13:57:10.592Z</updated>
   <id>//litten.me/</id>
   
   <author>
@@ -14,33 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？</title>
-    <link href="//litten.me/2017/07/03/20170703/"/>
-    <id>//litten.me/2017/07/03/20170703/</id>
-    <published>2017-07-03T02:36:00.000Z</published>
-    <updated>2017-07-04T13:43:29.800Z</updated>
-    
-    <content type="html"><![CDATA[<p>错误提示的意思是：mongoose模型被重复定义了，这是不允许的</p>
-<p>首先，你需要搞清楚require和module.exports的运行机制，建议你看看这篇：<a href="http://www.nodeclass.com/articles/37488" target="_blank" rel="external">http://www.nodeclass.com/articles/37488</a></p>
-<a id="more"></a>
-<p>然后，针对你这个场景，不应该把 mongoose.model()模型定义方法做为模块导出的方法，因<br>为：</p>
-<p>模型定义不允许重复，所以这个mongoose.model()应该只调用一次，而导出它执行后的结果<br>require机制确保了mongoose.model()只会执行一次</p>
-<p>所以，你的代码应该改写成这样：<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var UserAccountSchema = mongoose.Schema(&#123;</div><div class="line">   <span class="comment">//...略去定义代码</span></div><div class="line">&#125;);</div><div class="line">var <span class="keyword">model</span> = mongoose.<span class="keyword">model</span>(<span class="string">'user.account'</span>, UserAccountSchema);</div><div class="line"><span class="comment">//导出模型</span></div><div class="line">module.exports =<span class="keyword">model</span>;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;错误提示的意思是：mongoose模型被重复定义了，这是不允许的&lt;/p&gt;
-&lt;p&gt;首先，你需要搞清楚require和module.exports的运行机制，建议你看看这篇：&lt;a href=&quot;http://www.nodeclass.com/articles/37488&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.nodeclass.com/articles/37488&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="mongoose" scheme="//litten.me/tags/mongoose/"/>
-    
-  </entry>
   
   <entry>
     <title>mongoose分页</title>
@@ -141,6 +114,74 @@
     
     
       <category term="linux" scheme="//litten.me/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？</title>
+    <link href="//litten.me/2017/06/13/20170613/"/>
+    <id>//litten.me/2017/06/13/20170613/</id>
+    <published>2017-06-13T02:36:00.000Z</published>
+    <updated>2017-07-05T11:23:52.994Z</updated>
+    
+    <content type="html"><![CDATA[<p>错误提示的意思是：mongoose模型被重复定义了，这是不允许的</p>
+<p>首先，你需要搞清楚require和module.exports的运行机制，建议你看看这篇：<a href="http://www.nodeclass.com/articles/37488" target="_blank" rel="external">http://www.nodeclass.com/articles/37488</a></p>
+<a id="more"></a>
+<p>然后，针对你这个场景，不应该把 mongoose.model()模型定义方法做为模块导出的方法，因<br>为：</p>
+<p>模型定义不允许重复，所以这个mongoose.model()应该只调用一次，而导出它执行后的结果<br>require机制确保了mongoose.model()只会执行一次</p>
+<p>所以，你的代码应该改写成这样：<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var UserAccountSchema = mongoose.Schema(&#123;</div><div class="line">   <span class="comment">//...略去定义代码</span></div><div class="line">&#125;);</div><div class="line">var <span class="keyword">model</span> = mongoose.<span class="keyword">model</span>(<span class="string">'user.account'</span>, UserAccountSchema);</div><div class="line"><span class="comment">//导出模型</span></div><div class="line">module.exports =<span class="keyword">model</span>;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;错误提示的意思是：mongoose模型被重复定义了，这是不允许的&lt;/p&gt;
+&lt;p&gt;首先，你需要搞清楚require和module.exports的运行机制，建议你看看这篇：&lt;a href=&quot;http://www.nodeclass.com/articles/37488&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.nodeclass.com/articles/37488&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="mongoose" scheme="//litten.me/tags/mongoose/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用淘宝的cnpm代替npm</title>
+    <link href="//litten.me/2017/06/05/20170605/"/>
+    <id>//litten.me/2017/06/05/20170605/</id>
+    <published>2017-06-05T02:36:00.000Z</published>
+    <updated>2017-07-05T11:39:59.447Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用国内 npm 镜像</p>
+<blockquote>
+<p>npm 默认从国外的源（<a href="https://registry.npmjs.org/）获取和下载包信息，国内访问速度很不理想。" target="_blank" rel="external">https://registry.npmjs.org/）获取和下载包信息，国内访问速度很不理想。</a><br>就像其他很多开源软件都有国内镜像源，npm 也不例外。所以我们可以利用国内镜像源来加速模块安装。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="国内-npm-镜像源"><a href="#国内-npm-镜像源" class="headerlink" title="国内 npm 镜像源"></a>国内 npm 镜像源</h2><p>cnpmjs 镜像：</p>
+<p>搜索地址：<a href="https://cnpmjs.org/" target="_blank" rel="external">https://cnpmjs.org/</a><br>registry ： <a href="https://r.cnpmjs.org/" target="_blank" rel="external">https://r.cnpmjs.org/</a><br>淘宝 npm 镜像：</p>
+<p>搜索地址：<a href="https://npm.taobao.org/" target="_blank" rel="external">https://npm.taobao.org/</a><br>registry ： <a href="https://registry.npm.taobao.org/" target="_blank" rel="external">https://registry.npm.taobao.org/</a></p>
+<p>临时使用<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install express --registry <span class="string">https:</span><span class="comment">//r.cnpmjs.org/</span></div></pre></td></tr></table></figure></p>
+<p>持久使用</p>
+<p>npm 依次通过命令行、环境变量、.npmrc 文件来获取配置</p>
+<p>方式一：命令行修改 npm 配置<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 配置 registry</span></div><div class="line">npm config <span class="keyword">set</span> registry https:<span class="comment">//r.cnpmjs.org/</span></div><div class="line"><span class="meta"># 验证配置是否修改成功</span></div><div class="line">npm config <span class="keyword">get</span> registry</div></pre></td></tr></table></figure></p>
+<p>方式二：修改环境变量</p>
+<blockquote>
+<p>任何环境变量以npm<em>config</em>开头，将被解释为配置参数。<br>以 windows 为例，打开：系统信息 &gt; 高级系统设置 &gt; 环境变量。可以新建一条用户变量或者系统变量<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 变量名</span></div><div class="line">npm_config_registry</div><div class="line"><span class="meta"># 变量值</span></div><div class="line">https:<span class="comment">//r.cnpmjs.org/</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>方式三：添加 npm 配置文件 .npmrc<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.npmrc 包含 <span class="number">4</span> 级，可以按需求选择配置的地方</div><div class="line"></div><div class="line">项目目录：<span class="meta-keyword">/path/</span>to<span class="meta-keyword">/my/</span>project/.npmrc</div><div class="line">用户目录：~/.npmrc</div><div class="line">全局配置：$PREFIX<span class="meta-keyword">/etc/</span>.npmrc</div><div class="line">内置配置：<span class="meta-keyword">/path/</span>to<span class="meta-keyword">/npm/</span>.npmrc</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta"># .npmrc 配置</span></div><div class="line">registry = https:<span class="comment">//r.cnpmjs.org</span></div></pre></td></tr></table></figure></p>
+<h2 id="命令行工具-cnpm"><a href="#命令行工具-cnpm" class="headerlink" title="命令行工具 cnpm"></a>命令行工具 cnpm</h2><p>还可以通过定制的 cnpm 命令来直接从淘宝镜像源安装模块，参考 <a href="https://npm.taobao.org/" target="_blank" rel="external">https://npm.taobao.org/</a><br><figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 安装 cnpm</span></div><div class="line">npm install -g cnpm --registry=https:<span class="comment">//registry.npm.taobao.org</span></div><div class="line"></div><div class="line"><span class="meta"># 通过 cnpm 命令替代 npm 命令安装模块</span></div><div class="line">cnpm install express</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用国内 npm 镜像&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;npm 默认从国外的源（&lt;a href=&quot;https://registry.npmjs.org/）获取和下载包信息，国内访问速度很不理想。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://registry.npmjs.org/）获取和下载包信息，国内访问速度很不理想。&lt;/a&gt;&lt;br&gt;就像其他很多开源软件都有国内镜像源，npm 也不例外。所以我们可以利用国内镜像源来加速模块安装。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="node" scheme="//litten.me/tags/node/"/>
     
   </entry>
   
@@ -1162,31 +1203,6 @@
   </entry>
   
   <entry>
-    <title>注重生活体验，着眼点放在你自己的内心</title>
-    <link href="//litten.me/2016/08/23/20160823/"/>
-    <id>//litten.me/2016/08/23/20160823/</id>
-    <published>2016-08-23T02:36:00.000Z</published>
-    <updated>2017-07-05T11:03:17.056Z</updated>
-    
-    <content type="html"><![CDATA[<p>我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。</p>
-<p>虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。<br><a id="more"></a></p>
-<p>很多年轻人因为阅历的关系，其实不明白一个道理：人的欲望是无限的，你得到原来想要的，还会想得到更多，就像某些人没有iPhone的时候，做梦都想要，等用到一段时间之后，也就觉得就那么回事，一个手机而已（仅仅举个例子，什么豪宅，跑车，名表，名包，美女都那么回事，时间长了兴奋感都会消失），如果一个人的人生是欲望驱动的，那必然非常看重输赢，如果是这样的价值观，感受到的快乐也就全都来自于赢的一瞬间，不会长久，甚至很多人会为了赢做很多不喜欢的事情，反而本末倒置，不少所谓的成功人士的抑郁症就是这么来的。</p>
-<p>可能有人就问了，那怎样才能快乐呢？注重生活体验，着眼点放在你自己的内心，热爱生活，享受生活，不在乎输赢，而在乎做一件事的体验，在乎自己的成长，不要太在意外部强加的价值观，是的，这样，你可能不会成为外人眼里成功的人，得不到令人艳羡的目光，但你活的踏实，真实，平稳，而且最重要的，你活出真实的你自己，你有底气露出自信，满足，真实的微笑（这个答案肯定有很多人看不懂，我不要求每个人都懂）。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。&lt;/p&gt;
-&lt;p&gt;虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="自我" scheme="//litten.me/tags/%E8%87%AA%E6%88%91/"/>
-    
-  </entry>
-  
-  <entry>
     <title>别给自己找借口</title>
     <link href="//litten.me/2016/08/23/20150823/"/>
     <id>//litten.me/2016/08/23/20150823/</id>
@@ -1240,6 +1256,31 @@
     
     
       <category term="旧事" scheme="//litten.me/tags/%E6%97%A7%E4%BA%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>注重生活体验，着眼点放在你自己的内心</title>
+    <link href="//litten.me/2016/08/23/20160823/"/>
+    <id>//litten.me/2016/08/23/20160823/</id>
+    <published>2016-08-23T02:36:00.000Z</published>
+    <updated>2017-07-05T11:03:17.056Z</updated>
+    
+    <content type="html"><![CDATA[<p>我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。</p>
+<p>虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。<br><a id="more"></a></p>
+<p>很多年轻人因为阅历的关系，其实不明白一个道理：人的欲望是无限的，你得到原来想要的，还会想得到更多，就像某些人没有iPhone的时候，做梦都想要，等用到一段时间之后，也就觉得就那么回事，一个手机而已（仅仅举个例子，什么豪宅，跑车，名表，名包，美女都那么回事，时间长了兴奋感都会消失），如果一个人的人生是欲望驱动的，那必然非常看重输赢，如果是这样的价值观，感受到的快乐也就全都来自于赢的一瞬间，不会长久，甚至很多人会为了赢做很多不喜欢的事情，反而本末倒置，不少所谓的成功人士的抑郁症就是这么来的。</p>
+<p>可能有人就问了，那怎样才能快乐呢？注重生活体验，着眼点放在你自己的内心，热爱生活，享受生活，不在乎输赢，而在乎做一件事的体验，在乎自己的成长，不要太在意外部强加的价值观，是的，这样，你可能不会成为外人眼里成功的人，得不到令人艳羡的目光，但你活的踏实，真实，平稳，而且最重要的，你活出真实的你自己，你有底气露出自信，满足，真实的微笑（这个答案肯定有很多人看不懂，我不要求每个人都懂）。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。&lt;/p&gt;
+&lt;p&gt;虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="自我" scheme="//litten.me/tags/%E8%87%AA%E6%88%91/"/>
     
   </entry>
   

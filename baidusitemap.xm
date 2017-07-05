@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>//litten.me/2017/06/05/20170605/</loc>
+    <lastmod>2017-07-05T11:39:59.447Z</lastmod>
+    <data>
+        <display>
+        <title>使用淘宝的cnpm代替npm</title>
+        <pubTime>2017-06-05T02:36:00.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/2017/06/13/20170613/</loc>
+    <lastmod>2017-07-05T11:23:52.994Z</lastmod>
+    <data>
+        <display>
+        <title>mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？</title>
+        <pubTime>2017-06-13T02:36:00.000Z</pubTime>
+        
+        <tag>mongoose</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2017/02/23/20170223/</loc>
     <lastmod>2017-07-05T11:12:42.019Z</lastmod>
     <data>
@@ -658,23 +692,6 @@
         <pubTime>2017-06-20T02:36:00.000Z</pubTime>
         
         <tag>开发</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>//litten.me/2017/07/03/20170703/</loc>
-    <lastmod>2017-07-04T13:43:29.800Z</lastmod>
-    <data>
-        <display>
-        <title>mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？</title>
-        <pubTime>2017-07-03T02:36:00.000Z</pubTime>
-        
-        <tag>mongoose</tag>
          
          
            
