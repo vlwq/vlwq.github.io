@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>//litten.me/2017/07/05/20170705/</loc>
+    <lastmod>2017-07-05T12:42:33.723Z</lastmod>
+    <data>
+        <display>
+        <title>electron打包程序</title>
+        <pubTime>2017-07-05T02:36:00.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/2017/06/06/20170606/</loc>
+    <lastmod>2017-07-05T11:59:37.613Z</lastmod>
+    <data>
+        <display>
+        <title>yarn更换为淘宝镜像</title>
+        <pubTime>2017-06-06T02:36:00.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2017/06/05/20170605/</loc>
     <lastmod>2017-07-05T11:39:59.447Z</lastmod>
     <data>
