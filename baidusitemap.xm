@@ -4,6 +4,57 @@
 
     
   <url>
+    <loc>//litten.me/2017/06/22/20170622/</loc>
+    <lastmod>2017-07-07T14:15:39.139Z</lastmod>
+    <data>
+        <display>
+        <title>mongoose里.save()/update()/findOneAndUpdate()的区别</title>
+        <pubTime>2017-06-22T02:36:00.000Z</pubTime>
+        
+        <tag>开发</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/2017/02/03/20170203/</loc>
+    <lastmod>2017-07-07T13:45:18.769Z</lastmod>
+    <data>
+        <display>
+        <title>git还原某个特定的文件到之前的版本</title>
+        <pubTime>2017-02-03T02:36:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/2017/06/26/20170626/</loc>
+    <lastmod>2017-07-07T13:33:30.062Z</lastmod>
+    <data>
+        <display>
+        <title>html 网页中的锚点(命名锚记)的使用介绍</title>
+        <pubTime>2017-06-26T02:36:00.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2017/07/05/20170705/</loc>
     <lastmod>2017-07-05T12:42:33.723Z</lastmod>
     <data>

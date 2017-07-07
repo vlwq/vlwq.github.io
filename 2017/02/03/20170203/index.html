@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>BBR加速 | Andrew的博客</title>
+  <title>git还原某个特定的文件到之前的版本 | Andrew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Debian / Ubuntu 14.04 + CentOS用户请使用这个脚本：CentOS/Debian/Ubuntu系统 TCP-BBR 一键安装脚本  本脚本只在 Debian 7 / Debian 8 / Ubuntu 14.04 / Ubuntu 16.04 (均 x64位) 这几个系统中测试过脚本可以正常运行(Vultr)！  强烈推荐 Debian 7 x64，这个是我一直使用的系统">
+  <meta name="description" content="场景： 对于某个Git控制下的文件进行了修改，但是改的不满意，想退回到改之前的版本。假定该文件为 src/main/main.c">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BBR加速">
-<meta property="og:url" content="//litten.me/2017/06/14/20170202/index.html">
+<meta property="og:title" content="git还原某个特定的文件到之前的版本">
+<meta property="og:url" content="//litten.me/2017/02/03/20170203/index.html">
 <meta property="og:site_name" content="Andrew的博客">
-<meta property="og:description" content="Debian / Ubuntu 14.04 + CentOS用户请使用这个脚本：CentOS/Debian/Ubuntu系统 TCP-BBR 一键安装脚本  本脚本只在 Debian 7 / Debian 8 / Ubuntu 14.04 / Ubuntu 16.04 (均 x64位) 这几个系统中测试过脚本可以正常运行(Vultr)！  强烈推荐 Debian 7 x64，这个是我一直使用的系统">
-<meta property="og:updated_time" content="2017-07-04T14:06:57.758Z">
+<meta property="og:description" content="场景： 对于某个Git控制下的文件进行了修改，但是改的不满意，想退回到改之前的版本。假定该文件为 src/main/main.c">
+<meta property="og:updated_time" content="2017-07-07T13:45:18.769Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BBR加速">
-<meta name="twitter:description" content="Debian / Ubuntu 14.04 + CentOS用户请使用这个脚本：CentOS/Debian/Ubuntu系统 TCP-BBR 一键安装脚本  本脚本只在 Debian 7 / Debian 8 / Ubuntu 14.04 / Ubuntu 16.04 (均 x64位) 这几个系统中测试过脚本可以正常运行(Vultr)！  强烈推荐 Debian 7 x64，这个是我一直使用的系统">
+<meta name="twitter:title" content="git还原某个特定的文件到之前的版本">
+<meta name="twitter:description" content="场景： 对于某个Git控制下的文件进行了修改，但是改的不满意，想退回到改之前的版本。假定该文件为 src/main/main.c">
   
     <link rel="alternative" href="/atom.xml" title="Andrew的博客" type="application/atom+xml">
   
@@ -148,53 +148,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-20170202" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-20170203" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      BBR加速
+      git还原某个特定的文件到之前的版本
     </h1>
   
 
         
-        <a href="/2017/06/14/20170202/" class="archive-article-date">
-  	<time datetime="2017-06-14T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-14</time>
+        <a href="/2017/02/03/20170203/" class="archive-article-date">
+  	<time datetime="2017-02-03T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Debian / Ubuntu 14.04 +</p>
-<pre><code>CentOS用户请使用这个脚本：CentOS/Debian/Ubuntu系统 TCP-BBR 一键安装脚本
-
-本脚本只在 Debian 7 / Debian 8 / Ubuntu 14.04 / Ubuntu 16.04 (均 x64位) 这几个系统中测试过脚本可以正常运行(Vultr)！
-
-强烈推荐 Debian 7 x64，这个是我一直使用的系统，我的脚本在这个系统上面出错率最低。
-
-至于为什么不支持 CentOS 等系统，主要是我不怎么用其他的系统，就不做支持了。
-</code></pre><a id="more"></a>
-<p>安装步骤<br>更换内核需要ROOT权限，所以如果你是普通用户 的话，需要ROOT账号权限，如果你是ROOT账号，那就忽略这个步骤：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">sudo su</span></div></pre></td></tr></table></figure></p>
-<p>输入并回车后，会提示让你输入当前账号的密码，输入并回车后就可以继续下面的步骤了。<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -<span class="keyword">N</span> --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//softs.<span class="keyword">pw</span>/Bash/bbr.<span class="keyword">sh</span> &amp;&amp; chmod +<span class="keyword">x</span> bbr.<span class="keyword">sh</span> &amp;&amp; bash bbr.<span class="keyword">sh</span></div></pre></td></tr></table></figure></p>
-<p>备用下载地址（上面的链接无法下载，就用这个）：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -<span class="keyword">N</span> --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/ToyoDAdoubi/doubi/master/bbr.<span class="keyword">sh</span> &amp;&amp; chmod +<span class="keyword">x</span> bbr.<span class="keyword">sh</span> &amp;&amp; bash bbr.<span class="keyword">sh</span></div></pre></td></tr></table></figure></p>
-<p>下载并运行脚本后，会自动检测并开始安装，首先会提示你输入要下载的内核版本，可以安装自定义版本的内核，也可以直接回车安装最新版本的内核（内核版本获取）！<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">请输入 要下载安装的<span class="selector-tag">Linux</span>内核版本(BBR) <span class="selector-attr">[ 格式: x.xx.xx ，例如: 4.10.12 ]</span></div><div class="line"> <span class="selector-attr">[注意]</span>内核版本列表请去这里获取：<span class="selector-attr">[</span></div><div class="line"> http://kernel.ubuntu.com/~kernel-ppa/mainline/ ]</div><div class="line">(默认回车，自动获取最新版本)<span class="selector-pseudo">:4.10.10</span></div></pre></td></tr></table></figure></p>
-<p>如果没有出错，内核更换完毕后，会提示是否立即重启VPS，直接回车或者输入 Y 。<br>需要重启VPS后，才能开启BBR，是否现在重启 ? [Y/n] : y<br>[注意]  重启VPS后，请重新运行脚本开启BBR: bash bbr.sh start</p>
-<p>[信息]  VPS 重启中…</p>
-<p>等待十几秒，VPS启动后，重新通过SSH连接VPS，进入 bbr.sh 脚本的目录，然后执行下面这个命令开启BBR。<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">bash </span><span class="keyword">bbr.sh </span>start</div></pre></td></tr></table></figure></p>
-<p>然后就会自动开启BBR。<br>如果重启VPS后，无法连接，说明内核安装或与系统存在兼容性问题，无法正常启动，代表你的VPS当前系统无法使用BBR，请更换其他系统！</p>
-<p>使用方法<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 启动BBR，更换/升级内核并重启后，需要执行这个开启BBR！</span></div><div class="line"><span class="keyword">bash </span><span class="keyword">bbr.sh </span>start</div><div class="line"></div><div class="line"><span class="comment"># 关闭BBR</span></div><div class="line"><span class="keyword">bash </span><span class="keyword">bbr.sh </span>stop</div><div class="line"></div><div class="line"><span class="comment"># 查看BBR状态</span></div><div class="line"><span class="keyword">bash </span><span class="keyword">bbr.sh </span>status</div><div class="line"></div><div class="line"><span class="comment"># 升级BBR</span></div><div class="line"><span class="keyword">bash </span><span class="keyword">bbr.sh</span></div><div class="line"><span class="comment"># 因为BBR是集成于内核中的，只是内核中的一部分，所以不一定要更新最新的内核，因为内核升级不一定是BBR升级。</span></div></pre></td></tr></table></figure></p>
-<p>卸载BBR</p>
-<p>BBR集成于内核中，所以卸载BBR=更换内核，教程：</p>
-<p>其他说明</p>
-<p>注意：TCP-BBR必须是 2016-12-05 21:00 更新的 4.9.0-rc8 内核及以后的版本 才能开启，而锐速并不支持这个最新的内核版本，所以TCP-BBR和锐速是不可能共存的。<br>裸SS / 锐速+SS / BBR+SS简单速度对比，仅供参考，看这里。</p>
-<p>更换内核后重启服务器无法启动 的问题</p>
-<p>如果重启VPS后，无法连接，说明内核安装有问题 或 内核与系统存在兼容性问题，无法正常启动。</p>
-<p>这代表你的VPS当前系统不支持最新的内核版本，无法开启BBR，请更换其他系统尝试！<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">提示 wge<span class="variable">t:</span> unknown host “softs.<span class="keyword">pw</span>” 之类的错误</div></pre></td></tr></table></figure></p>
-<p>这是无法解析我的域名，多半是DNS的问题，请更换DNS为谷歌DNS。<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> <span class="string">"nameserver 8.8.8.8"</span> &gt; /etc/resolv.<span class="keyword">conf</span></div><div class="line"><span class="keyword">echo</span> <span class="string">"nameserver 8.8.4.4"</span> &gt;&gt; /etc/resolv.<span class="keyword">conf</span></div><div class="line">提示 wge<span class="variable">t:</span> <span class="keyword">command</span> not found 的错误</div></pre></td></tr></table></figure></p>
-<p>这是你的系统精简的太干净了，wget都没有安装，所以需要安装wget。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Debian/Ubuntu系统:</div><div class="line"></div><div class="line">apt-<span class="builtin-name">get</span> install -y wget</div></pre></td></tr></table></figure></p>
+        <blockquote>
+<p>场景： 对于某个Git控制下的文件进行了修改，但是改的不满意，想退回到改之前的版本。假定该文件为 src/main/main.c</p>
+</blockquote>
+<a id="more"></a>
+<p>解决方法：</p>
+<p>第一步： 在命令行中输入 Git log src/main/main.c 得到该文件的commit 历史。 会得到类似下面的界面</p>
+<p>第二步： 复制需要回退版本的hash，在此假设我们回退到 d98a0f565804ba639ba46d6e4295d4f787ff2949 ,则复制该序列即可</p>
+<p>第三步：checkout 对应版本。格式为 git checkout <hash> <filename>, 在此即为命令行中输入 git checkout d98a0f565804ba639ba46d6e4295d4f787ff2949 src/main/main.c</filename></hash></p>
+<p>第四步： commit checkout下来的版本。 如： git commit -m “revert to previous version”</p>
 
       
 
@@ -285,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxklEQVR42u3ayYrDMBQEwPz/T2dgToHBoluSFQ+UTibxUro83qLXK17v33X1++ca//t5z9U7NyxcXNxl7nu4/t6TPJVvIzfg4uKe546D1/jD4+vkl8SAi4v7TG7y+XF4Gt+Ji4v7f7n5q/PiBxcX95nctoWxjru9VsPFxV3gtg3TO65v7O/i4uKW3LmmZxvg2sB3+XVcXNwj3KR5MRfa8meTqBXNdXFxcTdxk5CUsNrgtZTi4OLiHuS2iGR7ecgrkhtcXNybuXmAmwtzyVY3tEpxcXG3ctsUJN9xUvzUjRhcXNwj3KSR0Q5NkyDVtl2y9g4uLu4e7o1d2DJ4JWkTLi7uGW5ekCSBqU1uJms1XFzcm7krxyzaNkreQr28xsXFPcJt05EiEVkofib7u7i4uJu4u0qXHDR3Py4u7re4cw3TuWA3V1bh4uKe4eZnG5LANDeOnWzF4uLi3sZdSVzao1oro1lcXNyT3DastK9LkqekRYKLi3ueu34wYn3okidPuLi4J7lzo9ANc5tyEIuLi/s0bl4ItSGy7vLi4uI+mNui57aEi4v7Le76YawWPXfYCxcX9wy3LUXagUo+TJ0rt3BxcbdyfwB+luIxaRxC6AAAAABJRU5ErkJggg==" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByUlEQVR42u3ay4rDMAwF0P7/T2dgVh0Yp1eWbVI4WZX0dZzFxZb0esXX9XuN7r+/e91eo28tvnBxcdvc/A+SZYwo+QJGn8HFxT3PvackiDx5Rr8fBSguLu7DuNXtTrIAXFzcb+dWjzFJwOHi4j6Z2zmcJMF0f2fLWQ0XF7fBrRZMd7zeWN/FxcUtcq/i1SmXzMXin9/BxcU9ws23I3OfzDc9eaEEFxd3N3cuqiYDqFguGUYYLi7uEe5c2aJ/PyK+S3BxcY9w83xY1TLpBCguLu4Z7tygVR5zHfo/Hlxc3IPcZHOTLyZvliQHqmjyCxcXdyk333DkDZJqMbQ8bIGLi3uEu3ZgIi+2Jo/vQ1sFFxd3A7cTPcnEVPVdXFzcJ3OrbZJOSyZvtODi4p7hVpup5YGJxkEraqjg4uJu4M4NV+XDFnl9I4o2XFzcg9xqIyRfTLWkEgUZLi7uEW41zvLjyqqN0YfMw8XFXcqtBkqnfVId1GiFIC4ubps7F179kkq1bIqLi3ueW42n6oZm1QAHLi7u07jVsa3Ogxg+Alxc3C/hJtDCABYuLu5juHMjU4VGyNS2qVUWwcXFbXCrBdO5Ymg/8nBxcY9wfwDuYk3UfnCNFwAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -299,18 +281,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/20/20170620/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/23/20170223/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          移动端
+          nginx反向代理
         
       </div>
     </a>
   
   
-    <a href="/2017/06/13/20170613/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？</div>
+    <a href="/2017/01/21/20170121/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node启动listen EADDRINUSE</div>
       <i class="icon-circle-right"></i>
     </a>
   

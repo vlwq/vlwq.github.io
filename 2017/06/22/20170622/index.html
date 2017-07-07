@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>nginx配置静态网页 | Andrew的博客</title>
+  <title>mongoose里.save()/update()/findOneAndUpdate()的区别 | Andrew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="负载均衡123456upstream bbs &amp;#123;       server music.istorm.cc:80 weight=1;   &amp;#125;   upstream blog &amp;#123;       server http://0.0.0.0:2020 weight=1;   &amp;#125;">
-<meta name="keywords" content="nginx">
+  <meta name="description" content=".save()和update()update比find之后save()效率高，因为这样不用读取整个文档。Mongoose的update是MongoDB的update，但是Mongoose的save可能是MongoDB的插入或是update。">
+<meta name="keywords" content="开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nginx配置静态网页">
+<meta property="og:title" content="mongoose里.save()&#x2F;update()&#x2F;findOneAndUpdate()的区别">
 <meta property="og:url" content="//litten.me/2017/06/22/20170622/index.html">
 <meta property="og:site_name" content="Andrew的博客">
-<meta property="og:description" content="负载均衡123456upstream bbs &amp;#123;       server music.istorm.cc:80 weight=1;   &amp;#125;   upstream blog &amp;#123;       server http://0.0.0.0:2020 weight=1;   &amp;#125;">
-<meta property="og:updated_time" content="2017-07-04T13:57:10.564Z">
+<meta property="og:description" content=".save()和update()update比find之后save()效率高，因为这样不用读取整个文档。Mongoose的update是MongoDB的update，但是Mongoose的save可能是MongoDB的插入或是update。">
+<meta property="og:updated_time" content="2017-07-07T14:15:39.139Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nginx配置静态网页">
-<meta name="twitter:description" content="负载均衡123456upstream bbs &amp;#123;       server music.istorm.cc:80 weight=1;   &amp;#125;   upstream blog &amp;#123;       server http://0.0.0.0:2020 weight=1;   &amp;#125;">
+<meta name="twitter:title" content="mongoose里.save()&#x2F;update()&#x2F;findOneAndUpdate()的区别">
+<meta name="twitter:description" content=".save()和update()update比find之后save()效率高，因为这样不用读取整个文档。Mongoose的update是MongoDB的update，但是Mongoose的save可能是MongoDB的插入或是update。">
   
     <link rel="alternative" href="/atom.xml" title="Andrew的博客" type="application/atom+xml">
   
@@ -85,7 +85,7 @@
 		        
 					<a class="github" target="_blank" href="https://github.com/vlwq" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="linkedin" target="_blank" href="http://istorm.cc" title="linkedin"><i class="icon-linkedin"></i></a>
+					<a class="linkedin" target="_blank" href="http://bbs.istorm.cc" title="linkedin"><i class="icon-linkedin"></i></a>
 		        
 			</div>
 		</nav>
@@ -124,7 +124,7 @@
 			        
 						<a class="github" target="_blank" href="https://github.com/vlwq" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="linkedin" target="_blank" href="http://istorm.cc" title="linkedin"><i class="icon-linkedin"></i></a>
+						<a class="linkedin" target="_blank" href="http://bbs.istorm.cc" title="linkedin"><i class="icon-linkedin"></i></a>
 			        
 				</div>
 			</nav>
@@ -155,7 +155,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      nginx配置静态网页
+      mongoose里.save()/update()/findOneAndUpdate()的区别
     </h1>
   
 
@@ -168,9 +168,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>负载均衡<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">upstream</span> bbs &#123;</div><div class="line">       <span class="attribute">server</span> music.istorm.cc:<span class="number">80</span> weight=<span class="number">1</span>;</div><div class="line">   &#125;</div><div class="line">   <span class="attribute">upstream</span> blog &#123;</div><div class="line">       <span class="attribute">server</span> http://0.0.0.0:2020 weight=<span class="number">1</span>;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>静态服务器和动态服务器配置<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name music.istorm.cc;</div><div class="line">    location / &#123;</div><div class="line">        <span class="comment">#这个地方指定被访问的文件夹位置</span></div><div class="line">        root <span class="string">/var/www/static/music</span>;</div><div class="line">        index index.html;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">#location /二级域名/ &#123;</span></div><div class="line">    <span class="comment">#    root /var/www/static/music;</span></div><div class="line">    <span class="comment">#    index index.html;</span></div><div class="line">    <span class="comment">#&#125;</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">server&#123;</div><div class="line">    listen 80;</div><div class="line">    <span class="comment"># 配置 www.istorm.cc</span></div><div class="line">    server_name www.istorm.cc;</div><div class="line">    access_log  <span class="string">/var/log/nginx/www.log</span>;</div><div class="line">    location / &#123;</div><div class="line">        root <span class="string">/home/website_root</span>;</div><div class="line"> <span class="comment"># proxy_pass 为反向代理后的 网站</span></div><div class="line">        proxy_pass http:<span class="string">//0.0.0.0</span><span class="function">:2020</span>;</div><div class="line">        proxy_read_timeout 300;</div><div class="line">        proxy_<span class="keyword">connect</span>_timeout 300;</div><div class="line">        proxy_redirect     off;</div><div class="line">        proxy_<span class="keyword">set</span>_header   X-Forwarded-Proto $scheme;</div><div class="line">        proxy_<span class="keyword">set</span>_header   Host              $http_host;</div><div class="line">        proxy_<span class="keyword">set</span>_header   X-Real-IP         $remote_addr;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>.save()和update()<br>update比find之后save()效率高，因为这样不用读取整个文档。<br>Mongoose的update是MongoDB的update，但是Mongoose的save可能是MongoDB的插入或是update。<br><a id="more"></a></p>
+<p>关于save，mongoose会自动diff新文档，只更改更新部分。这有利于原子性。<br>update不能触发中间件，validation默认不能，但是可以修改。<br>update()和findOneAndUpdate()<br>update()返回数据处理条数<br>findOneAndUpdate()返回处理后的数据<br>简单来说，你需要获取数据就用findOneAndUpdate()，只需要修改数据而不关注修改后数据那就用update()。</p>
 
       
 
@@ -205,7 +204,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">开发</a>
         		</li>
       		
 		</ul>
@@ -275,18 +274,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/23/20170623/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/06/25/20170625/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          nginx反向代理
+          mongoose分页
         
       </div>
     </a>
   
   
-    <a href="/2017/06/21/20170621/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">node启动listen EADDRINUSE</div>
+    <a href="/2017/06/20/20170620/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动端</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -402,10 +401,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">金融</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">自我</a>
               </li>
              
@@ -414,7 +409,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">5700</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">健康</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">金融</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -422,15 +429,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">5700</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">guagua</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -442,15 +441,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,6 +454,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">mongoose</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
               </li>
             
             <div class="clearfix"></div>

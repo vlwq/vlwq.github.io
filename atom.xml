@@ -50,6 +50,32 @@
   </entry>
   
   <entry>
+    <title>html 网页中的锚点(命名锚记)的使用介绍</title>
+    <link href="//litten.me/2017/06/26/20170626/"/>
+    <id>//litten.me/2017/06/26/20170626/</id>
+    <published>2017-06-26T02:36:00.000Z</published>
+    <updated>2017-07-07T13:33:30.062Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>锚点是网页制作中超级链接的一种，又叫命名锚记。命名锚记像一个迅速定位器一样是一种页面内的超级链接，运用相当普遍。<br>英文名：anchor<br>使用命名锚记可以在文档中设置标记，这些标记通常放在文档的特定主题处或顶部。然后可以创建到这些命名锚记的链接，这些链接可快速将访问者带到指定位置。<br>创建到命名锚记的链接的过程分为两步。首先，创建命名锚记，然后创建到该命名锚记的链接。</p>
+</blockquote>
+<a id="more"></a>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">代码如下:   这种方法测试不行必须加上id这个字段才可以</div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#method1"</span>&gt;</span>页面锚点方法一<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#method2"</span>&gt;</span>页面锚点方法二<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">"method1"</span>&gt;</span>方法一<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>使用锚标签的 href 和 name 属性<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"method2"</span>&gt;</span>方法二<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>使用锚标签和 id 属性<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;锚点是网页制作中超级链接的一种，又叫命名锚记。命名锚记像一个迅速定位器一样是一种页面内的超级链接，运用相当普遍。&lt;br&gt;英文名：anchor&lt;br&gt;使用命名锚记可以在文档中设置标记，这些标记通常放在文档的特定主题处或顶部。然后可以创建到这些命名锚记的链接，这些链接可快速将访问者带到指定位置。&lt;br&gt;创建到命名锚记的链接的过程分为两步。首先，创建命名锚记，然后创建到该命名锚记的链接。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="node" scheme="//litten.me/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mongoose分页</title>
     <link href="//litten.me/2017/06/25/20170625/"/>
     <id>//litten.me/2017/06/25/20170625/</id>
@@ -70,6 +96,28 @@
     
     
       <category term="node" scheme="//litten.me/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mongoose里.save()/update()/findOneAndUpdate()的区别</title>
+    <link href="//litten.me/2017/06/22/20170622/"/>
+    <id>//litten.me/2017/06/22/20170622/</id>
+    <published>2017-06-22T02:36:00.000Z</published>
+    <updated>2017-07-07T14:15:39.139Z</updated>
+    
+    <content type="html"><![CDATA[<p>.save()和update()<br>update比find之后save()效率高，因为这样不用读取整个文档。<br>Mongoose的update是MongoDB的update，但是Mongoose的save可能是MongoDB的插入或是update。<br><a id="more"></a></p>
+<p>关于save，mongoose会自动diff新文档，只更改更新部分。这有利于原子性。<br>update不能触发中间件，validation默认不能，但是可以修改。<br>update()和findOneAndUpdate()<br>update()返回数据处理条数<br>findOneAndUpdate()返回处理后的数据<br>简单来说，你需要获取数据就用findOneAndUpdate()，只需要修改数据而不关注修改后数据那就用update()。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;.save()和update()&lt;br&gt;update比find之后save()效率高，因为这样不用读取整个文档。&lt;br&gt;Mongoose的update是MongoDB的update，但是Mongoose的save可能是MongoDB的插入或是update。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="开发" scheme="//litten.me/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -354,6 +402,37 @@
     
     
       <category term="nginx" scheme="//litten.me/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git还原某个特定的文件到之前的版本</title>
+    <link href="//litten.me/2017/02/03/20170203/"/>
+    <id>//litten.me/2017/02/03/20170203/</id>
+    <published>2017-02-03T02:36:00.000Z</published>
+    <updated>2017-07-07T13:45:18.769Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>场景： 对于某个Git控制下的文件进行了修改，但是改的不满意，想退回到改之前的版本。假定该文件为 src/main/main.c</p>
+</blockquote>
+<a id="more"></a>
+<p>解决方法：</p>
+<p>第一步： 在命令行中输入 Git log src/main/main.c 得到该文件的commit 历史。 会得到类似下面的界面</p>
+<p>第二步： 复制需要回退版本的hash，在此假设我们回退到 d98a0f565804ba639ba46d6e4295d4f787ff2949 ,则复制该序列即可</p>
+<p>第三步：checkout 对应版本。格式为 git checkout <hash> <filename>, 在此即为命令行中输入 git checkout d98a0f565804ba639ba46d6e4295d4f787ff2949 src/main/main.c</filename></hash></p>
+<p>第四步： commit checkout下来的版本。 如： git commit -m “revert to previous version”</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;场景： 对于某个Git控制下的文件进行了修改，但是改的不满意，想退回到改之前的版本。假定该文件为 src/main/main.c&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="//litten.me/tags/linux/"/>
     
   </entry>
   
@@ -1271,6 +1350,31 @@
   </entry>
   
   <entry>
+    <title>注重生活体验，着眼点放在你自己的内心</title>
+    <link href="//litten.me/2016/08/23/20160823/"/>
+    <id>//litten.me/2016/08/23/20160823/</id>
+    <published>2016-08-23T02:36:00.000Z</published>
+    <updated>2017-07-05T11:03:17.056Z</updated>
+    
+    <content type="html"><![CDATA[<p>我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。</p>
+<p>虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。<br><a id="more"></a></p>
+<p>很多年轻人因为阅历的关系，其实不明白一个道理：人的欲望是无限的，你得到原来想要的，还会想得到更多，就像某些人没有iPhone的时候，做梦都想要，等用到一段时间之后，也就觉得就那么回事，一个手机而已（仅仅举个例子，什么豪宅，跑车，名表，名包，美女都那么回事，时间长了兴奋感都会消失），如果一个人的人生是欲望驱动的，那必然非常看重输赢，如果是这样的价值观，感受到的快乐也就全都来自于赢的一瞬间，不会长久，甚至很多人会为了赢做很多不喜欢的事情，反而本末倒置，不少所谓的成功人士的抑郁症就是这么来的。</p>
+<p>可能有人就问了，那怎样才能快乐呢？注重生活体验，着眼点放在你自己的内心，热爱生活，享受生活，不在乎输赢，而在乎做一件事的体验，在乎自己的成长，不要太在意外部强加的价值观，是的，这样，你可能不会成为外人眼里成功的人，得不到令人艳羡的目光，但你活的踏实，真实，平稳，而且最重要的，你活出真实的你自己，你有底气露出自信，满足，真实的微笑（这个答案肯定有很多人看不懂，我不要求每个人都懂）。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。&lt;/p&gt;
+&lt;p&gt;虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="自我" scheme="//litten.me/tags/%E8%87%AA%E6%88%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>别给自己找借口</title>
     <link href="//litten.me/2016/08/23/20150823/"/>
     <id>//litten.me/2016/08/23/20150823/</id>
@@ -1324,31 +1428,6 @@
     
     
       <category term="旧事" scheme="//litten.me/tags/%E6%97%A7%E4%BA%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>注重生活体验，着眼点放在你自己的内心</title>
-    <link href="//litten.me/2016/08/23/20160823/"/>
-    <id>//litten.me/2016/08/23/20160823/</id>
-    <published>2016-08-23T02:36:00.000Z</published>
-    <updated>2017-07-05T11:03:17.056Z</updated>
-    
-    <content type="html"><![CDATA[<p>我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。</p>
-<p>虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。<br><a id="more"></a></p>
-<p>很多年轻人因为阅历的关系，其实不明白一个道理：人的欲望是无限的，你得到原来想要的，还会想得到更多，就像某些人没有iPhone的时候，做梦都想要，等用到一段时间之后，也就觉得就那么回事，一个手机而已（仅仅举个例子，什么豪宅，跑车，名表，名包，美女都那么回事，时间长了兴奋感都会消失），如果一个人的人生是欲望驱动的，那必然非常看重输赢，如果是这样的价值观，感受到的快乐也就全都来自于赢的一瞬间，不会长久，甚至很多人会为了赢做很多不喜欢的事情，反而本末倒置，不少所谓的成功人士的抑郁症就是这么来的。</p>
-<p>可能有人就问了，那怎样才能快乐呢？注重生活体验，着眼点放在你自己的内心，热爱生活，享受生活，不在乎输赢，而在乎做一件事的体验，在乎自己的成长，不要太在意外部强加的价值观，是的，这样，你可能不会成为外人眼里成功的人，得不到令人艳羡的目光，但你活的踏实，真实，平稳，而且最重要的，你活出真实的你自己，你有底气露出自信，满足，真实的微笑（这个答案肯定有很多人看不懂，我不要求每个人都懂）。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。&lt;/p&gt;
-&lt;p&gt;虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="自我" scheme="//litten.me/tags/%E8%87%AA%E6%88%91/"/>
     
   </entry>
   
