@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>nginx反向代理 | Andrew的博客</title>
+  <title>bootstrap弹出框 | Andrew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="当只有一台服务器，而又想运行多个 web 后端服务，且希望网址为 www.XX.com / bbs.XX.com / blog.XX.com,怎么办，此时就要用nginx进行反向代理  以 ubuntu 为例   安装 NGINX  1$ sudo apt-get install nginx">
-<meta name="keywords" content="nginx">
+  <meta name="description" content="bootstrap弹出框标签（空格分隔）： bootstrap">
+<meta name="keywords" content="html5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nginx反向代理">
+<meta property="og:title" content="bootstrap弹出框">
 <meta property="og:url" content="//litten.me/2017/06/23/20170623/index.html">
 <meta property="og:site_name" content="Andrew的博客">
-<meta property="og:description" content="当只有一台服务器，而又想运行多个 web 后端服务，且希望网址为 www.XX.com / bbs.XX.com / blog.XX.com,怎么办，此时就要用nginx进行反向代理  以 ubuntu 为例   安装 NGINX  1$ sudo apt-get install nginx">
-<meta property="og:updated_time" content="2017-07-04T13:57:10.545Z">
+<meta property="og:description" content="bootstrap弹出框标签（空格分隔）： bootstrap">
+<meta property="og:updated_time" content="2017-07-16T04:34:47.981Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nginx反向代理">
-<meta name="twitter:description" content="当只有一台服务器，而又想运行多个 web 后端服务，且希望网址为 www.XX.com / bbs.XX.com / blog.XX.com,怎么办，此时就要用nginx进行反向代理  以 ubuntu 为例   安装 NGINX  1$ sudo apt-get install nginx">
+<meta name="twitter:title" content="bootstrap弹出框">
+<meta name="twitter:description" content="bootstrap弹出框标签（空格分隔）： bootstrap">
   
     <link rel="alternative" href="/atom.xml" title="Andrew的博客" type="application/atom+xml">
   
@@ -85,7 +85,7 @@
 		        
 					<a class="github" target="_blank" href="https://github.com/vlwq" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="linkedin" target="_blank" href="http://istorm.cc" title="linkedin"><i class="icon-linkedin"></i></a>
+					<a class="linkedin" target="_blank" href="http://bbs.istorm.cc" title="linkedin"><i class="icon-linkedin"></i></a>
 		        
 			</div>
 		</nav>
@@ -124,7 +124,7 @@
 			        
 						<a class="github" target="_blank" href="https://github.com/vlwq" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="linkedin" target="_blank" href="http://istorm.cc" title="linkedin"><i class="icon-linkedin"></i></a>
+						<a class="linkedin" target="_blank" href="http://bbs.istorm.cc" title="linkedin"><i class="icon-linkedin"></i></a>
 			        
 				</div>
 			</nav>
@@ -155,37 +155,23 @@
         
   
     <h1 class="article-title" itemprop="name">
-      nginx反向代理
+      bootstrap弹出框
     </h1>
   
 
         
         <a href="/2017/06/23/20170623/" class="archive-article-date">
-  	<time datetime="2017-06-23T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-23</time>
+  	<time datetime="2017-06-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>当只有一台服务器，而又想运行多个 web 后端服务，且希望网址为 www.XX.com / bbs.XX.com / blog.XX.com,怎么办，此时就要用nginx进行反向代理</p>
-<blockquote>
-<p>以 ubuntu 为例</p>
-</blockquote>
-<ol>
-<li>安装 NGINX</li>
-</ol>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-<span class="builtin-name">get</span> install nginx</div></pre></td></tr></table></figure>
+        <h1 id="bootstrap弹出框"><a href="#bootstrap弹出框" class="headerlink" title="bootstrap弹出框"></a>bootstrap弹出框</h1><p>标签（空格分隔）： bootstrap</p>
+<hr>
 <a id="more"></a>
-<ol>
-<li>修改 NGINX 的配置文件<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 配置文件在 /etc/nginx/nginx.conf</span></div><div class="line"><span class="keyword">cd</span> <span class="string">/etc/nginx</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>然后修改 nginx.conf,<br>具体为:修改配置文件中 的 http{}<br>在 http{} 中的末尾补上反向代理配置代码</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">user www-data;</div><div class="line">worker_processes auto;</div><div class="line">pid <span class="string">/run/nginx.pid</span>;</div><div class="line">events &#123;</div><div class="line">	worker_connections 768;</div><div class="line">	<span class="comment"># multi_accept on;</span></div><div class="line">&#125;</div><div class="line">http &#123;</div><div class="line">    <span class="comment">##</span></div><div class="line">    <span class="comment">#  前面的代码再此不展示了,在 http&#123;&#125; 中补上以上代码</span></div><div class="line">    <span class="comment">##</span></div><div class="line">	<span class="comment">##</span></div><div class="line">	<span class="comment"># 反向代理配置代码</span></div><div class="line">	<span class="comment">##</span></div><div class="line">    <span class="comment"># 注意端口号 8081 为 bbs 服务, 8082 为 blog 服务,8083 为 www 服务</span></div><div class="line">	upstream bbs &#123;</div><div class="line">        server 127.0.0.1<span class="function">:8081</span> weight=1;</div><div class="line">    &#125;</div><div class="line">    upstream blog &#123;</div><div class="line">        server 127.0.0.1<span class="function">:8082</span> weight=1;</div><div class="line">    &#125;</div><div class="line">    upstream www &#123;</div><div class="line">        server 127.0.0.1<span class="function">:8083</span> weight=1;</div><div class="line">    &#125;</div><div class="line">    server&#123;</div><div class="line">        listen 80;</div><div class="line">        <span class="comment"># 配置 www.bigbananas.cn</span></div><div class="line">        server_name www.bigbananas.cn;</div><div class="line">        access_log  <span class="string">/var/log/nginx/www.log</span>;</div><div class="line">        location / &#123;</div><div class="line">            root <span class="string">/home/website_root</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    server&#123;</div><div class="line">        listen 80;</div><div class="line">        <span class="comment"># 配置 blog.bigbananas.cn</span></div><div class="line">        server_name blog.bigbananas.cn;</div><div class="line">        access_log  <span class="string">/var/log/nginx/blog_access.log</span>;</div><div class="line">        location / &#123;</div><div class="line">            root <span class="string">/home/todo_root</span>;</div><div class="line">            <span class="comment"># proxy_pass 为反向代理后的 网站</span></div><div class="line">            proxy_pass http:<span class="string">//127.0.0.1</span><span class="function">:8081</span>/;</div><div class="line">            proxy_read_timeout 300;</div><div class="line">            proxy_<span class="keyword">connect</span>_timeout 300;</div><div class="line">            proxy_redirect     off;</div><div class="line">            proxy_<span class="keyword">set</span>_header   X-Forwarded-Proto $scheme;</div><div class="line">            proxy_<span class="keyword">set</span>_header   Host              $http_host;</div><div class="line">            proxy_<span class="keyword">set</span>_header   X-Real-IP         $remote_addr;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    server&#123;</div><div class="line">        listen 80;</div><div class="line">        <span class="comment"># 配置 bbs.bigbananas.cn</span></div><div class="line">        server_name bbs.bigbananas.cn;</div><div class="line">        access_log  <span class="string">/var/log/nginx/bbs_access.log</span>;</div><div class="line">        location / &#123;</div><div class="line">            root <span class="string">/home/todo_root</span>;</div><div class="line">            <span class="comment"># proxy_pass 为反向代理后的 网站</span></div><div class="line">            proxy_pass http:<span class="string">//127.0.0.1</span><span class="function">:8082</span>/;</div><div class="line">            proxy_read_timeout 300;</div><div class="line">            proxy_<span class="keyword">connect</span>_timeout 300;</div><div class="line">            proxy_redirect     off;</div><div class="line">            proxy_<span class="keyword">set</span>_header   X-Forwarded-Proto $scheme;</div><div class="line">            proxy_<span class="keyword">set</span>_header   Host              $http_host;</div><div class="line">            proxy_<span class="keyword">set</span>_header   X-Real-IP         $remote_addr;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>3、 在重启 NGINX 服务<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> sudo nginx -s reload</span></div></pre></td></tr></table></figure></p>
-<p>4、 在服务器启动 BLOG、BBS、WWW 服务</p>
-<p>注意：<br>端口号 8081 为 bbs 服务, 8082 为 blog 服务,8083 为 www 服务</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Bootstrap 实例 - 模态框（Modal）插件<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>创建模态框（Modal）<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 按钮触发模态框 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary btn-lg"</span> <span class="attr">data-toggle</span>=<span class="string">"modal"</span> <span class="attr">data-target</span>=<span class="string">"#myModal"</span>&gt;</span></div><div class="line">    开始演示模态框</div><div class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 模态框（Modal） --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal fade"</span> <span class="attr">id</span>=<span class="string">"myModal"</span> <span class="attr">tabindex</span>=<span class="string">"-1"</span> <span class="attr">role</span>=<span class="string">"dialog"</span> <span class="attr">aria-labelledby</span>=<span class="string">"myModalLabel"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-dialog"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-content"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-header"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"close"</span> <span class="attr">data-dismiss</span>=<span class="string">"modal"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span></div><div class="line">                    &amp;times;</div><div class="line">                <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"modal-title"</span> <span class="attr">id</span>=<span class="string">"myModalLabel"</span>&gt;</span></div><div class="line">                    模态框（Modal）标题</div><div class="line">                <span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-body"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"bs-example bs-example-form"</span> <span class="attr">role</span>=<span class="string">"form"</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"input-group"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"input-group-addon"</span>&gt;</span>字段1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"测试"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"input-group-addon"</span>&gt;</span>字段2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> &gt;</span></div><div class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"input-group"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"input-group-addon"</span>&gt;</span>字段1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"测试"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"input-group-addon"</span>&gt;</span>字段2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> &gt;</span></div><div class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"input-group"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"input-group-addon"</span>&gt;</span>字段1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"测试"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"input-group-addon"</span>&gt;</span>字段2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> &gt;</span></div><div class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-footer"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span> <span class="attr">data-dismiss</span>=<span class="string">"modal"</span>&gt;</span>关闭</div><div class="line">                <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span></div><div class="line">                    提交更改</div><div class="line">                <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- /.modal-content --&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- /.modal --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 
       
 
@@ -220,7 +206,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
         		</li>
       		
 		</ul>
@@ -301,7 +287,7 @@
   
   
     <a href="/2017/06/22/20170622/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">nginx配置静态网页</div>
+      <div class="article-nav-title">mongoose里.save()/update()/findOneAndUpdate()的区别</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -409,15 +395,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">note</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">金融</a>
+                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -425,7 +407,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">金融</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">鸡汤</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">5700</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,10 +424,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">职场</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">5700</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -453,7 +439,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -461,15 +447,23 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">高程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
               </li>
              
               <li class="article-tag-list-item">
