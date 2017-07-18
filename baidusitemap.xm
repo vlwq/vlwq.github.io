@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>//litten.me/2017/07/15/20170715/</loc>
+    <lastmod>2017-07-18T14:14:23.630Z</lastmod>
+    <data>
+        <display>
+        <title>mongodb查询</title>
+        <pubTime>2017-07-15T02:36:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/2017/07/18/20170718/</loc>
+    <lastmod>2017-07-18T12:23:39.095Z</lastmod>
+    <data>
+        <display>
+        <title>less命令</title>
+        <pubTime>2017-07-18T02:36:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2017/06/23/20170623/</loc>
     <lastmod>2017-07-16T04:34:47.981Z</lastmod>
     <data>

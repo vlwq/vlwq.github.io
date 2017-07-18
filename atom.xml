@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//litten.me/"/>
-  <updated>2017-07-16T04:27:15.191Z</updated>
+  <updated>2017-07-18T12:23:39.095Z</updated>
   <id>//litten.me/</id>
   
   <author>
@@ -14,6 +14,286 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>less命令</title>
+    <link href="//litten.me/2017/07/18/20170718/"/>
+    <id>//litten.me/2017/07/18/20170718/</id>
+    <published>2017-07-18T02:36:00.000Z</published>
+    <updated>2017-07-18T12:23:39.095Z</updated>
+    
+    <content type="html"><![CDATA[<p>less命令 与 more命令 非常类似，但less命令 可以更加随意地浏览文件，而且 less 在查看之前不会加载整个文件。<br>相比较于more命令，很多人更喜欢使用 less命令。<br><a id="more"></a></p>
+<p>一、Linux less命令语法</p>
+<blockquote>
+<p>less [参数] 文件<br>less命令非常强大，在此只介绍几个常用的参数，更多参数使用man less来查看Linux帮助手册。<br>-b &lt;缓冲区大小&gt; 设置缓冲区的大小<br>-e 当文件显示结束后，自动离开<br>-f 强迫打开特殊文件，例如外围设备代号、目录和二进制文件<br>-g 只标志最后搜索的关键词<br>-i 忽略搜索时的大小写<br>-m 显示类似more命令的百分比<br>-N 显示每行的行号<br>-o &lt;文件名&gt; 将less 输出的内容在指定文件中保存起来<br>-Q 不使用警告音<br>-s 显示连续空行为一行<br>-S 行过长时间将超出部分舍弃<br>-x &lt;数字&gt; 将”tab”键显示为规定的数字空格<br>/字符串：向下搜索”字符串”的功能<br>?字符串：向上搜索”字符串”的功能<br>n：重复前一个搜索（与 / 或 ? 有关）<br>N：反向重复前一个搜索（与 / 或 ? 有关）<br>b 向后翻一页<br>d 向后翻半页<br>h 显示帮助界面<br>Q 退出less 命令<br>u 向前滚动半页<br>y 向前滚动一行<br>空格键 滚动一行<br>回车键 滚动一页<br>[pagedown]： 向下翻动一页<br>[pageup]： 向上翻动一页</p>
+</blockquote>
+<p>二、Linux less命令使用实例</p>
+<blockquote>
+<p>1）查看文件<br>$less linuxdaxue.com-access_log<br>120.26.216.168 - - [12/Jun/2016:03:09:16 +0800] “HEAD / HTTP/1.1” 200 -<br>42.96.189.63 - - [12/Jun/2016:03:09:41 +0800] “HEAD / HTTP/1.1” 200 -<br>123.56.138.37 - - [12/Jun/2016:03:12:52 +0800] “HEAD / HTTP/1.1” 200 -<br>120.26.216.168 - - [12/Jun/2016:03:14:16 +0800] “HEAD / HTTP/1.1” 200 -<br>42.96.189.63 - - [12/Jun/2016:03:14:41 +0800] “HEAD / HTTP/1.1” 200 -<br>linuxdaxue.com-access_log<br>2）一次查看多个文件</p>
+<p>#less linuxdaxue.com-access_log linuxdaxue.com-error_log<br>120.26.216.168 - - [12/Jun/2016:03:09:16 +0800] “HEAD / HTTP/1.1” 200 -<br>42.96.189.63 - - [12/Jun/2016:03:09:41 +0800] “HEAD / HTTP/1.1” 200 -<br>123.56.138.37 - - [12/Jun/2016:03:12:52 +0800] “HEAD / HTTP/1.1” 200 -<br>120.26.216.168 - - [12/Jun/2016:03:14:16 +0800] “HEAD / HTTP/1.1” 200 -<br>42.96.189.63 - - [12/Jun/2016:03:14:41 +0800] “HEAD / HTTP/1.1” 200 -<br>123.56.138.37 - - [12/Jun/2016:03:17:52 +0800] “HEAD / HTTP/1.1” 200 -<br>linuxdaxue.com-access_log (file 1 of 2)<br>说明：<br>输入 ：n后，切换到linuxdaxue.com-error_log<br>输入 ：p 后，切换到linuxdaxue.com-access_log</p>
+</blockquote>
+<p>三、Linux less命令常用操作命令<br>接下来给大家介绍一些在less命令比较常用的操作命令，希望大家能够熟练掌握。<br>1）分屏导航<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">ctrl</span> + F - 向前移动一屏</div><div class="line"><span class="symbol">ctrl</span> + <span class="keyword">B </span>- 向后移动一屏</div><div class="line"><span class="symbol">ctrl</span> + D - 向前移动半屏</div><div class="line"><span class="symbol">ctrl</span> + U - 向后移动半屏</div></pre></td></tr></table></figure></p>
+<p>2）单行导航<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">j</span> - 向前移动一行</div><div class="line">k - 向后移动一行</div></pre></td></tr></table></figure></p>
+<p>3）其它导航<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">G</span> - 移动到最后一行</div><div class="line">g - 移动到第一行</div></pre></td></tr></table></figure></p>
+<p>4）其它命令<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">v - 使用配置的编辑器编辑当前文件</div><div class="line">h - 显示 <span class="keyword">less</span> 的帮助文档</div><div class="line">&amp;pattern - 仅显示匹配模式的行，而不是整个文件</div><div class="line">q / ZZ - 退出 <span class="keyword">less</span> 命令</div></pre></td></tr></table></figure></p>
+<p>5）标记导航<br>当使用 less 查看内容比较多的文件时，可以作一个标记，然后就能通过命令导航到标有特定标记的文本位置，方式如下所示：<br>ma - 使用 a 标记文本的当前位置。<br>‘a - 导航到标记 a 处<br>好了有关Linux less命令的相关内容就先为大家介绍到这里，less命令非常强大，在此只是为大家做一个简单的介绍，更熟练的掌握还需要大家的多多练习才行。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;less命令 与 more命令 非常类似，但less命令 可以更加随意地浏览文件，而且 less 在查看之前不会加载整个文件。&lt;br&gt;相比较于more命令，很多人更喜欢使用 less命令。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="//litten.me/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mongodb查询</title>
+    <link href="//litten.me/2017/07/15/20170715/"/>
+    <id>//litten.me/2017/07/15/20170715/</id>
+    <published>2017-07-15T02:36:00.000Z</published>
+    <updated>2017-07-18T14:14:23.630Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><p>当查询时同时使用sort,skip,limit，无论位置先后，最先执行顺序 sort再skip再limit。</p>
+<a id="more"></a>
+<p>想要读取从 10 条记录后 100 条记录，相当于 sql 中limit (10,100)。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">db</span><span class="selector-class">.getCollection</span>(<span class="string">'user'</span>)<span class="selector-class">.find</span><span class="selector-class">.skip</span>(<span class="number">10</span>)<span class="selector-class">.limit</span>(<span class="number">100</span>)</div></pre></td></tr></table></figure></p>
+<p>以上实例在集合中跳过前面 10 条返回 100 条数据。<br>skip 和 limit 结合就能实现分页。</p>
+<p>补充说明：<br>第一个 {} 放 where 条件，为空表示返回集合中所有文档。<br>第二个 {} 指定那些列显示和不显示 （0表示不显示 1表示显示)。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db<span class="selector-class">.col</span><span class="selector-class">.find</span>(&#123;&#125;,&#123;<span class="string">"title"</span>:<span class="number">1</span>,_id:<span class="number">0</span>&#125;).limit(<span class="number">2</span>)</div></pre></td></tr></table></figure></p>
+<h2 id="条件操作符"><a href="#条件操作符" class="headerlink" title="条件操作符"></a>条件操作符</h2><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>格式</th>
+<th>范例</th>
+<th>RDBMS中的类似语句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>等于</td>
+<td><code>{&lt;key&gt;:&lt;value&gt;}</code></td>
+<td>db.col.find({“by”:”guagua”}).pretty()</td>
+<td>where by = ‘guagua’</td>
+</tr>
+<tr>
+<td>小于</td>
+<td><code>{&lt;key&gt;:{$lt:&lt;value&gt;}}</code></td>
+<td>db.col.find({“likes”:{$lt:50}}).pretty()</td>
+<td>where likes &lt; 50</td>
+</tr>
+<tr>
+<td>小于或等于</td>
+<td><code>{&lt;key&gt;:{$lte:&lt;value&gt;}}</code></td>
+<td>db.col.find({“likes”:{$lte:50}}).pretty()</td>
+<td>where likes &lt;= 50</td>
+</tr>
+<tr>
+<td>大于</td>
+<td><code>{&lt;key&gt;:{$gt:&lt;value&gt;}}</code></td>
+<td>db.col.find({“likes”:{$gt:50}}).pretty()</td>
+<td>where likes &gt; 50</td>
+</tr>
+<tr>
+<td>大于或等于</td>
+<td><code>{&lt;key&gt;:{$gte:&lt;value&gt;}}</code></td>
+<td>db.col.find({“likes”:{$gte:50}}).pretty()</td>
+<td>where likes &gt;= 50</td>
+</tr>
+<tr>
+<td>不等于</td>
+<td><code>{&lt;key&gt;:{$ne:&lt;value&gt;}}</code></td>
+<td>db.col.find({“likes”:{$ne:50}}).pretty()</td>
+<td>where likes != 50</td>
+</tr>
+</tbody>
+</table>
+<h3 id="and"><a href="#and" class="headerlink" title="and"></a>and</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">db.col.<span class="builtin-name">find</span>(&#123;<span class="string">"by"</span>:<span class="string">"菜鸟教程"</span>, <span class="string">"title"</span>:<span class="string">"MongoDB 教程"</span>&#125;).pretty()</div><div class="line">以上实例中类似于 WHERE 语句：WHERE <span class="attribute">by</span>=<span class="string">'菜鸟教程'</span> <span class="keyword">AND</span> <span class="attribute">title</span>=<span class="string">'MongoDB 教程'</span></div></pre></td></tr></table></figure>
+<h3 id="or"><a href="#or" class="headerlink" title="or"></a>or</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">db</span><span class="selector-class">.col</span><span class="selector-class">.find</span>(</div><div class="line">   &#123;</div><div class="line">      $<span class="attribute">or</span>: [</div><div class="line">	     &#123;<span class="attribute">key1</span>: value1&#125;, &#123;<span class="attribute">key2</span>:value2&#125;</div><div class="line">      ]</div><div class="line">   &#125;</div><div class="line">)<span class="selector-class">.pretty</span>()</div></pre></td></tr></table></figure>
+<h3 id="AND-和-OR-联合使用"><a href="#AND-和-OR-联合使用" class="headerlink" title="AND 和 OR 联合使用"></a>AND 和 OR 联合使用</h3><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">以下实例演示了 <span class="keyword">AND</span> 和 <span class="keyword">OR</span> 联合使用，类似常规 SQL 语句为： <span class="string">'where likes&gt;50 AND (by = '</span>菜鸟教程<span class="string">' OR title = '</span>MongoDB 教程<span class="string">')'</span></div><div class="line"></div><div class="line">db.col.find(&#123;<span class="string">"likes"</span>: &#123;<span class="symbol">$</span><span class="keyword">gt</span>:<span class="number">50</span>&#125;, <span class="symbol">$</span><span class="keyword">or</span>: [&#123;<span class="string">"by"</span>: <span class="string">"菜鸟教程"</span>&#125;,&#123;<span class="string">"title"</span>: <span class="string">"MongoDB 教程"</span>&#125;]&#125;).pretty()</div></pre></td></tr></table></figure>
+<h3 id="大于等于小于"><a href="#大于等于小于" class="headerlink" title="大于等于小于"></a>大于等于小于</h3><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">MongoDB 使用 (&lt;) 和 (&gt;) 查询 - <span class="symbol">$</span><span class="keyword">lt</span> 和 <span class="symbol">$</span><span class="keyword">gt</span></div><div class="line">db.col.find(&#123;likes : &#123;<span class="symbol">$</span><span class="keyword">lt</span> :<span class="number">200</span>, <span class="symbol">$</span><span class="keyword">gt</span> : <span class="number">100</span>&#125;&#125;)</div><div class="line"></div><div class="line">备注：</div><div class="line"><span class="meta"><span class="meta-keyword">$gt</span> -------- greater than  &gt;</span></div><div class="line"><span class="meta"><span class="meta-keyword">$gte</span> --------- gt equal  &gt;=</span></div><div class="line"><span class="meta"><span class="meta-keyword">$lt</span> -------- less than  &lt;</span></div><div class="line"><span class="meta"><span class="meta-keyword">$lte</span> --------- lt equal  &lt;=</span></div><div class="line"><span class="meta"><span class="meta-keyword">$ne</span> ----------- not equal  !=</span></div><div class="line"><span class="meta"><span class="meta-keyword">$eq</span>  --------  equal  =</span></div></pre></td></tr></table></figure>
+<h2 id="MongoDB-排序"><a href="#MongoDB-排序" class="headerlink" title="MongoDB 排序"></a>MongoDB 排序</h2><p>sort()方法可以通过参数指定排序的字段，并使用 1 和 -1 来指定排序的方式，其中 1 为升序排列，而-1是用于降序排列。<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">以下实例演示了 <span class="keyword">col</span> 集合中的数据按字段 likes 的降序排列：</div><div class="line">db.<span class="keyword">col</span>.<span class="keyword">find</span>(&#123;&#125;,&#123;<span class="string">"title"</span>:<span class="number">1</span>,_id:<span class="number">0</span>&#125;).<span class="keyword">sort</span>(&#123;<span class="string">"likes"</span>:-<span class="number">1</span>&#125;)</div></pre></td></tr></table></figure></p>
+<h2 id="MongoDB中聚合-aggregate"><a href="#MongoDB中聚合-aggregate" class="headerlink" title="MongoDB中聚合(aggregate)"></a>MongoDB中聚合(aggregate)</h2><p>主要用于处理数据(诸如统计平均值,求和等)，并返回计算后的数据结果。有点类似sql语句中的 count(*)。<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">现在我们通过以上集合计算每个作者所写的文章数，使用aggregate()计算结果如下：</div><div class="line">&gt; db.mycol.aggregate([&#123;$group : &#123;_id : <span class="string">"$by_user"</span>, num_tutorial : &#123;$sum : <span class="number">1</span>&#125;&#125;&#125;])</div><div class="line">&#123;</div><div class="line">   <span class="string">"result"</span> : [</div><div class="line">      &#123;</div><div class="line">         <span class="string">"_id"</span> : <span class="string">"runoob.com"</span>,</div><div class="line">         <span class="string">"num_tutorial"</span> : <span class="number">2</span></div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">         <span class="string">"_id"</span> : <span class="string">"Neo4j"</span>,</div><div class="line">         <span class="string">"num_tutorial"</span> : <span class="number">1</span></div><div class="line">      &#125;</div><div class="line">   ],</div><div class="line">   <span class="string">"ok"</span> : <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$sum</td>
+<td>计算总和。</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, num_tutorial : {$sum : “$likes”}}}])</td>
+</tr>
+<tr>
+<td>$avg</td>
+<td>计算平均值</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, num_tutorial : {$avg : “$likes”}}}])</td>
+</tr>
+<tr>
+<td>$min</td>
+<td>获取集合中所有文档对应值得最小值。</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, num_tutorial : {$min : “$likes”}}}])</td>
+</tr>
+<tr>
+<td>$max</td>
+<td>获取集合中所有文档对应值得最大值。</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, num_tutorial : {$max : “$likes”}}}])</td>
+</tr>
+<tr>
+<td>$push</td>
+<td>在结果文档中插入值到一个数组中。</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, url : {$push: “$url”}}}])</td>
+</tr>
+<tr>
+<td>$addToSet</td>
+<td>在结果文档中插入值到一个数组中，但不创建副本。</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, url : {$addToSet : “$url”}}}])</td>
+</tr>
+<tr>
+<td>$first</td>
+<td>根据资源文档的排序获取第一个文档数据。</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, first_url : {$first : “$url”}}}])</td>
+</tr>
+<tr>
+<td>$last</td>
+<td>根据资源文档的排序获取最后一个文档数据</td>
+<td>db.mycol.aggregate([{$group : {_id : “$by_user”, last_url : {$last : “$url”}}}])</td>
+</tr>
+</tbody>
+</table>
+<h2 id="管道-聚合框架中常用的几个操作"><a href="#管道-聚合框架中常用的几个操作" class="headerlink" title="管道-聚合框架中常用的几个操作"></a>管道-聚合框架中常用的几个操作</h2><blockquote>
+<p>$project：修改输入文档的结构。可以用来重命名、增加或删除域，也可以用于创建计算结果以及嵌套文档。<br> $match：用于过滤数据，只输出符合条件的文档。$match使用MongoDB的标准查询操作。<br> $limit：用来限制MongoDB聚合管道返回的文档数。<br> $skip：在聚合管道中跳过指定数量的文档，并返回余下的文档。<br> $unwind：将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值。<br> $group：将集合中的文档分组，可用于统计结果。<br> $sort：将输入文档排序后输出。<br> $geoNear：输出接近某一地理位置的有序文档。</p>
+</blockquote>
+<h3 id="project"><a href="#project" class="headerlink" title="$project"></a>$project</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">这样的话结果中就只还有<span class="selector-tag">_id</span>,<span class="selector-tag">tilte</span>和<span class="selector-tag">author</span>三个字段了，默认情况下<span class="selector-tag">_id</span>字段是被包含的，填<span class="selector-tag">0</span>。。<span class="selector-tag">1</span>是显示，<span class="selector-tag">0</span>是隐藏</div><div class="line"> <span class="selector-tag">db</span><span class="selector-class">.getCollection</span>(<span class="string">'user'</span>)<span class="selector-class">.aggregate</span>(</div><div class="line">     &#123; $<span class="attribute">project </span>: &#123;</div><div class="line">         <span class="attribute">id </span>: <span class="number">1</span> ,</div><div class="line">         <span class="attribute">deleted </span>: <span class="number">1</span> ,</div><div class="line">     &#125;&#125;</div><div class="line">  );</div></pre></td></tr></table></figure>
+<h3 id="match实例"><a href="#match实例" class="headerlink" title="$match实例"></a>$match实例</h3><blockquote>
+<p>$match用于获取id=0,username不等于guagua记录，然后将符合条件的记录送到下一阶段$group管道操作符进行处理。<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">db.getCollection(<span class="string">'user'</span>).aggregate( [</div><div class="line">                        &#123; $match : &#123; id : &#123; $eq : <span class="number">0</span>&#125; , username:&#123; $ne : <span class="string">'guagua'</span> &#125; &#125; &#125;,</div><div class="line">                        &#123;$group : &#123;_id : <span class="string">"$username"</span>, gua : &#123;$sum : <span class="string">'$updated_time'</span>&#125;&#125;&#125;</div><div class="line">                       ] );</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="skip实例"><a href="#skip实例" class="headerlink" title="$skip实例"></a>$skip实例</h3><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">db.getCollection(<span class="string">'user'</span>).aggregate(&#123;$skip : <span class="number">2</span>&#125;)</div><div class="line">经过$skip管道操作符处理后，前<span class="number">2</span>个文档被<span class="string">"过滤"</span>掉</div></pre></td></tr></table></figure>
+<h2 id="在后台创建索引："><a href="#在后台创建索引：" class="headerlink" title="在后台创建索引："></a>在后台创建索引：</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">db</span><span class="selector-class">.values</span><span class="selector-class">.ensureIndex</span>(&#123;<span class="attribute">open</span>: <span class="number">1</span>, close: <span class="number">1</span>&#125;, &#123;<span class="attribute">background</span>: true&#125;)</div></pre></td></tr></table></figure>
+<h2 id="MongoDB-自动增长"><a href="#MongoDB-自动增长" class="headerlink" title="MongoDB 自动增长"></a>MongoDB 自动增长</h2><p>创建 Javascript 函数<br><code>db.counters.insert({_id:&quot;gua&quot;,sequence_value:0})</code><br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> getNextSequenceValue(sequenceName)&#123;</div><div class="line">   var sequenceDocument = db.counters.findAndModify(</div><div class="line">      &#123;</div><div class="line">         query:&#123;_id: sequenceName &#125;,</div><div class="line">         update: &#123;$inc:&#123;sequence_value:<span class="number">1</span>&#125;&#125;,</div><div class="line">         new:true</div><div class="line">      &#125;);</div><div class="line">   return sequenceDocument.sequence_value;</div><div class="line">&#125;</div><div class="line"></div><div class="line">db.counters.<span class="keyword">insert</span>(&#123;</div><div class="line">   <span class="string">"_id"</span>:getNextSequenceValue(<span class="string">"gua"</span>),</div><div class="line">   <span class="string">"product_name"</span>:<span class="string">"Apple iPhone"</span>,</div><div class="line">   <span class="string">'test'</span>:<span class="string">'guaguagua'</span>&#125;)</div></pre></td></tr></table></figure></p>
+<h2 id="type-操作符"><a href="#type-操作符" class="headerlink" title="$type 操作符"></a>$type 操作符</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>数字</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Double</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>String</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>Object</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>Array</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>Binary data</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>Undefined</td>
+<td>6</td>
+<td>已废弃。</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>id</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>Date</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>Null</td>
+<td>10</td>
+<td></td>
+</tr>
+<tr>
+<td>Regular Expression</td>
+<td>11</td>
+<td></td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>13</td>
+<td></td>
+</tr>
+<tr>
+<td>Symbol</td>
+<td>14</td>
+<td></td>
+</tr>
+<tr>
+<td>JavaScript (with scope)</td>
+<td>15</td>
+<td></td>
+</tr>
+<tr>
+<td>32-bit integer</td>
+<td>16</td>
+<td></td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>17</td>
+<td></td>
+</tr>
+<tr>
+<td>64-bit integer</td>
+<td>18</td>
+<td></td>
+</tr>
+<tr>
+<td>Min key</td>
+<td>255</td>
+<td>Query with -1.</td>
+</tr>
+<tr>
+<td>Max key</td>
+<td>127</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">如果想获取 <span class="string">"col"</span> 集合中 title 为 String 的数据，你可以使用以下命令：</div><div class="line">db<span class="selector-class">.col</span><span class="selector-class">.find</span>(&#123;<span class="string">"title"</span> : &#123;<span class="variable">$type</span> : <span class="number">2</span>&#125;&#125;)</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;分页&quot;&gt;&lt;a href=&quot;#分页&quot; class=&quot;headerlink&quot; title=&quot;分页&quot;&gt;&lt;/a&gt;分页&lt;/h3&gt;&lt;p&gt;当查询时同时使用sort,skip,limit，无论位置先后，最先执行顺序 sort再skip再limit。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="//litten.me/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>BBR加速</title>
