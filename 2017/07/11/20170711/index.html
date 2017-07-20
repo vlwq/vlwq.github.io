@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>Andrew的博客</title>
+  <title>ES6特性 | Andrew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="此为博客一枚。">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Andrew的博客">
-<meta property="og:url" content="//litten.me/page/6/index.html">
+  <meta name="description" content="ES6特性如下： 1.块级作用域 关键字let, 常量const 2.对象字面量的属性赋值简写（property value shorthand）">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6特性">
+<meta property="og:url" content="//litten.me/2017/07/11/20170711/index.html">
 <meta property="og:site_name" content="Andrew的博客">
-<meta property="og:description" content="此为博客一枚。">
+<meta property="og:description" content="ES6特性如下： 1.块级作用域 关键字let, 常量const 2.对象字面量的属性赋值简写（property value shorthand）">
+<meta property="og:updated_time" content="2017-07-20T13:12:44.931Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Andrew的博客">
-<meta name="twitter:description" content="此为博客一枚。">
+<meta name="twitter:title" content="ES6特性">
+<meta name="twitter:description" content="ES6特性如下： 1.块级作用域 关键字let, 常量const 2.对象字面量的属性赋值简写（property value shorthand）">
   
     <link rel="alternative" href="/atom.xml" title="Andrew的博客" type="application/atom+xml">
   
@@ -147,34 +148,90 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-20161101" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-20170711" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/01/20161101/">gua.js</a>
+    <h1 class="article-title" itemprop="name">
+      ES6特性
     </h1>
   
 
         
-        <a href="/2016/11/01/20161101/" class="archive-article-date">
-  	<time datetime="2016-11-01T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-01</time>
+        <a href="/2017/07/11/20170711/" class="archive-article-date">
+  	<time datetime="2017-07-11T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> log = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log.apply(<span class="built_in">console</span>, <span class="built_in">arguments</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> e = <span class="function"><span class="keyword">function</span>(<span class="params">selector</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">document</span>.querySelector(selector)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> es = <span class="function"><span class="keyword">function</span> (<span class="params">selector</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">document</span>.querySelectorAll(selector)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2016/11/01/20161101/#more">more >></a>
-        
+        <p>ES6特性如下：</p>
+<p>1.块级作用域 关键字let, 常量const</p>
+<p>2.对象字面量的属性赋值简写（property value shorthand）</p>
+<a id="more"></a>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="comment">// __proto__</span></div><div class="line">    __proto__: theProtoObj,</div><div class="line">    <span class="comment">// Shorthand for ‘handler: handler’</span></div><div class="line">    handler,</div><div class="line">    <span class="comment">// Method definitions</span></div><div class="line">    toString() &#123;</div><div class="line">    <span class="comment">// Super calls</span></div><div class="line">    <span class="keyword">return</span> <span class="string">"d "</span> + <span class="keyword">super</span>.toString();</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// Computed (dynamic) property names</span></div><div class="line">    [ <span class="string">'prop_'</span> + <span class="function">(<span class="params">(<span class="params"></span>) =&gt; 42</span>)<span class="params">()</span> ]: 42</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>3.赋值解构<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="attr">singer</span> = &#123; first: <span class="string">"Bob"</span>, last: <span class="string">"Dylan"</span> &#125;;</div><div class="line"><span class="keyword">let</span> &#123; first: f, last: l &#125; = singer; // 相当于 <span class="attr">f</span> = <span class="string">"Bob"</span>, <span class="attr">l</span> = <span class="string">"Dylan"</span></div><div class="line"><span class="keyword">let</span> [all, year, month, day] =  /^(\d\d\d\d)-(\d\d)-(\d\d)$/.exec(<span class="string">"2015-10-25"</span>);</div><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; // <span class="attr">x</span> = <span class="number">1</span>, <span class="attr">y</span> = <span class="number">2</span></div></pre></td></tr></table></figure></p>
+<p>4.函数参数 - 默认值、参数打包、 数组展开（Default 、Rest 、Spread）</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Default</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findArtist</span><span class="params">(name=<span class="string">'lu'</span>, age=<span class="string">'26'</span>)</span> </span>&#123;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line"><span class="comment">//Rest</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(x, <span class="rest_arg">...y</span>)</span> </span>&#123;</div><div class="line">  <span class="comment">// y is an Array</span></div><div class="line">  <span class="keyword">return</span> x * y.length;</div><div class="line">&#125;</div><div class="line">f(<span class="number">3</span>, <span class="string">"hello"</span>, <span class="literal">true</span>) == <span class="number">6</span></div><div class="line"></div><div class="line"><span class="comment">//Spread</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(x, y, z)</span> </span>&#123;</div><div class="line">  <span class="keyword">return</span> x + y + z;</div><div class="line">&#125;</div><div class="line"><span class="comment">// Pass each elem of array as argument</span></div><div class="line">f(...[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) == <span class="number">6</span></div></pre></td></tr></table></figure>
+<p>5.箭头函数 Arrow functions</p>
+<p>(1).简化了代码形式，默认return表达式结果。</p>
+<p>(2).自动绑定语义this，即定义函数时的this。如上面例子中，forEach的匿名函数参数中用到的this。</p>
+<p>6.字符串模板 Template strings<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"Bob"</span>, time = <span class="string">"today"</span>;</div><div class="line"><span class="string">`Hello <span class="subst">$&#123;name&#125;</span>, how are you <span class="subst">$&#123;time&#125;</span>?`</span></div><div class="line"><span class="comment">// return "Hello Bob, how are you today?"</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>Iterators（迭代器）+ for..of</li>
+</ol>
+<p>迭代器有个next方法，调用会返回：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(<span class="number">1</span>).返回迭代对象的一个元素：&#123; <span class="string">done:</span> <span class="literal">false</span>, <span class="string">value:</span> elem &#125;</div><div class="line"></div><div class="line">(<span class="number">2</span>).如果已到迭代对象的末端：&#123; <span class="string">done:</span> <span class="literal">true</span>, <span class="string">value:</span> retVal &#125;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (var n of [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]) &#123;</div><div class="line">  console.log(n);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 打印a、b、c</span></div></pre></td></tr></table></figure></p>
+<p>8.生成器 （Generators）</p>
+<p>9.Class</p>
+<p>Class，有constructor、extends、super，但本质上是语法糖（对语言的功能并没有影响，但是更方便程序员使用）。</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Artist</span> </span>&#123;</div><div class="line">    constructor(name) &#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    perform() &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="string">" performs "</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singer</span> <span class="keyword">extends</span> <span class="title">Artist</span> </span>&#123;</div><div class="line"></div><div class="line">    constructor(name, song) &#123;</div><div class="line">        <span class="keyword">super</span>.constructor(name);</div><div class="line">        <span class="keyword">this</span>.song = song;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    perform() &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.perform() + <span class="string">"["</span> + <span class="keyword">this</span>.song + <span class="string">"]"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">let james = <span class="keyword">new</span> <span class="type">Singer</span>(<span class="string">"Etta James"</span>, <span class="string">"At last"</span>);</div><div class="line">james instanceof <span class="type">Artist</span>; <span class="comment">// true</span></div><div class="line">james instanceof <span class="type">Singer</span>; <span class="comment">// true</span></div><div class="line"></div><div class="line">james.perform(); <span class="comment">// "Etta James performs [At last]"</span></div></pre></td></tr></table></figure>
+<p>10.Modules</p>
+<p>ES6的内置模块功能借鉴了CommonJS和AMD各自的优点：</p>
+<p>(1).具有CommonJS的精简语法、唯一导出出口(single exports)和循环依赖(cyclic dependencies)的特点。</p>
+<p>(2).类似AMD，支持异步加载和可配置的模块加载。</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// lib/math.js</span></div><div class="line">export function <span class="keyword">sum</span>(x, y) &#123;</div><div class="line">  return x + y;</div><div class="line">&#125;</div><div class="line">export var <span class="built-in">pi</span> = <span class="number">3.141593</span>;</div><div class="line"></div><div class="line"><span class="comment">// app.js</span></div><div class="line">import * as math from <span class="string">"lib/math"</span>;</div><div class="line">alert(<span class="string">"2π = "</span> + math.<span class="keyword">sum</span>(math.<span class="built-in">pi</span>, math.<span class="built-in">pi</span>));</div><div class="line"></div><div class="line"><span class="comment">// otherApp.js</span></div><div class="line">import &#123;<span class="keyword">sum</span>, <span class="built-in">pi</span>&#125; from <span class="string">"lib/math"</span>;</div><div class="line">alert(<span class="string">"2π = "</span> + <span class="keyword">sum</span>(<span class="built-in">pi</span>, <span class="built-in">pi</span>));</div><div class="line"></div><div class="line">Module Loaders:</div><div class="line"><span class="comment">// Dynamic loading – ‘System’ is default loader</span></div><div class="line"><span class="keyword">System</span>.import(<span class="string">'lib/math'</span>).<span class="keyword">then</span>(function(m) &#123;</div><div class="line">  alert(<span class="string">"2π = "</span> + m.<span class="keyword">sum</span>(m.<span class="built-in">pi</span>, m.<span class="built-in">pi</span>));</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Directly manipulate module cache</span></div><div class="line"><span class="keyword">System</span>.get(<span class="string">'jquery'</span>);</div><div class="line"><span class="keyword">System</span>.set(<span class="string">'jquery'</span>, Module(&#123;<span class="symbol">$</span>: <span class="symbol">$</span>&#125;)); <span class="comment">// WARNING: not yet finalized</span></div></pre></td></tr></table></figure>
+<p>11.Map + Set + WeakMap + WeakSet</p>
+<p>四种集合类型，WeakMap、WeakSet作为属性键的对象如果没有别的变量在引用它们，则会被回收释放掉。</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Sets</span></div><div class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> Set();</div><div class="line">s.<span class="keyword">add</span>(<span class="string">"hello"</span>).<span class="keyword">add</span>(<span class="string">"goodbye"</span>).<span class="keyword">add</span>(<span class="string">"hello"</span>);</div><div class="line">s.size === <span class="number">2</span>;</div><div class="line">s.has(<span class="string">"hello"</span>) === <span class="literal">true</span>;</div><div class="line"></div><div class="line"><span class="comment">// Maps</span></div><div class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> Map();</div><div class="line">m.<span class="keyword">set</span>(<span class="string">"hello"</span>, <span class="number">42</span>);</div><div class="line">m.<span class="keyword">set</span>(s, <span class="number">34</span>);</div><div class="line">m.<span class="keyword">get</span>(s) == <span class="number">34</span>;</div><div class="line"></div><div class="line"><span class="comment">//WeakMap</span></div><div class="line"><span class="keyword">var</span> wm = <span class="keyword">new</span> WeakMap();</div><div class="line">wm.<span class="keyword">set</span>(s, &#123; extra: <span class="number">42</span> &#125;);</div><div class="line">wm.size === undefined</div><div class="line"></div><div class="line"><span class="comment">// Weak Sets</span></div><div class="line"><span class="keyword">var</span> ws = <span class="keyword">new</span> WeakSet();</div><div class="line">ws.<span class="keyword">add</span>(&#123; data: <span class="number">42</span> &#125;);<span class="comment">//Because the added object has no other references, it will not be held in the set</span></div></pre></td></tr></table></figure>
+<p>12.Math + Number + String + Array + Object APIs</p>
+<p>一些新的API</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Number</span>.EPSILON</div><div class="line"><span class="built_in">Number</span>.isInteger(<span class="literal">Infinity</span>) <span class="comment">// false</span></div><div class="line"><span class="built_in">Number</span>.isNaN(<span class="string">"NaN"</span>) <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="built_in">Math</span>.acosh(<span class="number">3</span>) <span class="comment">// 1.762747174039086</span></div><div class="line"><span class="built_in">Math</span>.hypot(<span class="number">3</span>, <span class="number">4</span>) <span class="comment">// 5</span></div><div class="line"><span class="built_in">Math</span>.imul(<span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">32</span>) - <span class="number">1</span>, <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">32</span>) - <span class="number">2</span>) <span class="comment">// 2</span></div><div class="line"></div><div class="line"><span class="string">"abcde"</span>.includes(<span class="string">"cd"</span>) <span class="comment">// true</span></div><div class="line"><span class="string">"abc"</span>.repeat(<span class="number">3</span>) <span class="comment">// "abcabcabc"</span></div><div class="line"></div><div class="line"><span class="built_in">Array</span>.from(<span class="built_in">document</span>.querySelectorAll(<span class="string">'*'</span>)) <span class="comment">// Returns a real Array</span></div><div class="line"><span class="built_in">Array</span>.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>) <span class="comment">// Similar to new Array(...), but without special one-arg behavior</span></div><div class="line"></div><div class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>].fill(<span class="number">7</span>, <span class="number">1</span>) <span class="comment">// [0,7,7]</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].find(<span class="function"><span class="params">x</span> =&gt;</span> x == <span class="number">3</span>) <span class="comment">// 3</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].findIndex(<span class="function"><span class="params">x</span> =&gt;</span> x == <span class="number">2</span>) <span class="comment">// 1</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>].copyWithin(<span class="number">3</span>, <span class="number">0</span>) <span class="comment">// [1, 2, 3, 1, 2]</span></div><div class="line">[<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>].entries() <span class="comment">// iterator [0, "a"], [1,"b"], [2,"c"]</span></div><div class="line">[<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>].keys() <span class="comment">// iterator 0, 1, 2</span></div><div class="line">[<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>].values() <span class="comment">// iterator "a", "b", "c"</span></div><div class="line"></div><div class="line"><span class="built_in">Object</span>.assign(Point, &#123; <span class="attr">origin</span>: <span class="keyword">new</span> Point(<span class="number">0</span>,<span class="number">0</span>) &#125;)</div></pre></td></tr></table></figure>
+<ol>
+<li>Proxies</li>
+</ol>
+<p>使用代理（Proxy）监听对象的操作，然后可以做一些相应事情。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> target = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> handler = &#123;</div><div class="line">  <span class="keyword">get</span>: <span class="function"><span class="keyword">function</span> (<span class="params">receiver, name</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>!`</span>;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Proxy(target, handler);</div><div class="line">p.world === <span class="string">'Hello, world!'</span>;</div><div class="line"></div><div class="line">可监听的操作： <span class="keyword">get</span>、<span class="keyword">set</span>、has、deleteProperty、apply、construct、getOwnPropertyDescriptor、defineProperty、getPrototypeOf、setPrototypeOf、enumerate、ownKeys、preventExtensions、isExtensible。</div></pre></td></tr></table></figure>
+<p>14.Symbols</p>
+<p>Symbol是一种基本类型。Symbol 通过调用symbol函数产生，它接收一个可选的名字参数，该函数返回的symbol是唯一的。<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> key = <span class="built_in">Symbol</span>(<span class="string">"key"</span>);</div><div class="line"><span class="keyword">var</span> key2 = <span class="built_in">Symbol</span>(<span class="string">"key"</span>);</div><div class="line">key == key2  <span class="comment">//false</span></div></pre></td></tr></table></figure></p>
+<p>15.Promises</p>
+<p>Promises是处理异步操作的对象，使用了 Promise 对象之后可以用一种链式调用的方式来组织代码，让代码更加直观（类似jQuery的deferred 对象）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fakeAjax</span>(<span class="params">url</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">    <span class="comment">// setTimeouts are for effect, typically we would handle XHR</span></div><div class="line">    <span class="keyword">if</span> (!url) &#123;</div><div class="line">      <span class="keyword">return</span> setTimeout(reject, <span class="number">1000</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> setTimeout(resolve, <span class="number">1000</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// no url, promise rejected</span></div><div class="line">fakeAjax().then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'success'</span>);</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'fail'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
       
 
+      
+<!--        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>-->
       
     </div>
     <div class="article-info article-info-index">
@@ -185,7 +242,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">guagua</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -194,477 +251,94 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/01/20161101/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwUlEQVR42u3aQWrEMAwF0Ln/pVPoqlASviTbhOF5VSZp/JyFib78+cTj+h3PV//e8//+5J5lAxcXd8y9Hkd+z93ynp9Zfj4uLu5BbjJlbwt7fjW5ARcX953cu80l2YDunoaLi/sd3GTKavGDi4v7Tm5S/MxjlKO1Gi4u7oBbnX7H3xvzXVxc3CL3WjSqhVBvdlxc3DPcSfyRb3nJkgpxCS4u7mZu3kztlSvJ/ybLwMXFPc/NS5FeOFJ9Kbcz4uLiHuHOG6tnmrW3aFxc3M3cpEVa3dTypVY3OFxc3H3c5gGIYkSSxyujN4qLi7uIWw048qvV0qhwFRcX9wi3F23k5c3GWg0XF3cDd1XkMWmZ5L/g4uKe5yaN0gVTtuISXFzck9xeQdL79OmFJoX3jYuLu4g7CSZ6TdbnoLZZ/ODi4i7l5iFI8vuy0DNu8+Di4u7gXsWRBx/5kY7CdomLi3uEO9lWqjFosuxJyxYXF3ctt3r8Yi0xCU+bDRVcXNwxdxKP9j6Aml0SXFzcV3LzxSTc8lVcXNyXcXvbVu+Ixqe6Plxc3A3cXvEzeWYzHMHFxT3C7W12zx898wMcy/JdXFzcGvcHhTu+VcBv2esAAAAASUVORK5CYII=" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
   
-    <article id="post-20161006" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/06/20161006/">2017年房价?</a>
-    </h1>
+    <a href="/2017/07/15/20170715/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          mongodb查询
+        
+      </div>
+    </a>
   
-
-        
-        <a href="/2016/10/06/20161006/" class="archive-article-date">
-  	<time datetime="2016-10-06T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一苒说：2017年，房价的拐点是不是到了？</p>
-<p>首先声明，本文只是一个房地产业外人士的个人观点，很可能不够正确和严谨。<br>其次声明，绝非房地产楼盘或者中介广告——没有广告文章里，是唱衰房价的。<br>我也不会从Wind平台上拉一堆数据，或者引用一堆券商的PPT。整的看起来像那么回事，跟所有招摇撞骗的分析报告一样：形式严重大于内容，只有分析没有观点，只有人云亦云，没有对事物本质的思考。<br>
-        
-          <a class="article-more-a" href="/2016/10/06/20161006/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">金融</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/06/20161006/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+  
+    <a href="/2017/07/10/20170710/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BBR加速</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
 
 
   
-    <article id="post-20161005" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/05/20161005/">差距</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/05/20161005/" class="archive-article-date">
-  	<time datetime="2016-10-05T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>其实差别在上高中的时候就产生了。</p>
-<p>到了高二文理分科的时候，其实就是一个人生的选择转折点。</p>
-<p>因为从那个时候，摆在你面前的是一条又一条的十字路口。</p>
-<p>前十几年不可改变的生活背景，教育方式和水平，以及生活重心慢慢发生改变。</p>
-<p>人生的方向盘慢慢转交到了自己的手上。</p>
-<p>那个时候还是一脸天真，未谙世事的学生。哪里知道以后生活的路呢？</p>
-<p>但是作为一个典型的危机主义者，对未来充满曙光的同时也就会有巨大的压力。</p>
-<p>排解压力的方式也就是跟身边的好朋友谈想法谈未来。</p>
-        
-          <a class="article-more-a" href="/2016/10/05/20161005/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">自我</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/05/20161005/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
 
   
-    <article id="post-20161001" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/01/20161001/">能得到锻炼能力的机会</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/01/20161001/" class="archive-article-date">
-  	<time datetime="2016-10-01T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>“能得到锻炼能力的机会”本身就是一项极其稀缺的资源。没有锻炼的机会，你就算本身有天分也够努力，但没用，你得不到外界的营养，就会长得慢。</p>
-<p>为什么有的宝宝长得强壮，有的宝宝长得孱弱？妈妈们会告诉你“营养摄入”的区别。<br>为什么森林里有的树木长得高大，有的树木萎靡？因为有的树木得到了阳光，肥沃的土壤，有的树木得不到阳光，阳光被其他树木抢去了。</p>
-        
-          <a class="article-more-a" href="/2016/10/01/20161001/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">职场</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/01/20161001/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
 
   
-    <article id="post-20150921" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/21/20150921/">毕业一年</a>
-    </h1>
-  
 
-        
-        <a href="/2016/09/21/20150921/" class="archive-article-date">
-  	<time datetime="2016-09-21T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/assets/blogImg/diary-16.jpg" alt=""></p>
-<p>毕业接触社会是人生的又一次挑战。不论你的大学是如何度过的，成绩好坏，有无社会经验，是否准备充分以及是否愿意，在毕业的那一刻，你都将进入一个陌生的领域开始一段全新的人生旅程，并且你很可能再也回不到身后的象牙塔里去了。从此，无论前方是风霜雨雪，还是晴空暖阳，是陷阱沟壑，还是坦途平原，你都得坚持走下去。</p>
-<p>希望你能有这样的心理准备：接下来要走的路，要打交道的人和组织、要经历的事以及评判你的标准，都将和你人生前20多年的经历完全不同，你将会亲眼目睹亲身体验这世界的现实和残酷，承担责任，接受挑战。</p>
-<p>除非你有特殊的人生选择，否则进入社会将与未来要经历的择偶、结婚、生育等一样都是这辈子的大事。你得认真面对问题和处理事情，不能再稀里糊涂的混日子。如果你不是富二代或官二代，那以后的日子基本得靠你自己了。</p>
-<p>这样挺好，你的人生终于开始动真格的了。</p>
-        
-          <a class="article-more-a" href="/2016/09/21/20150921/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">自我</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/21/20150921/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-20160920" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/20/20160920/">结束了把</a>
-    </h1>
-  
-
-        
-        <a href="/2016/09/20/20160920/" class="archive-article-date">
-  	<time datetime="2016-09-20T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=694286&auto=0&height=66"></iframe>
-
-
-<p>金也空，银也空，死后何曾握手中。<br>妻也空，子也空，黄泉路上不相逢。<br>权也空，名也空，转眼荒郊土一封。<br>田也空，屋也空，换了多少主人翁。<br>爱也空，恨也空，人生陌路不相逢。<br>喜也空，悲也空，无非都是在梦中。</p>
-        
-          <a class="article-more-a" href="/2016/09/20/20160920/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">旧事</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/20/20160920/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-20150901" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/01/20150901/">实体凋敝，金融暴走</a>
-    </h1>
-  
-
-        
-        <a href="/2016/09/01/20150901/" class="archive-article-date">
-  	<time datetime="2016-09-01T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作者：neo anderson<br>链接：实体凋敝，金融暴走 - 卢瑟经济学 - 知乎专栏<br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-<p>今年年初写的一篇旧文，现在看基本都在按照预期运动。</p>
-<p>（一）双重危机</p>
-<p>如果以财富衡量，人类社会可能是唯一熵减的系统。市场经济中，唯一可以确定的是马太效应，即财富是单向汇聚的，一切经济问题由此产生。由于财富单向汇聚，社会形成金字塔结构。</p>
-<p>这种结构注定对应大量产品滞销，大批债务无法偿还。</p>
-<p>金子塔顶层拥有大量财富，撑的要吐，有能力消费没需求，消费不足。底层的收入被压到最低，饿得要死，有欲望需求没支付能力，也是消费不足。金字塔两端都消费不足，对应的必然是大量产品滞销，产能过剩。</p>
-<p>产能过剩，对应大批工人的劳动力滞销。他们的产品没人要，他们的劳动力自然没人要。于是，企业处于破产、停产、半停产状态，他们处于失业、半失业、放长假的状态。</p>
-<p>这是表现在产能和就业上的现象。</p>
-<p>多说一句，一些企业靠贷款维持最基本的运转，这些企业就成了“僵尸企业”。这些企业的工人，被扣上懒汉的帽子。</p>
-        
-          <a class="article-more-a" href="/2016/09/01/20150901/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">金融</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/01/20150901/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-20150823" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/23/20150823/">别给自己找借口</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/23/20150823/" class="archive-article-date">
-  	<time datetime="2016-08-23T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我经常能收到各种回复、提问、私信，有五种我不会回答，有这五种思维的人在现实生活中，我也会尽量远离，这是我爸活着的时候教我的。后来我一位广东朋友跟我说，这不是我爸一个人悟出来的，这是一种在他们那边流传很久的智慧，用广东话讲“费神教会你”。</p>
-        
-          <a class="article-more-a" href="/2016/08/23/20150823/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">旧事</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/23/20150823/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -687,8 +361,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

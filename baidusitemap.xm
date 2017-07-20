@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>//litten.me/2017/07/11/20170711/</loc>
+    <lastmod>2017-07-20T13:12:44.931Z</lastmod>
+    <data>
+        <display>
+        <title>ES6特性</title>
+        <pubTime>2017-07-11T02:36:00.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2017/07/15/20170715/</loc>
     <lastmod>2017-07-18T15:29:56.823Z</lastmod>
     <data>
