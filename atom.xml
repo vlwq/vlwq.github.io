@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//litten.me/"/>
-  <updated>2017-07-18T12:23:39.095Z</updated>
+  <updated>2017-07-22T14:02:50.708Z</updated>
   <id>//litten.me/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>异步同步</title>
+    <link href="//litten.me/2017/07/20/20170720/"/>
+    <id>//litten.me/2017/07/20/20170720/</id>
+    <published>2017-07-20T02:36:00.000Z</published>
+    <updated>2017-07-22T14:02:50.708Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doExe = <span class="function"><span class="keyword">function</span> (<span class="params">a, callback</span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a)</div><div class="line">        <span class="keyword">if</span> (callback) &#123;</div><div class="line">            callback()</div><div class="line">        &#125;</div><div class="line">    &#125;, <span class="number">100</span> * <span class="built_in">Math</span>.random())</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> gua = <span class="function"><span class="keyword">function</span> (<span class="params">max</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> aTest = <span class="function"><span class="keyword">function</span> (<span class="params">index</span>) </span>&#123;</div><div class="line">        doExe(index, () =&gt; &#123;</div><div class="line">            index &lt; max &amp;&amp; aTest(++index)</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> aTest(<span class="number">0</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">gua(<span class="number">10</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doExe = <span class="function"><span class="keyword">function</span> (<span class="params">a, callback</span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a)</div><div class="line">        <span class="keyword">if</span> (callback) &#123;</div><div class="line">            callback()</div><div class="line">        &#125;</div><div class="line">    &#125;, <span class="number">100</span> * <span class="built_in">Math</span>.random())</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> guaTest =   <span class="function"><span class="keyword">function</span> (<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i&lt;num ; i++)&#123;</div><div class="line">        (<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</div><div class="line">            setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                doExe(i)</div><div class="line">            &#125;, <span class="number">1000</span> * i)</div><div class="line">        &#125;)(i)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">guaTest(<span class="number">10</span>)</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;
+    
+    </summary>
+    
+    
+      <category term="js" scheme="//litten.me/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>less命令</title>

@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>Tag: 鸡汤 | Andrew的博客</title>
+  <title>异步同步 | Andrew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="此为博客一枚。">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Andrew的博客">
-<meta property="og:url" content="//litten.me/tags/鸡汤/index.html">
+  <meta name="description" content="12345678910111213141516171819var doExe = function (a, callback) &amp;#123;    setTimeout(function () &amp;#123;        console.log(a)        if (callback) &amp;#123;            callback()        &amp;#125;    &amp;#125;">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异步同步">
+<meta property="og:url" content="//litten.me/2017/07/20/20170720/index.html">
 <meta property="og:site_name" content="Andrew的博客">
-<meta property="og:description" content="此为博客一枚。">
+<meta property="og:description" content="12345678910111213141516171819var doExe = function (a, callback) &amp;#123;    setTimeout(function () &amp;#123;        console.log(a)        if (callback) &amp;#123;            callback()        &amp;#125;    &amp;#125;">
+<meta property="og:updated_time" content="2017-07-22T14:02:50.708Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Andrew的博客">
-<meta name="twitter:description" content="此为博客一枚。">
+<meta name="twitter:title" content="异步同步">
+<meta name="twitter:description" content="12345678910111213141516171819var doExe = function (a, callback) &amp;#123;    setTimeout(function () &amp;#123;        console.log(a)        if (callback) &amp;#123;            callback()        &amp;#125;    &amp;#125;">
   
     <link rel="alternative" href="/atom.xml" title="Andrew的博客" type="application/atom+xml">
   
@@ -147,98 +148,151 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-20170720" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/07/25/20160822/" class="archive-article-date">
-  	<time datetime="2016-07-25T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/25/20160822/">25岁前你必须要做完的7件事</a>
+    <h1 class="article-title" itemprop="name">
+      异步同步
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/20/20170720/" class="archive-article-date">
+  	<time datetime="2017-07-20T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doExe = <span class="function"><span class="keyword">function</span> (<span class="params">a, callback</span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a)</div><div class="line">        <span class="keyword">if</span> (callback) &#123;</div><div class="line">            callback()</div><div class="line">        &#125;</div><div class="line">    &#125;, <span class="number">100</span> * <span class="built_in">Math</span>.random())</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> gua = <span class="function"><span class="keyword">function</span> (<span class="params">max</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> aTest = <span class="function"><span class="keyword">function</span> (<span class="params">index</span>) </span>&#123;</div><div class="line">        doExe(index, () =&gt; &#123;</div><div class="line">            index &lt; max &amp;&amp; aTest(++index)</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> aTest(<span class="number">0</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">gua(<span class="number">10</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doExe = <span class="function"><span class="keyword">function</span> (<span class="params">a, callback</span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a)</div><div class="line">        <span class="keyword">if</span> (callback) &#123;</div><div class="line">            callback()</div><div class="line">        &#125;</div><div class="line">    &#125;, <span class="number">100</span> * <span class="built_in">Math</span>.random())</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> guaTest =   <span class="function"><span class="keyword">function</span> (<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i&lt;num ; i++)&#123;</div><div class="line">        (<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</div><div class="line">            setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                doExe(i)</div><div class="line">            &#125;, <span class="number">1000</span> * i)</div><div class="line">        &#125;)(i)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">guaTest(<span class="number">10</span>)</div></pre></td></tr></table></figure>
+      
+
+      
+<!--        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>-->
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">鸡汤</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzElEQVR42u3aS46DQAwFQO5/6RlpthH0s/sTRipWkUKgyMIyz76u+Pj5Oz4/3515d3yec+04cHFxp7n5De5+9Xy157vkBlxc3PPcpHjlxeiZkhdHXFzc93Orj5R0Kbi4uP+dm5Sn5Mpfrru4uLgxt/dyUi1MeRu04F0NFxd3gjsTmK76fCjfxcXFnZ5KzMQZSeNSvjsuLu4R7vOYJIkzZoKPZpOEi4t7hFsdfjQLUDEuGfw1uLi4m7nVGLRatpJxy/N9b1scXFzcbdxqCFIdkVaXt6rtFC4u7m5uFVp9NeqVsEJfhouLu4jbKyVr49TCeBUXF3czN29Z5puemRKJi4t7kttbsOiVp+oVBgURFxd3M3cm0MzXNZJvcXFx38BNhha9sUrvJWcwSsHFxT3CzYOMmYWJxcMYXFzczdzeElV1HJKDBqUNFxf3ILcajiQRRl6qCitfuLi4B7n50Vuq6DVGV17zcHFxl3KrBaUHTX6bl1RcXNwz3Hwckgeg1faoMIjFxcU9yM0XKWbWqqrnDPJdXFzcF3ALo9DWHxG9PuHi4r6SW/02iVbzx8DFxT3J7a1MbQGtikVwcXEnuL3ANEfka1vVyBUXF3cD9xeC0uceBf+BmgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/01/20151001/" class="archive-article-date">
-  	<time datetime="2016-01-01T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-01</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/01/20151001/">鸡汤</a>
-    </h1>
+  
+    <a href="/2017/07/18/20170718/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">less命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">鸡汤</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -261,9 +315,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

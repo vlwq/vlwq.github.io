@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>//litten.me/2017/07/20/20170720/</loc>
+    <lastmod>2017-07-22T14:02:50.708Z</lastmod>
+    <data>
+        <display>
+        <title>异步同步</title>
+        <pubTime>2017-07-20T02:36:00.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2017/07/11/20170711/</loc>
     <lastmod>2017-07-20T13:12:44.931Z</lastmod>
     <data>

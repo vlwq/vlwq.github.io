@@ -149,6 +149,67 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-20170225" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/25/20170225/">nginx配置静态网页</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/25/20170225/" class="archive-article-date">
+  	<time datetime="2017-02-25T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>负载均衡<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">upstream</span> bbs &#123;</div><div class="line">       <span class="attribute">server</span> music.istorm.cc:<span class="number">80</span> weight=<span class="number">1</span>;</div><div class="line">   &#125;</div><div class="line">   <span class="attribute">upstream</span> blog &#123;</div><div class="line">       <span class="attribute">server</span> http://0.0.0.0:2020 weight=<span class="number">1</span>;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2017/02/25/20170225/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/25/20170225/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-20170224" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -590,69 +651,6 @@
 
 
   
-    <article id="post-20161110" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/10/20161110/">js同步异步</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/10/20161110/" class="archive-article-date">
-  	<time datetime="2016-11-10T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="guasync-file"><a href="#guasync-file" class="headerlink" title="guasync file"></a>guasync file</h1><p>/*<br> 同步和异步编程的概念</p>
-<p> 同步的意思是 函数通过返回值来传递数据<br> 函数从获取数据一直到返回数据之间的时间一直在等待</p>
-<p> 异步的意思是 函数通过回调函数的方式来传递获取的数据<br> 函数执行后立刻就返回了, 数据获取成功后, 调用回调函数并传递参数<br> */</p>
-        
-          <a class="article-more-a" href="/2016/11/10/20161110/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">guagua</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/10/20161110/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -761,7 +759,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">鸡汤</a>
+                <a href="javascript:void(0)" class="js-tag color5">5700</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -769,11 +767,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">5700</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">健康</a>
+                <a href="javascript:void(0)" class="js-tag color3">鸡汤</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -789,11 +783,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+                <a href="javascript:void(0)" class="js-tag color3">健康</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -802,6 +796,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
