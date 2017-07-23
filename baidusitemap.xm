@@ -5,10 +5,10 @@
     
   <url>
     <loc>//litten.me/2017/07/20/20170720/</loc>
-    <lastmod>2017-07-22T14:02:50.708Z</lastmod>
+    <lastmod>2017-07-23T02:55:01.036Z</lastmod>
     <data>
         <display>
-        <title>异步同步</title>
+        <title>同步/异步新认识</title>
         <pubTime>2017-07-20T02:36:00.000Z</pubTime>
         
         <tag>js</tag>

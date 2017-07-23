@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>异步同步 | Andrew的博客</title>
+  <title>同步/异步新认识 | Andrew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213141516171819var doExe = function (a, callback) &amp;#123;    setTimeout(function () &amp;#123;        console.log(a)        if (callback) &amp;#123;            callback()        &amp;#125;    &amp;#125;">
+  <meta name="description" content="//令人窒息的操作">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="异步同步">
+<meta property="og:title" content="同步&#x2F;异步新认识">
 <meta property="og:url" content="//litten.me/2017/07/20/20170720/index.html">
 <meta property="og:site_name" content="Andrew的博客">
-<meta property="og:description" content="12345678910111213141516171819var doExe = function (a, callback) &amp;#123;    setTimeout(function () &amp;#123;        console.log(a)        if (callback) &amp;#123;            callback()        &amp;#125;    &amp;#125;">
-<meta property="og:updated_time" content="2017-07-22T14:02:50.708Z">
+<meta property="og:description" content="//令人窒息的操作">
+<meta property="og:updated_time" content="2017-07-23T02:55:01.036Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="异步同步">
-<meta name="twitter:description" content="12345678910111213141516171819var doExe = function (a, callback) &amp;#123;    setTimeout(function () &amp;#123;        console.log(a)        if (callback) &amp;#123;            callback()        &amp;#125;    &amp;#125;">
+<meta name="twitter:title" content="同步&#x2F;异步新认识">
+<meta name="twitter:description" content="//令人窒息的操作">
   
     <link rel="alternative" href="/atom.xml" title="Andrew的博客" type="application/atom+xml">
   
@@ -155,7 +155,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      异步同步
+      同步/异步新认识
     </h1>
   
 
@@ -168,9 +168,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doExe = <span class="function"><span class="keyword">function</span> (<span class="params">a, callback</span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a)</div><div class="line">        <span class="keyword">if</span> (callback) &#123;</div><div class="line">            callback()</div><div class="line">        &#125;</div><div class="line">    &#125;, <span class="number">100</span> * <span class="built_in">Math</span>.random())</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> gua = <span class="function"><span class="keyword">function</span> (<span class="params">max</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> aTest = <span class="function"><span class="keyword">function</span> (<span class="params">index</span>) </span>&#123;</div><div class="line">        doExe(index, () =&gt; &#123;</div><div class="line">            index &lt; max &amp;&amp; aTest(++index)</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> aTest(<span class="number">0</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">gua(<span class="number">10</span>)</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doExe = <span class="function"><span class="keyword">function</span> (<span class="params">a, callback</span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a)</div><div class="line">        <span class="keyword">if</span> (callback) &#123;</div><div class="line">            callback()</div><div class="line">        &#125;</div><div class="line">    &#125;, <span class="number">100</span> * <span class="built_in">Math</span>.random())</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> guaTest =   <span class="function"><span class="keyword">function</span> (<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i&lt;num ; i++)&#123;</div><div class="line">        (<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</div><div class="line">            setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                doExe(i)</div><div class="line">            &#125;, <span class="number">1000</span> * i)</div><div class="line">        &#125;)(i)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">guaTest(<span class="number">10</span>)</div></pre></td></tr></table></figure>
+        <p>//令人窒息的操作</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doExe = <span class="function"><span class="keyword">function</span> (<span class="params">a, callback</span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a)</div><div class="line">        <span class="keyword">if</span> (callback) &#123;</div><div class="line">            callback()</div><div class="line">        &#125;</div><div class="line">    &#125;, <span class="number">100</span> * <span class="built_in">Math</span>.random())</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//async</span></div><div class="line">(<span class="keyword">async</span> () =&gt; &#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">    <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> doExe(i, resolve));</div><div class="line">  &#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">//不让用async</span></div><div class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">res</span> =&gt;</span> doExe(<span class="number">0</span>,res));</div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">  p = p.then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">res</span> =&gt;</span> doExe(i, res)));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//es5</span></div><div class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> aTest = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  i &lt; <span class="number">10</span> &amp;&amp; doExe(i++, aTest);</div><div class="line">&#125;</div><div class="line">aTest();</div><div class="line"></div><div class="line"><span class="comment">//令人窒息的操作</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> t = <span class="number">0</span>; t &lt; <span class="number">10</span>; t++)&#123;</div><div class="line">  <span class="built_in">Math</span>.random = <span class="function"><span class="params">()</span> =&gt;</span> t;</div><div class="line">  doExe(t);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
 
       
@@ -396,7 +396,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">5700</a>
+                <a href="javascript:void(0)" class="js-tag color3">鸡汤</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">健康</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -404,7 +408,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">鸡汤</a>
+                <a href="javascript:void(0)" class="js-tag color5">5700</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -412,15 +416,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">guagua</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">健康</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -432,11 +432,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -444,11 +444,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高程</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color3">高程</a>
               </li>
              
               <li class="article-tag-list-item">
