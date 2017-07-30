@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>Andrew的博客</title>
+  <title>Andrew的Json.parse解析器 | Andrew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="此为博客一枚。">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Andrew的博客">
-<meta property="og:url" content="//litten.me/index.html">
+  <meta name="description" content="//令人窒息的操作  Andrew的Json.parse解析器">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Andrew的Json.parse解析器">
+<meta property="og:url" content="//litten.me/2017/07/29/20170729/index.html">
 <meta property="og:site_name" content="Andrew的博客">
-<meta property="og:description" content="此为博客一枚。">
+<meta property="og:description" content="//令人窒息的操作  Andrew的Json.parse解析器">
+<meta property="og:updated_time" content="2017-07-30T06:34:26.738Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Andrew的博客">
-<meta name="twitter:description" content="此为博客一枚。">
+<meta name="twitter:title" content="Andrew的Json.parse解析器">
+<meta name="twitter:description" content="//令人窒息的操作  Andrew的Json.parse解析器">
   
     <link rel="alternative" href="/atom.xml" title="Andrew的博客" type="application/atom+xml">
   
@@ -143,16 +144,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-20170729" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-20170729" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/29/20170729/">Andrew的Json.parse解析器</a>
+    <h1 class="article-title" itemprop="name">
+      Andrew的Json.parse解析器
     </h1>
   
 
@@ -169,72 +168,31 @@
 <blockquote>
 <p>Andrew的Json.parse解析器</p>
 </blockquote>
-        
-          <a class="article-more-a" href="/2017/07/29/20170729/#more">more >></a>
-        
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by Andrew on 2017/7/30 0030.</div><div class="line"> */</div><div class="line"><span class="keyword">const</span> log = <span class="built_in">console</span>.log.bind(<span class="built_in">console</span>)</div><div class="line"><span class="comment">//处理key,value,去掉""</span></div><div class="line"><span class="keyword">const</span> parsedElement = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> (e[<span class="number">0</span>] === <span class="string">'\"'</span> || e[<span class="number">0</span>] === <span class="string">"\'"</span>) &#123;</div><div class="line">        <span class="keyword">return</span> e.slice(<span class="number">1</span>, e.length - <span class="number">1</span>)</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Number</span>(e)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//解析name: 'gua', 一个字符值的情况</span></div><div class="line"><span class="keyword">const</span> parsedOne = <span class="function">(<span class="params">s</span>) =&gt;</span> &#123;</div><div class="line">    log(<span class="string">'debug parsedOne'</span>, s)</div><div class="line">    <span class="keyword">const</span> obj = &#123;&#125;</div><div class="line">    <span class="keyword">const</span> arr = s.split(<span class="string">','</span>)</div><div class="line">    arr.forEach(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">const</span> t = e.split(<span class="string">":"</span>)</div><div class="line">        <span class="keyword">const</span> k = parsedElement(t[<span class="number">0</span>])</div><div class="line">        <span class="keyword">const</span> v = parsedElement(t[<span class="number">1</span>])</div><div class="line">        obj[k] = v</div><div class="line">    &#125;)</div><div class="line">    <span class="keyword">return</span> obj</div><div class="line">&#125;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * [[[[[]]]]]]]</div><div class="line"> * 处理&#123;&#123;&#123;&#123;&#125;&#125;&#125;&#125;,取到最后一个&#125;，默认i处理object ,数组需要传false</div><div class="line"> */</div><div class="line"><span class="keyword">const</span> findElementEnd = <span class="function">(<span class="params">str, start, isObj = <span class="literal">true</span></span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> a = <span class="string">''</span></div><div class="line">    <span class="keyword">let</span> b = <span class="string">''</span></div><div class="line">    <span class="keyword">if</span> (isObj) &#123;</div><div class="line">        a = <span class="string">'&#123;'</span></div><div class="line">        b = <span class="string">'&#125;'</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        a = <span class="string">'['</span></div><div class="line">        b = <span class="string">']'</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">const</span> stack = [a]</div><div class="line">    <span class="keyword">let</span> i = start + <span class="number">1</span></div><div class="line">    <span class="keyword">while</span> (i &lt; str.length &amp;&amp; stack.length &gt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">if</span> (str[i] === a) &#123;</div><div class="line">            stack.push(a)</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (str[i] === b) &#123;</div><div class="line">            <span class="keyword">let</span> index = stack.length - <span class="number">1</span></div><div class="line">            stack.splice(index, <span class="number">1</span>)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">//</span></div><div class="line">        &#125;</div><div class="line">        i++</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> i</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> dealWithArray = <span class="function">(<span class="params">s, arr = []</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">//50,"20",[1,[3,4],2],[55,66]</span></div><div class="line">    <span class="keyword">const</span> index = s.indexOf(<span class="string">'['</span>)</div><div class="line">    log(<span class="string">'debug diguiguigi----: '</span>, s)</div><div class="line">    <span class="keyword">if</span> (index === <span class="number">-1</span>) &#123;</div><div class="line">        <span class="keyword">const</span> a = s.split(<span class="string">','</span>).map(<span class="function"><span class="params">e</span> =&gt;</span> parsedElement(e))</div><div class="line">        arr.push.apply(arr, a)</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//处理前面半段,不能为0</span></div><div class="line">        <span class="keyword">if</span> (index !== <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">let</span> newStr = s.slice(<span class="number">0</span>, index - <span class="number">1</span>)</div><div class="line">            <span class="keyword">let</span> a = newStr.split(<span class="string">','</span>).map(<span class="function"><span class="params">e</span> =&gt;</span> parsedElement(e))</div><div class="line">            arr.push.apply(arr, a)</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//递归(中间)</span></div><div class="line">        <span class="keyword">const</span> last = findElementEnd(s, index, <span class="literal">false</span>)</div><div class="line">        <span class="keyword">let</span> newS = s.slice(index + <span class="number">1</span>, last - <span class="number">1</span>)</div><div class="line">        <span class="keyword">let</span> temp = []</div><div class="line">        <span class="keyword">let</span> b = dealWithArray(newS, [])</div><div class="line">        arr.push(b)</div><div class="line">        <span class="comment">//处理后面半段</span></div><div class="line">        log(<span class="string">'===============================\n'</span>)</div><div class="line">        <span class="comment">//继续递归</span></div><div class="line">        <span class="keyword">let</span> newStr = s.slice(last + <span class="number">1</span>)</div><div class="line">        <span class="keyword">if</span> (newStr.length &gt; <span class="number">0</span>) &#123;</div><div class="line">            log(<span class="string">'test------'</span>, newStr)</div><div class="line">            <span class="keyword">let</span> c = dealWithArray(newStr, [])</div><div class="line">            arr.push.apply(arr, c)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> myParse = <span class="function">(<span class="params">s, obj = &#123;&#125;</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> (s[<span class="number">0</span>] === <span class="string">'&#123;'</span>) &#123;</div><div class="line">        s = s.slice(<span class="number">1</span>, s.length - <span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//复杂情形</span></div><div class="line">    <span class="comment">//  "name":"gua","todo":&#123;"play":"0/1"&#125;</span></div><div class="line">    <span class="keyword">let</span> index = s.indexOf(<span class="string">':'</span>)</div><div class="line">    <span class="keyword">const</span> str = s[index + <span class="number">1</span>]</div><div class="line">    log(<span class="string">'debug digui '</span>, s, <span class="string">'\n'</span>)</div><div class="line">    <span class="keyword">if</span> (str === <span class="string">'&#123;'</span>) &#123;</div><div class="line">        log(<span class="string">'-----enter  object  parse-----------'</span>)</div><div class="line">        <span class="keyword">let</span> key = s.split(<span class="string">':&#123;'</span>)[<span class="number">0</span>]</div><div class="line">        <span class="comment">//截取s</span></div><div class="line">        key = parsedElement(key)</div><div class="line">        <span class="comment">// 找到最后一个&#125;</span></div><div class="line">        <span class="keyword">const</span> last = findElementEnd(s, index)</div><div class="line">        <span class="keyword">const</span> newStr = s.slice(index + <span class="number">2</span>, last - <span class="number">1</span>)</div><div class="line">        <span class="keyword">let</span> o = &#123;&#125;</div><div class="line">        o = myParse(newStr, o)</div><div class="line">        obj[<span class="string">`<span class="subst">$&#123;key&#125;</span>`</span>] = o</div><div class="line">        log(<span class="string">'debug newStr : '</span>, newStr)</div><div class="line">        log(<span class="string">'debug o : '</span>, o)</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (str !== <span class="string">'&#123;'</span> &amp;&amp; str !== <span class="string">'['</span>) &#123;</div><div class="line">        log(<span class="string">`----enter str parse--------<span class="subst">$&#123;s&#125;</span> \n`</span>)</div><div class="line">        <span class="comment">//取到"name":"gua"</span></div><div class="line">        <span class="keyword">const</span> cell = s.split(<span class="string">','</span>)[<span class="number">0</span>]</div><div class="line">        log(<span class="string">'cell '</span>, s, <span class="string">'----'</span>, cell)</div><div class="line">        <span class="keyword">const</span> o = parsedOne(cell)</div><div class="line">        <span class="keyword">const</span> k = <span class="built_in">Object</span>.keys(o)[<span class="number">0</span>]</div><div class="line">        obj[<span class="string">`<span class="subst">$&#123;k&#125;</span>`</span>] = o[k]</div><div class="line">        <span class="comment">//log('obj: ',obj)</span></div><div class="line">        <span class="comment">//下一个元素</span></div><div class="line">        index = s.indexOf(<span class="string">','</span>)</div><div class="line">        <span class="keyword">if</span> (index !== <span class="number">-1</span>) &#123;</div><div class="line">            s = s.slice(index + <span class="number">1</span>)</div><div class="line">            obj = myParse(s, obj)</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (str === <span class="string">'['</span>) &#123;</div><div class="line">        log(<span class="string">'-----enter  array  parse-----------'</span>)</div><div class="line">        <span class="comment">//"age":[50,20,30]</span></div><div class="line">        <span class="keyword">let</span> key = s.split(<span class="string">':['</span>)[<span class="number">0</span>]</div><div class="line">        <span class="comment">//截取s</span></div><div class="line">        key = parsedElement(key)</div><div class="line">        <span class="comment">// 找到最后一个]</span></div><div class="line">        <span class="keyword">const</span> last = findElementEnd(s, index, <span class="literal">false</span>)</div><div class="line">        <span class="keyword">const</span> newStr = s.slice(index + <span class="number">2</span>, last - <span class="number">1</span>)</div><div class="line">        <span class="comment">//</span></div><div class="line">        <span class="keyword">const</span> r = dealWithArray(newStr)</div><div class="line">        log(<span class="string">'final:'</span>, r)</div><div class="line">        <span class="comment">//log('debug arr: ',newStr)</span></div><div class="line">        <span class="comment">//Todo 有bug需要考虑后续字符s.slice(last + 1)</span></div><div class="line">        obj[<span class="string">`<span class="subst">$&#123;key&#125;</span>`</span>] = r</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">const</span> testParser = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> o = &#123;</div><div class="line">        <span class="attr">todo</span>: &#123;</div><div class="line">            <span class="string">'play'</span>: <span class="string">'0/1'</span>,</div><div class="line">            <span class="string">'sports'</span>: &#123;</div><div class="line">                <span class="string">'gua'</span>:&#123;</div><div class="line">                    <span class="string">'test'</span>:<span class="number">222</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="comment">//name: 'test',</span></div><div class="line">        <span class="comment">//todo:  没完成：array单独运行没问题，和obj搭配有bug,需要update</span></div><div class="line">        <span class="comment">//age: [50,'20',[1,[3,4],[22,33],2] ,[55,66]],</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">const</span> s = <span class="built_in">JSON</span>.stringify(o)</div><div class="line">    <span class="keyword">const</span> obj = myParse(s)</div><div class="line">    log(<span class="string">'\n\nfinal result : '</span>)</div><div class="line">    log(<span class="string">'\nJSON.parse result:'</span>, s)</div><div class="line">    log(<span class="string">`\nAndrew's JSON Parse : `</span>, obj)</div><div class="line">    log(<span class="string">`\nAndrew's JSON Parse TODO 子类obj : `</span>, obj[<span class="string">'todo'</span>])</div><div class="line">&#125;</div><div class="line"></div><div class="line">testParser()</div></pre></td></tr></table></figure>
       
 
       
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/29/20170729/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-20170720" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/20/20170720/">同步/异步新认识</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/20/20170720/" class="archive-article-date">
-  	<time datetime="2017-07-20T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>//令人窒息的操作</p>
-        
-          <a class="article-more-a" href="/2017/07/20/20170720/#more">more >></a>
-        
-      
-
+<!--        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>-->
       
     </div>
     <div class="article-info article-info-index">
@@ -254,403 +212,85 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/20/20170720/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABv0lEQVR42u3aUa7CMAwEQO5/ad4BKsI6jgs8Tb+qqjQTPqJ4nccjvp6X6/r81ZvJrw5fuLi4bW51gOvz5PvJ/dqAi4t7P3dvmPXCtF6wkmnj4uL+Fjdf7Na7FFxc3P/EXb9ZLX5wcXG/k5sMsMYlE761VsPFxW1w85Ry7n4k38XFxd3iPotXvjHKv1AYHRcX9xZutR2ShB17C2JhXFxc3GFu0vzI49G8dMnj1Df/Ky4u7gC3H4vkTZRqSPrmP8bFxR3m5vFlJzo53ILFxcUd4/Y3JXuUfBGMUhxcXNwBbj/0rE4jn1KU3+Di4o5xqwVMXsZUv/Dy0AYuLu6N3CqxfxjrWPGDi4s7wK0Ok7+fb182p4eLi3sLt7qsVJus1YMX1TdxcXHPcvMiJD+QkTdp8ngFFxf3U9z8sMXe9MrtkyTlxcXFHePuHb3aizxauzBcXNxh7lwZUw1Go3IIFxf3Fu5eOLI3THUjtRmY4uLiHuJ2Fq9809MpgXBxcT/FTRqieQB6qvjBxcX9FW6+YLWC0eqMcXFxv4Z76phFq/ODi4s7xq0WKtVfVVsvuLi4n+XuxZ1J8NFp3hzId3FxcXe4f+5MSOc+2zLmAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
   
-    <article id="post-20170718" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/20170718/">less命令</a>
-    </h1>
   
-
-        
-        <a href="/2017/07/18/20170718/" class="archive-article-date">
-  	<time datetime="2017-07-18T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>less命令 与 more命令 非常类似，但less命令 可以更加随意地浏览文件，而且 less 在查看之前不会加载整个文件。<br>相比较于more命令，很多人更喜欢使用 less命令。<br>
-        
-          <a class="article-more-a" href="/2017/07/18/20170718/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/18/20170718/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+    <a href="/2017/07/20/20170720/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">同步/异步新认识</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
 
 
   
-    <article id="post-20170715" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/15/20170715/">mongodb查询</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/15/20170715/" class="archive-article-date">
-  	<time datetime="2017-07-15T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><p>当查询时同时使用sort,skip,limit，无论位置先后，最先执行顺序 sort再skip再limit。</p>
-        
-          <a class="article-more-a" href="/2017/07/15/20170715/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/15/20170715/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
 
   
-    <article id="post-20170711" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/11/20170711/">ES6特性</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/11/20170711/" class="archive-article-date">
-  	<time datetime="2017-07-11T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ES6特性如下：</p>
-<p>1.块级作用域 关键字let, 常量const</p>
-<p>2.对象字面量的属性赋值简写（property value shorthand）</p>
-        
-          <a class="article-more-a" href="/2017/07/11/20170711/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/11/20170711/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
 
   
-    <article id="post-20170710" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/20170710/">BBR加速</a>
-    </h1>
-  
 
-        
-        <a href="/2017/07/10/20170710/" class="archive-article-date">
-  	<time datetime="2017-07-10T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Debian / Ubuntu 14.04 +</p>
-<pre><code>CentOS用户请使用这个脚本：CentOS/Debian/Ubuntu系统 TCP-BBR 一键安装脚本
-
-本脚本只在 Debian 7 / Debian 8 / Ubuntu 14.04 / Ubuntu 16.04 (均 x64位) 这几个系统中测试过脚本可以正常运行(Vultr)！
-
-强烈推荐 Debian 7 x64，这个是我一直使用的系统，我的脚本在这个系统上面出错率最低。
-
-至于为什么不支持 CentOS 等系统，主要是我不怎么用其他的系统，就不做支持了。
-</code></pre>
-        
-          <a class="article-more-a" href="/2017/07/10/20170710/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/10/20170710/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-20170708" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/08/20170708/">mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/08/20170708/" class="archive-article-date">
-  	<time datetime="2017-07-08T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>错误提示的意思是：mongoose模型被重复定义了，这是不允许的</p>
-<p>首先，你需要搞清楚require和module.exports的运行机制，建议你看看这篇：<a href="http://www.nodeclass.com/articles/37488" target="_blank" rel="external">http://www.nodeclass.com/articles/37488</a></p>
-        
-          <a class="article-more-a" href="/2017/07/08/20170708/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mongoose</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/08/20170708/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-20170705" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/05/20170705/">electron打包程序</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/05/20170705/" class="archive-article-date">
-  	<time datetime="2017-07-05T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>目录结构<br>T:/player/index.html(网页入口)<br>T:/player/main.js<br>T:/player/package.json<br>//成功打包的话，会player同级目录生成exe<br>T:/outplayer/项目名</p>
-        
-          <a class="article-more-a" href="/2017/07/05/20170705/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/05/20170705/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -673,8 +313,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
