@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>//litten.me/2017/08/08/20170808/</loc>
+    <lastmod>2017-08-20T13:22:45.545Z</lastmod>
+    <data>
+        <display>
+        <title>Andrew Parse</title>
+        <pubTime>2017-08-07T16:00:00.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2017/07/29/20170729/</loc>
     <lastmod>2017-07-30T06:34:26.738Z</lastmod>
     <data>
