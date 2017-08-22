@@ -5,10 +5,10 @@
     
   <url>
     <loc>//litten.me/2017/08/08/20170808/</loc>
-    <lastmod>2017-08-20T13:22:45.545Z</lastmod>
+    <lastmod>2017-08-22T16:21:14.390Z</lastmod>
     <data>
         <display>
-        <title>Andrew Parse</title>
+        <title>Andrew Parse 2</title>
         <pubTime>2017-08-07T16:00:00.000Z</pubTime>
         
         <tag>js</tag>
