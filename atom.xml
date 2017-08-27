@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Andrew的博客</title>
-  <subtitle>一个人的思想、性格、对世界的认知、对问题的看法、决策的取舍，这些才是对程序员来说是最有意义的。</subtitle>
+  <subtitle>过去不回头，未来不将就。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="//litten.me/"/>
