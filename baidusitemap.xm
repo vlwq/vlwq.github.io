@@ -1075,7 +1075,7 @@
 
     
   <url>
-    <loc>//litten.me/2016/01/01/20151001/</loc>
+    <loc>//litten.me/2016/01/01/2015/20151001/</loc>
     <lastmod>2017-07-02T11:55:39.623Z</lastmod>
     <data>
         <display>
@@ -1092,7 +1092,7 @@
 
     
   <url>
-    <loc>//litten.me/2016/09/21/20150921/</loc>
+    <loc>//litten.me/2016/09/21/2015/20150921/</loc>
     <lastmod>2017-07-02T11:55:05.469Z</lastmod>
     <data>
         <display>
@@ -1109,7 +1109,7 @@
 
     
   <url>
-    <loc>//litten.me/2015/11/23/20151123/</loc>
+    <loc>//litten.me/2015/11/23/2015/20151123/</loc>
     <lastmod>2017-07-02T11:31:11.883Z</lastmod>
     <data>
         <display>
@@ -1126,7 +1126,7 @@
 
     
   <url>
-    <loc>//litten.me/2016/09/01/20150901/</loc>
+    <loc>//litten.me/2016/09/01/2015/20150901/</loc>
     <lastmod>2017-07-02T10:36:14.892Z</lastmod>
     <data>
         <display>
@@ -1143,7 +1143,7 @@
 
     
   <url>
-    <loc>//litten.me/2016/08/23/20150823/</loc>
+    <loc>//litten.me/2016/08/23/2015/20150823/</loc>
     <lastmod>2017-07-02T10:15:04.220Z</lastmod>
     <data>
         <display>
@@ -1160,7 +1160,7 @@
 
     
   <url>
-    <loc>//litten.me/2016/08/01/20150808/</loc>
+    <loc>//litten.me/2016/08/01/2015/20150808/</loc>
     <lastmod>2017-07-02T10:12:36.474Z</lastmod>
     <data>
         <display>
@@ -1177,7 +1177,7 @@
 
     
   <url>
-    <loc>//litten.me/2015/07/01/20150701/</loc>
+    <loc>//litten.me/2015/07/01/2015/20150701/</loc>
     <lastmod>2017-07-02T10:08:36.013Z</lastmod>
     <data>
         <display>
