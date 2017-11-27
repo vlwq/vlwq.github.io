@@ -4,6 +4,74 @@
 
     
   <url>
+    <loc>//litten.me/2017/11/01/2017/20171101/</loc>
+    <lastmod>2017-11-27T06:45:14.323Z</lastmod>
+    <data>
+        <display>
+        <title>git服务端强制覆盖本地</title>
+        <pubTime>2017-10-31T16:00:00.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/2017/10/01/2017/20171001/</loc>
+    <lastmod>2017-11-27T06:38:30.583Z</lastmod>
+    <data>
+        <display>
+        <title>node的路径</title>
+        <pubTime>2017-09-30T16:00:00.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/2017/10/02/2017/20171002/</loc>
+    <lastmod>2017-11-27T06:38:30.498Z</lastmod>
+    <data>
+        <display>
+        <title>实现promise(转自bananas)</title>
+        <pubTime>2017-10-01T16:00:00.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/2016/08/23/2016/20160823/</loc>
+    <lastmod>2017-10-13T15:28:19.856Z</lastmod>
+    <data>
+        <display>
+        <title>注重生活体验，着眼点放在你自己的内心</title>
+        <pubTime>2016-08-23T02:36:00.000Z</pubTime>
+        
+        <tag>乱七八糟</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2016/02/15/2016/20160215/</loc>
     <lastmod>2017-08-27T05:59:23.221Z</lastmod>
     <data>
@@ -231,23 +299,6 @@
         <display>
         <title>差距</title>
         <pubTime>2016-10-05T02:36:00.000Z</pubTime>
-        
-        <tag>乱七八糟</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>//litten.me/2016/08/23/2016/20160823/</loc>
-    <lastmod>2017-08-27T05:52:15.849Z</lastmod>
-    <data>
-        <display>
-        <title>注重生活体验，着眼点放在你自己的内心</title>
-        <pubTime>2016-08-23T02:36:00.000Z</pubTime>
         
         <tag>乱七八糟</tag>
          
