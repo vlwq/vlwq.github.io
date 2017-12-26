@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>//litten.me/2017/12/26/2017/20171226/</loc>
+    <lastmod>2017-12-26T15:08:48.492Z</lastmod>
+    <data>
+        <display>
+        <title>lodash合并对象数组</title>
+        <pubTime>2017-12-25T16:00:00.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/2017/12/25/2017/20171225/</loc>
+    <lastmod>2017-12-26T14:59:57.180Z</lastmod>
+    <data>
+        <display>
+        <title>sequelize-auto对照数据库自动生成相应的models</title>
+        <pubTime>2017-12-24T16:00:00.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2017/11/01/2017/20171101/</loc>
     <lastmod>2017-11-27T06:45:14.323Z</lastmod>
     <data>

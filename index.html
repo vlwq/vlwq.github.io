@@ -145,6 +145,128 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2017/20171226" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/26/2017/20171226/">lodash合并对象数组</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/26/2017/20171226/" class="archive-article-date">
+  	<time datetime="2017-12-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因pmo查询做得辣鸡，需要多次查询合成结果集，查询经常遇到对象数组合并问题(key不存在也要赋值)<br>如<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">const test1 = [</div><div class="line">  &#123; <span class="string">name:</span> <span class="string">'zhanghong'</span>, <span class="string">age:</span> <span class="number">32</span>, &#125;,</div><div class="line">  &#123; <span class="string">name:</span> <span class="string">'wanghong'</span>, <span class="string">age:</span> <span class="number">20</span>, <span class="string">size:</span> <span class="number">6</span> &#125;,</div><div class="line">]</div><div class="line"></div><div class="line">const test2 = [</div><div class="line">  &#123; <span class="string">name:</span> <span class="string">'zhanghong'</span>, <span class="string">gender:</span> <span class="string">'male'</span>&#125;,</div><div class="line">  &#123; <span class="string">name:</span> <span class="string">'wanghong'</span>, <span class="string">gender:</span> <span class="string">'female'</span>&#125;,</div><div class="line">]</div><div class="line"></div><div class="line">期望最后结果集合</div><div class="line">const test3 = [</div><div class="line">  &#123; <span class="string">name:</span> <span class="string">'zhanghong'</span>,<span class="string">gender:</span> <span class="string">'male'</span>, <span class="string">age:</span> <span class="number">32</span>, <span class="string">size:</span> <span class="number">6</span>, &#125;,</div><div class="line">  &#123; <span class="string">name:</span> <span class="string">'wanghong'</span>, <span class="string">gender:</span> <span class="string">'female'</span> ,<span class="string">age:</span> <span class="number">20</span>, <span class="string">size:</span> <span class="number">0</span> &#125;,</div><div class="line">]</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2017/12/26/2017/20171226/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/26/2017/20171226/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-2017/20171225" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/25/2017/20171225/">sequelize-auto对照数据库自动生成相应的models</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/25/2017/20171225/" class="archive-article-date">
+  	<time datetime="2017-12-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Install</span></div><div class="line"></div><div class="line">npm <span class="keyword">install</span> -g sequelize-<span class="keyword">auto</span></div><div class="line">Prerequisites</div><div class="line"></div><div class="line">You will need <span class="keyword">to</span> <span class="keyword">install</span> the correct dialect binding <span class="keyword">globally</span> <span class="keyword">before</span> <span class="keyword">using</span> sequelize-auto.</div><div class="line"></div><div class="line">Example <span class="keyword">for</span> MySQL/MariaDB</div><div class="line"></div><div class="line">npm <span class="keyword">install</span> -g mysql</div><div class="line"></div><div class="line">Example <span class="keyword">for</span> Postgres</div><div class="line"></div><div class="line">npm <span class="keyword">install</span> -g pg pg-hstore</div><div class="line"></div><div class="line">Example <span class="keyword">for</span> Sqlite3</div><div class="line"></div><div class="line">npm <span class="keyword">install</span> -g sqlite</div><div class="line"></div><div class="line">Example <span class="keyword">for</span> MSSQL</div><div class="line"></div><div class="line">npm <span class="keyword">install</span> -g mssql</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/12/25/2017/20171225/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/25/2017/20171225/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-2017/20171101" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -520,128 +642,6 @@
 
 
   
-    <article id="post-2017/20170718" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/2017/20170718/">less命令</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/18/2017/20170718/" class="archive-article-date">
-  	<time datetime="2017-07-18T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>less命令 与 more命令 非常类似，但less命令 可以更加随意地浏览文件，而且 less 在查看之前不会加载整个文件。<br>相比较于more命令，很多人更喜欢使用 less命令。<br>
-        
-          <a class="article-more-a" href="/2017/07/18/2017/20170718/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/18/2017/20170718/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-2017/20170715" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/15/2017/20170715/">mongodb查询</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/15/2017/20170715/" class="archive-article-date">
-  	<time datetime="2017-07-15T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><p>当查询时同时使用sort,skip,limit，无论位置先后，最先执行顺序 sort再skip再limit。</p>
-        
-          <a class="article-more-a" href="/2017/07/15/2017/20170715/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mongoose</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/15/2017/20170715/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -742,11 +742,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">guagua</a>
+                <a href="javascript:void(0)" class="js-tag color3">健康</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">健康</a>
+                <a href="javascript:void(0)" class="js-tag color2">guagua</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -774,11 +774,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">base</a>
+                <a href="javascript:void(0)" class="js-tag color3">高程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高程</a>
+                <a href="javascript:void(0)" class="js-tag color5">base</a>
               </li>
              
               <li class="article-tag-list-item">

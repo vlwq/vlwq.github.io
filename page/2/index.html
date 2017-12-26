@@ -145,6 +145,128 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2017/20170718" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/18/2017/20170718/">less命令</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/18/2017/20170718/" class="archive-article-date">
+  	<time datetime="2017-07-18T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>less命令 与 more命令 非常类似，但less命令 可以更加随意地浏览文件，而且 less 在查看之前不会加载整个文件。<br>相比较于more命令，很多人更喜欢使用 less命令。<br>
+        
+          <a class="article-more-a" href="/2017/07/18/2017/20170718/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/18/2017/20170718/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-2017/20170715" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/15/2017/20170715/">mongodb查询</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/15/2017/20170715/" class="archive-article-date">
+  	<time datetime="2017-07-15T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><p>当查询时同时使用sort,skip,limit，无论位置先后，最先执行顺序 sort再skip再limit。</p>
+        
+          <a class="article-more-a" href="/2017/07/15/2017/20170715/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mongoose</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/15/2017/20170715/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-2017/20170711" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -526,129 +648,6 @@
 
 
   
-    <article id="post-2017/20170625" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/25/2017/20170625/">mongoose分页</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/25/2017/20170625/" class="archive-article-date">
-  	<time datetime="2017-06-25T11:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">var</span> mongoose = <span class="keyword">require</span>(<span class="string">'mongoose'</span>);</div><div class="line">mongoose.connect(<span class="string">'MongoDB://192.168.0.229:27017/Test'</span>);</div><div class="line"></div><div class="line"><span class="built_in">var</span> Cat = mongoose.model(<span class="string">'Cat'</span>, &#123;</div><div class="line">    name: <span class="built_in">String</span> ,</div><div class="line">    _id:<span class="built_in">String</span> ,</div><div class="line">    age:&#123; <span class="keyword">type</span>: Number, <span class="keyword">min</span>: <span class="number">18</span>, <span class="keyword">max</span>: <span class="number">65</span> &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/06/25/2017/20170625/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/25/2017/20170625/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-2017/20170623" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/23/2017/20170623/">bootstrap弹出框</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/23/2017/20170623/" class="archive-article-date">
-  	<time datetime="2017-06-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="bootstrap弹出框"><a href="#bootstrap弹出框" class="headerlink" title="bootstrap弹出框"></a>bootstrap弹出框</h1><p>标签（空格分隔）： bootstrap</p>
-<hr>
-        
-          <a class="article-more-a" href="/2017/06/23/2017/20170623/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/23/2017/20170623/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -749,11 +748,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">guagua</a>
+                <a href="javascript:void(0)" class="js-tag color3">健康</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">健康</a>
+                <a href="javascript:void(0)" class="js-tag color2">guagua</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -781,11 +780,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">base</a>
+                <a href="javascript:void(0)" class="js-tag color3">高程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高程</a>
+                <a href="javascript:void(0)" class="js-tag color5">base</a>
               </li>
              
               <li class="article-tag-list-item">

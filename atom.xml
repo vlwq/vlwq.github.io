@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//litten.me/"/>
-  <updated>2017-11-27T06:45:14.323Z</updated>
+  <updated>2017-12-26T15:08:48.492Z</updated>
   <id>//litten.me/</id>
   
   <author>
@@ -14,6 +14,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>lodash合并对象数组</title>
+    <link href="//litten.me/2017/12/26/2017/20171226/"/>
+    <id>//litten.me/2017/12/26/2017/20171226/</id>
+    <published>2017-12-25T16:00:00.000Z</published>
+    <updated>2017-12-26T15:08:48.492Z</updated>
+    
+    <content type="html"><![CDATA[<p>因pmo查询做得辣鸡，需要多次查询合成结果集，查询经常遇到对象数组合并问题(key不存在也要赋值)<br>如<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">const test1 = [</div><div class="line">  &#123; <span class="string">name:</span> <span class="string">'zhanghong'</span>, <span class="string">age:</span> <span class="number">32</span>, &#125;,</div><div class="line">  &#123; <span class="string">name:</span> <span class="string">'wanghong'</span>, <span class="string">age:</span> <span class="number">20</span>, <span class="string">size:</span> <span class="number">6</span> &#125;,</div><div class="line">]</div><div class="line"></div><div class="line">const test2 = [</div><div class="line">  &#123; <span class="string">name:</span> <span class="string">'zhanghong'</span>, <span class="string">gender:</span> <span class="string">'male'</span>&#125;,</div><div class="line">  &#123; <span class="string">name:</span> <span class="string">'wanghong'</span>, <span class="string">gender:</span> <span class="string">'female'</span>&#125;,</div><div class="line">]</div><div class="line"></div><div class="line">期望最后结果集合</div><div class="line">const test3 = [</div><div class="line">  &#123; <span class="string">name:</span> <span class="string">'zhanghong'</span>,<span class="string">gender:</span> <span class="string">'male'</span>, <span class="string">age:</span> <span class="number">32</span>, <span class="string">size:</span> <span class="number">6</span>, &#125;,</div><div class="line">  &#123; <span class="string">name:</span> <span class="string">'wanghong'</span>, <span class="string">gender:</span> <span class="string">'female'</span> ,<span class="string">age:</span> <span class="number">20</span>, <span class="string">size:</span> <span class="number">0</span> &#125;,</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>参照</p>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/29320817/lodash-union-of-arrays-of-objects" target="_blank" rel="external">https://stackoverflow.com/questions/29320817/lodash-union-of-arrays-of-objects</a></p>
+</blockquote>
+<p>暂时解决，待优化代码</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">const</span> test1 = [</div><div class="line">  &#123; name: <span class="string">'zhanghong'</span>, age: <span class="number">32</span>, money: <span class="number">0</span>, <span class="built_in">size</span>: <span class="number">12</span>, &#125;,</div><div class="line">  &#123; name: <span class="string">'wanghong'</span>, age: <span class="number">20</span>, <span class="built_in">size</span>: <span class="number">6</span> &#125;,</div><div class="line">  &#123; name: <span class="string">'jinhong'</span>, age: <span class="number">16</span>, <span class="built_in">height</span>: <span class="number">172</span> &#125;,</div><div class="line">]</div><div class="line"></div><div class="line"><span class="keyword">const</span> test2 = [</div><div class="line">  &#123; name: <span class="string">'zhanghong'</span>, gender: <span class="string">'male'</span>, age: <span class="number">14</span> &#125;,</div><div class="line">  &#123; name: <span class="string">'wanghong'</span>, gender: <span class="string">'female'</span>, age: <span class="number">33</span> &#125;,</div><div class="line">  &#123; name: <span class="string">'lihong'</span>, gender: <span class="string">'female'</span>, age: <span class="number">33</span> &#125;,</div><div class="line">]</div><div class="line"></div><div class="line"><span class="keyword">const</span> test3 = [</div><div class="line">  &#123; name: <span class="string">'meinv'</span> &#125;,</div><div class="line">]</div><div class="line"></div><div class="line"><span class="keyword">const</span> test4 = [</div><div class="line">  &#123; name: <span class="string">'aaa'</span> &#125;,</div><div class="line">]</div><div class="line"></div><div class="line"><span class="keyword">const</span> test5 = [</div><div class="line">  &#123; name: <span class="string">'zhanghong'</span>, age: <span class="string">'wtf'</span> &#125;,</div><div class="line">]</div><div class="line"></div><div class="line"><span class="keyword">const</span> result = mergeUnionByKey(test1, test2, test3, test4, [], test5, <span class="string">'name'</span>, <span class="string">'override'</span>)</div><div class="line"></div><div class="line">function mergeUnionByKey(...args) &#123;</div><div class="line"></div><div class="line">  <span class="keyword">const</span> config = _.chain(args)</div><div class="line">    .<span class="built_in">filter</span>(_.isString)</div><div class="line">    .value()</div><div class="line"></div><div class="line">  <span class="keyword">const</span> <span class="built_in">key</span> = _.<span class="built_in">get</span>(config, <span class="string">'[0]'</span>)</div><div class="line"></div><div class="line">  <span class="keyword">const</span> strategy = _.<span class="built_in">get</span>(config, <span class="string">'[1]'</span>) === <span class="string">'override'</span> ? _.merge : _.defaultsDeep</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (!_.isString(<span class="built_in">key</span>))</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">'missing key'</span>)</div><div class="line"></div><div class="line">  <span class="keyword">const</span> datasets = _.chain(args)</div><div class="line">    .reject(_.isEmpty)</div><div class="line">    .<span class="built_in">filter</span>(_.isArray)</div><div class="line">    .value()</div><div class="line"></div><div class="line">  <span class="keyword">const</span> datasetsIndex = _.mapValues(datasets, dataset =&gt; _.keyBy(dataset, <span class="built_in">key</span>))</div><div class="line"></div><div class="line">  <span class="keyword">const</span> uniqKeys = _.chain(datasets)</div><div class="line">    .flatten()</div><div class="line">    .<span class="built_in">map</span>(<span class="built_in">key</span>)</div><div class="line">    .uniq()</div><div class="line">    .value()</div><div class="line"></div><div class="line">  <span class="keyword">return</span> _.chain(uniqKeys)</div><div class="line">    .<span class="built_in">map</span>(val =&gt; &#123;</div><div class="line">      <span class="keyword">const</span> data = &#123;&#125;</div><div class="line">      _.each(datasetsIndex, dataset =&gt; strategy(data, dataset[val]))</div><div class="line">      <span class="keyword">return</span> data</div><div class="line">    &#125;)</div><div class="line">    .<span class="built_in">filter</span>(<span class="built_in">key</span>)</div><div class="line">    .value()</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>(JSON.stringify(result, <span class="keyword">null</span>, <span class="number">4</span>))</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因pmo查询做得辣鸡，需要多次查询合成结果集，查询经常遇到对象数组合并问题(key不存在也要赋值)&lt;br&gt;如&lt;br&gt;&lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;const test1 = [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#123; &lt;span class=&quot;string&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;zhanghong&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;age:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;32&lt;/span&gt;, &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#123; &lt;span class=&quot;string&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;wanghong&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;age:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;size:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt; &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;const test2 = [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#123; &lt;span class=&quot;string&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;zhanghong&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;gender:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;male&#39;&lt;/span&gt;&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#123; &lt;span class=&quot;string&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;wanghong&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;gender:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;female&#39;&lt;/span&gt;&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;期望最后结果集合&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;const test3 = [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#123; &lt;span class=&quot;string&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;zhanghong&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;gender:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;male&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;age:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;32&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;size:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#123; &lt;span class=&quot;string&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;wanghong&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;gender:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;female&#39;&lt;/span&gt; ,&lt;span class=&quot;string&quot;&gt;age:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;size:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="node" scheme="//litten.me/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sequelize-auto对照数据库自动生成相应的models</title>
+    <link href="//litten.me/2017/12/25/2017/20171225/"/>
+    <id>//litten.me/2017/12/25/2017/20171225/</id>
+    <published>2017-12-24T16:00:00.000Z</published>
+    <updated>2017-12-26T14:59:57.180Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Install</span></div><div class="line"></div><div class="line">npm <span class="keyword">install</span> -g sequelize-<span class="keyword">auto</span></div><div class="line">Prerequisites</div><div class="line"></div><div class="line">You will need <span class="keyword">to</span> <span class="keyword">install</span> the correct dialect binding <span class="keyword">globally</span> <span class="keyword">before</span> <span class="keyword">using</span> sequelize-auto.</div><div class="line"></div><div class="line">Example <span class="keyword">for</span> MySQL/MariaDB</div><div class="line"></div><div class="line">npm <span class="keyword">install</span> -g mysql</div><div class="line"></div><div class="line">Example <span class="keyword">for</span> Postgres</div><div class="line"></div><div class="line">npm <span class="keyword">install</span> -g pg pg-hstore</div><div class="line"></div><div class="line">Example <span class="keyword">for</span> Sqlite3</div><div class="line"></div><div class="line">npm <span class="keyword">install</span> -g sqlite</div><div class="line"></div><div class="line">Example <span class="keyword">for</span> MSSQL</div><div class="line"></div><div class="line">npm <span class="keyword">install</span> -g mssql</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>参数见npm文档</p>
+<p><a href="https://www.npmjs.com/package/sequelize-auto" target="_blank" rel="external">https://www.npmjs.com/package/sequelize-auto</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Install&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; -g sequelize-&lt;span class=&quot;keyword&quot;&gt;auto&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Prerequisites&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;You will need &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; the correct dialect binding &lt;span class=&quot;keyword&quot;&gt;globally&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;before&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; sequelize-auto.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Example &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; MySQL/MariaDB&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; -g mysql&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Example &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; Postgres&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; -g pg pg-hstore&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Example &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; Sqlite3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; -g sqlite&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Example &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; MSSQL&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; -g mssql&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="node" scheme="//litten.me/tags/node/"/>
+    
+  </entry>
   
   <entry>
     <title>git服务端强制覆盖本地</title>
@@ -2458,6 +2509,34 @@
   </entry>
   
   <entry>
+    <title>注重生活体验，着眼点放在你自己的内心</title>
+    <link href="//litten.me/2016/08/23/2016/20160823/"/>
+    <id>//litten.me/2016/08/23/2016/20160823/</id>
+    <published>2016-08-23T02:36:00.000Z</published>
+    <updated>2017-10-13T15:28:19.856Z</updated>
+    
+    <content type="html"><![CDATA[<p>我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。</p>
+<p>虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。<br><a id="more"></a></p>
+<p>很多年轻人因为阅历的关系，其实不明白一个道理：人的欲望是无限的，你得到原来想要的，还会想得到更多，就像某些人没有iPhone的时候，做梦都想要，等用到一段时间之后，也就觉得就那么回事，一个手机而已（仅仅举个例子，什么豪宅，跑车，名表，名包，美女都那么回事，时间长了兴奋感都会消失），如果一个人的人生是欲望驱动的，那必然非常看重输赢，如果是这样的价值观，感受到的快乐也就全都来自于赢的一瞬间，不会长久，甚至很多人会为了赢做很多不喜欢的事情，反而本末倒置，不少所谓的成功人士的抑郁症就是这么来的。</p>
+<p>可能有人就问了，那怎样才能快乐呢？注重生活体验，着眼点放在你自己的内心，热爱生活，享受生活，不在乎输赢，而在乎做一件事的体验，在乎自己的成长，不要太在意外部强加的价值观，是的，这样，你可能不会成为外人眼里成功的人，得不到令人艳羡的目光，但你活的踏实，真实，平稳，而且最重要的，你活出真实的你自己，你有底气露出自信，满足，真实的微笑（这个答案肯定有很多人看不懂，我不要求每个人都懂）。</p>
+<blockquote>
+<p>dudu<br>$ apt-get update<br>$ apt-get install python-pip<br>$ pip install setuptools<br>$ pip install shadowsocks<br>$ nano /etc/shadowsocks.json<br>{<br> “server”: “${ip}”,<br> “server_port”: ${port},<br> “local_address”: “127.0.0.1”,<br> “local_port”: 1080,<br> “password”: “password”,<br> “method”: “aes-256-cfb”,<br> “fast_open”: true,<br> “timeout”:300<br>}<br>$ ssserver -c /etc/shadowsocks.json -d stop<br>$ ssserver -c /etc/shadowsocks.json -d start</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。&lt;/p&gt;
+&lt;p&gt;虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="乱七八糟" scheme="//litten.me/tags/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>别给自己找借口</title>
     <link href="//litten.me/2016/08/23/2015/20150823/"/>
     <id>//litten.me/2016/08/23/2015/20150823/</id>
@@ -2506,34 +2585,6 @@
     <summary type="html">
     
       &lt;p&gt;我经常能收到各种回复、提问、私信，有五种我不会回答，有这五种思维的人在现实生活中，我也会尽量远离，这是我爸活着的时候教我的。后来我一位广东朋友跟我说，这不是我爸一个人悟出来的，这是一种在他们那边流传很久的智慧，用广东话讲“费神教会你”。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="乱七八糟" scheme="//litten.me/tags/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>注重生活体验，着眼点放在你自己的内心</title>
-    <link href="//litten.me/2016/08/23/2016/20160823/"/>
-    <id>//litten.me/2016/08/23/2016/20160823/</id>
-    <published>2016-08-23T02:36:00.000Z</published>
-    <updated>2017-10-13T15:28:19.856Z</updated>
-    
-    <content type="html"><![CDATA[<p>我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。</p>
-<p>虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。<br><a id="more"></a></p>
-<p>很多年轻人因为阅历的关系，其实不明白一个道理：人的欲望是无限的，你得到原来想要的，还会想得到更多，就像某些人没有iPhone的时候，做梦都想要，等用到一段时间之后，也就觉得就那么回事，一个手机而已（仅仅举个例子，什么豪宅，跑车，名表，名包，美女都那么回事，时间长了兴奋感都会消失），如果一个人的人生是欲望驱动的，那必然非常看重输赢，如果是这样的价值观，感受到的快乐也就全都来自于赢的一瞬间，不会长久，甚至很多人会为了赢做很多不喜欢的事情，反而本末倒置，不少所谓的成功人士的抑郁症就是这么来的。</p>
-<p>可能有人就问了，那怎样才能快乐呢？注重生活体验，着眼点放在你自己的内心，热爱生活，享受生活，不在乎输赢，而在乎做一件事的体验，在乎自己的成长，不要太在意外部强加的价值观，是的，这样，你可能不会成为外人眼里成功的人，得不到令人艳羡的目光，但你活的踏实，真实，平稳，而且最重要的，你活出真实的你自己，你有底气露出自信，满足，真实的微笑（这个答案肯定有很多人看不懂，我不要求每个人都懂）。</p>
-<blockquote>
-<p>dudu<br>$ apt-get update<br>$ apt-get install python-pip<br>$ pip install setuptools<br>$ pip install shadowsocks<br>$ nano /etc/shadowsocks.json<br>{<br> “server”: “${ip}”,<br> “server_port”: ${port},<br> “local_address”: “127.0.0.1”,<br> “local_port”: 1080,<br> “password”: “password”,<br> “method”: “aes-256-cfb”,<br> “fast_open”: true,<br> “timeout”:300<br>}<br>$ ssserver -c /etc/shadowsocks.json -d stop<br>$ ssserver -c /etc/shadowsocks.json -d start</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我跳槽，不是因为待遇，而是：1、受不了银行这类国企的气氛；2、不喜欢银行IT的工作，太死板，太没有成就感；3、进了银行，往上升很大程度上不取决于自己的技能了，有太多其他因素；还是喜欢靠本事吃饭，虽然很可能只是粗茶淡饭。&lt;/p&gt;
-&lt;p&gt;虽然业务能力得到了很大提升，但思维模式得到了固化，做事更多的开始依赖过往的“经验”，而不去思考它的其他可能性。&lt;br&gt;
     
     </summary>
     
@@ -3193,43 +3244,6 @@
   </entry>
   
   <entry>
-    <title>别给自己设定界限</title>
-    <link href="//litten.me/2016/01/01/2016/20160101/"/>
-    <id>//litten.me/2016/01/01/2016/20160101/</id>
-    <published>2016-01-01T02:36:00.000Z</published>
-    <updated>2017-08-27T05:51:57.902Z</updated>
-    
-    <content type="html"><![CDATA[<p>你会发现，<br>大部分人对事物的理解多为道听途说，<br>他们会告诉你“你做不到”，<br>不是因为“他们知道你做不到”<br>也不是因为“他们自己做不到”<br>而是因为:<br>“他们听别人说做不到”。</p>
-<a id="more"></a>
-<p>就这个问题，答主在MIT的时候，问过自己的一位老师，诺贝尔物理学奖得主，夸克的发现人，弗里德曼。</p>
-<p>在这里，答主要揭示一个关键的逻辑，这个关键的逻辑，诅咒着99%的人。</p>
-<p>这个逻辑是什么呢？</p>
-<p>请紧跟下面对话，不要快速阅读，要慢慢看，一句一句地看：</p>
-<p>弗里德曼：地球是圆的吗？</p>
-<p>答主：是的。</p>
-<p>弗里德曼：你知道地球是圆的吗？</p>
-<p>答主：知道。</p>
-<p>弗里德曼：但是，你知道地球是圆的，说明你很厉害吗？</p>
-<p>答主：不。</p>
-<p>弗里德曼：你知道一个很重要的实事，而且你是对的，为什么不能证明你很厉害？</p>
-<p>答主：因为：这个事情已经得到大家的认同了！</p>
-<p>弗里德曼：是啊。只要是大家都已经认同的东西，你再对，也没有意义了。</p>
-<p>其实，任何个人的成就，特别是在学科领域，都是在大家不知道、不同意，甚至强烈反对的时候，你坚持，并且发现你是对的之后，才产生的。也就是说，想要做出成就，最主要的就是：不能做大家都已经认同的事情。也就是，要出众，则不能从众。在这方面，中国的学生是最差的。</p>
-<p>答主认为，这才是“钱学森之问”真正的答案。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;你会发现，&lt;br&gt;大部分人对事物的理解多为道听途说，&lt;br&gt;他们会告诉你“你做不到”，&lt;br&gt;不是因为“他们知道你做不到”&lt;br&gt;也不是因为“他们自己做不到”&lt;br&gt;而是因为:&lt;br&gt;“他们听别人说做不到”。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="乱七八糟" scheme="//litten.me/tags/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>鸡汤</title>
     <link href="//litten.me/2016/01/01/2015/20151001/"/>
     <id>//litten.me/2016/01/01/2015/20151001/</id>
@@ -3319,6 +3333,43 @@
 &lt;p&gt;现在的中国，进入了更高层次的“资本经济”的时代。&lt;/p&gt;
 &lt;p&gt;　　什么是“资本经济”时代呢？简而言之，它就是在市场经济的基础上加了一根“杠杆”，在物理学上“杠杆”的作用是利用“力臂”将“力量”放大，从而可以翘起更大质量物体。经济上多了这一根杠杆，其活动空间和灵活性都大大增强，这也叫“资本思维”。今后的中国人必须深刻理解和运用“资本思维”这个工具。&lt;/p&gt;
 &lt;p&gt;　资本思维&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="乱七八糟" scheme="//litten.me/tags/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>别给自己设定界限</title>
+    <link href="//litten.me/2016/01/01/2016/20160101/"/>
+    <id>//litten.me/2016/01/01/2016/20160101/</id>
+    <published>2016-01-01T02:36:00.000Z</published>
+    <updated>2017-08-27T05:51:57.902Z</updated>
+    
+    <content type="html"><![CDATA[<p>你会发现，<br>大部分人对事物的理解多为道听途说，<br>他们会告诉你“你做不到”，<br>不是因为“他们知道你做不到”<br>也不是因为“他们自己做不到”<br>而是因为:<br>“他们听别人说做不到”。</p>
+<a id="more"></a>
+<p>就这个问题，答主在MIT的时候，问过自己的一位老师，诺贝尔物理学奖得主，夸克的发现人，弗里德曼。</p>
+<p>在这里，答主要揭示一个关键的逻辑，这个关键的逻辑，诅咒着99%的人。</p>
+<p>这个逻辑是什么呢？</p>
+<p>请紧跟下面对话，不要快速阅读，要慢慢看，一句一句地看：</p>
+<p>弗里德曼：地球是圆的吗？</p>
+<p>答主：是的。</p>
+<p>弗里德曼：你知道地球是圆的吗？</p>
+<p>答主：知道。</p>
+<p>弗里德曼：但是，你知道地球是圆的，说明你很厉害吗？</p>
+<p>答主：不。</p>
+<p>弗里德曼：你知道一个很重要的实事，而且你是对的，为什么不能证明你很厉害？</p>
+<p>答主：因为：这个事情已经得到大家的认同了！</p>
+<p>弗里德曼：是啊。只要是大家都已经认同的东西，你再对，也没有意义了。</p>
+<p>其实，任何个人的成就，特别是在学科领域，都是在大家不知道、不同意，甚至强烈反对的时候，你坚持，并且发现你是对的之后，才产生的。也就是说，想要做出成就，最主要的就是：不能做大家都已经认同的事情。也就是，要出众，则不能从众。在这方面，中国的学生是最差的。</p>
+<p>答主认为，这才是“钱学森之问”真正的答案。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;你会发现，&lt;br&gt;大部分人对事物的理解多为道听途说，&lt;br&gt;他们会告诉你“你做不到”，&lt;br&gt;不是因为“他们知道你做不到”&lt;br&gt;也不是因为“他们自己做不到”&lt;br&gt;而是因为:&lt;br&gt;“他们听别人说做不到”。&lt;/p&gt;
     
     </summary>
     
