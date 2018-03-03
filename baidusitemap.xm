@@ -4,8 +4,25 @@
 
     
   <url>
+    <loc>//litten.me/2018/01/20/2018/20180120/</loc>
+    <lastmod>2018-03-03T04:56:51.215Z</lastmod>
+    <data>
+        <display>
+        <title>docker install</title>
+        <pubTime>2018-01-19T16:00:00.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2018/01/01/2018/20180101/</loc>
-    <lastmod>2018-01-01T08:25:55.509Z</lastmod>
+    <lastmod>2018-03-03T04:47:27.037Z</lastmod>
     <data>
         <display>
         <title>tcp3次握手协议理解</title>
@@ -61,23 +78,6 @@
         <display>
         <title>git服务端强制覆盖本地</title>
         <pubTime>2017-10-31T16:00:00.000Z</pubTime>
-        
-        <tag>node</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>//litten.me/2017/10/01/2017/20171001/</loc>
-    <lastmod>2017-11-27T06:38:30.583Z</lastmod>
-    <data>
-        <display>
-        <title>node的路径</title>
-        <pubTime>2017-09-30T16:00:00.000Z</pubTime>
         
         <tag>node</tag>
          
