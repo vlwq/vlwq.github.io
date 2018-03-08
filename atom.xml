@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//litten.me/"/>
-  <updated>2018-03-03T04:56:51.215Z</updated>
+  <updated>2018-03-08T12:57:49.679Z</updated>
   <id>//litten.me/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>lodash array to object</title>
+    <link href="//litten.me/2018/03/01/2018/20180301/"/>
+    <id>//litten.me/2018/03/01/2018/20180301/</id>
+    <published>2018-02-28T16:00:00.000Z</published>
+    <updated>2018-03-08T12:57:49.679Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> mergeUnionByKey = <span class="function"><span class="keyword">function</span>(<span class="params">data,key,templete=&#123;&#125;</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> datasets = data</div><div class="line">  <span class="keyword">const</span> datasetsIndex = _.mapValues(datasets, <span class="function"><span class="params">dataset</span> =&gt;</span> _.keyBy(dataset, key))</div><div class="line">  <span class="keyword">const</span> uniqKeys = _.chain(datasets).flatten().map(key).uniq().value()</div><div class="line">  <span class="keyword">const</span> c = _.chain(uniqKeys).map(<span class="function"><span class="params">val</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> data = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(templete))</div><div class="line">    _.each(datasetsIndex, <span class="function"><span class="params">dataset</span> =&gt;</span>&#123;</div><div class="line">      _.merge(data, dataset[val])</div><div class="line">    &#125;)</div><div class="line">    <span class="keyword">return</span> data</div><div class="line">  &#125;).filter(key).value()</div><div class="line">  <span class="keyword">return</span> c</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;figure class=&quot;highlight typescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;
+    
+    </summary>
+    
+    
+      <category term="node" scheme="//litten.me/tags/node/"/>
+    
+  </entry>
   
   <entry>
     <title>docker install</title>
@@ -3280,6 +3302,43 @@
   </entry>
   
   <entry>
+    <title>别给自己设定界限</title>
+    <link href="//litten.me/2016/01/01/2016/20160101/"/>
+    <id>//litten.me/2016/01/01/2016/20160101/</id>
+    <published>2016-01-01T02:36:00.000Z</published>
+    <updated>2017-08-27T05:51:57.902Z</updated>
+    
+    <content type="html"><![CDATA[<p>你会发现，<br>大部分人对事物的理解多为道听途说，<br>他们会告诉你“你做不到”，<br>不是因为“他们知道你做不到”<br>也不是因为“他们自己做不到”<br>而是因为:<br>“他们听别人说做不到”。</p>
+<a id="more"></a>
+<p>就这个问题，答主在MIT的时候，问过自己的一位老师，诺贝尔物理学奖得主，夸克的发现人，弗里德曼。</p>
+<p>在这里，答主要揭示一个关键的逻辑，这个关键的逻辑，诅咒着99%的人。</p>
+<p>这个逻辑是什么呢？</p>
+<p>请紧跟下面对话，不要快速阅读，要慢慢看，一句一句地看：</p>
+<p>弗里德曼：地球是圆的吗？</p>
+<p>答主：是的。</p>
+<p>弗里德曼：你知道地球是圆的吗？</p>
+<p>答主：知道。</p>
+<p>弗里德曼：但是，你知道地球是圆的，说明你很厉害吗？</p>
+<p>答主：不。</p>
+<p>弗里德曼：你知道一个很重要的实事，而且你是对的，为什么不能证明你很厉害？</p>
+<p>答主：因为：这个事情已经得到大家的认同了！</p>
+<p>弗里德曼：是啊。只要是大家都已经认同的东西，你再对，也没有意义了。</p>
+<p>其实，任何个人的成就，特别是在学科领域，都是在大家不知道、不同意，甚至强烈反对的时候，你坚持，并且发现你是对的之后，才产生的。也就是说，想要做出成就，最主要的就是：不能做大家都已经认同的事情。也就是，要出众，则不能从众。在这方面，中国的学生是最差的。</p>
+<p>答主认为，这才是“钱学森之问”真正的答案。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;你会发现，&lt;br&gt;大部分人对事物的理解多为道听途说，&lt;br&gt;他们会告诉你“你做不到”，&lt;br&gt;不是因为“他们知道你做不到”&lt;br&gt;也不是因为“他们自己做不到”&lt;br&gt;而是因为:&lt;br&gt;“他们听别人说做不到”。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="乱七八糟" scheme="//litten.me/tags/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>鸡汤</title>
     <link href="//litten.me/2016/01/01/2015/20151001/"/>
     <id>//litten.me/2016/01/01/2015/20151001/</id>
@@ -3369,43 +3428,6 @@
 &lt;p&gt;现在的中国，进入了更高层次的“资本经济”的时代。&lt;/p&gt;
 &lt;p&gt;　　什么是“资本经济”时代呢？简而言之，它就是在市场经济的基础上加了一根“杠杆”，在物理学上“杠杆”的作用是利用“力臂”将“力量”放大，从而可以翘起更大质量物体。经济上多了这一根杠杆，其活动空间和灵活性都大大增强，这也叫“资本思维”。今后的中国人必须深刻理解和运用“资本思维”这个工具。&lt;/p&gt;
 &lt;p&gt;　资本思维&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="乱七八糟" scheme="//litten.me/tags/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>别给自己设定界限</title>
-    <link href="//litten.me/2016/01/01/2016/20160101/"/>
-    <id>//litten.me/2016/01/01/2016/20160101/</id>
-    <published>2016-01-01T02:36:00.000Z</published>
-    <updated>2017-08-27T05:51:57.902Z</updated>
-    
-    <content type="html"><![CDATA[<p>你会发现，<br>大部分人对事物的理解多为道听途说，<br>他们会告诉你“你做不到”，<br>不是因为“他们知道你做不到”<br>也不是因为“他们自己做不到”<br>而是因为:<br>“他们听别人说做不到”。</p>
-<a id="more"></a>
-<p>就这个问题，答主在MIT的时候，问过自己的一位老师，诺贝尔物理学奖得主，夸克的发现人，弗里德曼。</p>
-<p>在这里，答主要揭示一个关键的逻辑，这个关键的逻辑，诅咒着99%的人。</p>
-<p>这个逻辑是什么呢？</p>
-<p>请紧跟下面对话，不要快速阅读，要慢慢看，一句一句地看：</p>
-<p>弗里德曼：地球是圆的吗？</p>
-<p>答主：是的。</p>
-<p>弗里德曼：你知道地球是圆的吗？</p>
-<p>答主：知道。</p>
-<p>弗里德曼：但是，你知道地球是圆的，说明你很厉害吗？</p>
-<p>答主：不。</p>
-<p>弗里德曼：你知道一个很重要的实事，而且你是对的，为什么不能证明你很厉害？</p>
-<p>答主：因为：这个事情已经得到大家的认同了！</p>
-<p>弗里德曼：是啊。只要是大家都已经认同的东西，你再对，也没有意义了。</p>
-<p>其实，任何个人的成就，特别是在学科领域，都是在大家不知道、不同意，甚至强烈反对的时候，你坚持，并且发现你是对的之后，才产生的。也就是说，想要做出成就，最主要的就是：不能做大家都已经认同的事情。也就是，要出众，则不能从众。在这方面，中国的学生是最差的。</p>
-<p>答主认为，这才是“钱学森之问”真正的答案。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;你会发现，&lt;br&gt;大部分人对事物的理解多为道听途说，&lt;br&gt;他们会告诉你“你做不到”，&lt;br&gt;不是因为“他们知道你做不到”&lt;br&gt;也不是因为“他们自己做不到”&lt;br&gt;而是因为:&lt;br&gt;“他们听别人说做不到”。&lt;/p&gt;
     
     </summary>
     

@@ -145,6 +145,65 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2018/20180301" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/01/2018/20180301/">lodash array to object</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/01/2018/20180301/" class="archive-article-date">
+  	<time datetime="2018-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> mergeUnionByKey = <span class="function"><span class="keyword">function</span>(<span class="params">data,key,templete=&#123;&#125;</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> datasets = data</div><div class="line">  <span class="keyword">const</span> datasetsIndex = _.mapValues(datasets, <span class="function"><span class="params">dataset</span> =&gt;</span> _.keyBy(dataset, key))</div><div class="line">  <span class="keyword">const</span> uniqKeys = _.chain(datasets).flatten().map(key).uniq().value()</div><div class="line">  <span class="keyword">const</span> c = _.chain(uniqKeys).map(<span class="function"><span class="params">val</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> data = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(templete))</div><div class="line">    _.each(datasetsIndex, <span class="function"><span class="params">dataset</span> =&gt;</span>&#123;</div><div class="line">      _.merge(data, dataset[val])</div><div class="line">    &#125;)</div><div class="line">    <span class="keyword">return</span> data</div><div class="line">  &#125;).filter(key).value()</div><div class="line">  <span class="keyword">return</span> c</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/01/2018/20180301/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-2018/20180120" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -579,70 +638,6 @@
 
 
   
-    <article id="post-2017/20170729" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/29/2017/20170729/">Andrew的Json.parse解析器</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/29/2017/20170729/" class="archive-article-date">
-  	<time datetime="2017-07-29T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>//令人窒息的操作</p>
-<blockquote>
-<p>Andrew的Json.parse解析器</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/07/29/2017/20170729/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">base</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/29/2017/20170729/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -743,11 +738,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">guagua</a>
+                <a href="javascript:void(0)" class="js-tag color3">健康</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">健康</a>
+                <a href="javascript:void(0)" class="js-tag color2">guagua</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -755,11 +750,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -780,10 +779,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">mongoose</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
             
             <div class="clearfix"></div>

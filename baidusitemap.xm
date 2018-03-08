@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>//litten.me/2018/03/01/2018/20180301/</loc>
+    <lastmod>2018-03-08T12:57:49.679Z</lastmod>
+    <data>
+        <display>
+        <title>lodash array to object</title>
+        <pubTime>2018-02-28T16:00:00.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2018/01/20/2018/20180120/</loc>
     <lastmod>2018-03-03T04:56:51.215Z</lastmod>
     <data>
