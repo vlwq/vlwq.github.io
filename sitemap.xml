@@ -541,6 +541,13 @@
   </url>
   
   <url>
+    <loc>//litten.me/photos/index.html</loc>
+    
+    <lastmod>2017-07-01T04:45:00.443Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>//litten.me/photos/ins.json</loc>
     
     <lastmod>2017-07-01T04:45:00.443Z</lastmod>
@@ -548,9 +555,9 @@
   </url>
   
   <url>
-    <loc>//litten.me/photos/index.html</loc>
+    <loc>//litten.me/assets/demo/mediator/demo.html</loc>
     
-    <lastmod>2017-07-01T04:45:00.443Z</lastmod>
+    <lastmod>2017-07-01T04:45:00.427Z</lastmod>
     
   </url>
   
@@ -569,21 +576,7 @@
   </url>
   
   <url>
-    <loc>//litten.me/assets/demo/mediator/demo.html</loc>
-    
-    <lastmod>2017-07-01T04:45:00.427Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//litten.me/assets/demo/hack_demo.html</loc>
-    
-    <lastmod>2017-07-01T04:45:00.412Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>//litten.me/assets/demo/gift/index.html</loc>
+    <loc>//litten.me/assets/demo/jiugongge_demo2.html</loc>
     
     <lastmod>2017-07-01T04:45:00.412Z</lastmod>
     
@@ -597,21 +590,28 @@
   </url>
   
   <url>
-    <loc>//litten.me/assets/demo/jiugongge_demo2.html</loc>
+    <loc>//litten.me/assets/demo/gift/index.html</loc>
     
     <lastmod>2017-07-01T04:45:00.412Z</lastmod>
     
   </url>
   
   <url>
-    <loc>//litten.me/assets/demo/border1px.html</loc>
+    <loc>//litten.me/assets/demo/hack_demo.html</loc>
+    
+    <lastmod>2017-07-01T04:45:00.412Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//litten.me/assets/demo/coffee_pc_demo/pro-con.html</loc>
     
     <lastmod>2017-07-01T04:45:00.396Z</lastmod>
     
   </url>
   
   <url>
-    <loc>//litten.me/assets/demo/coffee_pc_demo/pro-con.html</loc>
+    <loc>//litten.me/assets/demo/border1px.html</loc>
     
     <lastmod>2017-07-01T04:45:00.396Z</lastmod>
     
