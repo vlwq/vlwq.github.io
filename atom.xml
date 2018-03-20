@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Andrew的博客</title>
-  <subtitle>过去不回头，未来不将就。</subtitle>
+  <subtitle>practice makes perfect</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="//litten.me/"/>
