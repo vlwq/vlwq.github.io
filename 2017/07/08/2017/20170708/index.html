@@ -165,11 +165,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>错误提示的意思是：mongoose模型被重复定义了，这是不允许的</p>
-<p>首先，你需要搞清楚require和module.exports的运行机制，建议你看看这篇：<a href="http://www.nodeclass.com/articles/37488" target="_blank" rel="external">http://www.nodeclass.com/articles/37488</a></p>
+<p>首先，你需要搞清楚require和module.exports的运行机制，建议你看看这篇：<a href="http://www.nodeclass.com/articles/37488" target="_blank" rel="noopener">http://www.nodeclass.com/articles/37488</a></p>
 <a id="more"></a>
 <p>然后，针对你这个场景，不应该把 mongoose.model()模型定义方法做为模块导出的方法，因<br>为：</p>
 <p>模型定义不允许重复，所以这个mongoose.model()应该只调用一次，而导出它执行后的结果<br>require机制确保了mongoose.model()只会执行一次</p>
-<p>所以，你的代码应该改写成这样：<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var UserAccountSchema = mongoose.Schema(&#123;</div><div class="line">   <span class="comment">//...略去定义代码</span></div><div class="line">&#125;);</div><div class="line">var <span class="keyword">model</span> = mongoose.<span class="keyword">model</span>(<span class="string">'user.account'</span>, UserAccountSchema);</div><div class="line"><span class="comment">//导出模型</span></div><div class="line">module.exports =<span class="keyword">model</span>;</div></pre></td></tr></table></figure></p>
+<p>所以，你的代码应该改写成这样：<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var UserAccountSchema = mongoose.Schema(&#123;</span><br><span class="line">   <span class="comment">//...略去定义代码</span></span><br><span class="line">&#125;);</span><br><span class="line">var <span class="keyword">model</span> = mongoose.<span class="keyword">model</span>(<span class="string">'user.account'</span>, UserAccountSchema);</span><br><span class="line"><span class="comment">//导出模型</span></span><br><span class="line">module.exports =<span class="keyword">model</span>;</span><br></pre></td></tr></table></figure></p>
 
       
 

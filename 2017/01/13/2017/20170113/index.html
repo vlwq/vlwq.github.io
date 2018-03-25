@@ -165,7 +165,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li>向你的 Github Pages 仓库添加一个CNAME(一定要<em>大写</em>)文件其中只能包含一个顶级域名，<br>像这样：<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">example</span><span class="selector-class">.com</span></div></pre></td></tr></table></figure>
+<li>向你的 Github Pages 仓库添加一个CNAME(一定要<em>大写</em>)文件其中只能包含一个顶级域名，<br>像这样：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">example</span><span class="selector-class">.com</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <a id="more"></a>
@@ -175,10 +175,10 @@
 </blockquote>
 <p>后会把你的博客所在目录下 public 文件夹里的东西都推到 Github Pages 仓库上，并且把 CNAME 文件覆盖掉，<br>解决这个问题可以直接把 CNAME 文件添加到 source 文件夹里，这样每次推的时候就不用担心仓库里的 CNAME 文件被覆盖掉了。</p>
 <ol>
-<li>向你的 DNS 配置中添加 3 条记录<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@          A             <span class="number">192.30</span><span class="number">.252</span><span class="number">.153</span></div><div class="line">@          A             <span class="number">192.30</span><span class="number">.252</span><span class="number">.154</span></div><div class="line">www      CNAME    username.github.io.</div></pre></td></tr></table></figure>
+<li>向你的 DNS 配置中添加 3 条记录<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@          A             <span class="number">192.30</span><span class="number">.252</span><span class="number">.153</span></span><br><span class="line">@          A             <span class="number">192.30</span><span class="number">.252</span><span class="number">.154</span></span><br><span class="line">www      CNAME    username.github.io.</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>用你自己的 Github 用户名替换 username推荐使用 DNSPOD 的服务，使用国外的 DNS 解析服务可能有被墙的风险。至于如何使用 DNSPOD 解析域名，<br>参考<br><a href="http://jingyan.baidu.com/article/546ae1857c4ee81149f28cbe.html3" target="_blank" rel="external">http://jingyan.baidu.com/article/546ae1857c4ee81149f28cbe.html3</a>.<br>等待你的 DNS 配置生效对DNS的配置不是立即生效的，过10分钟再去访问你的域名看看有没有配置成功 : )</p>
+<p>用你自己的 Github 用户名替换 username推荐使用 DNSPOD 的服务，使用国外的 DNS 解析服务可能有被墙的风险。至于如何使用 DNSPOD 解析域名，<br>参考<br><a href="http://jingyan.baidu.com/article/546ae1857c4ee81149f28cbe.html3" target="_blank" rel="noopener">http://jingyan.baidu.com/article/546ae1857c4ee81149f28cbe.html3</a>.<br>等待你的 DNS 配置生效对DNS的配置不是立即生效的，过10分钟再去访问你的域名看看有没有配置成功 : )</p>
 
       
 
