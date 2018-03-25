@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>//litten.me/2018/03/15/2018/20180315/</loc>
+    <lastmod>2018-03-25T15:29:21.974Z</lastmod>
+    <data>
+        <display>
+        <title>Visual Studio中配置SDL</title>
+        <pubTime>2018-03-14T16:00:00.000Z</pubTime>
+        
+        <tag>c</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2018/03/01/2018/20180301/</loc>
     <lastmod>2018-03-08T12:57:49.679Z</lastmod>
     <data>
@@ -73,7 +90,7 @@
     
   <url>
     <loc>//litten.me/2017/12/25/2017/20171225/</loc>
-    <lastmod>2017-12-26T14:59:57.180Z</lastmod>
+    <lastmod>2017-12-26T14:59:57.181Z</lastmod>
     <data>
         <display>
         <title>sequelize-auto对照数据库自动生成相应的models</title>
@@ -90,7 +107,7 @@
     
   <url>
     <loc>//litten.me/2017/11/01/2017/20171101/</loc>
-    <lastmod>2017-11-27T06:45:14.323Z</lastmod>
+    <lastmod>2017-11-27T06:45:14.324Z</lastmod>
     <data>
         <display>
         <title>git服务端强制覆盖本地</title>
@@ -107,7 +124,7 @@
     
   <url>
     <loc>//litten.me/2017/10/02/2017/20171002/</loc>
-    <lastmod>2017-11-27T06:38:30.498Z</lastmod>
+    <lastmod>2017-11-27T06:38:30.499Z</lastmod>
     <data>
         <display>
         <title>实现promise(转自bananas)</title>
@@ -124,7 +141,7 @@
     
   <url>
     <loc>//litten.me/2016/08/23/2016/20160823/</loc>
-    <lastmod>2017-10-13T15:28:19.856Z</lastmod>
+    <lastmod>2017-10-13T15:28:19.857Z</lastmod>
     <data>
         <display>
         <title>注重生活体验，着眼点放在你自己的内心</title>
@@ -175,7 +192,7 @@
     
   <url>
     <loc>//litten.me/2017/08/08/2017/20170808/</loc>
-    <lastmod>2017-08-27T05:57:56.304Z</lastmod>
+    <lastmod>2017-08-27T05:57:56.305Z</lastmod>
     <data>
         <display>
         <title>Andrew Parse 2</title>
@@ -209,7 +226,7 @@
     
   <url>
     <loc>//litten.me/2017/02/03/2017/20170203/</loc>
-    <lastmod>2017-08-27T05:56:31.019Z</lastmod>
+    <lastmod>2017-08-27T05:56:31.020Z</lastmod>
     <data>
         <display>
         <title>git还原某个特定的文件到之前的版本</title>
@@ -362,7 +379,7 @@
     
   <url>
     <loc>//litten.me/2016/10/05/2016/20161005/</loc>
-    <lastmod>2017-08-27T05:52:15.885Z</lastmod>
+    <lastmod>2017-08-27T05:52:15.886Z</lastmod>
     <data>
         <display>
         <title>差距</title>
@@ -379,7 +396,7 @@
     
   <url>
     <loc>//litten.me/2016/03/04/2016/20160304/</loc>
-    <lastmod>2017-08-27T05:52:15.833Z</lastmod>
+    <lastmod>2017-08-27T05:52:15.834Z</lastmod>
     <data>
         <display>
         <title>执行力</title>
@@ -396,7 +413,7 @@
     
   <url>
     <loc>//litten.me/2016/06/02/2016/20160602/</loc>
-    <lastmod>2017-08-27T05:52:15.817Z</lastmod>
+    <lastmod>2017-08-27T05:52:15.818Z</lastmod>
     <data>
         <display>
         <title>这个世界上根本没有、也不可能有什么“一定能XX”的模版</title>
@@ -447,7 +464,7 @@
     
   <url>
     <loc>//litten.me/2016/07/25/2016/20160822/</loc>
-    <lastmod>2017-08-27T05:50:41.412Z</lastmod>
+    <lastmod>2017-08-27T05:50:41.413Z</lastmod>
     <data>
         <display>
         <title>25岁前你必须要做完的7件事</title>
@@ -464,7 +481,7 @@
     
   <url>
     <loc>//litten.me/2016/01/01/2015/20151001/</loc>
-    <lastmod>2017-08-27T05:47:16.806Z</lastmod>
+    <lastmod>2017-08-27T05:47:16.807Z</lastmod>
     <data>
         <display>
         <title>鸡汤</title>
@@ -481,7 +498,7 @@
     
   <url>
     <loc>//litten.me/2016/08/01/2015/20150808/</loc>
-    <lastmod>2017-08-27T05:46:21.971Z</lastmod>
+    <lastmod>2017-08-27T05:46:21.972Z</lastmod>
     <data>
         <display>
         <title>自我同一性</title>
@@ -515,7 +532,7 @@
     
   <url>
     <loc>//litten.me/2016/02/05/2016/20160205/</loc>
-    <lastmod>2017-08-27T05:45:11.280Z</lastmod>
+    <lastmod>2017-08-27T05:45:11.281Z</lastmod>
     <data>
         <display>
         <title>问题</title>
@@ -532,7 +549,7 @@
     
   <url>
     <loc>//litten.me/2016/02/28/2016/20160228/</loc>
-    <lastmod>2017-08-27T05:45:05.943Z</lastmod>
+    <lastmod>2017-08-27T05:45:05.944Z</lastmod>
     <data>
         <display>
         <title>出国</title>
@@ -566,7 +583,7 @@
     
   <url>
     <loc>//litten.me/2016/02/02/2016/20160202/</loc>
-    <lastmod>2017-08-27T05:44:55.473Z</lastmod>
+    <lastmod>2017-08-27T05:44:55.474Z</lastmod>
     <data>
         <display>
         <title>赚客</title>
@@ -583,7 +600,7 @@
     
   <url>
     <loc>//litten.me/2016/09/20/2016/20160920/</loc>
-    <lastmod>2017-08-27T05:44:49.901Z</lastmod>
+    <lastmod>2017-08-27T05:44:49.902Z</lastmod>
     <data>
         <display>
         <title>结束了把</title>
@@ -634,7 +651,7 @@
     
   <url>
     <loc>//litten.me/2016/08/23/2015/20150823/</loc>
-    <lastmod>2017-08-27T05:10:34.248Z</lastmod>
+    <lastmod>2017-08-27T05:10:34.249Z</lastmod>
     <data>
         <display>
         <title>别给自己找借口</title>
@@ -651,7 +668,7 @@
     
   <url>
     <loc>//litten.me/2015/07/01/2015/20150701/</loc>
-    <lastmod>2017-08-27T05:10:25.069Z</lastmod>
+    <lastmod>2017-08-27T05:10:25.070Z</lastmod>
     <data>
         <display>
         <title>过去</title>
@@ -668,7 +685,7 @@
     
   <url>
     <loc>//litten.me/2017/07/20/2017/20170720/</loc>
-    <lastmod>2017-07-23T02:55:01.036Z</lastmod>
+    <lastmod>2017-07-23T02:55:01.037Z</lastmod>
     <data>
         <display>
         <title>同步/异步新认识</title>
@@ -685,7 +702,7 @@
     
   <url>
     <loc>//litten.me/2017/07/11/2017/20170711/</loc>
-    <lastmod>2017-07-20T13:12:44.931Z</lastmod>
+    <lastmod>2017-07-20T13:12:44.932Z</lastmod>
     <data>
         <display>
         <title>ES6特性</title>
@@ -736,7 +753,7 @@
     
   <url>
     <loc>//litten.me/2017/07/01/2017/20170701/</loc>
-    <lastmod>2017-07-16T04:34:21.559Z</lastmod>
+    <lastmod>2017-07-16T04:34:21.560Z</lastmod>
     <data>
         <display>
         <title>yarn更换为淘宝镜像</title>
@@ -770,7 +787,7 @@
     
   <url>
     <loc>//litten.me/2017/06/17/2017/20170617/</loc>
-    <lastmod>2017-07-16T04:25:43.362Z</lastmod>
+    <lastmod>2017-07-16T04:25:43.363Z</lastmod>
     <data>
         <display>
         <title>高程笔记9-新api</title>
@@ -787,7 +804,7 @@
     
   <url>
     <loc>//litten.me/2017/06/16/2017/20170616/</loc>
-    <lastmod>2017-07-16T04:25:18.699Z</lastmod>
+    <lastmod>2017-07-16T04:25:18.700Z</lastmod>
     <data>
         <display>
         <title>高程笔记8-cookie</title>
@@ -804,7 +821,7 @@
     
   <url>
     <loc>//litten.me/2017/06/15/2017/20170615/</loc>
-    <lastmod>2017-07-16T04:23:32.286Z</lastmod>
+    <lastmod>2017-07-16T04:23:32.287Z</lastmod>
     <data>
         <display>
         <title>高程笔记7-JSON和ajax</title>
@@ -838,7 +855,7 @@
     
   <url>
     <loc>//litten.me/2017/06/13/2017/20170613/</loc>
-    <lastmod>2017-07-16T04:21:14.746Z</lastmod>
+    <lastmod>2017-07-16T04:21:14.747Z</lastmod>
     <data>
         <display>
         <title>高程笔记5-事件</title>
@@ -906,7 +923,7 @@
     
   <url>
     <loc>//litten.me/2017/06/10/2017/20170610/</loc>
-    <lastmod>2017-07-16T04:16:48.823Z</lastmod>
+    <lastmod>2017-07-16T04:16:48.824Z</lastmod>
     <data>
         <display>
         <title>高程笔记2-面向对象的程序设计</title>
@@ -923,7 +940,7 @@
     
   <url>
     <loc>//litten.me/2017/06/09/2017/20170609/</loc>
-    <lastmod>2017-07-16T04:15:32.006Z</lastmod>
+    <lastmod>2017-07-16T04:15:32.007Z</lastmod>
     <data>
         <display>
         <title>高程笔记1</title>
@@ -940,7 +957,7 @@
     
   <url>
     <loc>//litten.me/2017/06/26/2017/20170626/</loc>
-    <lastmod>2017-07-07T13:33:30.062Z</lastmod>
+    <lastmod>2017-07-07T13:33:30.063Z</lastmod>
     <data>
         <display>
         <title>html 网页中的锚点(命名锚记)的使用介绍</title>
@@ -957,7 +974,7 @@
     
   <url>
     <loc>//litten.me/2017/07/05/2017/20170705/</loc>
-    <lastmod>2017-07-05T12:42:33.723Z</lastmod>
+    <lastmod>2017-07-05T12:42:33.724Z</lastmod>
     <data>
         <display>
         <title>electron打包程序</title>
@@ -974,7 +991,7 @@
     
   <url>
     <loc>//litten.me/2017/06/05/2017/20170702/</loc>
-    <lastmod>2017-07-05T11:39:59.447Z</lastmod>
+    <lastmod>2017-07-05T11:39:59.448Z</lastmod>
     <data>
         <display>
         <title>使用淘宝的cnpm代替npm</title>
@@ -1025,7 +1042,7 @@
     
   <url>
     <loc>//litten.me/2017/02/25/2017/20170225/</loc>
-    <lastmod>2017-07-05T11:12:41.935Z</lastmod>
+    <lastmod>2017-07-05T11:12:41.936Z</lastmod>
     <data>
         <display>
         <title>nginx配置静态网页</title>
@@ -1059,7 +1076,7 @@
     
   <url>
     <loc>//litten.me/2017/01/21/2017/20170121/</loc>
-    <lastmod>2017-07-05T11:12:41.872Z</lastmod>
+    <lastmod>2017-07-05T11:12:41.873Z</lastmod>
     <data>
         <display>
         <title>node启动listen EADDRINUSE</title>
@@ -1093,7 +1110,7 @@
     
   <url>
     <loc>//litten.me/2016/11/08/2016/20161108/</loc>
-    <lastmod>2017-07-05T11:09:58.154Z</lastmod>
+    <lastmod>2017-07-05T11:09:58.155Z</lastmod>
     <data>
         <display>
         <title>linux相关</title>
@@ -1127,7 +1144,7 @@
     
   <url>
     <loc>//litten.me/2016/11/11/2016/20161111/</loc>
-    <lastmod>2017-07-05T11:09:58.087Z</lastmod>
+    <lastmod>2017-07-05T11:09:58.088Z</lastmod>
     <data>
         <display>
         <title>guajs简单版本</title>
@@ -1144,7 +1161,7 @@
     
   <url>
     <loc>//litten.me/2016/11/07/2016/20161107/</loc>
-    <lastmod>2017-07-05T11:09:58.050Z</lastmod>
+    <lastmod>2017-07-05T11:09:58.051Z</lastmod>
     <data>
         <display>
         <title>数据结构与算法</title>
@@ -1195,7 +1212,7 @@
     
   <url>
     <loc>//litten.me/2016/11/12/2016/20161112/</loc>
-    <lastmod>2017-07-05T11:09:57.934Z</lastmod>
+    <lastmod>2017-07-05T11:09:57.935Z</lastmod>
     <data>
         <display>
         <title>flex布局</title>
@@ -1212,7 +1229,7 @@
     
   <url>
     <loc>//litten.me/2016/11/03/2016/20161103/</loc>
-    <lastmod>2017-07-05T11:09:13.614Z</lastmod>
+    <lastmod>2017-07-05T11:09:13.615Z</lastmod>
     <data>
         <display>
         <title>ajax,Bom</title>
@@ -1246,7 +1263,7 @@
     
   <url>
     <loc>//litten.me/2016/11/02/2016/20161102/</loc>
-    <lastmod>2017-07-05T11:06:42.965Z</lastmod>
+    <lastmod>2017-07-05T11:06:42.966Z</lastmod>
     <data>
         <display>
         <title>console的apply,call,bind</title>
