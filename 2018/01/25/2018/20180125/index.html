@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>test | Andrew的博客</title>
+  <title>start | Andrew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一些印象比较深刻的问题：  进程、线程、协程的区别略 锁的种类自旋 互斥 乐观 悲观 阻塞… 进程通信方式信号 管道 消息队列 共享内存 socket fifo goroutine实现机制一个线程里实现出一堆模拟的线程作为协程池, 开一个goroutine就去这个池子里捞一个出来然后用调度器切来切去 Docker 与 OS 的通信原理 docker和宿主机搭一个网桥 也就是虚拟子网 不同宿主机的">
+  <meta name="description" content="客观看待事物，不要代入自己的感情和固有习惯 实事求是，讲事实，用逻辑思考，不要被情绪操控 要认识到上面 2 点对自己是十分重要的">
 <meta name="keywords" content="summary">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="//litten.me/2016/09/22/2016/20160922/index.html">
+<meta property="og:title" content="start">
+<meta property="og:url" content="//litten.me/2018/01/25/2018/20180125/index.html">
 <meta property="og:site_name" content="Andrew的博客">
-<meta property="og:description" content="一些印象比较深刻的问题：  进程、线程、协程的区别略 锁的种类自旋 互斥 乐观 悲观 阻塞… 进程通信方式信号 管道 消息队列 共享内存 socket fifo goroutine实现机制一个线程里实现出一堆模拟的线程作为协程池, 开一个goroutine就去这个池子里捞一个出来然后用调度器切来切去 Docker 与 OS 的通信原理 docker和宿主机搭一个网桥 也就是虚拟子网 不同宿主机的">
-<meta property="og:updated_time" content="2019-08-11T16:15:58.792Z">
+<meta property="og:description" content="客观看待事物，不要代入自己的感情和固有习惯 实事求是，讲事实，用逻辑思考，不要被情绪操控 要认识到上面 2 点对自己是十分重要的">
+<meta property="og:updated_time" content="2019-08-11T16:59:21.952Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description" content="一些印象比较深刻的问题：  进程、线程、协程的区别略 锁的种类自旋 互斥 乐观 悲观 阻塞… 进程通信方式信号 管道 消息队列 共享内存 socket fifo goroutine实现机制一个线程里实现出一堆模拟的线程作为协程池, 开一个goroutine就去这个池子里捞一个出来然后用调度器切来切去 Docker 与 OS 的通信原理 docker和宿主机搭一个网桥 也就是虚拟子网 不同宿主机的">
+<meta name="twitter:title" content="start">
+<meta name="twitter:description" content="客观看待事物，不要代入自己的感情和固有习惯 实事求是，讲事实，用逻辑思考，不要被情绪操控 要认识到上面 2 点对自己是十分重要的">
   
     <link rel="alternative" href="/atom.xml" title="Andrew的博客" type="application/atom+xml">
   
@@ -148,50 +148,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2016/20160922" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2018/20180125" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      start
     </h1>
   
 
         
-        <a href="/2016/09/22/2016/20160922/" class="archive-article-date">
-  	<time datetime="2016-09-22T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-22</time>
+        <a href="/2018/01/25/2018/20180125/" class="archive-article-date">
+  	<time datetime="2018-01-25T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>一些印象比较深刻的问题：</p>
-<ol>
-<li>进程、线程、协程的区别<br>略</li>
-<li>锁的种类<br>自旋 互斥 乐观 悲观 阻塞…</li>
-<li>进程通信方式<br>信号 管道 消息队列 共享内存 socket fifo</li>
-<li>goroutine实现机制<br>一个线程里实现出一堆模拟的线程作为协程池, 开一个goroutine就去这个池子里捞一个出来然后用调度器切来切去</li>
-<li>Docker 与 OS 的通信原理</li>
-<li>docker和宿主机搭一个网桥 也就是虚拟子网 不同宿主机的docker之间只能靠端口映射了…</li>
-<li>protobuf2 和 protobuf3 的区别<br>..没用过protobuf..</li>
-<li>protobuf 的实现机制<br>还是没用过…大概和json是类似的东西把…</li>
-<li><p>mysql 集群，主从备份，主写备份读，A写入后主库，告诉B去读从库，由于没有同步完，B读不到，请设计一下<br>怎么让 B 读到？<br>给B前面加个redis, A先写入redis, redis在写入B, 完事</p>
-</li>
-<li><p>大根堆，小根堆 区别<br>…根大的就是大根….</p>
-</li>
-<li>链表种类及优劣（单链表 循环链表 双链表，优劣部分答的）<br>略</li>
-<li>一个字符串，只保留第一次出现的字符，去掉重复的后续字符。（写了一个 for 循环，O（n2），要求更好的方案，没写出来）<br>遇到字符先去字典D里查一把, 没有就加入字典有就跳过, 这样是O(n)</li>
-</ol>
-<ul>
-<li>用 goroutine 去更快的实现（答 把字符串分割处理，然后结果合并，进一步问如何解决有序，答 signal阻塞）</li>
+        <ul>
+<li>客观看待事物，不要代入自己的感情和固有习惯</li>
+<li>实事求是，讲事实，用逻辑思考，不要被情绪操控</li>
+<li>要认识到上面 2 点对自己是十分重要的</li>
 </ul>
-<ol>
-<li>一个字符串，有部分字符串是有序的，请用设计一个基于冒泡排序的算法，更快的排好。<br>略</li>
-</ol>
 
       
 
@@ -282,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABu0lEQVR42u3aQW7EIBAEwP3/p51rpAjUwwBxouK0Wlt24QOaafh84vF8G8nVZzCSp20YuLi4be4zHf0X/HzO6PfcgIuLe5+bv2Z+Tz7J6vNxcXHfzJ0vZ8liN5oYLi7u/+AmJUv1Ki4u7nu4SfOTRyF5XHKwV8PFxW1w90Yba7+P5Lu4uLhL3Kc4OgvZ/AnR23Fxca9w14KMTixSXchwcXHvc6uHKlpfpTil4XfFxcW9ws3LkfzYRD8kHVZkuLi4V7jVBqZ6kKsagw4nhouLe4W7q0DpHM6ohi+4uLinuWuBSGcha0UnuLi4V7h5YJGHI2uRR94y4eLi3uE+x0b5ayXNDy4u7mHu2tGKeQlSDV4L/+Di4l7hJo1Hjt7V/BQ2dHFxcY9xq5scefOTL3OFIyC4uLgv4FbDi11lUKFXw8XFPczNy45keuUKq3/YAhcXt83tb6BWJ7N2Jy4u7k1uPk4EHIvNDy4u7hXu2kbpWgiSxK+tQgcXF3crN48+10qfzb0aLi7uK7nVxascjOLi4v5BbrKErYUd0VYKLi7uFW61Uekc2MqDV1xc3N/i9uPOamOza9sGFxf3APcLVH6aecxizbEAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABw0lEQVR42u3ay4qEQAwF0P7/n3ZgVgPSepOUhQOnVqI2fcpFqDw+n3gdv+v6zvnpeZ2ffp5YuLi4Y+5xuc64b/T8nesNfHsHFxd3P/c6eCV/0HszN+Di4r6TmzxNDi5J4MPFxf0v3N6dJKHCxcV9J3eSnKza2OJcDRcXd8CtFkyfuH6wvouLi1vkHsVVLXMkKVPh33Fxcbdwqw3UBFc9+pQTJ1xc3Ie5eSt0VSDrjW7g4uLu5yaBrEdPwtkN8a8HFxd3IzcPT2vHPcuhEBcXdwu32uzsDWr06IVvjIuL+xi3OoSRp0l5eyZqr+Li4m7hVkul1b5ntdg6Oj3h4uKOub0hqmoYygupN20VXFzcjdzCD4rHkUnzFRcX9w3cecCaJznNVgouLu5Sbq+hklxPUqNyfRcXF3cp9yiuXgk1CXNRaMPFxd3IzY8mq4qk1QIuLi7ufu68ddprjTRbqri4uA9ze83XXgG0Os41CoK4uLhj7jx49YY4kw1/reLg4uJu4VaD12S0ojcchouL+05uzup9iJueDy4u7uu5eTukPICFi4v7Gm5e7MjLo5Mj0YKyCC4u7oC7p2B6vaV8k7i4uA9zfwCoHqqhFIgDiwAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -296,18 +277,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/09/23/2016/20160923/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/03/01/2018/20180301/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          元学习
+          lodash array to object
         
       </div>
     </a>
   
   
-    <a href="/2016/09/21/2016/20160921/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">end</div>
+    <a href="/2018/01/20/2018/20180120/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">docker install</div>
       <i class="icon-circle-right"></i>
     </a>
   
