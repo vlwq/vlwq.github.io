@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>//litten.me/2017/11/05/2017/20171105/</loc>
+    <lastmod>2019-08-21T12:56:59.167Z</lastmod>
+    <data>
+        <display>
+        <title>ES6中的promise对象</title>
+        <pubTime>2017-11-05T02:36:00.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/1970/01/01/1970/20161108/</loc>
     <lastmod>2019-08-21T12:53:10.318Z</lastmod>
     <data>
@@ -1041,7 +1058,7 @@
 
     
   <url>
-    <loc>//litten.me/2016/11/06/2016/20161106/</loc>
+    <loc>//litten.me/2016/11/06/2017/20171106/</loc>
     <lastmod>2017-07-05T11:09:58.204Z</lastmod>
     <data>
         <display>
@@ -1075,29 +1092,12 @@
 
     
   <url>
-    <loc>//litten.me/2016/11/07/2016/20161107/</loc>
+    <loc>//litten.me/2016/11/07/2017/20171107/</loc>
     <lastmod>2017-07-05T11:09:58.051Z</lastmod>
     <data>
         <display>
         <title>数据结构与算法</title>
         <pubTime>2016-11-07T02:36:00.000Z</pubTime>
-        
-        <tag>js</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>//litten.me/2016/11/05/2016/20161105/</loc>
-    <lastmod>2017-07-05T11:09:58.019Z</lastmod>
-    <data>
-        <display>
-        <title>ES6中的promise对象</title>
-        <pubTime>2016-11-05T02:36:00.000Z</pubTime>
         
         <tag>js</tag>
          
@@ -1126,7 +1126,7 @@
 
     
   <url>
-    <loc>//litten.me/2016/11/03/2016/20161103/</loc>
+    <loc>//litten.me/2016/11/03/2017/20171103/</loc>
     <lastmod>2017-07-05T11:09:13.615Z</lastmod>
     <data>
         <display>
@@ -1143,7 +1143,7 @@
 
     
   <url>
-    <loc>//litten.me/2016/11/04/2016/20161104/</loc>
+    <loc>//litten.me/2016/11/04/2017/20171104/</loc>
     <lastmod>2017-07-05T11:09:13.530Z</lastmod>
     <data>
         <display>
@@ -1160,7 +1160,7 @@
 
     
   <url>
-    <loc>//litten.me/2016/11/02/2016/20161102/</loc>
+    <loc>//litten.me/2016/11/02/2017/20171102/</loc>
     <lastmod>2017-07-05T11:06:42.966Z</lastmod>
     <data>
         <display>
