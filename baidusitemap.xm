@@ -4,12 +4,97 @@
 
     
   <url>
-    <loc>//litten.me/2016/10/01/2016/20161001/</loc>
-    <lastmod>2019-08-21T12:46:31.314Z</lastmod>
+    <loc>//litten.me/1970/01/01/1970/20161108/</loc>
+    <lastmod>2019-08-21T12:53:10.318Z</lastmod>
     <data>
         <display>
-        <title>test杂</title>
-        <pubTime>2016-10-01T02:36:00.000Z</pubTime>
+        <title>linux相关</title>
+        <pubTime>1970-01-01T02:36:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/1970/01/01/1970/20161111/</loc>
+    <lastmod>2019-08-21T12:52:29.710Z</lastmod>
+    <data>
+        <display>
+        <title>guajs简单版本</title>
+        <pubTime>1969-12-31T16:39:00.000Z</pubTime>
+        
+        <tag>guagua</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/1970/01/01/1970/20161110/</loc>
+    <lastmod>2019-08-21T12:52:19.578Z</lastmod>
+    <data>
+        <display>
+        <title>js同步异步</title>
+        <pubTime>1969-12-31T16:37:00.000Z</pubTime>
+        
+        <tag>guagua</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/1970/01/01/1970/20161101/</loc>
+    <lastmod>2019-08-21T12:52:10.696Z</lastmod>
+    <data>
+        <display>
+        <title>gua.js</title>
+        <pubTime>1969-12-31T16:38:00.000Z</pubTime>
+        
+        <tag>guagua</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/1970/01/01/1970/20160215/</loc>
+    <lastmod>2019-08-21T12:51:51.135Z</lastmod>
+    <data>
+        <display>
+        <title>gua5700</title>
+        <pubTime>1969-12-31T16:36:00.000Z</pubTime>
+        
+        <tag>guagua</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//litten.me/2015/09/21/2015/20150921/</loc>
+    <lastmod>2019-08-21T12:48:15.022Z</lastmod>
+    <data>
+        <display>
+        <title>test</title>
+        <pubTime>2015-09-21T02:36:00.000Z</pubTime>
         
         <tag>乱七八糟</tag>
          
@@ -21,12 +106,12 @@
 
     
   <url>
-    <loc>//litten.me/2016/09/21/2015/20150921/</loc>
-    <lastmod>2019-08-21T12:45:50.926Z</lastmod>
+    <loc>//litten.me/2016/10/01/2016/20161001/</loc>
+    <lastmod>2019-08-21T12:46:31.314Z</lastmod>
     <data>
         <display>
-        <title>test</title>
-        <pubTime>2016-09-21T02:36:00.000Z</pubTime>
+        <title>test杂</title>
+        <pubTime>2016-10-01T02:36:00.000Z</pubTime>
         
         <tag>乱七八糟</tag>
          
@@ -412,23 +497,6 @@
 
     
   <url>
-    <loc>//litten.me/2016/02/15/2016/20160215/</loc>
-    <lastmod>2017-08-27T05:59:23.221Z</lastmod>
-    <data>
-        <display>
-        <title>gua5700</title>
-        <pubTime>2016-02-15T02:36:00.000Z</pubTime>
-        
-        <tag>guagua</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>//litten.me/2017/07/29/2017/20170729/</loc>
     <lastmod>2017-08-27T05:58:10.407Z</lastmod>
     <data>
@@ -548,46 +616,12 @@
 
     
   <url>
-    <loc>//litten.me/2016/07/25/2016/20160822/</loc>
-    <lastmod>2017-08-27T05:50:41.413Z</lastmod>
-    <data>
-        <display>
-        <title>25岁前你必须要做完的7件事</title>
-        <pubTime>2016-07-25T02:36:00.000Z</pubTime>
-        
-        <tag>乱七八糟</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>//litten.me/2015/06/28/abc/</loc>
     <lastmod>2017-08-27T05:45:00.504Z</lastmod>
     <data>
         <display>
         <title>helloWorld</title>
         <pubTime>2015-06-27T16:00:00.000Z</pubTime>
-        
-        <tag>乱七八糟</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>//litten.me/2015/07/01/2015/20150701/</loc>
-    <lastmod>2017-08-27T05:10:25.070Z</lastmod>
-    <data>
-        <display>
-        <title>过去</title>
-        <pubTime>2015-07-01T02:36:00.000Z</pubTime>
         
         <tag>乱七八糟</tag>
          
@@ -1024,23 +1058,6 @@
 
     
   <url>
-    <loc>//litten.me/2016/11/08/2016/20161108/</loc>
-    <lastmod>2017-07-05T11:09:58.155Z</lastmod>
-    <data>
-        <display>
-        <title>linux相关</title>
-        <pubTime>2016-11-08T02:36:00.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>//litten.me/2016/11/09/2016/20161109/</loc>
     <lastmod>2017-07-05T11:09:58.123Z</lastmod>
     <data>
@@ -1049,23 +1066,6 @@
         <pubTime>2016-11-09T02:36:00.000Z</pubTime>
         
         <tag>html5</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>//litten.me/2016/11/11/2016/20161111/</loc>
-    <lastmod>2017-07-05T11:09:58.088Z</lastmod>
-    <data>
-        <display>
-        <title>guajs简单版本</title>
-        <pubTime>2016-11-11T02:36:00.000Z</pubTime>
-        
-        <tag>guagua</tag>
          
          
            
@@ -1100,23 +1100,6 @@
         <pubTime>2016-11-05T02:36:00.000Z</pubTime>
         
         <tag>js</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>//litten.me/2016/11/10/2016/20161110/</loc>
-    <lastmod>2017-07-05T11:09:57.972Z</lastmod>
-    <data>
-        <display>
-        <title>js同步异步</title>
-        <pubTime>2016-11-10T02:36:00.000Z</pubTime>
-        
-        <tag>guagua</tag>
          
          
            
@@ -1185,23 +1168,6 @@
         <pubTime>2016-11-02T02:36:00.000Z</pubTime>
         
         <tag>js</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>//litten.me/2016/11/01/2016/20161101/</loc>
-    <lastmod>2017-07-05T11:06:06.753Z</lastmod>
-    <data>
-        <display>
-        <title>gua.js</title>
-        <pubTime>2016-11-01T02:36:00.000Z</pubTime>
-        
-        <tag>guagua</tag>
          
          
            
