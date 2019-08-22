@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>//litten.me/1970/01/01/1970/20161108/</loc>
+    <lastmod>2019-08-22T17:30:41.297Z</lastmod>
+    <data>
+        <display>
+        <title>linux相关</title>
+        <pubTime>1970-01-01T02:36:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//litten.me/2017/11/03/2017/20171103/</loc>
     <lastmod>2019-08-21T13:01:01.978Z</lastmod>
     <data>
@@ -97,23 +114,6 @@
         <pubTime>2017-11-05T02:36:00.000Z</pubTime>
         
         <tag>js</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>//litten.me/1970/01/01/1970/20161108/</loc>
-    <lastmod>2019-08-21T12:53:10.318Z</lastmod>
-    <data>
-        <display>
-        <title>linux相关</title>
-        <pubTime>1970-01-01T02:36:00.000Z</pubTime>
-        
-        <tag>linux</tag>
          
          
            
