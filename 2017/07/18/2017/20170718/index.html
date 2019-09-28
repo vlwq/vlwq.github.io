@@ -176,12 +176,12 @@
 <p>二、Linux less命令使用实例</p>
 <blockquote>
 <p>1）查看文件<br>$less linuxdaxue.com-access_log<br>120.26.216.168 - - [12/Jun/2016:03:09:16 +0800] “HEAD / HTTP/1.1” 200 -<br>42.96.189.63 - - [12/Jun/2016:03:09:41 +0800] “HEAD / HTTP/1.1” 200 -<br>123.56.138.37 - - [12/Jun/2016:03:12:52 +0800] “HEAD / HTTP/1.1” 200 -<br>120.26.216.168 - - [12/Jun/2016:03:14:16 +0800] “HEAD / HTTP/1.1” 200 -<br>42.96.189.63 - - [12/Jun/2016:03:14:41 +0800] “HEAD / HTTP/1.1” 200 -<br>linuxdaxue.com-access_log<br>2）一次查看多个文件</p>
-</blockquote>
 <p>#less linuxdaxue.com-access_log linuxdaxue.com-error_log<br>120.26.216.168 - - [12/Jun/2016:03:09:16 +0800] “HEAD / HTTP/1.1” 200 -<br>42.96.189.63 - - [12/Jun/2016:03:09:41 +0800] “HEAD / HTTP/1.1” 200 -<br>123.56.138.37 - - [12/Jun/2016:03:12:52 +0800] “HEAD / HTTP/1.1” 200 -<br>120.26.216.168 - - [12/Jun/2016:03:14:16 +0800] “HEAD / HTTP/1.1” 200 -<br>42.96.189.63 - - [12/Jun/2016:03:14:41 +0800] “HEAD / HTTP/1.1” 200 -<br>123.56.138.37 - - [12/Jun/2016:03:17:52 +0800] “HEAD / HTTP/1.1” 200 -<br>linuxdaxue.com-access_log (file 1 of 2)<br>说明：<br>输入 ：n后，切换到linuxdaxue.com-error_log<br>输入 ：p 后，切换到linuxdaxue.com-access_log</p>
-<p>三、Linux less命令常用操作命令<br>接下来给大家介绍一些在less命令比较常用的操作命令，希望大家能够熟练掌握。<br>1）分屏导航<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">ctrl</span> + F - 向前移动一屏</span><br><span class="line"><span class="symbol">ctrl</span> + <span class="keyword">B </span>- 向后移动一屏</span><br><span class="line"><span class="symbol">ctrl</span> + D - 向前移动半屏</span><br><span class="line"><span class="symbol">ctrl</span> + U - 向后移动半屏</span><br></pre></td></tr></table></figure></p>
-<p>2）单行导航<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">j</span> - 向前移动一行</span><br><span class="line">k - 向后移动一行</span><br></pre></td></tr></table></figure></p>
-<p>3）其它导航<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">G</span> - 移动到最后一行</span><br><span class="line">g - 移动到第一行</span><br></pre></td></tr></table></figure></p>
-<p>4）其它命令<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">v - 使用配置的编辑器编辑当前文件</span><br><span class="line">h - 显示 <span class="keyword">less</span> 的帮助文档</span><br><span class="line">&amp;pattern - 仅显示匹配模式的行，而不是整个文件</span><br><span class="line">q / ZZ - 退出 <span class="keyword">less</span> 命令</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>三、Linux less命令常用操作命令<br>接下来给大家介绍一些在less命令比较常用的操作命令，希望大家能够熟练掌握。<br>1）分屏导航<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">ctrl</span> + F - 向前移动一屏</div><div class="line"><span class="symbol">ctrl</span> + <span class="keyword">B </span>- 向后移动一屏</div><div class="line"><span class="symbol">ctrl</span> + D - 向前移动半屏</div><div class="line"><span class="symbol">ctrl</span> + U - 向后移动半屏</div></pre></td></tr></table></figure></p>
+<p>2）单行导航<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">j</span> - 向前移动一行</div><div class="line">k - 向后移动一行</div></pre></td></tr></table></figure></p>
+<p>3）其它导航<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">G</span> - 移动到最后一行</div><div class="line">g - 移动到第一行</div></pre></td></tr></table></figure></p>
+<p>4）其它命令<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">v - 使用配置的编辑器编辑当前文件</div><div class="line">h - 显示 <span class="keyword">less</span> 的帮助文档</div><div class="line">&amp;pattern - 仅显示匹配模式的行，而不是整个文件</div><div class="line">q / ZZ - 退出 <span class="keyword">less</span> 命令</div></pre></td></tr></table></figure></p>
 <p>5）标记导航<br>当使用 less 查看内容比较多的文件时，可以作一个标记，然后就能通过命令导航到标有特定标记的文本位置，方式如下所示：<br>ma - 使用 a 标记文本的当前位置。<br>‘a - 导航到标记 a 处<br>好了有关Linux less命令的相关内容就先为大家介绍到这里，less命令非常强大，在此只是为大家做一个简单的介绍，更熟练的掌握还需要大家的多多练习才行。</p>
 
       
@@ -407,6 +407,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">乱七八糟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">anan</a>
               </li>
              
               <li class="article-tag-list-item">
