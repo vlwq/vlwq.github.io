@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/vlwq/vlwq.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/vlwq/vlwq.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/vlwq/vlwq.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/vlwq/vlwq.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/vlwq/vlwq.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/vlwq/vlwq.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vlwq.github.io","root":"/vlwq/vlwq.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="目录结构T:&#x2F;player&#x2F;index.html(网页入口)T:&#x2F;player&#x2F;main.jsT:&#x2F;player&#x2F;package.json&#x2F;&#x2F;成功打包的话，会player同级目录生成exeT:&#x2F;outplayer&#x2F;项目名">
+<meta property="og:type" content="article">
+<meta property="og:title" content="electron打包程序">
+<meta property="og:url" content="https://vlwq.github.io/2017/07/05/2017/20170705/index.html">
+<meta property="og:site_name" content="Andrew的博客">
+<meta property="og:description" content="目录结构T:&#x2F;player&#x2F;index.html(网页入口)T:&#x2F;player&#x2F;main.jsT:&#x2F;player&#x2F;package.json&#x2F;&#x2F;成功打包的话，会player同级目录生成exeT:&#x2F;outplayer&#x2F;项目名">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-07-05T02:36:00.000Z">
+<meta property="article:modified_time" content="2017-07-05T12:42:33.723Z">
+<meta property="article:author" content="Andrew Li">
+<meta property="article:tag" content="node">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://vlwq.github.io/2017/07/05/2017/20170705/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>electron打包程序 | Andrew的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/vlwq/vlwq.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Andrew的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">practice makes perfect</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/vlwq/vlwq.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/vlwq/vlwq.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/vlwq/vlwq.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2017/07/05/2017/20170705/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          electron打包程序
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-07-05 10:36:00" itemprop="dateCreated datePublished" datetime="2017-07-05T10:36:00+08:00">2017-07-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>目录结构<br>T:/player/index.html(网页入口)<br>T:/player/main.js<br>T:/player/package.json<br>//成功打包的话，会player同级目录生成exe<br>T:/outplayer/项目名</p>
+<span id="more"></span>
+
+<h3 id="mian-js"><a href="#mian-js" class="headerlink" title="mian.js"></a>mian.js</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">const electron = require(&#x27;electron&#x27;)</span><br><span class="line">// Module to control application life.</span><br><span class="line">const app = electron.app</span><br><span class="line">// Module to create native browser window.</span><br><span class="line">const BrowserWindow = electron.BrowserWindow</span><br><span class="line"></span><br><span class="line">const path = require(&#x27;path&#x27;)</span><br><span class="line">const url = require(&#x27;url&#x27;)</span><br><span class="line"></span><br><span class="line">// Keep a global reference of the window object, if you don&#x27;t, the window will</span><br><span class="line">// be closed automatically when the JavaScript object is garbage collected.</span><br><span class="line">let mainWindow</span><br><span class="line"></span><br><span class="line">function createWindow() &#123;</span><br><span class="line">    // Create the browser window.</span><br><span class="line">    mainWindow = new BrowserWindow(&#123;</span><br><span class="line">        width: 1200,</span><br><span class="line">        height: 800</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    // and load the index.html of the app.</span><br><span class="line">    mainWindow.loadURL(url.format(&#123;</span><br><span class="line">        pathname: path.join(__dirname, &#x27;index.html&#x27;),</span><br><span class="line">        protocol: &#x27;file:&#x27;,</span><br><span class="line">        slashes: true</span><br><span class="line">    &#125;))</span><br><span class="line"></span><br><span class="line">    // Open the DevTools.我默认关闭了调试模式</span><br><span class="line">    //mainWindow.webContents.openDevTools()</span><br><span class="line"></span><br><span class="line">    // Emitted when the window is closed.</span><br><span class="line">    mainWindow.on(&#x27;closed&#x27;, function() &#123;</span><br><span class="line">        // Dereference the window object, usually you would store windows</span><br><span class="line">        // in an array if your app supports multi windows, this is the time</span><br><span class="line">        // when you should delete the corresponding element.</span><br><span class="line">        mainWindow = null</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// This method will be called when Electron has finished</span><br><span class="line">// initialization and is ready to create browser windows.</span><br><span class="line">// Some APIs can only be used after this event occurs.</span><br><span class="line">app.on(&#x27;ready&#x27;, createWindow)</span><br><span class="line"></span><br><span class="line">// Quit when all windows are closed.</span><br><span class="line">app.on(&#x27;window-all-closed&#x27;, function() &#123;</span><br><span class="line">    // On OS X it is common for applications and their menu bar</span><br><span class="line">    // to stay active until the user quits explicitly with Cmd + Q</span><br><span class="line">    if (process.platform !== &#x27;darwin&#x27;) &#123;</span><br><span class="line">        app.quit()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.on(&#x27;activate&#x27;, function() &#123;</span><br><span class="line">    // On OS X it&#x27;s common to re-create a window in the app when the</span><br><span class="line">    // dock icon is clicked and there are no other windows open.</span><br><span class="line">    if (mainWindow === null) &#123;</span><br><span class="line">        createWindow()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// In this file you can include the rest of your app&#x27;s specific main process</span><br><span class="line">// code. You can also put them in separate files and require them here.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;player&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;a music player&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;main.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;start&quot;: &quot;electron .&quot;,</span><br><span class="line">    &quot;pack&quot;: &quot;electron-packager ./ andrewplayer --win32 --out ./../outplayer --electronVersion 1.4.13 --overwrite&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;author&quot;: &quot;Andrew li&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;electron&quot;: &quot;^1.6.11&quot;,</span><br><span class="line">    &quot;electron-packager&quot;: &quot;^8.7.2&quot;,</span><br><span class="line">    &quot;electron-prebuilt&quot;: &quot;^1.4.13&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="package文件的打包脚本pack说明一下："><a href="#package文件的打包脚本pack说明一下：" class="headerlink" title="package文件的打包脚本pack说明一下："></a>package文件的打包脚本pack说明一下：</h2><p>andrewplayer               –是我的程序名<br>win32                      –生成windows下的exe可执行文件,其他平台: linux, win32, darwin, mas, all<br>./../outplayer             —生成的项目所在地方，和player（当前项目）同级目录<br>–electronVersion 1.4.13   —这个是electron-prebuilt的版本</p>
+<p>更多查 <a target="_blank" rel="noopener" href="https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#platform">官网api</a></p>
+<h2 id="开始安装，先把源切到淘宝的镜像（yarn官网那个时慢时快）"><a href="#开始安装，先把源切到淘宝的镜像（yarn官网那个时慢时快）" class="headerlink" title="开始安装，先把源切到淘宝的镜像（yarn官网那个时慢时快）"></a>开始安装，先把源切到淘宝的镜像（yarn官网那个时慢时快）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 查看下载源</span><br><span class="line"></span><br><span class="line">yarn config get registry</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>// 更换为淘宝源</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<h2 id="后面直接运行脚本即可"><a href="#后面直接运行脚本即可" class="headerlink" title="后面直接运行脚本即可"></a>后面直接运行脚本即可</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>先测试下能不能用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn run start</span><br></pre></td></tr></table></figure>
+
+<h2 id="最后打包"><a href="#最后打包" class="headerlink" title="最后打包"></a>最后打包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yarn run pack</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>和player同级目录外面应该已经生成一个outplayer目录了</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/vlwq/vlwq.github.io/tags/node/" rel="tag"># node</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/vlwq/vlwq.github.io/2017/07/01/2017/20170701/" rel="prev" title="yarn更换为淘宝镜像">
+      <i class="fa fa-chevron-left"></i> yarn更换为淘宝镜像
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/vlwq/vlwq.github.io/2017/07/08/2017/20170708/" rel="next" title="mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？">
+      mongoose 模型定义重复引用就报错：Cannot overwrite model once compiled 怎么解决？ <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#mian-js"><span class="nav-number">1.</span> <span class="nav-text">mian.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#package-json"><span class="nav-number">2.</span> <span class="nav-text">package.json</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package%E6%96%87%E4%BB%B6%E7%9A%84%E6%89%93%E5%8C%85%E8%84%9A%E6%9C%ACpack%E8%AF%B4%E6%98%8E%E4%B8%80%E4%B8%8B%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">package文件的打包脚本pack说明一下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85%EF%BC%8C%E5%85%88%E6%8A%8A%E6%BA%90%E5%88%87%E5%88%B0%E6%B7%98%E5%AE%9D%E7%9A%84%E9%95%9C%E5%83%8F%EF%BC%88yarn%E5%AE%98%E7%BD%91%E9%82%A3%E4%B8%AA%E6%97%B6%E6%85%A2%E6%97%B6%E5%BF%AB%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">开始安装，先把源切到淘宝的镜像（yarn官网那个时慢时快）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E9%9D%A2%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC%E5%8D%B3%E5%8F%AF"><span class="nav-number"></span> <span class="nav-text">后面直接运行脚本即可</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E6%89%93%E5%8C%85"><span class="nav-number"></span> <span class="nav-text">最后打包</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Andrew Li"
+      src="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+  <p class="site-author-name" itemprop="name">Andrew Li</p>
+  <div class="site-description" itemprop="description">此为博客一枚。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/vlwq/vlwq.github.io/archives/">
+        
+          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/vlwq/vlwq.github.io/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:xiyun0769@fomail.com" title="E-Mail → mailto:xiyun0769@fomail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://shequ.liweiqiang.vip/" title="http:&#x2F;&#x2F;shequ.liweiqiang.vip" rel="noopener" target="_blank">个人社区</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Andrew Li</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/vlwq/vlwq.github.io/lib/anime.min.js"></script>
+  <script src="/vlwq/vlwq.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/vlwq/vlwq.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/vlwq/vlwq.github.io/js/utils.js"></script>
+
+<script src="/vlwq/vlwq.github.io/js/motion.js"></script>
+
+
+<script src="/vlwq/vlwq.github.io/js/schemes/pisces.js"></script>
+
+
+<script src="/vlwq/vlwq.github.io/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

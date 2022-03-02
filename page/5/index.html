@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/vlwq/vlwq.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/vlwq/vlwq.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/vlwq/vlwq.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/vlwq/vlwq.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/vlwq/vlwq.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/vlwq/vlwq.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vlwq.github.io","root":"/vlwq/vlwq.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="此为博客一枚。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Andrew的博客">
+<meta property="og:url" content="https://vlwq.github.io/page/5/index.html">
+<meta property="og:site_name" content="Andrew的博客">
+<meta property="og:description" content="此为博客一枚。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Andrew Li">
+<meta property="article:tag" content="nodejs,后端,js,jquery,javascript,html5,开发者,码农,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://vlwq.github.io/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Andrew的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/vlwq/vlwq.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Andrew的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">practice makes perfect</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/vlwq/vlwq.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/vlwq/vlwq.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/vlwq/vlwq.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2017/02/23/2017/20170223/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/vlwq/vlwq.github.io/2017/02/23/2017/20170223/" class="post-title-link" itemprop="url">nginx反向代理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-02-23 10:36:00" itemprop="dateCreated datePublished" datetime="2017-02-23T10:36:00+08:00">2017-02-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>当只有一台服务器，而又想运行多个 web 后端服务，且希望网址为 <a target="_blank" rel="noopener" href="http://www.xx.com/">www.XX.com</a> / bbs.XX.com / blog.XX.com,怎么办，此时就要用nginx进行反向代理</p>
+<blockquote>
+<p>以 ubuntu 为例</p>
+</blockquote>
+<ol>
+<li>安装 NGINX</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/vlwq/vlwq.github.io/2017/02/23/2017/20170223/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2017/02/03/2017/20170203/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/vlwq/vlwq.github.io/2017/02/03/2017/20170203/" class="post-title-link" itemprop="url">git还原某个特定的文件到之前的版本</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-02-03 10:36:00" itemprop="dateCreated datePublished" datetime="2017-02-03T10:36:00+08:00">2017-02-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>场景： 对于某个Git控制下的文件进行了修改，但是改的不满意，想退回到改之前的版本。假定该文件为 src/main/main.c</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/vlwq/vlwq.github.io/2017/02/03/2017/20170203/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2017/01/21/2017/20170121/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/vlwq/vlwq.github.io/2017/01/21/2017/20170121/" class="post-title-link" itemprop="url">node启动listen EADDRINUSE</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-01-21 10:36:00" itemprop="dateCreated datePublished" datetime="2017-01-21T10:36:00+08:00">2017-01-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>我在使用elasticsearch的kibana插件时候，有一次启动，遇到这个错误：</p>
+<p>Error: listen EADDRINUSE 0.0.0.0:5601<br>它的意思是，端口5601被其他进程占用。</p>
+<p>故而，需要kill掉那个进程，或者更换kibana的端口号。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/vlwq/vlwq.github.io/2017/01/21/2017/20170121/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2017/01/13/2017/20170113/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/vlwq/vlwq.github.io/2017/01/13/2017/20170113/" class="post-title-link" itemprop="url">github怎么绑定自己的域名？</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-01-13 10:36:00" itemprop="dateCreated datePublished" datetime="2017-01-13T10:36:00+08:00">2017-01-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li>向你的 Github Pages 仓库添加一个CNAME(一定要<em>大写</em>)文件其中只能包含一个顶级域名，<br>像这样：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">example.com</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/vlwq/vlwq.github.io/2017/01/13/2017/20170113/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2016/11/12/2016/20161112/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/vlwq/vlwq.github.io/2016/11/12/2016/20161112/" class="post-title-link" itemprop="url">flex布局</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-11-12 10:36:00" itemprop="dateCreated datePublished" datetime="2016-11-12T10:36:00+08:00">2016-11-12</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>flex布局，做了3个demo</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/vlwq/vlwq.github.io/2016/11/12/2016/20161112/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2016/11/11/2016/20161111/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/vlwq/vlwq.github.io/2016/11/11/2016/20161111/" class="post-title-link" itemprop="url">guajs简单版本</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-11-11 10:36:00" itemprop="dateCreated datePublished" datetime="2016-11-11T10:36:00+08:00">2016-11-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>guajs简单版本，备用工具</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/vlwq/vlwq.github.io/2016/11/11/2016/20161111/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2016/11/10/2016/20161110/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/vlwq/vlwq.github.io/2016/11/10/2016/20161110/" class="post-title-link" itemprop="url">js同步异步</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-11-10 10:36:00" itemprop="dateCreated datePublished" datetime="2016-11-10T10:36:00+08:00">2016-11-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="guasync-file"><a href="#guasync-file" class="headerlink" title="guasync file"></a>guasync file</h1><p>/*<br> 同步和异步编程的概念</p>
+<p> 同步的意思是 函数通过返回值来传递数据<br> 函数从获取数据一直到返回数据之间的时间一直在等待</p>
+<p> 异步的意思是 函数通过回调函数的方式来传递获取的数据<br> 函数执行后立刻就返回了, 数据获取成功后, 调用回调函数并传递参数<br> */</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/vlwq/vlwq.github.io/2016/11/10/2016/20161110/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2016/11/09/2016/20161109/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/vlwq/vlwq.github.io/2016/11/09/2016/20161109/" class="post-title-link" itemprop="url">HTML5 新内容</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-11-09 10:36:00" itemprop="dateCreated datePublished" datetime="2016-11-09T10:36:00+08:00">2016-11-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>HTML5 新内容主要是以下几点</p>
+<p>语义化标签如 article、footer、header、nav、section<br>视频和音频标签 video 和 audio<br>本地离线存储 localStorage 和 sessionStorage<br>新增表单特性如新控件 calendar email color 等<br>用于绘图的 canvas 标签(用于游戏等)<br>用于高性能图形的 WebGL(用于游戏等, 这个是专用领域的知识, 我们不会直接接触)</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/vlwq/vlwq.github.io/2016/11/09/2016/20161109/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2016/11/08/2016/20161108/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/vlwq/vlwq.github.io/2016/11/08/2016/20161108/" class="post-title-link" itemprop="url">linux相关</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-11-08 10:36:00" itemprop="dateCreated datePublished" datetime="2016-11-08T10:36:00+08:00">2016-11-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Linux 服务器介绍和使用<br>常用 Linux 版本分析<br>常用工具/概念/使用方式<br>以前和现在的服务器(托管和云平台)<br>服务器配置<br>部署项目</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/vlwq/vlwq.github.io/2016/11/08/2016/20161108/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2016/11/07/2016/20161107/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/vlwq/vlwq.github.io/2016/11/07/2016/20161107/" class="post-title-link" itemprop="url">数据结构与算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-11-07 10:36:00" itemprop="dateCreated datePublished" datetime="2016-11-07T10:36:00+08:00">2016-11-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>// 数据结构与算法分析</p>
+<p>/*<br>数据结构就是存储数据的方式<br>算法分析是对一个算法的时间的大略估计<br>算法是有特定的套路的</p>
+<p>了解 5 种时间复杂度即可<br>*/</p>
+<p>// 时间、空间复杂度(空间复杂度一般不考虑)<br>// 复杂度是对一个操作的大致估计<br>// 复杂度从小到大依次如下</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/vlwq/vlwq.github.io/2016/11/07/2016/20161107/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/vlwq/vlwq.github.io/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/vlwq/vlwq.github.io/">1</a><span class="space">&hellip;</span><a class="page-number" href="/vlwq/vlwq.github.io/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/vlwq/vlwq.github.io/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/vlwq/vlwq.github.io/page/9/">9</a><a class="extend next" rel="next" href="/vlwq/vlwq.github.io/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Andrew Li"
+      src="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+  <p class="site-author-name" itemprop="name">Andrew Li</p>
+  <div class="site-description" itemprop="description">此为博客一枚。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/vlwq/vlwq.github.io/archives/">
+        
+          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/vlwq/vlwq.github.io/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:xiyun0769@fomail.com" title="E-Mail → mailto:xiyun0769@fomail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://shequ.liweiqiang.vip/" title="http:&#x2F;&#x2F;shequ.liweiqiang.vip" rel="noopener" target="_blank">个人社区</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Andrew Li</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/vlwq/vlwq.github.io/lib/anime.min.js"></script>
+  <script src="/vlwq/vlwq.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/vlwq/vlwq.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/vlwq/vlwq.github.io/js/utils.js"></script>
+
+<script src="/vlwq/vlwq.github.io/js/motion.js"></script>
+
+
+<script src="/vlwq/vlwq.github.io/js/schemes/pisces.js"></script>
+
+
+<script src="/vlwq/vlwq.github.io/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

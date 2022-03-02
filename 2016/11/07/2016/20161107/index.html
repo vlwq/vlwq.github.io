@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/vlwq/vlwq.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/vlwq/vlwq.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/vlwq/vlwq.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/vlwq/vlwq.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/vlwq/vlwq.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/vlwq/vlwq.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vlwq.github.io","root":"/vlwq/vlwq.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="&#x2F;&#x2F; 数据结构与算法分析 &#x2F;*数据结构就是存储数据的方式算法分析是对一个算法的时间的大略估计算法是有特定的套路的 了解 5 种时间复杂度即可*&#x2F; &#x2F;&#x2F; 时间、空间复杂度(空间复杂度一般不考虑)&#x2F;&#x2F; 复杂度是对一个操作的大致估计&#x2F;&#x2F; 复杂度从小到大依次如下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法">
+<meta property="og:url" content="https://vlwq.github.io/2016/11/07/2016/20161107/index.html">
+<meta property="og:site_name" content="Andrew的博客">
+<meta property="og:description" content="&#x2F;&#x2F; 数据结构与算法分析 &#x2F;*数据结构就是存储数据的方式算法分析是对一个算法的时间的大略估计算法是有特定的套路的 了解 5 种时间复杂度即可*&#x2F; &#x2F;&#x2F; 时间、空间复杂度(空间复杂度一般不考虑)&#x2F;&#x2F; 复杂度是对一个操作的大致估计&#x2F;&#x2F; 复杂度从小到大依次如下">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-11-07T02:36:00.000Z">
+<meta property="article:modified_time" content="2017-07-05T11:09:58.050Z">
+<meta property="article:author" content="Andrew Li">
+<meta property="article:tag" content="js">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://vlwq.github.io/2016/11/07/2016/20161107/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>数据结构与算法 | Andrew的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/vlwq/vlwq.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Andrew的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">practice makes perfect</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/vlwq/vlwq.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/vlwq/vlwq.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/vlwq/vlwq.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2016/11/07/2016/20161107/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据结构与算法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-11-07 10:36:00" itemprop="dateCreated datePublished" datetime="2016-11-07T10:36:00+08:00">2016-11-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>// 数据结构与算法分析</p>
+<p>/*<br>数据结构就是存储数据的方式<br>算法分析是对一个算法的时间的大略估计<br>算法是有特定的套路的</p>
+<p>了解 5 种时间复杂度即可<br>*/</p>
+<p>// 时间、空间复杂度(空间复杂度一般不考虑)<br>// 复杂度是对一个操作的大致估计<br>// 复杂度从小到大依次如下</p>
+<span id="more"></span>
+
+<p>/*<br>五种常见时间复杂度<br>复杂度用 大 O 记法 来描述(大 O 记法是描述算法复杂度的符号)<br>O(1)<br>    常数复杂度，最快速的算法。<br>    求数组前 10000 个元素的和<br>    字典和集合的存取都是 O(1)<br>    数组的存取是 O(1)<br>O(lgN)<br>    对数复杂度<br>    假设有一个有序数组，以二分法查找<br>O(n)<br>    线性复杂度<br>    假设有一个数组，以遍历的方式在其中查找元素<br>O(NlogN)<br>    求两个数组交集，其中一个是有序数组<br>    假设 A 数组的长度是 M, 无序<br>    假设 B 数组的长度是 N, 有序<br>    A 数组每一个元素都要在 B 数组中进行查找操作<br>    每次查找如果使用二分法则复杂度是 lgN<br>    加起来就是 M * lgN<br>    所以时间复杂度是 NlogN<br>O(N²)<br>    平方复杂度<br>    求两个无序数组的交集<br>    假设 A 数组的长度是 M, 无序<br>    假设 B 数组的长度是 N, 无序<br>    A 数组每一个元素都要在 B 数组中进行查找操作<br>    每次查找只能使用遍历操作, 所以每次查找都是 N<br>    加起来就是 M * N<br>    所以时间复杂度是 N²<br>*/</p>
+<p>/*<br>数据结构<br>===</p>
+<p>针对常用的操作，我们发明了一套常用的数据结构<br>四大数据结构<br>1，数组<br>    连续的一块内存<br>    读取元素时间是 O(1)<br>    插入、删除是 O(n)<br>2，链表<br>    手拉手的盒子，一个盒子只能访问左右手的盒子<br>    以下标方式读取元素的时间是 O(n)<br>    插入、删除是 O(1)<br>    栈和队列是链表的特定场景应用(当然, 不用链表也能实现栈和队列)<br>3，字典(Hash Table 哈希表)<br>    把字符串转为数字作为下标存储到数组中<br>    字符串转化为数字的算法是 O(1)<br>    所以字典的存取操作都是 O(1)<br>    除非对数据有顺序要求，否则字典永远是最佳选择<br>    字符串转化为数字的算法<br>        1，确定数据规模，这样可以确定容器数组的大小 Size<br>        2，把字符当作 N 进制数字得到结果<br>            ‘gua’ 被视为 g * 1 + u * 10 + a * 100 得到结果 n<br>            n % Size 作为字符串在数组中的下标<br>            通常 Size 会选一个 素数<br>4，搜索树(平衡二叉搜索树)（我们只用，不写，甚至只是隐含在用，你并不知道你用的是树）<br>    AVL 树<br>    红黑树</p>
+<p>额外的，图是一种有时候有用但你一辈子都可能写不到的数据结构<br>只了解，不用学习如何实现<br>图的应用举例<br>    地图导航<br>    全国几个大城市之间的出行方案(有价格/时间/路途等权重)<br>*/<br>var log = console.log.bind(console)</p>
+<p>// 队列结构(先进先出)<br>// 主要有 2 个操作<br>// enqueue dequeue<br>//<br>var Queue = function() {<br>    // data 是存储元素的数组<br>    this.data = []<br>}</p>
+<p>// 入队<br>Queue.prototype.enqueue = function (element) {<br>    this.data.push(element)<br>}</p>
+<p>// 出队<br>Queue.prototype.dequeue = function () {<br>    return this.data.splice(0, 1)<br>}</p>
+<p>// 队列长度<br>Queue.prototype.length = function () {<br>    return this.data.length<br>}</p>
+<p>// 清空队列<br>Queue.prototype.empty = function() {<br>    this.data = []<br>}</p>
+<p>// var q = new Queue()<br>// q.enqueue(1)<br>// q.enqueue(2)<br>// q.enqueue(3)<br>// log(‘length’, q.length())<br>// log(q.dequeue())<br>// q.enqueue(4)<br>// log(q.dequeue())<br>// log(q.dequeue())<br>// log(q.dequeue())</p>
+<p>// Stack 栈(先进后出)<br>// 常见的 3 个操作<br>// push pop top<br>//<br>var Stack = function() {<br>    this.data = []<br>}</p>
+<p>// push 添加一个元素<br>Stack.prototype.push = function(e) {<br>    this.data.push(e)<br>}</p>
+<p>// pop 删除并返回最新添加的元素<br>Stack.prototype.pop = function() {<br>    var index = this.data.length - 1<br>    return this.data.splice(index, 1)<br>}</p>
+<p>// top 仅返回最新添加的元素<br>Stack.prototype.top = function() {<br>    var index = this.data.length - 1<br>    return this.data[index]<br>}</p>
+<p>var s = new Stack()<br>s.push(‘hello’)<br>s.push(‘world’)<br>log(s.pop())<br>log(s.pop())</p>
+<p>var str = ‘hello’<br>for (var i = 0; i &lt; str.length; i++) {<br>    s.push(str[i])<br>}</p>
+<p>var str1 = ‘’<br>for (var i = 0; i &lt; str.length; i++) {<br>    str1 += s.pop(str[i])<br>}<br>log(str1)</p>
+<p>/*<br>((1 + 2) * 3)<br>作业 验证括号匹配<br>*/</p>
+<p>// 链表<br>// LinkedList<br>// [1, 2, 3, 4, 15, 16, 27]<br>// [1, 2, 3, 0, 4, 5, 6, 7]</p>
+<p>// 链表实现<br>//<br>var Node = function(e) {<br>    this.element = e<br>    this.next = null<br>}</p>
+<p>// var n1 = new Node(1)<br>// var n2 = new Node(2)<br>// var n3 = new Node(3)<br>// n1.next = n2<br>// n2.next = n3<br>//<br>// var n = n1<br>// while(n != null) {<br>//     log(‘遍历链表’, n.element)<br>//     n = n.next<br>// }</p>
+<p>var LinkedList = function() {<br>    this.head = new Node()<br>    this._length = 0<br>}</p>
+<p>// 在链表末尾增加一个元素<br>LinkedList.prototype.append = function(e) {<br>    var node = new Node(e)<br>    var n = this.head<br>    while(n.next != null) {<br>        n = n.next<br>    }<br>    n.next = node<br>    //<br>    this._length++<br>}</p>
+<p>// 返回一个元素的 index<br>LinkedList.prototype.indexOf = function(e) {<br>    var index = -1<br>    var n = this.head<br>    var i = 0<br>    while(n.next != null) {<br>        if (e === n.element) {<br>            index = i<br>            break<br>        }<br>        n = n.next<br>        i++<br>    }<br>    return index<br>}</p>
+<p>// 返回链表的长度<br>LinkedList.prototype.length = function() {<br>    return this._length<br>}</p>
+<p>LinkedList.prototype.log = function() {<br>    var n = this.head.next<br>    log(‘遍历链表’)<br>    while(n != null) {<br>        log(‘ &gt; ‘, n.element)<br>        n = n.next<br>    }<br>}</p>
+<p>var list = new LinkedList()<br>list.append(‘hello’)<br>list.append(‘gua’)<br>list.append(‘你好’)<br>list.log()<br>log(list.length())</p>
+<p>/*<br>面向对象 多态 继承 大致讲一下</p>
+<p>多态<br>在某些语言里面 比如 java<br>你函数定义的参数必须有类型 类型不匹配就是错误的<br>var add = function(a, b) {<br>    return a + b<br>}</p>
+<p>// 在其他语言里面可能是这样的 比如 java c<br>var add = function(int:a, int:b) {<br>    return a + b<br>}</p>
+<p>add(1.1, 2.2)<br>// 报错， 类型不匹配</p>
+<p>var add = function(float:a, float:b) {<br>    return a + b<br>}</p>
+<p>add(1.1, 1)</p>
+<p>var add = function(int:a, float:b) {<br>    return a + b<br>}</p>
+<p>var add = function(float:a, int:b) {<br>    return a + b<br>}</p>
+<p>// 现在就不会报错了。。。<br>add(1.1, 1)</p>
+<p>// 在 js 中没这个问题<br>// 我们称之为 duck type</p>
+<p>继承<br>继承是说 子类拥有父类的某些东西</p>
+<p>定义一个类 人</p>
+<p>再定义 男人 女人<br>然后设置 男人 女人的 prototype = 人</p>
+<p>*/</p>
+<p>/*<br>其他数据结构</p>
+<p>hash table  哈希表（散列表）<br>tree        树<br>set         集合<br>graph       图</p>
+<p>哈希表就是用 字符串 当下标，也就是 js 中的对象的实现方式<br>也就是其他语言中的 字典</p>
+<p>原理是用字符串 算出一个数字 然后用这个数字当下标存东西<br>比如 gua 这个字符串 我们用每个字符乘以一个数字最后求余得到下标<br>从字符串到数字的操作叫做 hash<br>// hash(‘gua’) = 1<br>// hash(‘hs’) = 3<br>【坑1， 坑2， 坑3， 坑4， 坑5， 坑6】<br>  gua        hs               wh<br>  xiao       lj<br>             bl</p>
+<p>树一般是用来实现二叉搜索树的，应用范围不多<br>     6<br>    / <br>   4   8<br>    \ / <br>    57  9</p>
+<p>*/</p>
+<pre><code>
+
+
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/vlwq/vlwq.github.io/tags/js/" rel="tag"># js</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/vlwq/vlwq.github.io/2016/11/06/2016/20161106/" rel="prev" title="css动画">
+      <i class="fa fa-chevron-left"></i> css动画
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/vlwq/vlwq.github.io/2016/11/08/2016/20161108/" rel="next" title="linux相关">
+      linux相关 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Andrew Li"
+      src="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+  <p class="site-author-name" itemprop="name">Andrew Li</p>
+  <div class="site-description" itemprop="description">此为博客一枚。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/vlwq/vlwq.github.io/archives/">
+        
+          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/vlwq/vlwq.github.io/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:xiyun0769@fomail.com" title="E-Mail → mailto:xiyun0769@fomail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://shequ.liweiqiang.vip/" title="http:&#x2F;&#x2F;shequ.liweiqiang.vip" rel="noopener" target="_blank">个人社区</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Andrew Li</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/vlwq/vlwq.github.io/lib/anime.min.js"></script>
+  <script src="/vlwq/vlwq.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/vlwq/vlwq.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/vlwq/vlwq.github.io/js/utils.js"></script>
+
+<script src="/vlwq/vlwq.github.io/js/motion.js"></script>
+
+
+<script src="/vlwq/vlwq.github.io/js/schemes/pisces.js"></script>
+
+
+<script src="/vlwq/vlwq.github.io/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

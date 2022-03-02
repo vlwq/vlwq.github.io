@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/vlwq/vlwq.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/vlwq/vlwq.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/vlwq/vlwq.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/vlwq/vlwq.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/vlwq/vlwq.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/vlwq/vlwq.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vlwq.github.io","root":"/vlwq/vlwq.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="高程笔记4-BOM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高程笔记4-BOM">
+<meta property="og:url" content="https://vlwq.github.io/2017/06/12/2017/20170612/index.html">
+<meta property="og:site_name" content="Andrew的博客">
+<meta property="og:description" content="高程笔记4-BOM">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-06-12T02:36:00.000Z">
+<meta property="article:modified_time" content="2017-07-16T04:19:24.266Z">
+<meta property="article:author" content="Andrew Li">
+<meta property="article:tag" content="高程">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://vlwq.github.io/2017/06/12/2017/20170612/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>高程笔记4-BOM | Andrew的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/vlwq/vlwq.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Andrew的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">practice makes perfect</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/vlwq/vlwq.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/vlwq/vlwq.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/vlwq/vlwq.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2017/06/12/2017/20170612/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          高程笔记4-BOM
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-06-12 10:36:00" itemprop="dateCreated datePublished" datetime="2017-06-12T10:36:00+08:00">2017-06-12</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>高程笔记4-BOM</p>
+<span id="more"></span>
+
+<h2 id="8-windows对象"><a href="#8-windows对象" class="headerlink" title="8-windows对象"></a>8-windows对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">抛开全局变量会成为 window 对象的属性不谈，定义全局变量与在 window 对象上直接定义属性还</span><br><span class="line">是有一点差别：全局变量不能通过 delete 操作符删除，而直接在 window 对象上的定义的属性可以。</span><br><span class="line">例如：</span><br><span class="line">var age = 29;</span><br><span class="line">window.color = &quot;red&quot;;</span><br><span class="line">//在 IE &lt; 9 时抛出错误，在其他所有浏览器中都返回 false</span><br><span class="line">delete window.age;</span><br><span class="line">//在 IE &lt; 9 时抛出错误，在其他所有浏览器中都返回 true</span><br><span class="line">delete window.color; //returns true</span><br><span class="line">alert(window.age); //29</span><br><span class="line">alert(window.color); //undefined</span><br></pre></td></tr></table></figure>
+
+<h3 id="间歇调用和超时调用"><a href="#间歇调用和超时调用" class="headerlink" title="间歇调用和超时调用"></a>间歇调用和超时调用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//设置超时调用</span><br><span class="line">var timeoutId = setTimeout(function() &#123;</span><br><span class="line"> alert(&quot;Hello world!&quot;);</span><br><span class="line">&#125;, 1000);</span><br><span class="line">//注意：把它取消</span><br><span class="line">clearTimeout(timeoutId);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//不建议传递字符串！</span><br><span class="line">setInterval (&quot;alert(&#x27;Hello world!&#x27;) &quot;, 10000);</span><br><span class="line">//推荐的调用方式</span><br><span class="line">setInterval (function() &#123;</span><br><span class="line"> alert(&quot;Hello world!&quot;);</span><br><span class="line">&#125;, 10000)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>浏览器通过 alert()、confirm()和 prompt()方法可以调用系统对话框向用户显示消息。<br>//显示“打印”对话框<br>window.print();<br>//显示“查找”对话框<br>window.find();</p>
+</blockquote>
+<h2 id="location-对象"><a href="#location-对象" class="headerlink" title="location 对象"></a>location 对象</h2><p>位置操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">location.assign(&quot;http://www.wrox.com&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">window.location = &quot;http://www.wrox.com&quot;;</span><br><span class="line">location.href = &quot;http://www.wrox.com&quot;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//假设初始 URL 为 http://www.wrox.com/WileyCDA/</span><br><span class="line">//将 URL 修改为&quot;http://www.wrox.com/WileyCDA/#section1&quot;</span><br><span class="line">location.hash = &quot;#section1&quot;;</span><br><span class="line">//将 URL 修改为&quot;http://www.wrox.com/WileyCDA/?q=javascript&quot;</span><br><span class="line">location.search = &quot;?q=javascript&quot;;</span><br><span class="line">//将 URL 修改为&quot;http://www.yahoo.com/WileyCDA/&quot;</span><br><span class="line">location.hostname = &quot;www.yahoo.com&quot;;</span><br><span class="line">//将 URL 修改为&quot;http://www.yahoo.com/mydir/&quot;</span><br><span class="line">location.pathname = &quot;mydir&quot;;</span><br><span class="line">//将 URL 修改为&quot;http://www.yahoo.com:8080/WileyCDA/&quot;</span><br><span class="line">location.port = 8080;</span><br><span class="line">每次修改 location 的属性（hash 除外），页面都会以新 URL 重新加载。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重新加载<br>location.reload(); //重新加载（有可能从缓存中加载）<br>location.reload(true); //重新加载（从服务器重新加载）</p>
+</blockquote>
+<h2 id="history-对象"><a href="#history-对象" class="headerlink" title="history 对象"></a>history 对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">使用 go()方法可以在用户的历史记录中任意跳转，可以向后也可以向前。这个方法接受一个参数，</span><br><span class="line">表示向后或向前跳转的页面数的一个整数值。负数表示向后跳转（类似于单击浏览器的“后退”按钮），</span><br><span class="line">正数表示向前跳转（类似于单击浏览器的“前进”按钮）。来看下面的例子。</span><br><span class="line">//后退一页</span><br><span class="line">history.go(-1);</span><br><span class="line">//前进一页</span><br><span class="line">history.go(1);</span><br><span class="line">//前进两页</span><br><span class="line">history.go(2);</span><br><span class="line">//跳转到最近的 wrox.com 页面</span><br><span class="line">history.go(&quot;wrox.com&quot;);</span><br><span class="line">//跳转到最近的 nczonline.net 页面</span><br><span class="line">history.go(&quot;nczonline.net&quot;);</span><br><span class="line">另外，还可以使用两个简写方法 back()和 forward()来代替 go()。顾名思义，这两个方法可以</span><br><span class="line">模仿浏览器的“后退”和“前进”按钮。</span><br><span class="line">//后退一页</span><br><span class="line">history.back();</span><br><span class="line">//前进一页</span><br><span class="line">history.forward();</span><br></pre></td></tr></table></figure>
+
+<h2 id="BOM总结"><a href="#BOM总结" class="headerlink" title="BOM总结"></a>BOM总结</h2><blockquote>
+<p>浏览器对象模型（BOM）以 window 对象为依托，表示浏览器窗口以及页面可见区域。同时，window<br>对象还是 ECMAScript 中的 Global 对象，因而所有全局变量和函数都是它的属性，且所有原生的构造<br>函数及其他函数也都存在于它的命名空间下。本章讨论了下列 BOM 的组成部分。<br> 在使用框架时，每个框架都有自己的 window 对象以及所有原生构造函数及其他函数的副本。<br>每个框架都保存在 frames 集合中，可以通过位置或通过名称来访问。<br> 有一些窗口指针，可以用来引用其他框架，包括父框架。<br> top 对象始终指向最外围的框架，也就是整个浏览器窗口。<br> parent 对象表示包含当前框架的框架，而 self 对象则回指 window。<br> 使用 location 对象可以通过编程方式来访问浏览器的导航系统。设置相应的属性，可以逐段<br>或整体性地修改浏览器的 URL。<br> 调用 replace()方法可以导航到一个新 URL，同时该 URL 会替换浏览器历史记录中当前显示<br>的页面。<br> navigator 对象提供了与浏览器有关的信息。到底提供哪些信息，很大程度上取决于用户的浏<br>览器；不过，也有一些公共的属性（如 userAgent）存在于所有浏览器中。<br>BOM 中还有两个对象：screen 和 history，但它们的功能有限。screen 对象中保存着与客户端<br>显示器有关的信息，这些信息一般只用于站点分析。history 对象为访问浏览器的历史记录开了一个<br>小缝隙，开发人员可以据此判断历史记录的数量，也可以在历史记录中向后或向前导航到任意页面。</p>
+</blockquote>
+<h1 id="10-DOM"><a href="#10-DOM" class="headerlink" title="10.DOM"></a>10.DOM</h1><h2 id="DOCUMENT"><a href="#DOCUMENT" class="headerlink" title="DOCUMENT"></a>DOCUMENT</h2><blockquote>
+<p>这个页面在经过浏览器解析后，其文档中只包含一个子节点，即<html>元素。可以通过<br>documentElement 或 childNodes 列表来访问这个元素，如下所示。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var html = document.documentElement; //取得对&lt;html&gt;的引用</span><br><span class="line">alert(html === document.childNodes[0]); //true</span><br><span class="line">alert(html === document.firstChild); //true</span><br><span class="line"></span><br><span class="line">//取得文档标题</span><br><span class="line">var originalTitle = document.title;</span><br><span class="line">//设置文档标题</span><br><span class="line">document.title = &quot;New page title&quot;;</span><br><span class="line"></span><br><span class="line">//取得完整的 URL</span><br><span class="line">var url = document.URL;</span><br><span class="line">//取得域名</span><br><span class="line">var domain = document.domain;</span><br><span class="line">//取得来源页面的 URL</span><br><span class="line">var referrer = document.referrer;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 文档写入</p>
+<blockquote>
+<p>有一个 document 对象的功能已经存在很多年了，那就是将输出流写入到网页中的能力。这个能力<br>体现在下列 4 个方法中：write()、writeln()、open()和 close()。其中，write()和 writeln()<br>方法都接受一个字符串参数，即要写入到输出流中的文本。write()会原样写入，而 writeln()则会<br>在字符串的末尾添加一个换行符（\n）。在页面被加载的过程中，可以使用这两个方法向页面中动态地<br>加入内容，如下面的例子所示。</p>
+</blockquote>
+<h4 id="Element类型"><a href="#Element类型" class="headerlink" title="Element类型"></a>Element类型</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">if (element.tagName == &quot;div&quot;)&#123; //不能这样比较，很容易出错！</span><br><span class="line"> //在此执行某些操作</span><br><span class="line">&#125;</span><br><span class="line">if (element.tagName.toLowerCase() == &quot;div&quot;)&#123; //这样最好（适用于任何文档）</span><br><span class="line"> //在此执行某些操作</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//属性的3个方法</span><br><span class="line">div.setAttribute(&quot;id&quot;, &quot;someOtherId&quot;);</span><br><span class="line">alert(div.getAttribute(&quot;mycolor&quot;)); //null（IE 除外）</span><br><span class="line">div.removeAttribute(&quot;class&quot;);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="DOM拓展"><a href="#DOM拓展" class="headerlink" title="DOM拓展"></a>DOM拓展</h1><p>querySelector()方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//取得 body 元素</span><br><span class="line">var body = document.querySelector(&quot;body&quot;);</span><br><span class="line"></span><br><span class="line">//取得某&lt;div&gt;中的所有&lt;em&gt;元素（类似于 getElementsByTagName(&quot;em&quot;)）</span><br><span class="line">var ems = document.getElementById(&quot;myDiv&quot;).querySelectorAll(&quot;em&quot;);</span><br><span class="line"></span><br><span class="line">//matchesSelector()方法</span><br><span class="line">//Selectors API Level 2 规范为 Element 类型新增了一个方法 matchesSelector()。这个方法接收</span><br><span class="line">//一个参数，即 CSS 选择符，如果调用元素与该选择符匹配，返回 true；否则，返回 false。看例子。</span><br><span class="line">if (document.body.matchesSelector(&quot;body.page1&quot;))&#123;</span><br><span class="line"> //true</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="classList-属性"><a href="#classList-属性" class="headerlink" title="classList 属性"></a>classList 属性</h3><blockquote>
+<p> add(value)：将给定的字符串值添加到列表中。如果值已经存在，就不添加了。<br> contains(value)：表示列表中是否存在给定的值，如果存在则返回 true，否则返回 false。<br> remove(value)：从列表中删除给定的字符串。<br> toggle(value)：如果列表中已经存在给定的值，删除它；如果列表中没有给定的值，添加它。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//删除&quot;disabled&quot;类</span><br><span class="line">div.classList.remove(&quot;disabled&quot;);</span><br><span class="line">//添加&quot;current&quot;类</span><br><span class="line">div.classList.add(&quot;current&quot;);</span><br><span class="line">//切换&quot;user&quot;类</span><br><span class="line">div.classList.toggle(&quot;user&quot;);</span><br><span class="line">//确定元素中是否包含既定的类名</span><br><span class="line">if (div.classList.contains(&quot;bd&quot;) &amp;&amp; !div.classList.contains(&quot;disabled&quot;))&#123;</span><br><span class="line"> //执行操作</span><br><span class="line">)</span><br><span class="line">//迭代类名</span><br><span class="line">for (var i=0, len=div.classList.length; i &lt; len; i++)&#123;</span><br><span class="line"> doSomething(div.classList[i]);</span><br><span class="line">&#125;</span><br><span class="line">有了 classList 属性，除非你需要全部删除所有类名，或者完全重写元素的 class 属性，否则也</span><br><span class="line">就用不到 className 属性了。</span><br><span class="line">支持 classList 属性的浏览器有 Firefox 3.6+和 Chrome。</span><br></pre></td></tr></table></figure>
+
+<h3 id="焦点管理"><a href="#焦点管理" class="headerlink" title="焦点管理"></a>焦点管理</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">默认情况下，文档刚刚加载完成时，document.activeElement 中保存的是 document.body 元</span><br><span class="line">素的引用。文档加载期间，document.activeElement 的值为 null。</span><br><span class="line">另外就是新增了 document.hasFocus()方法，这个方法用于确定文档是否获得了焦点。</span><br><span class="line">var button = document.getElementById(&quot;myButton&quot;);</span><br><span class="line">button.focus();</span><br><span class="line">alert(document.hasFocus()); //true</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义数据属性"><a href="#自定义数据属性" class="headerlink" title="自定义数据属性"></a>自定义数据属性</h3><blockquote>
+<p>HTML5 规定可以为元素添加非标准的属性，但要添加前缀 data-，目的是为元素提供与渲染无关的<br>信息，或者提供语义信息。这些属性可以任意添加、随便命名，只要以 data-开头即可。来看一个例子。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;myDiv&quot; data-appId=&quot;12345&quot; data-myname=&quot;Nicholas&quot;&gt;&lt;/div&gt;</span><br><span class="line">添加了自定义属性之后，可以通过元素的 dataset 属性来访问自定义属性的值。dataset 属性的</span><br><span class="line">值是 DOMStringMap 的一个实例，也就是一个名值对儿的映射。在这个映射中，每个 data-name 形式</span><br><span class="line">的属性都会有一个对应的属性，只不过属性名没有 data-前缀（比如，自定义属性是 data-myname，</span><br><span class="line">那映射中对应的属性就是 myname）。还是看一个例子吧。</span><br><span class="line">//本例中使用的方法仅用于演示</span><br><span class="line">var div = document.getElementById(&quot;myDiv&quot;);</span><br><span class="line">//取得自定义属性的值</span><br><span class="line">var appId = div.dataset.appId;</span><br><span class="line">var myName = div.dataset.myname;</span><br><span class="line">//设置值</span><br><span class="line">div.dataset.appId = 23456;</span><br><span class="line">div.dataset.myname = &quot;Michael&quot;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符集属性"><a href="#字符集属性" class="headerlink" title="字符集属性"></a>字符集属性</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HTML5 新增了几个与文档字符集有关的属性。其中，charset 属性表示文档中实际使用的字符集，</span><br><span class="line">也可以用来指定新字符集。默认情况下，这个属性的值为&quot;UTF-16&quot;，但可以通过&lt;meta&gt;元素、响应头</span><br><span class="line">部或直接设置 charset 属性修改这个值。来看一个例子。</span><br><span class="line">alert(document.charset); //&quot;UTF-16&quot;</span><br><span class="line">document.charset = &quot;UTF-8&quot;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="插入标记"><a href="#插入标记" class="headerlink" title="插入标记"></a>插入标记</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">innerHTMLs属性</span><br><span class="line">div.innerHTML = &quot;Hello world!&quot;;</span><br><span class="line"></span><br><span class="line">outerHTML 属性</span><br><span class="line">outerHTML会根据指定的 HTML 字符串创建新的 DOM 子树，然后用这个 DOM 子树完全替换调用元素</span><br><span class="line">div.outerHTML = &quot;&lt;p&gt;This is a paragraph.&lt;/p&gt;&quot;;   //div会被覆盖掉</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>insertAdjacentHTML()方法<br>插入标记的最后一个新增方式是insertAdjacentHTML()方法。这个方法最早也是在IE中出现的，<br>它接收两个参数：插入位置和要插入的 HTML 文本。第一个参数必须是下列值之一：<br> “beforebegin”，在当前元素之前插入一个紧邻的同辈元素；<br> “afterbegin”，在当前元素之下插入一个新的子元素或在第一个子元素之前再插入新的子元素；<br> “beforeend”，在当前元素之下插入一个新的子元素或在最后一个子元素之后再插入新的子元素；<br> “afterend”，在当前元素之后插入一个紧邻的同辈元素。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//作为前一个同辈元素插入</span><br><span class="line">element.insertAdjacentHTML(&quot;beforebegin&quot;, &quot;&lt;p&gt;Hello world!&lt;/p&gt;&quot;);</span><br><span class="line">//作为第一个子元素插入</span><br><span class="line">element.insertAdjacentHTML(&quot;afterbegin&quot;, &quot;&lt;p&gt;Hello world!&lt;/p&gt;&quot;);</span><br><span class="line">//作为最后一个子元素插入</span><br><span class="line">element.insertAdjacentHTML(&quot;beforeend&quot;, &quot;&lt;p&gt;Hello world!&lt;/p&gt;&quot;);</span><br><span class="line">//作为后一个同辈元素插入</span><br><span class="line">element.insertAdjacentHTML(&quot;afterend&quot;, &quot;&lt;p&gt;Hello world!&lt;/p&gt;&quot;);</span><br><span class="line">支持 insertAdjacentHTML()方法的浏览器有 IE、Firefox 8+、Safari、Opera 和 Chrome。</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="scrollIntoView-方法"><a href="#scrollIntoView-方法" class="headerlink" title="scrollIntoView()方法"></a>scrollIntoView()方法</h3><blockquote>
+<p>如何滚动页面也是 DOM 规范没有解决的一个问题。为了解决这个问题，浏览器实现了一些方法，<br>以方便开发人员更好地控制页面滚动。在各种专有方法中，HTML5 最终选择了 scrollIntoView()作<br>为标准方法。<br>//让元素可见</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.forms[0].scrollIntoView();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> scrollIntoViewIfNeeded(alignCenter)：只在当前元素在视口中不可见的情况下，才滚<br>动浏览器窗口或容器元素，最终让它可见。如果当前元素在视口中可见，这个方法什么也不做。<br>如果将可选的 alignCenter 参数设置为 true，则表示尽量将元素显示在视口中部（垂直方向）。<br>Safari 和 Chrome 实现了这个方法。<br> scrollByLines(lineCount)：将元素的内容滚动指定的行高，lineCount 值可以是正值，<br>也可以是负值。Safari 和 Chrome 实现了这个方法。<br> scrollByPages(pageCount)：将元素的内容滚动指定的页面高度，具体高度由元素的高度决<br>定。Safari 和 Chrome 实现了这个方法。</p>
+</blockquote>
+<h3 id="设置CSS"><a href="#设置CSS" class="headerlink" title="设置CSS"></a>设置CSS</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">只要取得一个有效的 DOM 元素的引用，就可以随时使用 JavaScript 为其设置样式。以下是几个例子。</span><br><span class="line">var myDiv = document.getElementById(&quot;myDiv&quot;);</span><br><span class="line">//设置背景颜色</span><br><span class="line">myDiv.style.backgroundColor = &quot;red&quot;;</span><br><span class="line">//改变大小</span><br><span class="line">myDiv.style.width = &quot;100px&quot;;</span><br><span class="line">myDiv.style.height = &quot;200px&quot;;</span><br><span class="line">//指定边框</span><br><span class="line">myDiv.style.border = &quot;1px solid black&quot;;</span><br><span class="line">在以这种方式改变样式时，元素的外观会自动被更新。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>DOM 样式属性和方法<br>“DOM2级样式”规范还为 style 对象定义了一些属性和方法。这些属性和方法在提供元素的 style<br>特性值的同时，也可以修改样式。下面列出了这些属性和方法。<br> cssText：如前所述，通过它能够访问到 style 特性中的 CSS 代码。<br> length：应用给元素的 CSS 属性的数量。<br> parentRule：表示 CSS 信息的 CSSRule 对象。本节后面将讨论 CSSRule 类型。<br> getPropertyCSSValue(propertyName)：返回包含给定属性值的 CSSValue 对象。<br> getPropertyPriority(propertyName)：如果给定的属性使用了!important 设置，则返回<br>“important”；否则，返回空字符串。<br> getPropertyValue(propertyName)：返回给定属性的字符串值。<br> item(index)：返回给定位置的 CSS 属性的名称。<br> removeProperty(propertyName)：从样式中删除给定属性。<br> setProperty(propertyName,value,priority)：将给定属性设置为相应的值，并加上优先<br>权标志（”important”或者一个空字符串）。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">myDiv.style.cssText = &quot;width: 25px; height: 100px; background-color: green&quot;;</span><br><span class="line">alert(myDiv.style.cssText);</span><br><span class="line"></span><br><span class="line">设计 length 属性的目的，就是将其与 item()方法配套使用，以便迭代在元素中定义的 CSS 属性。</span><br><span class="line">在使用 length 和 item()时，style 对象实际上就相当于一个集合，都可以使用方括号语法来代替</span><br><span class="line">item()来取得给定位置的 CSS 属性，如下面的例子所示。</span><br><span class="line">for (var i=0, len=myDiv.style.length; i &lt; len; i++)&#123;</span><br><span class="line"> alert(myDiv.style[i]); //或者 myDiv.style.item(i)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>// CSS 规则</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var sheet = document.styleSheets[0];</span><br><span class="line">var rules = sheet.cssRules || sheet.rules; //取得规则列表</span><br><span class="line">var rule = rules[0]; //取得第一条规则</span><br><span class="line">alert(rule.selectorText); //&quot;div.box&quot;</span><br><span class="line">alert(rule.style.cssText); //完整的 CSS 代码</span><br><span class="line">alert(rule.style.backgroundColor); //&quot;blue&quot;</span><br><span class="line">alert(rule.style.width); //&quot;100px&quot;</span><br><span class="line">alert(rule.style.height); //&quot;200px&quot;</span><br><span class="line">/*</span><br><span class="line">使用这种方式，可以像确定元素的行内样式信息一样，确定与规则相关的样式信息。与使用元素的</span><br><span class="line">方式一样，在这种方式下也可以修改样式信息，如下面的例子所示。</span><br><span class="line">*/</span><br><span class="line">var sheet = document.styleSheets[0];</span><br><span class="line">var rules = sheet.cssRules || sheet.rules; //取得规则列表</span><br><span class="line">var rule = rules[0]; //取得第一条规则</span><br><span class="line">rule.style.backgroundColor = &quot;red&quot;</span><br><span class="line"></span><br><span class="line">//2. 创建规则</span><br><span class="line">sheet.insertRule(&quot;body &#123; background-color: silver &#125;&quot;, 0); //DOM 方法</span><br><span class="line">//3. 删除规则</span><br><span class="line">sheet.deleteRule(0); //DOM 方法</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/vlwq/vlwq.github.io/tags/%E9%AB%98%E7%A8%8B/" rel="tag"># 高程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/vlwq/vlwq.github.io/2017/06/11/2017/20170611/" rel="prev" title="高程笔记3-函数表达式">
+      <i class="fa fa-chevron-left"></i> 高程笔记3-函数表达式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/vlwq/vlwq.github.io/2017/06/13/2017/20170613/" rel="next" title="高程笔记5-事件">
+      高程笔记5-事件 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-windows%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">8-windows对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%B4%E6%AD%87%E8%B0%83%E7%94%A8%E5%92%8C%E8%B6%85%E6%97%B6%E8%B0%83%E7%94%A8"><span class="nav-number">1.1.</span> <span class="nav-text">间歇调用和超时调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#location-%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">location 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history-%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.</span> <span class="nav-text">history 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BOM%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">BOM总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-DOM"><span class="nav-number"></span> <span class="nav-text">10.DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOCUMENT"><span class="nav-number">1.</span> <span class="nav-text">DOCUMENT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Element%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.0.1.</span> <span class="nav-text">Element类型</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DOM%E6%8B%93%E5%B1%95"><span class="nav-number"></span> <span class="nav-text">DOM拓展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#classList-%E5%B1%9E%E6%80%A7"><span class="nav-number">0.1.</span> <span class="nav-text">classList 属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%84%A6%E7%82%B9%E7%AE%A1%E7%90%86"><span class="nav-number">0.2.</span> <span class="nav-text">焦点管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E5%B1%9E%E6%80%A7"><span class="nav-number">0.3.</span> <span class="nav-text">自定义数据属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E9%9B%86%E5%B1%9E%E6%80%A7"><span class="nav-number">0.4.</span> <span class="nav-text">字符集属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%A0%87%E8%AE%B0"><span class="nav-number">0.5.</span> <span class="nav-text">插入标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scrollIntoView-%E6%96%B9%E6%B3%95"><span class="nav-number">0.6.</span> <span class="nav-text">scrollIntoView()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AECSS"><span class="nav-number">0.7.</span> <span class="nav-text">设置CSS</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Andrew Li"
+      src="/vlwq/vlwq.github.io/assets/headimg/lwq.jpg">
+  <p class="site-author-name" itemprop="name">Andrew Li</p>
+  <div class="site-description" itemprop="description">此为博客一枚。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/vlwq/vlwq.github.io/archives/">
+        
+          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/vlwq/vlwq.github.io/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:xiyun0769@fomail.com" title="E-Mail → mailto:xiyun0769@fomail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://shequ.liweiqiang.vip/" title="http:&#x2F;&#x2F;shequ.liweiqiang.vip" rel="noopener" target="_blank">个人社区</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Andrew Li</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/vlwq/vlwq.github.io/lib/anime.min.js"></script>
+  <script src="/vlwq/vlwq.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/vlwq/vlwq.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/vlwq/vlwq.github.io/js/utils.js"></script>
+
+<script src="/vlwq/vlwq.github.io/js/motion.js"></script>
+
+
+<script src="/vlwq/vlwq.github.io/js/schemes/pisces.js"></script>
+
+
+<script src="/vlwq/vlwq.github.io/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
