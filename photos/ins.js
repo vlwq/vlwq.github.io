@@ -82,7 +82,7 @@
     /**
      * @name impush-client 
      * @description 这个项目让我发家致富…
-     * @date 2016-12-1
+     * @date 2015others-12-1
      */
 
     var _collection = [];

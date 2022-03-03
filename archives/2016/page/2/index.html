@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vlwq.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"vlwq.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="此为博客一枚。">
@@ -103,6 +103,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -127,11 +128,38 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -158,13 +186,33 @@
     <div class="posts-collapse">
       <div class="collection-title">
         
-        <span class="collection-header">很好! 目前共计 81 篇日志。 继续努力。</span>
+        <span class="collection-header">不错! 目前共计 68 篇日志。 继续努力。</span>
       </div>
 
       
     <div class="collection-year">
       <span class="collection-header">2016</span>
     </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2016-11-03T10:36:00+08:00"
+              content="2016-11-03">
+          11-03
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2016/11/03/2016fe/20161103/" itemprop="url">
+            <span itemprop="name">ajax,Bom</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -178,7 +226,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2016/11/02/2016/20161102/" itemprop="url">
+          <a class="post-title-link" href="/2016/11/02/2016fe/20161102/" itemprop="url">
             <span itemprop="name">console的apply,call,bind</span>
           </a>
       </div>
@@ -191,35 +239,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2016-11-01T10:36:00+08:00"
-              content="2016-11-01">
-          11-01
+              datetime="2016-10-12T10:36:00+08:00"
+              content="2016-10-12">
+          10-12
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2016/11/01/2016/20161101/" itemprop="url">
-            <span itemprop="name">gua.js</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2016-10-06T10:36:00+08:00"
-              content="2016-10-06">
-          10-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2016/10/06/2016/20161006/" itemprop="url">
-            <span itemprop="name">2017年房价?</span>
+          <a class="post-title-link" href="/2016/10/12/2016fe/20161012/" itemprop="url">
+            <span itemprop="name">flex布局</span>
           </a>
       </div>
 
@@ -238,7 +266,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2016/10/05/2016/20161005/" itemprop="url">
+          <a class="post-title-link" href="/2016/10/05/2015others/20161005/" itemprop="url">
             <span itemprop="name">差距</span>
           </a>
       </div>
@@ -258,7 +286,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2016/10/01/2016/20161001/" itemprop="url">
+          <a class="post-title-link" href="/2016/10/01/2015others/20161001/" itemprop="url">
             <span itemprop="name">能得到锻炼能力的机会</span>
           </a>
       </div>
@@ -278,7 +306,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2016/09/21/2015/20150921/" itemprop="url">
+          <a class="post-title-link" href="/2016/09/21/2015others/20160921/" itemprop="url">
             <span itemprop="name">毕业一年</span>
           </a>
       </div>
@@ -291,15 +319,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2016-09-20T10:36:00+08:00"
-              content="2016-09-20">
-          09-20
+              datetime="2016-07-25T10:36:00+08:00"
+              content="2016-07-25">
+          07-25
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2016/09/20/2016/20160920/" itemprop="url">
-            <span itemprop="name">结束了把</span>
+          <a class="post-title-link" href="/2016/07/25/2015others/20160822/" itemprop="url">
+            <span itemprop="name">25岁前你必须要做完的7件事</span>
           </a>
       </div>
 
@@ -311,15 +339,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2016-09-01T10:36:00+08:00"
-              content="2016-09-01">
-          09-01
+              datetime="2016-03-04T10:36:00+08:00"
+              content="2016-03-04">
+          03-04
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2016/09/01/2015/20150901/" itemprop="url">
-            <span itemprop="name">实体凋敝，金融暴走</span>
+          <a class="post-title-link" href="/2016/03/04/2015others/20160304/" itemprop="url">
+            <span itemprop="name">执行力</span>
           </a>
       </div>
 
@@ -331,15 +359,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2016-08-23T10:36:00+08:00"
-              content="2016-08-23">
-          08-23
+              datetime="2016-03-01T10:36:00+08:00"
+              content="2016-03-01">
+          03-01
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2016/08/23/2015/20150823/" itemprop="url">
-            <span itemprop="name">别给自己找借口</span>
+          <a class="post-title-link" href="/2016/03/01/2015others/20160301/" itemprop="url">
+            <span itemprop="name">目标-三十而立</span>
           </a>
       </div>
 
@@ -351,15 +379,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2016-08-23T10:36:00+08:00"
-              content="2016-08-23">
-          08-23
+              datetime="2016-02-03T10:36:00+08:00"
+              content="2016-02-03">
+          02-03
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2016/08/23/2016/20160823/" itemprop="url">
-            <span itemprop="name">注重生活体验，着眼点放在你自己的内心</span>
+          <a class="post-title-link" href="/2016/02/03/2015others/20160203/" itemprop="url">
+            <span itemprop="name">颈椎病</span>
           </a>
       </div>
 
@@ -375,7 +403,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2016/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2016/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2016/page/3/">3</a><a class="page-number" href="/archives/2016/page/4/">4</a><a class="extend next" rel="next" href="/archives/2016/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/archives/2016/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2016/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2016/page/3/">3</a><a class="extend next" rel="next" href="/archives/2016/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -443,14 +471,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -535,6 +563,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vlwq.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"vlwq.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="此为博客一枚。">
@@ -103,6 +103,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -127,11 +128,38 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -179,7 +207,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2017/06/17/2017/20170617/" itemprop="url">
+          <a class="post-title-link" href="/2017/06/17/2017%E9%AB%98%E7%A8%8B/20170617/" itemprop="url">
             <span itemprop="name">高程笔记9-新api</span>
           </a>
       </div>
@@ -199,7 +227,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2017/06/16/2017/20170616/" itemprop="url">
+          <a class="post-title-link" href="/2017/06/16/2017%E9%AB%98%E7%A8%8B/20170616/" itemprop="url">
             <span itemprop="name">高程笔记8-cookie</span>
           </a>
       </div>
@@ -219,7 +247,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2017/06/15/2017/20170615/" itemprop="url">
+          <a class="post-title-link" href="/2017/06/15/2017%E9%AB%98%E7%A8%8B/20170615/" itemprop="url">
             <span itemprop="name">高程笔记7-JSON和ajax</span>
           </a>
       </div>
@@ -239,7 +267,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2017/06/14/2017/20170614/" itemprop="url">
+          <a class="post-title-link" href="/2017/06/14/2017%E9%AB%98%E7%A8%8B/20170614/" itemprop="url">
             <span itemprop="name">高程笔记6-表单知识</span>
           </a>
       </div>
@@ -259,7 +287,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2017/06/13/2017/20170613/" itemprop="url">
+          <a class="post-title-link" href="/2017/06/13/2017%E9%AB%98%E7%A8%8B/20170613/" itemprop="url">
             <span itemprop="name">高程笔记5-事件</span>
           </a>
       </div>
@@ -279,7 +307,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2017/06/12/2017/20170612/" itemprop="url">
+          <a class="post-title-link" href="/2017/06/12/2017%E9%AB%98%E7%A8%8B/20170612/" itemprop="url">
             <span itemprop="name">高程笔记4-BOM</span>
           </a>
       </div>
@@ -299,7 +327,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2017/06/11/2017/20170611/" itemprop="url">
+          <a class="post-title-link" href="/2017/06/11/2017%E9%AB%98%E7%A8%8B/20170611/" itemprop="url">
             <span itemprop="name">高程笔记3-函数表达式</span>
           </a>
       </div>
@@ -319,7 +347,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2017/06/10/2017/20170610/" itemprop="url">
+          <a class="post-title-link" href="/2017/06/10/2017%E9%AB%98%E7%A8%8B/20170610/" itemprop="url">
             <span itemprop="name">高程笔记2-面向对象的程序设计</span>
           </a>
       </div>
@@ -339,7 +367,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2017/06/09/2017/20170609/" itemprop="url">
+          <a class="post-title-link" href="/2017/06/09/2017%E9%AB%98%E7%A8%8B/20170609/" itemprop="url">
             <span itemprop="name">高程笔记1</span>
           </a>
       </div>
@@ -420,14 +448,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -512,6 +540,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
