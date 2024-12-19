@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"vlwq.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Docker rmidocker rmi 通过镜像的 ID 删除镜像。 要删除镜像，首先需要列出所有镜像以获取镜像的 ID，镜像的名称和其他详细信息。 运行简单的命令 docker images -a 或 docker images。之后，明确要删除哪个镜像，然后执行简单命令 docker rmi 。然后，列出所有镜像并检查，可以确认镜像是否已删除。 一次删除多张镜像当你要一次删除多张镜像时，可以">
+  <meta name="description" content="挂起后无法唤醒，一直黑屏。好像N卡普遍会有这个问题。为了这个破问题找了很多方法，网上很多说升级内核、升级显卡驱动还有些其它的方法都试过也没用，还把系统弄崩过。后来在外网找到一个不算完美的解决方法，就是把nvidia的挂起与休眠服务给停了。具体代码sudo systemctl stop nvidia-suspend.servicesudo systemctl stop nvidia-hibernat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="删除 Docker 镜像">
-<meta property="og:url" content="https://vlwq.github.io/2020/05/11/2016docker/20200511/index.html">
+<meta property="og:title" content="ubuntu20.04挂起后无法唤醒的问题">
+<meta property="og:url" content="https://vlwq.github.io/2020/05/14/2020/20200514/index.html">
 <meta property="og:site_name" content="Andrew的博客">
-<meta property="og:description" content="Docker rmidocker rmi 通过镜像的 ID 删除镜像。 要删除镜像，首先需要列出所有镜像以获取镜像的 ID，镜像的名称和其他详细信息。 运行简单的命令 docker images -a 或 docker images。之后，明确要删除哪个镜像，然后执行简单命令 docker rmi 。然后，列出所有镜像并检查，可以确认镜像是否已删除。 一次删除多张镜像当你要一次删除多张镜像时，可以">
+<meta property="og:description" content="挂起后无法唤醒，一直黑屏。好像N卡普遍会有这个问题。为了这个破问题找了很多方法，网上很多说升级内核、升级显卡驱动还有些其它的方法都试过也没用，还把系统弄崩过。后来在外网找到一个不算完美的解决方法，就是把nvidia的挂起与休眠服务给停了。具体代码sudo systemctl stop nvidia-suspend.servicesudo systemctl stop nvidia-hibernat">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-03T06:35:55.255Z">
+<meta property="article:published_time" content="2020-05-13T16:01:00.000Z">
+<meta property="article:modified_time" content="2024-12-19T09:23:13.086Z">
 <meta property="article:author" content="Andrew Li">
-<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://vlwq.github.io/2020/05/11/2016docker/20200511/">
+<link rel="canonical" href="https://vlwq.github.io/2020/05/14/2020/20200514/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>删除 Docker 镜像 | Andrew的博客</title>
+  <title>ubuntu20.04挂起后无法唤醒的问题 | Andrew的博客</title>
   
 
 
@@ -185,7 +185,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2020/05/11/2016docker/20200511/">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2020/05/14/2020/20200514/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/assets/headimg/lwq.jpg">
@@ -198,7 +198,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          删除 Docker 镜像
+          ubuntu20.04挂起后无法唤醒的问题
         </h1>
 
         <div class="post-meta">
@@ -208,7 +208,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-05-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-11T00:00:00+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-14 00:01:00" itemprop="dateCreated datePublished" datetime="2020-05-14T00:01:00+08:00">2020-05-14</time>
             </span>
 
           
@@ -222,33 +222,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Docker rmi<br>docker rmi 通过镜像的 ID 删除镜像。</p>
-<p>要删除镜像，首先需要列出所有镜像以获取镜像的 ID，镜像的名称和其他详细信息。 运行简单的命令 docker images -a 或 docker images。<br>之后，明确要删除哪个镜像，然后执行简单命令 docker rmi <your-image-id>。然后，列出所有镜像并检查，可以确认镜像是否已删除。</p>
-<p>一次删除多张镜像<br>当你要一次删除多张镜像时，可以使用一种方法。首先只需列出镜像即可获取镜像的 ID，然后执行简单的命令：</p>
-<blockquote>
-<p>docker rmi <your-image-id> <your-image-id> …</p>
-</blockquote>
-<p>列出镜像的 ID，每个 ID 之间留一个空格。</p>
-<p>一次删除所有镜像<br>要删除所有镜像，有一个简单的命令可以做到：</p>
-<blockquote>
-<p>docker rmi $(docker images -q)。</p>
-</blockquote>
-<p>在上面的命令中，有两个命令，第一个在 $() 中执行的命令是 shell 语法，返回以该执行的结果。然后，-q- 是一个选项，用于返回唯一的 ID。$() 返回镜像 ID 的结果，然后 docker rmi 删除所有这些镜像。</p>
-<span id="more"></span>
-
-
-<p>Docker rm<br>docker rm 根据容器的名称或者 ID 来删除容器。</p>
-<p>如果 Docker 容器正在运行，你在删除它们之前需要先停止运行。</p>
-<p>停止所有容器运行：</p>
-<blockquote>
-<p>docker stop $(docker ps -a -q)</p>
-</blockquote>
-<p>删除所有停止运行的容器：</p>
-<blockquote>
-<p>docker rm $(docker ps -a -q)</p>
-</blockquote>
-<p>删除多个容器<br>你可以通过向命令传递要删除的容器列表来停止和删除多个容器。shell 语法 $() 返回括号中执行的任何结果。因此，你可以在其中创建容器列表，以传递给 stop 和 rm 命令。</p>
-<p>docker ps -a -q 分解<br>docker ps 列出容器。<br>-a 这个选项用于列出所有容器，包括停止运行的。如果没有这个选项，则默认只列出在运行的容器。<br>-q 这个选项列出容器的数字 ID，而不是容器的所有信息。</p>
+        <p>挂起后无法唤醒，一直黑屏。好像N卡普遍会有这个问题。为了这个破问题找了很多方法，网上很多说升级内核、升级显卡驱动还有些其它的方法都试过也没用，还把系统弄崩过。后来在外网找到一个不算完美的解决方法，就是把nvidia的挂起与休眠服务给停了。具体代码<br>sudo systemctl stop nvidia-suspend.service<br>sudo systemctl stop nvidia-hibernate.service<br>sudo systemctl stop nvidia-resume.services<br>udo systemctl disable nvidia-suspend.service<br>sudo systemctl disable nvidia-hibernate.service<br>sudo systemctl disable nvidia-resume.service<br>sudo rm &#x2F;lib&#x2F;systemd&#x2F;system-sleep&#x2F;nvidia<br>然后重启电脑。</p>
 
     </div>
 
@@ -258,7 +232,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Docker/" rel="tag"># Docker</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
           </div>
 
         
@@ -267,12 +241,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/10/2018git/20200510/" rel="prev" title="How to squash all commits on branch">
-      <i class="fa fa-chevron-left"></i> How to squash all commits on branch
+    <a href="/2020/05/13/2020/20200513/" rel="prev" title="git rebase记录">
+      <i class="fa fa-chevron-left"></i> git rebase记录
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/05/12/2016docker/20200512/" rel="next" title="Docker: 上传镜像至私有仓库">
-      Docker: 上传镜像至私有仓库 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/06/06/2017node/20200606/" rel="next" title="Random alpha-numeric string in JavaScript">
+      Random alpha-numeric string in JavaScript <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -347,14 +321,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">229</span>
+          <span class="site-state-item-count">234</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -396,7 +370,7 @@
 <div class="copyright">
   
   &copy; 2016 – 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
