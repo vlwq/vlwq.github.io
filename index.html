@@ -223,7 +223,7 @@
           <h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><ul>
 <li>黎伟强</li>
 <li>手机：191-2898-2623</li>
-<li>Email：<a href="mailto:&#120;&#x69;&#121;&#117;&#110;&#x30;&#55;&#x36;&#x39;&#x40;&#102;&#x6f;&#120;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;">&#120;&#x69;&#121;&#117;&#110;&#x30;&#55;&#x36;&#x39;&#x40;&#102;&#x6f;&#120;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;</a></li>
+<li>Email：<a href="mailto:&#x78;&#x69;&#x79;&#117;&#110;&#48;&#55;&#54;&#x39;&#64;&#x66;&#111;&#120;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#x78;&#x69;&#x79;&#117;&#110;&#48;&#55;&#54;&#x39;&#64;&#x66;&#111;&#120;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;</a></li>
 </ul>
 <hr>
 <h1 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h1><ul>
@@ -330,7 +330,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2020/10/03/2020/20201003004/">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2022/05/05/2022_docker/20220505/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/assets/headimg/lwq.jpg">
@@ -344,7 +344,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/10/03/2020/20201003004/" class="post-title-link" itemprop="url">Docker本地导入导出（export）</a>
+            <a href="/2022/05/05/2022_docker/20220505/" class="post-title-link" itemprop="url">Docker: 上传镜像至私有仓库</a>
         </h2>
 
         <div class="post-meta">
@@ -354,7 +354,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-10-03 00:05:00" itemprop="dateCreated datePublished" datetime="2020-10-03T00:05:00+08:00">2020-10-03</time>
+              <time title="创建时间：2022-05-05 17:53:00" itemprop="dateCreated datePublished" datetime="2022-05-05T17:53:00+08:00">2022-05-05</time>
             </span>
 
           
@@ -368,14 +368,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>一、使用 export 和 import<br>1，查看本机的容器<br>这两个命令是通过容器来导入、导出镜像。首先我们使用 docker ps -a 命令查看本机所有的容器。</p>
-<p>2，导出镜像<br>（1）使用 docker export 命令根据容器 ID 将镜像导出成一个文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">export</span> f299f501774c &gt; hangger_server.tar</span><br></pre></td></tr></table></figure>
-<p>（2）上面命令执行后，可以看到文件已经保存到当前的 docker 终端目录下。</p>
-<p>3，导入镜像<br>（1）使用 docker import 命令则可将这个镜像文件导入进来。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker import - new_hangger_server &lt; hangger_server.tar</span><br></pre></td></tr></table></figure>
-<p>（2）执行 docker images 命令可以看到镜像确实已经导入进来了。</p>
-
+          <p>上传镜像<br>要上传镜像到私有仓库，需要在镜像的 tag 上加入仓库地址：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag express-app 111.111.111.111:5000/sunhengzhe/express-app:v1</span><br></pre></td></tr></table></figure>
+<p>为了不与其他镜像冲突，可以加入命名空间如 sunhengzhe，另外最好给镜像打上 tag 如 v1。</p>
+<p>注意仓库地址没有加协议部分，docker 默认的安全策略需要仓库是支持 https 的，如果服务器只能使用 http 传输，那么直接上传会失败，需要在 docker 客户端的配置文件中进行声明。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/05/2022_docker/20220505/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -394,7 +398,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2020/10/01/2020/20201001002/">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2022/05/04/2022_docker/20220504/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/assets/headimg/lwq.jpg">
@@ -408,7 +412,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/10/01/2020/20201001002/" class="post-title-link" itemprop="url">Docker rmi</a>
+            <a href="/2022/05/04/2022_docker/20220504/" class="post-title-link" itemprop="url">Docker rmi</a>
         </h2>
 
         <div class="post-meta">
@@ -418,7 +422,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-10-01 00:04:00" itemprop="dateCreated datePublished" datetime="2020-10-01T00:04:00+08:00">2020-10-01</time>
+              <time title="创建时间：2022-05-04 18:20:00" itemprop="dateCreated datePublished" datetime="2022-05-04T18:20:00+08:00">2022-05-04</time>
             </span>
 
           
@@ -460,7 +464,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2020/10/01/2020/20201001/">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2022/05/03/2022_docker/20220503/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/assets/headimg/lwq.jpg">
@@ -474,7 +478,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/10/01/2020/20201001/" class="post-title-link" itemprop="url">EACCES: permission denied in VS Code MAC</a>
+            <a href="/2022/05/03/2022_docker/20220503/" class="post-title-link" itemprop="url">docker install</a>
         </h2>
 
         <div class="post-meta">
@@ -484,7 +488,279 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-10-01 00:02:00" itemprop="dateCreated datePublished" datetime="2020-10-01T00:02:00+08:00">2020-10-01</time>
+              <time title="创建时间：2022-05-03 14:12:00" itemprop="dateCreated datePublished" datetime="2022-05-03T14:12:00+08:00">2022-05-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>参照官方<a target="_blank" rel="noopener" href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">https://docs.docker.com/install/linux/docker-ce/ubuntu/</a></p>
+<p>ce是社区版</p>
+<p>先切换ubuntu内镜像<a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/repogen/">https://mirrors.ustc.edu.cn/repogen/</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/03/2022_docker/20220503/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2022/05/02/2022_docker/20220502/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/02/2022_docker/20220502/" class="post-title-link" itemprop="url">Docker本地导入导出（export）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-02 10:05:00" itemprop="dateCreated datePublished" datetime="2022-05-02T10:05:00+08:00">2022-05-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一、使用 export 和 import<br>1，查看本机的容器<br>这两个命令是通过容器来导入、导出镜像。首先我们使用 docker ps -a 命令查看本机所有的容器。</p>
+<p>2，导出镜像<br>（1）使用 docker export 命令根据容器 ID 将镜像导出成一个文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">export</span> f299f501774c &gt; hangger_server.tar</span><br></pre></td></tr></table></figure>
+<p>（2）上面命令执行后，可以看到文件已经保存到当前的 docker 终端目录下。</p>
+<p>3，导入镜像<br>（1）使用 docker import 命令则可将这个镜像文件导入进来。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker import - new_hangger_server &lt; hangger_server.tar</span><br></pre></td></tr></table></figure>
+<p>（2）执行 docker images 命令可以看到镜像确实已经导入进来了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2022/05/01/2022_docker/20220501/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/01/2022_docker/20220501/" class="post-title-link" itemprop="url">删除 Docker 镜像</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-01 14:18:00" itemprop="dateCreated datePublished" datetime="2022-05-01T14:18:00+08:00">2022-05-01</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Docker rmi<br>docker rmi 通过镜像的 ID 删除镜像。</p>
+<p>要删除镜像，首先需要列出所有镜像以获取镜像的 ID，镜像的名称和其他详细信息。 运行简单的命令 docker images -a 或 docker images。<br>之后，明确要删除哪个镜像，然后执行简单命令 docker rmi <your-image-id>。然后，列出所有镜像并检查，可以确认镜像是否已删除。</p>
+<p>一次删除多张镜像<br>当你要一次删除多张镜像时，可以使用一种方法。首先只需列出镜像即可获取镜像的 ID，然后执行简单的命令：</p>
+<blockquote>
+<p>docker rmi <your-image-id> <your-image-id> …</p>
+</blockquote>
+<p>列出镜像的 ID，每个 ID 之间留一个空格。</p>
+<p>一次删除所有镜像<br>要删除所有镜像，有一个简单的命令可以做到：</p>
+<blockquote>
+<p>docker rmi $(docker images -q)。</p>
+</blockquote>
+<p>在上面的命令中，有两个命令，第一个在 $() 中执行的命令是 shell 语法，返回以该执行的结果。然后，-q- 是一个选项，用于返回唯一的 ID。$() 返回镜像 ID 的结果，然后 docker rmi 删除所有这些镜像。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/01/2022_docker/20220501/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2021/09/10/2021_linux/20210910/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/10/2021_linux/20210910/" class="post-title-link" itemprop="url">less命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-10 19:04:00" itemprop="dateCreated datePublished" datetime="2021-09-10T19:04:00+08:00">2021-09-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>less命令 与 more命令 非常类似，但less命令 可以更加随意地浏览文件，而且 less 在查看之前不会加载整个文件。<br>相比较于more命令，很多人更喜欢使用 less命令。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/10/2021_linux/20210910/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2021/09/09/2021_linux/20210909/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/09/2021_linux/20210909/" class="post-title-link" itemprop="url">EACCES: permission denied in VS Code MAC</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-09 21:37:00" itemprop="dateCreated datePublished" datetime="2021-09-09T21:37:00+08:00">2021-09-09</time>
             </span>
 
           
@@ -521,7 +797,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2020/06/06/2017node/20200606/">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2021/09/08/2021_linux/20210908/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/assets/headimg/lwq.jpg">
@@ -535,7 +811,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/06/2017node/20200606/" class="post-title-link" itemprop="url">Random alpha-numeric string in JavaScript</a>
+            <a href="/2021/09/08/2021_linux/20210908/" class="post-title-link" itemprop="url">nginx反向代理</a>
         </h2>
 
         <div class="post-meta">
@@ -545,7 +821,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-06-06 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-06T00:00:00+08:00">2020-06-06</time>
+              <time title="创建时间：2021-09-08 12:56:00" itemprop="dateCreated datePublished" datetime="2021-09-08T12:56:00+08:00">2021-09-08</time>
             </span>
 
           
@@ -559,272 +835,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>I just came across this as a really nice and elegant solution:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Math</span>.<span class="title function_">random</span>().<span class="title function_">toString</span>(<span class="number">36</span>).<span class="title function_">slice</span>(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p>Notes on this implementation:</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/06/2017node/20200606/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2020/05/14/2020/20200514/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/assets/headimg/lwq.jpg">
-      <meta itemprop="name" content="Andrew Li">
-      <meta itemprop="description" content="此为博客一枚。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Andrew的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/14/2020/20200514/" class="post-title-link" itemprop="url">ubuntu20.04挂起后无法唤醒的问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-14 00:01:00" itemprop="dateCreated datePublished" datetime="2020-05-14T00:01:00+08:00">2020-05-14</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>挂起后无法唤醒，一直黑屏。好像N卡普遍会有这个问题。为了这个破问题找了很多方法，网上很多说升级内核、升级显卡驱动还有些其它的方法都试过也没用，还把系统弄崩过。后来在外网找到一个不算完美的解决方法，就是把nvidia的挂起与休眠服务给停了。具体代码<br>sudo systemctl stop nvidia-suspend.service<br>sudo systemctl stop nvidia-hibernate.service<br>sudo systemctl stop nvidia-resume.services<br>udo systemctl disable nvidia-suspend.service<br>sudo systemctl disable nvidia-hibernate.service<br>sudo systemctl disable nvidia-resume.service<br>sudo rm &#x2F;lib&#x2F;systemd&#x2F;system-sleep&#x2F;nvidia<br>然后重启电脑。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2020/05/13/2020/20200513/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/assets/headimg/lwq.jpg">
-      <meta itemprop="name" content="Andrew Li">
-      <meta itemprop="description" content="此为博客一枚。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Andrew的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/13/2020/20200513/" class="post-title-link" itemprop="url">git rebase记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-13 00:01:00" itemprop="dateCreated datePublished" datetime="2020-05-13T00:01:00+08:00">2020-05-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev</span><br><span class="line">git pull</span><br><span class="line">git reset $(git merge-base master $(git branch --show-current))</span><br><span class="line">git add -A</span><br><span class="line">git commit -m  <span class="string">&quot;rebase  commit&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git push --force</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2020/05/12/2020/20200512/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/assets/headimg/lwq.jpg">
-      <meta itemprop="name" content="Andrew Li">
-      <meta itemprop="description" content="此为博客一枚。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Andrew的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/12/2020/20200512/" class="post-title-link" itemprop="url">Docker: 上传镜像至私有仓库</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-12 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-12T00:00:00+08:00">2020-05-12</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>上传镜像<br>要上传镜像到私有仓库，需要在镜像的 tag 上加入仓库地址：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag express-app 111.111.111.111:5000/sunhengzhe/express-app:v1</span><br></pre></td></tr></table></figure>
-<p>为了不与其他镜像冲突，可以加入命名空间如 sunhengzhe，另外最好给镜像打上 tag 如 v1。</p>
-<p>注意仓库地址没有加协议部分，docker 默认的安全策略需要仓库是支持 https 的，如果服务器只能使用 http 传输，那么直接上传会失败，需要在 docker 客户端的配置文件中进行声明。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/12/2020/20200512/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2020/05/11/2020/20200511/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/assets/headimg/lwq.jpg">
-      <meta itemprop="name" content="Andrew Li">
-      <meta itemprop="description" content="此为博客一枚。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Andrew的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/11/2020/20200511/" class="post-title-link" itemprop="url">删除 Docker 镜像</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-11T00:00:00+08:00">2020-05-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Docker rmi<br>docker rmi 通过镜像的 ID 删除镜像。</p>
-<p>要删除镜像，首先需要列出所有镜像以获取镜像的 ID，镜像的名称和其他详细信息。 运行简单的命令 docker images -a 或 docker images。<br>之后，明确要删除哪个镜像，然后执行简单命令 docker rmi <your-image-id>。然后，列出所有镜像并检查，可以确认镜像是否已删除。</p>
-<p>一次删除多张镜像<br>当你要一次删除多张镜像时，可以使用一种方法。首先只需列出镜像即可获取镜像的 ID，然后执行简单的命令：</p>
+          <p>当只有一台服务器，而又想运行多个 web 后端服务，且希望网址为 <a target="_blank" rel="noopener" href="http://www.xx.com/">www.XX.com</a> &#x2F; bbs.XX.com &#x2F; blog.XX.com,怎么办，此时就要用nginx进行反向代理</p>
 <blockquote>
-<p>docker rmi <your-image-id> <your-image-id> …</p>
+<p>以 ubuntu 为例</p>
 </blockquote>
-<p>列出镜像的 ID，每个 ID 之间留一个空格。</p>
-<p>一次删除所有镜像<br>要删除所有镜像，有一个简单的命令可以做到：</p>
-<blockquote>
-<p>docker rmi $(docker images -q)。</p>
-</blockquote>
-<p>在上面的命令中，有两个命令，第一个在 $() 中执行的命令是 shell 语法，返回以该执行的结果。然后，-q- 是一个选项，用于返回唯一的 ID。$() 返回镜像 ID 的结果，然后 docker rmi 删除所有这些镜像。</p>
+<ol>
+<li>安装 NGINX</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/11/2020/20200511/#more" rel="contents">
+              <a class="btn" href="/2021/09/08/2021_linux/20210908/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -848,7 +869,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2020/05/10/2018git/20200510/">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2021/09/07/2021_linux/20210907/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/assets/headimg/lwq.jpg">
@@ -862,7 +883,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/10/2018git/20200510/" class="post-title-link" itemprop="url">How to squash all commits on branch</a>
+            <a href="/2021/09/07/2021_linux/20210907/" class="post-title-link" itemprop="url">让终端走代理的几种方法</a>
         </h2>
 
         <div class="post-meta">
@@ -872,7 +893,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-05-10 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-10T00:00:00+08:00">2020-05-10</time>
+              <time title="创建时间：2021-09-07 09:24:00" itemprop="dateCreated datePublished" datetime="2021-09-07T09:24:00+08:00">2021-09-07</time>
             </span>
 
           
@@ -886,27 +907,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Another way to squash all your commits is to reset the index to master:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout yourBranch</span><br><span class="line">git reset $(git merge-base master $(git branch --show-current))</span><br><span class="line">git add -A</span><br><span class="line">git commit -m <span class="string">&quot;one commit on yourBranch&quot;</span></span><br></pre></td></tr></table></figure>
-<p>This isn’t perfect as it implies you know from which branch “yourBranch” is coming from.<br>Note: finding that origin branch isn’t easy&#x2F;possible with Git (the visual way is often the easiest, as seen here).</p>
-<p>Note: <code>git branch --show-current</code> has been introduced with Git 2.22 (Q1 20219).</p>
-<p>EDIT: you will need to use <code>git push --force</code></p>
-<p>Karlotcha Hoa adds in the comments:
-For the reset, you can do</p>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))</span><br></pre></td></tr></table></figure>
-<p>[That] automatically uses the branch you are currently on.<br>And if you use that, you can also use an alias, as the command doesn’t rely on the branch name.</p>
-<p>sschoof adds in the comments:</p>
-<p>Since my default branch is called main and my search had multi times brought me here:<br>To copy it for my next time</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset $(git merge-base main $(git rev-parse --abbrev-ref HEAD))</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/10/2018git/20200510/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h1 id="让终端走代理的几种方法包括以下几种‌："><a href="#让终端走代理的几种方法包括以下几种‌：" class="headerlink" title="让终端走代理的几种方法包括以下几种‌："></a>让终端走代理的几种方法包括以下几种‌：</h1><h2 id="1-‌直接在终端中运行命令‌："><a href="#1-‌直接在终端中运行命令‌：" class="headerlink" title="1.‌直接在终端中运行命令‌："></a>1.‌直接在终端中运行命令‌：</h2><p>可以在终端中直接运行以下命令来设置代理：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=http://proxyAddress:port</span><br><span class="line"><span class="built_in">export</span> https_proxy=http://proxyAddress:port</span><br></pre></td></tr></table></figure>
+<p>例如，如果你想使用127.0.0.1的7890端口作为代理，应该输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=http://127.0.0.1:7890</span><br><span class="line"><span class="built_in">export</span> https_proxy=http://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+<p>这种方法的好处是简单直接，并且只对当前终端有效‌</p>
+<h2 id="2-‌将代理服务器地址写入shell配置文件‌："><a href="#2-‌将代理服务器地址写入shell配置文件‌：" class="headerlink" title="2.‌将代理服务器地址写入shell配置文件‌："></a>2.‌将代理服务器地址写入shell配置文件‌：</h2><p>可以将代理服务器地址写入.bashrc或.zshrc配置文件中，这样设置会永久保存，下次可以直接使用。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://localhost:port&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://localhost:port&quot;</span></span><br></pre></td></tr></table></figure>
+<p>以使用小飞机代理为例，代理端口为1080，则应设置为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:1080&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:1080&quot;</span></span><br></pre></td></tr></table></figure>
+<p>保存后，在终端中执行source ~&#x2F;.bashrc或退出当前终端再重新打开一个终端‌ 。</p>
+<h2 id="3-‌修改特定工具的配置‌："><a href="#3-‌修改特定工具的配置‌：" class="headerlink" title="3.‌修改特定工具的配置‌："></a>3.‌修改特定工具的配置‌：</h2><p>对于某些特定的工具，如apt、git等，可以直接在它们的配置文件中设置代理。例如，对于apt：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/apt.conf</span><br></pre></td></tr></table></figure>
+<p>在文件末尾加入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Acquire::http::Proxy <span class="string">&quot;http://proxyAddress:port&quot;</span></span><br></pre></td></tr></table></figure>
+<p>对于git：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy <span class="string">&#x27;socks5://127.0.0.1:1088&#x27;</span></span><br><span class="line">git config --global https.proxy <span class="string">&#x27;socks5://127.0.0.1:1088&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>这样设置后，该工具就会使用指定的代理服务器‌。</p>
+<h2 id="4-‌使用Proxychains‌："><a href="#4-‌使用Proxychains‌：" class="headerlink" title="4.‌使用Proxychains‌："></a>4.‌使用Proxychains‌：</h2><p>Proxychains可以在终端中使用SOCKS5代理。如果代理服务器需要登录，可以直接在命令中指定用户名和密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http_proxy=http://userName:password@proxyAddress:port</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -992,14 +1011,14 @@ For the reset, you can do</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">235</span>
+          <span class="site-state-item-count">237</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

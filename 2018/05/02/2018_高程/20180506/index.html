@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vlwq.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="高程笔记二">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高程笔记2-面向对象的程序设计">
+<meta property="og:url" content="https://vlwq.github.io/2018/05/02/2018_%E9%AB%98%E7%A8%8B/20180506/index.html">
+<meta property="og:site_name" content="Andrew的博客">
+<meta property="og:description" content="高程笔记二">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-05-02T06:37:00.000Z">
+<meta property="article:modified_time" content="2024-12-22T13:10:13.385Z">
+<meta property="article:author" content="Andrew Li">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://vlwq.github.io/2018/05/02/2018_%E9%AB%98%E7%A8%8B/20180506/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>高程笔记2-面向对象的程序设计 | Andrew的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Andrew的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">practice makes perfect</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlwq.github.io/2018/05/02/2018_%E9%AB%98%E7%A8%8B/20180506/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/headimg/lwq.jpg">
+      <meta itemprop="name" content="Andrew Li">
+      <meta itemprop="description" content="此为博客一枚。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Andrew的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          高程笔记2-面向对象的程序设计
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-05-02 14:37:00" itemprop="dateCreated datePublished" datetime="2018-05-02T14:37:00+08:00">2018-05-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>高程笔记二</p>
+<span id="more"></span>
+
+
+<h1 id="面向对象的程序设计"><a href="#面向对象的程序设计" class="headerlink" title="面向对象的程序设计"></a>面向对象的程序设计</h1><h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><blockquote>
+<p> [[Configurable]]：表示能否通过 delete 删除属性从而重新定义属性，能否修改属性的特<br>性，或者能否把属性修改为访问器属性。像前面例子中那样直接在对象上定义的属性，它们的<br>这个特性默认值为 true。<br> [[Enumerable]]：表示能否通过 for-in 循环返回属性。像前面例子中那样直接在对象上定<br>义的属性，它们的这个特性默认值为 true。<br> [[Writable]]：表示能否修改属性的值。像前面例子中那样直接在对象上定义的属性，它们的<br>这个特性默认值为 true。<br> [[Value]]：包含这个属性的数据值。读取属性值的时候，从这个位置读；写入属性值的时候，<br>把新值保存在这个位置。这个特性的默认值为 undefined。</p>
+</blockquote>
+<blockquote>
+<p>要修改属性默认的特性，必须使用ECMAScript 5的Object.defineProperty()方法。这个方法接收三个参数：属性所在的对象、属性的名字和一个描述符对象。其中，描述符（descriptor）对象的属性必须是：configurable、enumerable、writable 和 value。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;&#125;;</span><br><span class="line">Object.defineProperty(person, &quot;name&quot;, &#123;</span><br><span class="line"> writable: false,</span><br><span class="line"> value: &quot;Nicholas&quot;</span><br><span class="line">&#125;);</span><br><span class="line">alert(person.name); //&quot;Nicholas&quot;</span><br><span class="line">person.name = &quot;Greg&quot;;</span><br><span class="line">alert(person.name); //&quot;Nicholas&quot;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">这个例子创建了一个名为 name 的属性，它的值&quot;Nicholas&quot;是只读的。这个属性的值是不可修改</span><br><span class="line">的，如果尝试为它指定新值，则在非严格模式下，赋值操作将被忽略；在严格模式下，赋值操作将会导</span><br><span class="line">致抛出错误。</span><br><span class="line">类似的规则也适用于不可配置的属性。例如：</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">var person = &#123;&#125;;</span><br><span class="line">Object.defineProperty(person, &quot;name&quot;, &#123;</span><br><span class="line"> configurable: false,</span><br><span class="line"> value: &quot;Nicholas&quot;</span><br><span class="line">&#125;);</span><br><span class="line">alert(person.name); //&quot;Nicholas&quot;</span><br><span class="line">delete person.name;</span><br><span class="line">alert(person.name); //&quot;Nicholas&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var book = &#123;</span><br><span class="line"> _year: 2004,</span><br><span class="line"> edition: 1</span><br><span class="line">&#125;;</span><br><span class="line">Object.defineProperty(book, &quot;year&quot;, &#123;</span><br><span class="line"> get: function()&#123;</span><br><span class="line"> return this._year;</span><br><span class="line"> &#125;,</span><br><span class="line"> set: function(newValue)&#123;</span><br><span class="line"> if (newValue &gt; 2004) &#123;</span><br><span class="line"> this._year = newValue;</span><br><span class="line"> this.edition += newValue - 2004;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br><span class="line">book.year = 2005;</span><br><span class="line">alert(book.edition); //2</span><br></pre></td></tr></table></figure>
+
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><blockquote>
+<p>工厂模式是软件工程领域一种广为人知的设计模式，这种模式抽象了创建具体对象的过程（本书后<br>面还将讨论其他设计模式及其在 JavaScript 中的实现）</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function createPerson(name, age, job)&#123;</span><br><span class="line"> var o = new Object();</span><br><span class="line"> o.name = name;</span><br><span class="line"> o.age = age;</span><br><span class="line"> o.job = job;</span><br><span class="line"> o.sayName = function()&#123;</span><br><span class="line"> alert(this.name);</span><br><span class="line"> &#125;;</span><br><span class="line"> return o;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = createPerson(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;);</span><br><span class="line">var person2 = createPerson(&quot;Greg&quot;, 27, &quot;Doctor&quot;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">我们创建的每个函数都有一个 prototype（原型）属性，这个属性是一个指针，指向一个对象，</span><br><span class="line">而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。如果按照字面意思来理解，那</span><br><span class="line">么 prototype 就是通过调用构造函数而创建的那个对象实例的原型对象。使用原型对象的好处是可以</span><br><span class="line">让所有对象实例共享它所包含的属性和方法。换句话说，不必在构造函数中定义对象实例的信息，而是</span><br><span class="line">可以将这些信息直接添加到原型对象中，如下面的例子所示。</span><br><span class="line">function Person()&#123;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.name = &quot;Nicholas&quot;;</span><br><span class="line">Person.prototype.age = 29;</span><br><span class="line">Person.prototype.job = &quot;Software Engineer&quot;;</span><br><span class="line">Person.prototype.sayName = function()&#123;</span><br><span class="line"> alert(this.name);</span><br><span class="line">&#125;;</span><br><span class="line">var person1 = new Person();</span><br><span class="line">person1.sayName(); //&quot;Nicholas&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="组合使用构造函数模式和原型模式"><a href="#组合使用构造函数模式和原型模式" class="headerlink" title="组合使用构造函数模式和原型模式"></a>组合使用构造函数模式和原型模式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">创建自定义类型的最常见方式，就是组合使用构造函数模式与原型模式。构造函数模式用于定义实</span><br><span class="line">例属性，而原型模式用于定义方法和共享的属性。结果，每个实例都会有自己的一份实例属性的副本，</span><br><span class="line">但同时又共享着对方法的引用，最大限度地节省了内存。另外，这种混成模式还支持向构造函数传递参</span><br><span class="line">数；可谓是集两种模式之长。下面的代码重写了前面的例子。</span><br><span class="line">function Person(name, age, job)&#123;</span><br><span class="line"> this.name = name;</span><br><span class="line"> this.age = age;</span><br><span class="line"> this.job = job;</span><br><span class="line"> this.friends = [&quot;Shelby&quot;, &quot;Court&quot;];</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line"> constructor : Person,</span><br><span class="line"> sayName : function()&#123;</span><br><span class="line"> alert(this.name);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;);</span><br><span class="line">var person2 = new Person(&quot;Greg&quot;, 27, &quot;Doctor&quot;);</span><br><span class="line">person1.friends.push(&quot;Van&quot;);</span><br><span class="line">alert(person1.friends); //&quot;Shelby,Count,Van&quot;</span><br><span class="line">alert(person2.friends); //&quot;Shelby,Count&quot;</span><br><span class="line">alert(person1.friends === person2.friends); //false</span><br><span class="line">alert(person1.sayName === person2.sayName); //true</span><br></pre></td></tr></table></figure>
+
+<h3 id="动态原型模式"><a href="#动态原型模式" class="headerlink" title="动态原型模式"></a>动态原型模式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">有其他 OO 语言经验的开发人员在看到独立的构造函数和原型时，很可能会感到非常困惑。动态原</span><br><span class="line">型模式正是致力于解决这个问题的一个方案，它把所有信息都封装在了构造函数中，而通过在构造函数</span><br><span class="line">中初始化原型（仅在必要的情况下），又保持了同时使用构造函数和原型的优点。换句话说，可以通过</span><br><span class="line">检查某个应该存在的方法是否有效，来决定是否需要初始化原型。来看一个例子。</span><br><span class="line">function Person(name, age, job)&#123;</span><br><span class="line"> //属性</span><br><span class="line"> this.name = name;</span><br><span class="line"> this.age = age;</span><br><span class="line"> this.job = job;</span><br><span class="line"> //方法</span><br><span class="line"> if (typeof this.sayName != &quot;function&quot;)&#123;</span><br><span class="line">    Person.prototype.sayName = function()&#123;</span><br><span class="line">        alert(this.name);</span><br><span class="line">    &#125;;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">var friend = new Person(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;);</span><br><span class="line">friend.sayName();</span><br></pre></td></tr></table></figure>
+
+<h2 id="寄生构造函数模式"><a href="#寄生构造函数模式" class="headerlink" title="寄生构造函数模式"></a>寄生构造函数模式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">通常，在前述的几种模式都不适用的情况下，可以使用寄生（parasitic）构造函数模式。这种模式</span><br><span class="line">的基本思想是创建一个函数，该函数的作用仅仅是封装创建对象的代码，然后再返回新创建的对象；但</span><br><span class="line">从表面上看，这个函数又很像是典型的构造函数。下面是一个例子。</span><br><span class="line">function Person(name, age, job)&#123;</span><br><span class="line"> var o = new Object();</span><br><span class="line"> o.name = name;</span><br><span class="line"> o.age = age;</span><br><span class="line"> o.job = job;</span><br><span class="line"> o.sayName = function()&#123;</span><br><span class="line"> alert(this.name);</span><br><span class="line"> &#125;;</span><br><span class="line"> return o;</span><br><span class="line">&#125;</span><br><span class="line">var friend = new Person(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;);</span><br><span class="line">friend.sayName(); //&quot;Nicholas&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="原型链的问题"><a href="#原型链的问题" class="headerlink" title="原型链的问题"></a>原型链的问题</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">原型链虽然很强大，可以用它来实现继承，但它也存在一些问题。其中，最主要的问题来自包含引</span><br><span class="line">用类型值的原型。想必大家还记得，我们前面介绍过包含引用类型值的原型属性会被所有实例共享；而</span><br><span class="line">这也正是为什么要在构造函数中，而不是在原型对象中定义属性的原因。在通过原型来实现继承时，原</span><br><span class="line">型实际上会变成另一个类型的实例。于是，原先的实例属性也就顺理成章地变成了现在的原型属性了。</span><br><span class="line">下列代码可以用来说明这个问题。</span><br><span class="line">function SuperType()&#123;</span><br><span class="line"> this.colors = [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;];</span><br><span class="line"> &#125;</span><br><span class="line">function SubType()&#123;</span><br><span class="line">&#125;</span><br><span class="line">//继承了 SuperType</span><br><span class="line">SubType.prototype = new SuperType();</span><br><span class="line">var instance1 = new SubType();</span><br><span class="line">instance1.colors.push(&quot;black&quot;);</span><br><span class="line">alert(instance1.colors); //&quot;red,blue,green,black&quot;</span><br><span class="line">var instance2 = new SubType();</span><br><span class="line">alert(instance2.colors); //&quot;red,blue,green,black&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">组合继承（combination inheritance），有时候也叫做伪经典继承，指的是将原型链和借用构造函数的</span><br><span class="line">技术组合到一块，从而发挥二者之长的一种继承模式。其背后的思路是使用原型链实现对原型属性和方</span><br><span class="line">法的继承，而通过借用构造函数来实现对实例属性的继承。这样，既通过在原型上定义方法实现了函数</span><br><span class="line">复用，又能够保证每个实例都有它自己的属性。下面来看一个例子。</span><br><span class="line">function SuperType(name)&#123;</span><br><span class="line"> this.name = name;</span><br><span class="line"> this.colors = [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;];</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.sayName = function()&#123;</span><br><span class="line"> alert(this.name);</span><br><span class="line"> &#125;;</span><br><span class="line">function SubType(name, age)&#123;</span><br><span class="line"> //继承属性</span><br><span class="line"> SuperType.call(this, name);</span><br><span class="line"></span><br><span class="line"> this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">//继承方法</span><br><span class="line">SubType.prototype = new SuperType();</span><br><span class="line">SubType.prototype.constructor = SubType;</span><br><span class="line">SubType.prototype.sayAge = function()&#123;</span><br><span class="line"> alert(this.age);</span><br><span class="line">&#125;;</span><br><span class="line">var instance1 = new SubType(&quot;Nicholas&quot;, 29);</span><br><span class="line">instance1.colors.push(&quot;black&quot;);</span><br><span class="line">alert(instance1.colors); //&quot;red,blue,green,black&quot;</span><br><span class="line">instance1.sayName(); //&quot;Nicholas&quot;;</span><br><span class="line">instance1.sayAge(); //29</span><br><span class="line">var instance2 = new SubType(&quot;Greg&quot;, 27);</span><br><span class="line">alert(instance2.colors); //&quot;red,blue,green&quot;</span><br><span class="line">instance2.sayName(); //&quot;Greg&quot;;</span><br><span class="line">instance2.sayAge(); //27</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="原型式继承"><a href="#原型式继承" class="headerlink" title="原型式继承"></a>原型式继承</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;</span><br><span class="line"> name: &quot;Nicholas&quot;,</span><br><span class="line"> friends: [&quot;Shelby&quot;, &quot;Court&quot;, &quot;Van&quot;]</span><br><span class="line">&#125;;</span><br><span class="line">var anotherPerson = object(person);</span><br><span class="line">anotherPerson.name = &quot;Greg&quot;;</span><br><span class="line">anotherPerson.friends.push(&quot;Rob&quot;);</span><br><span class="line">var yetAnotherPerson = object(person);</span><br><span class="line">yetAnotherPerson.name = &quot;Linda&quot;;</span><br><span class="line">yetAnotherPerson.friends.push(&quot;Barbie&quot;);</span><br><span class="line">alert(person.friends); //&quot;Shelby,Court,Van,Rob,Barbie&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>ECMAScript 5 通过新增 Object.create()方法规范化了原型式继承。这个方法接收两个参数：一<br>个用作新对象原型的对象和（可选的）一个为新对象定义额外属性的对象。在传入一个参数的情况下，<br>Object.create()与 object()方法的行为相同。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;</span><br><span class="line"> name: &quot;Nicholas&quot;,</span><br><span class="line"> friends: [&quot;Shelby&quot;, &quot;Court&quot;, &quot;Van&quot;]</span><br><span class="line">&#125;;</span><br><span class="line">var anotherPerson = Object.create(person);</span><br><span class="line">anotherPerson.name = &quot;Greg&quot;;</span><br><span class="line">anotherPerson.friends.push(&quot;Rob&quot;);</span><br><span class="line"></span><br><span class="line">var yetAnotherPerson = Object.create(person);</span><br><span class="line">yetAnotherPerson.name = &quot;Linda&quot;;</span><br><span class="line">yetAnotherPerson.friends.push(&quot;Barbie&quot;);</span><br><span class="line">alert(person.friends); //&quot;Shelby,Court,Van,Rob,Barbie&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="寄生组合式继承"><a href="#寄生组合式继承" class="headerlink" title="寄生组合式继承"></a>寄生组合式继承</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function SuperType(name)&#123;</span><br><span class="line"> this.name = name;</span><br><span class="line"> this.colors = [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;];</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.sayName = function()&#123;</span><br><span class="line"> alert(this.name);</span><br><span class="line">&#125;;</span><br><span class="line">function SubType(name, age)&#123;</span><br><span class="line"> SuperType.call(this, name);</span><br><span class="line"></span><br><span class="line"> this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">inheritPrototype(SubType, SuperType);</span><br><span class="line">SubType.prototype.sayAge = function()&#123;</span><br><span class="line"> alert(this.age);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>ECMAScript 支持面向对象（OO）编程，但不使用类或者接口。对象可以在代码执行过程中创建和<br>增强，因此具有动态性而非严格定义的实体。在没有类的情况下，可以采用下列模式创建对象。<br> 工厂模式，使用简单的函数创建对象，为对象添加属性和方法，然后返回对象。这个模式后来<br>被构造函数模式所取代。<br> 构造函数模式，可以创建自定义引用类型，可以像创建内置对象实例一样使用 new 操作符。不<br>过，构造函数模式也有缺点，即它的每个成员都无法得到复用，包括函数。由于函数可以不局<br>限于任何对象（即与对象具有松散耦合的特点），因此没有理由不在多个对象间共享函数。<br> 原型模式，使用构造函数的 prototype 属性来指定那些应该共享的属性和方法。组合使用构造<br>函数模式和原型模式时，使用构造函数定义实例属性，而使用原型定义共享的属性和方法。<br>JavaScript 主要通过原型链实现继承。原型链的构建是通过将一个类型的实例赋值给另一个构造函<br>数的原型实现的。这样，子类型就能够访问超类型的所有属性和方法，这一点与基于类的继承很相似。<br>原型链的问题是对象实例共享所有继承的属性和方法，因此不适宜单独使用。解决这个问题的技术是借<br>用构造函数，即在子类型构造函数的内部调用超类型构造函数。这样就可以做到每个实例都具有自己的<br>属性，同时还能保证只使用构造函数模式来定义类型。使用最多的继承模式是组合继承，这种模式使用<br>原型链继承共享的属性和方法，而通过借用构造函数继承实例属性。<br>此外，还存在下列可供选择的继承模式。<br> 原型式继承，可以在不必预先定义构造函数的情况下实现继承，其本质是执行对给定对象的浅<br>复制。而复制得到的副本还可以得到进一步改造。<br> 寄生式继承，与原型式继承非常相似，也是基于某个对象或某些信息创建一个对象，然后增强<br>对象，最后返回对象。为了解决组合继承模式由于多次调用超类型构造函数而导致的低效率问<br>题，可以将这个模式与组合继承一起使用。<br> 寄生组合式继承，集寄生式继承和组合继承的优点与一身，是实现基于类型继承的最有效方式。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/05/01/2018_%E9%AB%98%E7%A8%8B/20180505/" rel="prev" title="高程笔记1">
+      <i class="fa fa-chevron-left"></i> 高程笔记1
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/05/03/2018_%E9%AB%98%E7%A8%8B/20180509/" rel="next" title="高程笔记3-函数表达式">
+      高程笔记3-函数表达式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text">面向对象的程序设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">1.1.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E5%99%A8%E5%B1%9E%E6%80%A7"><span class="nav-number">1.1.1.</span> <span class="nav-text">访问器属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">工厂模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">原型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.3.1.</span> <span class="nav-text">组合使用构造函数模式和原型模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.3.2.</span> <span class="nav-text">动态原型模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%84%E7%94%9F%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">寄生构造函数模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.4.1.</span> <span class="nav-text">原型链的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E7%BB%A7%E6%89%BF"><span class="nav-number">1.4.2.</span> <span class="nav-text">组合继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E5%BC%8F%E7%BB%A7%E6%89%BF"><span class="nav-number">1.5.</span> <span class="nav-text">原型式继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%84%E7%94%9F%E7%BB%84%E5%90%88%E5%BC%8F%E7%BB%A7%E6%89%BF"><span class="nav-number">1.6.</span> <span class="nav-text">寄生组合式继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.7.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Andrew Li"
+      src="/assets/headimg/lwq.jpg">
+  <p class="site-author-name" itemprop="name">Andrew Li</p>
+  <div class="site-description" itemprop="description">此为博客一枚。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">237</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:xiyun0769@fomail.com" title="E-Mail → mailto:xiyun0769@fomail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://shequ.liweiqiang.vip/" title="http:&#x2F;&#x2F;shequ.liweiqiang.vip" rel="noopener" target="_blank">个人社区</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Andrew Li</span>
+</div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
